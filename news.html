@@ -1,0 +1,21 @@
+---
+title: News!
+layout: news
+---
+<h1>News</h1>
+
+  <div class='grid_24'>
+{% for post in site.posts %}
+
+    <div class='section-grouping'>
+      <h2 id='{{ post.date| date: '%s' }}'>
+        {{ post.date | date: '%A, %d %B %Y' }} : {{post.title}}
+      </h2>
+
+      {{ post.content }}
+
+    </div>
+  <br/>
+{% endfor %}
+  </div>
+<!-- End of iterator -->

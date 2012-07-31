@@ -1,0 +1,149 @@
+---
+title: index
+layout: main
+---
+<!-- Start index -->
+    <div id='front-page-main-upper'>
+      <hr class='shade' />
+      <div class='container_24'>
+        <div class='grid_8'>
+          <img alt='AEOLUS' class='logo' src='images/logo-frontpage.png' />
+        </div>
+        <div class='grid_16'>
+          <h1>
+            Aeolus
+            <sup>TM</sup>
+          </h1>
+          <h2>
+            Meet the world's best cloud management software,
+            <br />
+            <strong>and it's free.</strong>
+          </h2>
+          <div class='frontpagebuttons'>
+            <a class='button' href='about.html'>
+              Learn More
+              <img alt='→' src='images/button-right.png' />
+            </a>
+            <a class='button' href='get_it.html'>
+              Get Aeolus
+              <img alt='v' src='images/button-down.png' />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='container_24 clearfix' id='front-page-main-lower'>
+      <div class='grid_8'>
+        <div id='what'>
+          <h1>
+            <a href='about.html' style='color: #007EB5; text-decoration: none'>What is Aeolus?</a>
+          </h1>
+          <p>
+            Aeolus is software for running virtual machines both internally on your
+            own equipment, and in Clouds from several leading vendors.  All at the
+            same time.
+          </p>
+          <p>
+            REDUCE YOUR RISK of being caught out whenever your preferred Cloud
+            vendor has issues.
+          </p>
+          <a class='button small' href='about.html'>
+            More
+          </a>
+          <br />
+          <br />
+        </div>
+        <div id='developer_info'>
+          <h1>
+            <a href='developers.html' style='color: #007EB5; text-decoration: none'>Developer Info</a>
+          </h1>
+          <h3>Aeolus:</h3>
+          <ul>
+            <li>Is Open Source</li>
+            <li>Is written in Ruby <em>(well, most of it)</em></li>
+            <li>
+              Runs on Linux
+              <br />
+              <em>(some parts also work on OSX)</em>
+            </li>
+            <li>Has a growing Community</li>
+            <li>Is sponsored by Red Hat, Inc.</li>
+          </ul>
+        </div>
+      </div>
+      <div class='grid_8 news'>
+        <h1>
+          <a href='news.html' style='color: #007EB5'>Recent News</a>
+        </h1>
+        {% for post in site.posts limit: 5 %}
+        <p>
+          <a href="news.html#{{post.date| date:'%s'}}" title="News item: {{post.title}}">
+            <strong>{{ post.date | date: '%d %B %Y' }} : {{post.title}} </strong>
+          </a>
+        </p>
+        <p style='margin-bottom: 2em'>
+          {{post.summary}}
+        </p>
+        {% endfor %}
+        {% comment %}
+        <p>
+          <a href='news.html#2012062701' title='News item: Aeolus 0.10.0 released!'>
+            <strong>27th June 2012 - Aeolus 0.10.0 released!</strong>
+          </a>
+        </p>
+        <p style='margin-bottom: 2em'>
+          Newest stable release of Aeolus is out, with (64-bit) packages for
+          Fedora 16 available.
+        </p>
+        <p>
+          <a href='news.html#2012031001' title='News item: Image Warehouse 1.5 stable release!'>
+            <strong>10th March 2012 - Image Warehouse 1.5 stable release</strong>
+          </a>
+        </p>
+        <p style='margin-bottom: 2em'>
+          Image Warehouse 1.5, a stable release, is available.
+        </p>
+        <p>
+          <a href='news.html#2012030501' title='News item: Image Warehouse 1.4 stable release!'>
+            <strong>5th March 2012 - Image Warehouse 1.4 stable release</strong>
+          </a>
+        </p>
+        <p style='margin-bottom: 2em'>
+          Image Warehouse 1.4, a stable release, is available.
+        </p>
+        <p>
+          <a href='news.html#2012030201' title='News item: Image Warehouse 1.3 stable release!'>
+            <strong>2nd March 2012 - Image Warehouse 1.3 stable release</strong>
+          </a>
+        </p>
+        <p style='margin-bottom: 2em'>
+          Image Warehouse 1.3, a stable release, is available.
+        </p>
+        {% endcomment %}
+      </div>
+      <div class='grid_8'>
+        <br />
+        <script src='http://widgets.twimg.com/j/2/widget.js'></script>
+        <script type='text/javascript'>
+        {% include twitter.js %}
+        </script>
+        <br />
+      </div>
+      <div class='grid_24'>
+        <div class='grid_8 alpha'>
+          <a class='button small' href='developers.html'>
+            More
+          </a>
+        </div>
+        <div class='grid_8'>
+          <a class='button small' href='news.html'>
+            More
+          </a>
+        </div>
+        <div class='grid_8 omega'>
+          <a class='button small' href='http://twitter.com/aeolusproject'>
+            More
+          </a>
+        </div>
+      </div>
+    </div>

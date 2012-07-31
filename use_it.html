@@ -1,0 +1,22 @@
+---
+layout: page
+title: "Use it!"
+---
+
+<h1>Using Aeolus Effectively</h1>
+<p>
+  This page is a launching point for all our user level documentation.
+</p>
+
+<div class='section-grouping'>
+
+{% capture get_started %} {% include use-it/getstarted.md %} {% endcapture %}
+{{ get_started | markdownify }}
+</div>
+<br/>
+<div class='section-grouping'>
+{% capture other_documentation %} {% include use-it/otherdocumentation.md %} {% endcapture %}
+{{ other_documentation | markdownify }}
+</div>
+
+</div>
