@@ -6,7 +6,7 @@ title: Sitemap
 Sitemap
 ===
 
-Pages
+Pages:
 ---
 
 {% for page in site.pages %}
