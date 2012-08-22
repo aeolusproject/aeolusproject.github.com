@@ -6,13 +6,13 @@ title: Sitemap
 Sitemap
 ===
 
-Pages:
+Pages
 ---
 
 {% for page in site.pages %}
 {{site.production_url}}{{ page.url }}{% endfor %}
 
-Posts:
+Posts
 ---
 {% for post in site.posts %}
 {{site.production_url}}{{ post.url }}{% endfor %}
