@@ -6,9 +6,14 @@ layout: news
 
   <div class='grid_24'>
 {% for post in site.posts %}
-
     <div class='section-grouping'>
-      <h2 id='{{ post.date| date: '%s' }}'>
+
+  {% if post.customid %}
+	  <h2 id='{{ post.customid }}'>
+  {% else %}
+      <h2 id='{{ post.date | date: '%s' }}'>
+  {% endif %}
+
         {{ post.date | date: '%A, %d %B %Y' }} : {{post.title}}
       </h2>
 
