@@ -1,5 +1,6 @@
 ---
 layout: news
+customid: "2012030501"
 title: "Image Warehouse 1.4 stable release"
 summary: "Image Warehouse 1.4, a stable release, is available"
 ---
