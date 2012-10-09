@@ -12,7 +12,7 @@ sometimes unstable, or not yet feature complete, so use with caution.
 
 Installation instructions are available:
 
-&nbsp;&nbsp;&nbsp;&nbsp;[ http://www.aeolusproject.org/get_it.html#dev ][1]
+&nbsp;&nbsp;&nbsp;&nbsp;[http://www.aeolusproject.org/get_it.html#dev][1]
 
 Packages are available for Fedora 14 x86_64, and RHEL 6.1 x86_64 (Release
 Candidate or later).
