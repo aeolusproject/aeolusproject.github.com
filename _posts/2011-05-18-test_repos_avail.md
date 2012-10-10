@@ -1,6 +1,5 @@
 ---
 layout: news
-customid: "2011051801"
 title: "Testing repositories and packages now available"
 summary: "Testing repositories and packages now available"
 ---

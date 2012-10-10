@@ -1,6 +1,5 @@
 ---
 layout: news
-customid: "2011092601"
 title: "Aeolus Project on Social Media"
 summary: "Aeolus Project on Social Media"
 ---

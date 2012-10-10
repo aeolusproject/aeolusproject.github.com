@@ -1,6 +1,5 @@
 ---
 layout: news
-customid: "2012080201"
 title: "Aeolus Blog launched"
 summary: "Aeolus Blog launched"
 ---

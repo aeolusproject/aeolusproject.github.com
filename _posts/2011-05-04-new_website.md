@@ -1,6 +1,5 @@
 ---
 layout: news
-customid: "20110504"
 title: "New website!"
 summary: "The Aeolus Community have launched the second version of our main website."
 ---

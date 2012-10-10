@@ -1,6 +1,5 @@
 ---
 layout: news
-customid: "2011092401"
 title: "David Lutterkort's Puppetconf Presentation"
 summary: "David Lutterkort's Puppetconf Presentation"
 ---

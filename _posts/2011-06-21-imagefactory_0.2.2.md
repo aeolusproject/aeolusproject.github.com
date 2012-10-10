@@ -1,6 +1,5 @@
 ---
 layout: news
-customid: "2011062101"
 title: "Image Factory 0.2.2 now available"
 summary: "Image Factory 0.2.2 now available"
 ---
