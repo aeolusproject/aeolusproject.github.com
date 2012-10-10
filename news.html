@@ -6,11 +6,18 @@ layout: news
 
   <div class='grid_24'>
 {% for post in site.posts %}
+  {% capture cmonth %}{{ post.date | date: "%B" }}{% endcapture %}
+  {% unless lmonth == cmonth %}
+    <h2 id="{{ post.date | date: '%Y%m' }}" style="color: black"> {{ post.date | date: '%B %Y' }}</h2>
+
+    {% assign lmonth = cmonth %}
+  {% endunless %}
+
     <div class='section-grouping'>
 
   {% if post.customid %}
 	  <h2 id='{{ post.customid }}'>
-  {% else %}
+  {% else             %}
       <h2 id='{{ post.date | date: '%s' }}'>
   {% endif %}
 
