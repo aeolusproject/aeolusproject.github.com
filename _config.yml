@@ -6,3 +6,4 @@ tagline: Manage Your Cloud Deployments with Ease
 author: The Aeolus Project Content Writers
 host: www.aeolusproject.org
 production_url: http://www.aeolusproject.org
+exclude: README.md, image_source

@@ -6,9 +6,26 @@ layout: news
 
   <div class='grid_24'>
 {% for post in site.posts %}
+  {% comment %} ### Generate monthly heading for first post in a month ### {% endcomment %}
+  {% capture cmonth %}{{ post.date | date: "%B" }}{% endcapture %}
+  {% unless lmonth == cmonth %}
+    <h2 id="{{ post.date | date: '%Y%m' }}" style="color: black"> {{ post.date | date: '%B %Y' }}</h2>
+    {% assign lmonth = cmonth %}
+  {% endunless %}
 
     <div class='section-grouping'>
-      <h2 id='{{ post.date| date: '%s' }}'>
+
+  {% comment %} ### Count the number of posts for the day ### {% endcomment %}
+    {% capture thisdate %}{{ post.date | date: "%Y%m%d" }}{% endcapture %}
+    {% if thisdate != lastdate %}
+      {% assign postindex = '1' %}
+	  {% assign lastdate = thisdate %}
+	{% else %}
+	  {% capture postindex %}{{ postindex | plus: '1' }}{% endcapture %}
+    {% endif %}
+
+    {% comment %} ### Output the post title with a unique date based id ### {% endcomment %}
+      <h2 id='{{ thisdate }}0{{postindex}}'>
         {{ post.date | date: '%A, %d %B %Y' }} : {{post.title}}
       </h2>
 
