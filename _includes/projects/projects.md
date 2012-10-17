@@ -15,5 +15,5 @@ source project itself:
 -   [Image
     Warehouse](imagewarehouse.html "Image Warehouse project pages") –
     Daemon to move cloud images from cloud to cloud based on rules
--   [Oz](oz.html "Oz project pages") – Automated virtual machine
-    installer
+-   [Oz](https://github.com/clalancette/oz/wiki "Oz project pages") –
+    Automated virtual machine installer
