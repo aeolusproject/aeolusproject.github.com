@@ -10,10 +10,8 @@ This page is a launching point for all developer documentation.
        
 -   [Submitting patches](patches.html "Guide to submitting patches")   
        
--   [Open
-    bugs](https://bugzilla.redhat.com/buglist.cgi?classification=Red%20Hat&query_format=advanced&bug_status=NEW&bug_status=ASSIGNED&bug_status=MODIFIED&product=Cloud%20Engine "List of open bugs")
-      
-       
--   [Planning](redmine "Project Planning in Redmine") (Redmine)   
-     This is where the planning of Aeolus development happens.   
+-   [Open bugs](https://bugzilla.redhat.com/buglist.cgi?classification=Red%20Hat&query_format=advanced&bug_status=NEW&bug_status=ASSIGNED&bug_status=MODIFIED&product=CloudForms%20Cloud%20Engine "List of open bugs")
+
+-   [Planning](https://redmine.aeolusproject.org/redmine "Project Planning in Redmine")
+    (Redmine) This is where the planning of Aeolus development happens.   
     Scenarios, features, use cases, and more.   
