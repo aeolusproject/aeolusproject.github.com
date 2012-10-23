@@ -29,8 +29,8 @@ Incubator projects
 
 -   [bundler\_ext](#bundler)
 -   [TIM](#tim)
--   [Jekyll based Aeolus website](#jekweb)
--   [Template site](#templsite)
+-   [Template repository](#templrepo)
+-   [Template sharing website](#templsite)
 
 Dependencies
 ------------
@@ -177,11 +177,11 @@ Git repo:
 
 GitHub page:
 
-<pre><a class='whitehref' href='https://github.com/aeolusproject/aeolus-website'>https://github.com/aeolusproject/aeolus-website</a></pre>
+<pre><a class='whitehref' href='https://github.com/aeolusproject/aeolusproject.github.com'>https://github.com/aeolusproject/aeolusproject.github.com</a></pre>
 
 Git repo:
 
-    git://github.com/aeolusproject/aeolus-website.git
+	git://github.com/aeolusproject/aeolusproject.github.com.git
 </div>
 <br />
 
@@ -215,21 +215,21 @@ Git repo:
 <br />
 
 <div class="section-grouping">
-### Jekyll based Aeolus website {#jekweb}
+### Template Repository {#templrepo}
 
 Website:
 
-<pre><a class='whitehref' href='https://github.com/aeolus-incubator/aeolus-incubator.github.com'>https://github.com/aeolus-incubator/aeolus-incubator.github.com</a></pre>
+<pre><a class='whitehref' href='https://github.com/aeolus-incubator/templates'>https://github.com/aeolus-incubator/templates</a></pre>
 
 Git repo:
 
-    git://github.com/aeolus-incubator/aeolus-incubator.github.com.git
+    git://github.com/aeolus-incubator/templates.git
 
 </div>
 <br />
 
 <div class="section-grouping">
-### Template site {#templsite}
+### Template Website {#templsite}
 
 Website:
 
