@@ -89,7 +89,7 @@ Git repo:
 
 Description of each branch:
 
-<pre><a class='whitehref' href='https://www.aeolusproject.org/redmine/projects/aeolus/wiki/GitHub_Branches_and_Tags'>https://www.aeolusproject.org/redmine/projects/aeolus/wiki/GitHub_Branches_and_Tags</a></pre>
+<pre><a class='whitehref' href='https://redmine.aeolusproject.org/redmine/projects/aeolus/wiki/GitHub_Branches_and_Tags'>https://redmine.aeolusproject.org/redmine/projects/aeolus/wiki/GitHub_Branches_and_Tags</a></pre>
 
 </div>
 <br />

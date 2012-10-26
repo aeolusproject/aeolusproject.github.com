@@ -59,7 +59,7 @@ return here.
     $ git clone git://github.com/aeolusproject/conductor.git -b branch_name
 
 Look up the *branch\_name* to use
-[here](https://www.aeolusproject.org/redmine/projects/aeolus/wiki/GitHub_Branches_and_Tags).
+[here](https://redmine.aeolusproject.org/redmine/projects/aeolus/wiki/GitHub_Branches_and_Tags).
 
 #### 3. Initialise any needed git submodules
 

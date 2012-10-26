@@ -145,7 +145,7 @@ Once you are logged in, you can execute the Configuration setup script:
 
     #> aeolus-configserver-setup
 
-You can see sample output of the script [here](https://www.aeolusproject.org/redmine/projects/audrey/wiki/Configserver_Setup_Script_Output).
+You can see sample output of the script [here](https://redmine.aeolusproject.org/redmine/projects/audrey/wiki/Configserver_Setup_Script_Output).
 
 ####Test the Configuration Server<a id="test_config_server"></a>####
 
@@ -165,8 +165,8 @@ And you should see output similar to:
 Once the Configuration Server setup is complete, collect information from the script output to apply to Conductor:
 
 * The public DNS name of the Configuration Server instance (the ec2 public DNS name, in this example)
-* The Conductor Auth Key (see [line 27](https://www.aeolusproject.org/redmine/projects/audrey/wiki/Configserver_Setup_Script_Output) from the script output)
-* The Conductor Auth Secret (see [line 28](https://www.aeolusproject.org/redmine/projects/audrey/wiki/Configserver_Setup_Script_Output) from the script output)
+* The Conductor Auth Key (see [line 27](https://redmine.aeolusproject.org/redmine/projects/audrey/wiki/Configserver_Setup_Script_Output) from the script output)
+* The Conductor Auth Secret (see [line 28](https://redmine.aeolusproject.org/redmine/projects/audrey/wiki/Configserver_Setup_Script_Output) from the script output)
 
 ###4. Update Conductor<a id="update_conductor"></a>###
 
@@ -178,14 +178,14 @@ To update Conductor:<a id="update_conductor_steps"></a>
 4. Select "Accounts"
 5. Select the cloud provider account where the Configuration Server instance is running
 6. Click the "[ Add ]" link to add a Configuration Server to the provider account
-   <img width="700px" height="300px" src="https://www.aeolusproject.org/redmine/attachments/202/aeolus-provider-account-before.png"/>
+   <img width="700px" height="300px" src="https://redmine.aeolusproject.org/redmine/attachments/202/aeolus-provider-account-before.png"/>
 7. Enter the following information into the "Add Configserver" page:
-   <img width="700px" heigth="300px" src="https://www.aeolusproject.org/redmine/attachments/204/aeolus-add-configserver.png"/>
+   <img width="700px" heigth="300px" src="https://redmine.aeolusproject.org/redmine/attachments/204/aeolus-add-configserver.png"/>
     * Server Endpoint (URL): https://${ec2_public_dns_name}
     * Consumer Key: the [Conductor Auth Key](#collect_conductor_data)
     * Consumer Secret: the [Conductor Auth Secret](#collect_conductor_data)
 8. Click "Save"
-  <br/><img width="700px" heigth="300px" src="https://www.aeolusproject.org/redmine/attachments/203/aeolus-provider-account-after.png"/>
+  <br/><img width="700px" heigth="300px" src="https://redmine.aeolusproject.org/redmine/attachments/203/aeolus-provider-account-after.png"/>
 </div>
 
 <br />

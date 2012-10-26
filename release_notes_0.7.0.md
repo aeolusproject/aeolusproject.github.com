@@ -114,5 +114,5 @@ The following section contains links to closed issues.
 
 View the full list of completed Redmine issues for this version here:
 
-[https://www.aeolusproject.org/redmine/projects/aeolus/issues?query\_id=86](https://www.aeolusproject.org/redmine/projects/aeolus/issues?query_id=86 "Resolved Redmine Issues")
+[https://redmine.aeolusproject.org/redmine/projects/aeolus/issues?query\_id=86](https://redmine.aeolusproject.org/redmine/projects/aeolus/issues?query_id=86 "Resolved Redmine Issues")
 </div>

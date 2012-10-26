@@ -15,4 +15,4 @@
     bug](report_a_bug.html "Instructions for reporting a bug")   
        
 -   Link to the [Aeolus
-    Wiki](https://www.aeolusproject.org/redmine/projects/aeolus/wiki/)
+    Wiki](https://redmine.aeolusproject.org/redmine/projects/aeolus/wiki/)
