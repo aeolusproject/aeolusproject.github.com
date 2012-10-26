@@ -43,7 +43,7 @@ the name of your Aeolus server instead of "**server\_name**":
 
 <div class="note">
 **USEFUL INFO:** Aeolus is really [several pieces of software that work
-together.](https://www.aeolusproject.org/redmine/projects/aeolus/wiki/Aeolus_Components)
+together.](https://redmine.aeolusproject.org/redmine/projects/aeolus/wiki/Aeolus_Components)
 "Conductor" is the web based user interface piece.
 </div>
 
