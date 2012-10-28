@@ -61,7 +61,7 @@ Initial working support has been added for:
     start to shape up from the next major Aeolus release (0.4.0).
 
     Initial setup instructions are
-    [here](https://www.aeolusproject.org/redmine/projects/aeolus/wiki/RHEV-M_Setup "RHEV-M setup instructions").
+    [here](https://redmine.aeolusproject.org/redmine/projects/aeolus/wiki/RHEV-M_Setup "RHEV-M setup instructions").
     They are in rough initial form, with more user friendly ones due for
     creation soon.
 </div>
@@ -193,291 +193,291 @@ These are known problems due to be resolved in a subsequent release:
 ## Redmine items completed {#redmine}
 
 -   **Redmine
-    [1914](https://www.aeolusproject.org/redmine/issues/1914)** - Remove
+    [1914](https://redmine.aeolusproject.org/redmine/issues/1914)** - Remove
     unimplemented admin settings
 -   **Redmine
-    [1882](https://www.aeolusproject.org/redmine/issues/1882)** -
+    [1882](https://redmine.aeolusproject.org/redmine/issues/1882)** -
     Find\_index method doesn't find breadcrumb for slice! method
 -   **Redmine
-    [1870](https://www.aeolusproject.org/redmine/issues/1870)** -
+    [1870](https://redmine.aeolusproject.org/redmine/issues/1870)** -
     Conductor supports HWPs with nil attributes
 -   **Redmine
-    [1869](https://www.aeolusproject.org/redmine/issues/1869)** - Build
+    [1869](https://redmine.aeolusproject.org/redmine/issues/1869)** - Build
     imagefactory 0.2.2
 -   **Redmine
-    [1866](https://www.aeolusproject.org/redmine/issues/1866)** - Create
+    [1866](https://redmine.aeolusproject.org/redmine/issues/1866)** - Create
     config file for aeolus-cli if one doesn't exist
 -   **Redmine
-    [1845](https://www.aeolusproject.org/redmine/issues/1845)** - As a
+    [1845](https://redmine.aeolusproject.org/redmine/issues/1845)** - As a
     user, I would like the look of tab navigation to match that of the
     visual designs
 -   **Redmine
-    [1844](https://www.aeolusproject.org/redmine/issues/1844)** - As a
+    [1844](https://redmine.aeolusproject.org/redmine/issues/1844)** - As a
     self service user, I would like permission to launch deployables in
     all pools by default
 -   **Redmine
-    [1830](https://www.aeolusproject.org/redmine/issues/1830)** - When
+    [1830](https://redmine.aeolusproject.org/redmine/issues/1830)** - When
     admin is adding new suggested deployables, warn if the URL they
     enter doesn't resolve to a valid XML file
 -   **Redmine
-    [1809](https://www.aeolusproject.org/redmine/issues/1809)** -
+    [1809](https://redmine.aeolusproject.org/redmine/issues/1809)** -
     aeolus-list
 -   **Redmine
-    [1799](https://www.aeolusproject.org/redmine/issues/1799)** - As
+    [1799](https://redmine.aeolusproject.org/redmine/issues/1799)** - As
     RCM, I have access to updated packages in brew & a list of NEVRs for
     the rpms that need to be included
 -   **Redmine
-    [1796](https://www.aeolusproject.org/redmine/issues/1796)** - As a
+    [1796](https://redmine.aeolusproject.org/redmine/issues/1796)** - As a
     conductor/rhev-m user, I can launch a deployable on RHEV-M
 -   **Redmine
-    [1790](https://www.aeolusproject.org/redmine/issues/1790)** - As a
+    [1790](https://redmine.aeolusproject.org/redmine/issues/1790)** - As a
     conductor/rhev-m user, when I push an image the image is exported as
     a template in rhevm that is launchable
 -   **Redmine
-    [1784](https://www.aeolusproject.org/redmine/issues/1784)** -
+    [1784](https://redmine.aeolusproject.org/redmine/issues/1784)** -
     Removed the legacy Configure code whichs adds aeolus repos to
     /etc/yum.repos.d/
 -   **Redmine
-    [1761](https://www.aeolusproject.org/redmine/issues/1761)** - Fix JS
+    [1761](https://redmine.aeolusproject.org/redmine/issues/1761)** - Fix JS
     method for selecting Provider in New ProviderAccount view
 -   **Redmine
-    [1683](https://www.aeolusproject.org/redmine/issues/1683)** - As a
+    [1683](https://redmine.aeolusproject.org/redmine/issues/1683)** - As a
     developer, I have an understanding of the IPA/SSO integration
     strategy so I can execute on future work
 -   **Redmine
-    [1681](https://www.aeolusproject.org/redmine/issues/1681)** -
+    [1681](https://redmine.aeolusproject.org/redmine/issues/1681)** -
     Resolve critical rubygem-rails bug
 -   **Redmine
-    [1663](https://www.aeolusproject.org/redmine/issues/1663)** - As an
+    [1663](https://redmine.aeolusproject.org/redmine/issues/1663)** - As an
     aeolus-conductor developer, there is an automated sequence to build
     an srpm using mock and trigger staged QE tests to pass rpm to
     fp-testing repo
 -   **Redmine
-    [1658](https://www.aeolusproject.org/redmine/issues/1658)** - Broken
+    [1658](https://redmine.aeolusproject.org/redmine/issues/1658)** - Broken
     translations in next, after merge of newui
 -   **Redmine
-    [1650](https://www.aeolusproject.org/redmine/issues/1650)** - As an
+    [1650](https://redmine.aeolusproject.org/redmine/issues/1650)** - As an
     admin, I have a cli tool for building and importing images
 -   **Redmine
-    [1631](https://www.aeolusproject.org/redmine/issues/1631)** - As an
+    [1631](https://redmine.aeolusproject.org/redmine/issues/1631)** - As an
     end-user, pulp is not installed by an installation of aeolus-all
 -   **Redmine
-    [1618](https://www.aeolusproject.org/redmine/issues/1618)** - Check
+    [1618](https://redmine.aeolusproject.org/redmine/issues/1618)** - Check
     if pool has set up quota in pretty/filter view
 -   **Redmine
-    [1597](https://www.aeolusproject.org/redmine/issues/1597)** -
+    [1597](https://redmine.aeolusproject.org/redmine/issues/1597)** -
     Prepare to remove old/unnecessary components
 -   **Redmine
-    [1595](https://www.aeolusproject.org/redmine/issues/1595)** -
+    [1595](https://redmine.aeolusproject.org/redmine/issues/1595)** -
     building aeolus conductor from src instructions are no longer
     accurate
 -   **Redmine
-    [1575](https://www.aeolusproject.org/redmine/issues/1575)** -
+    [1575](https://redmine.aeolusproject.org/redmine/issues/1575)** -
     Implement loading/switching of AJAX partials for pretty/grid views
     on any pages which offer both
 -   **Redmine
-    [1566](https://www.aeolusproject.org/redmine/issues/1566)** -
+    [1566](https://redmine.aeolusproject.org/redmine/issues/1566)** -
     dbomatic periodically crashes (the next iteration)
 -   **Redmine
-    [1563](https://www.aeolusproject.org/redmine/issues/1563)** - As an
+    [1563](https://redmine.aeolusproject.org/redmine/issues/1563)** - As an
     aeous developer I want to work against puppet components in the
     upstream project
 -   **Redmine
-    [1524](https://www.aeolusproject.org/redmine/issues/1524)** -
+    [1524](https://redmine.aeolusproject.org/redmine/issues/1524)** -
     Dependency analysis for rails 3 upgrade next sprint
 -   **Redmine
-    [1514](https://www.aeolusproject.org/redmine/issues/1514)** - As a
+    [1514](https://redmine.aeolusproject.org/redmine/issues/1514)** - As a
     admin of machines running Fedora / Java stacks, I would like to see
     jruby in Fedora so as to eventually support aeolus on my platform
 -   **Redmine
-    [1487](https://www.aeolusproject.org/redmine/issues/1487)** - As an
+    [1487](https://redmine.aeolusproject.org/redmine/issues/1487)** - As an
     admin I would like more options to configure aeolus-configure
     logging
 -   **Redmine
-    [1473](https://www.aeolusproject.org/redmine/issues/1473)** - As a
+    [1473](https://redmine.aeolusproject.org/redmine/issues/1473)** - As a
     user of aeolus-configure, web requests should have consistent error
     handling/management
 -   **Redmine
-    [1458](https://www.aeolusproject.org/redmine/issues/1458)** - Fix
+    [1458](https://redmine.aeolusproject.org/redmine/issues/1458)** - Fix
     public redmine issues
 -   **Redmine
-    [1453](https://www.aeolusproject.org/redmine/issues/1453)** - As a
+    [1453](https://redmine.aeolusproject.org/redmine/issues/1453)** - As a
     developer, I want the Rails application to know if the user's
     browser supports javascript
 -   **Redmine
-    [1451](https://www.aeolusproject.org/redmine/issues/1451)** - As a
+    [1451](https://redmine.aeolusproject.org/redmine/issues/1451)** - As a
     developer, I want ensure that my controllers adhere to REST
     principles
 -   **Redmine
-    [1449](https://www.aeolusproject.org/redmine/issues/1449)** - As a
+    [1449](https://redmine.aeolusproject.org/redmine/issues/1449)** - As a
     developer, I need the CRUD actions in the pools, deployments, and
     instances controllers to be able to render only a partial of the
     page when the request is made by XHR
 -   **Redmine
-    [1447](https://www.aeolusproject.org/redmine/issues/1447)** - As a
+    [1447](https://redmine.aeolusproject.org/redmine/issues/1447)** - As a
     developer, I need the CRUD actions in the pools, deployments, and
     instances controllers to respond\_to :json requests
 -   **Redmine
-    [1444](https://www.aeolusproject.org/redmine/issues/1444)** - As a
+    [1444](https://redmine.aeolusproject.org/redmine/issues/1444)** - As a
     developer, I want to simplify the controller namespacing
 -   **Redmine
-    [1439](https://www.aeolusproject.org/redmine/issues/1439)** -
+    [1439](https://redmine.aeolusproject.org/redmine/issues/1439)** -
     deltacloud-core-0.3.0 available in f14
 -   **Redmine
-    [1429](https://www.aeolusproject.org/redmine/issues/1429)** - As a
+    [1429](https://redmine.aeolusproject.org/redmine/issues/1429)** - As a
     team member, I have seen the QE automation suite in action and can
     run it myself
 -   **Redmine
-    [1406](https://www.aeolusproject.org/redmine/issues/1406)** - As a
+    [1406](https://redmine.aeolusproject.org/redmine/issues/1406)** - As a
     user, When I destroy a pool, I dont want to destroy Hardware Profile
 -   **Redmine
-    [1402](https://www.aeolusproject.org/redmine/issues/1402)** - RHEV-M
+    [1402](https://redmine.aeolusproject.org/redmine/issues/1402)** - RHEV-M
     issue encountered by iwhd
 -   **Redmine
-    [1386](https://www.aeolusproject.org/redmine/issues/1386)** - As a
+    [1386](https://redmine.aeolusproject.org/redmine/issues/1386)** - As a
     mainter of aeolus-conductor, there is a scripted way to synchronize
     the results of a mock build with the correct fedora public repo on
     fedorapeople
 -   **Redmine
-    [1384](https://www.aeolusproject.org/redmine/issues/1384)** - As an
+    [1384](https://redmine.aeolusproject.org/redmine/issues/1384)** - As an
     internal user of redmine, I can verify that reset password works as
     expected
 -   **Redmine
-    [1383](https://www.aeolusproject.org/redmine/issues/1383)** - As an
+    [1383](https://redmine.aeolusproject.org/redmine/issues/1383)** - As an
     internal user of redmine,I will get an email when I request a
     password change, create a new account, etc
 -   **Redmine
-    [1382](https://www.aeolusproject.org/redmine/issues/1382)** - As an
+    [1382](https://redmine.aeolusproject.org/redmine/issues/1382)** - As an
     end user, I can configure an aeolus-conductor machine by specifying
     the layout in yml. (external puppet node)
 -   **Redmine
-    [1381](https://www.aeolusproject.org/redmine/issues/1381)** - As an
+    [1381](https://redmine.aeolusproject.org/redmine/issues/1381)** - As an
     end user, I can launch an instance in RHEV
 -   **Redmine
-    [1379](https://www.aeolusproject.org/redmine/issues/1379)** - As an
+    [1379](https://redmine.aeolusproject.org/redmine/issues/1379)** - As an
     admin, I have access to imagefactory (0.1.7 +)
 -   **Redmine
-    [1378](https://www.aeolusproject.org/redmine/issues/1378)** - As an
+    [1378](https://redmine.aeolusproject.org/redmine/issues/1378)** - As an
     admin, I have libdeltacloud (0.8) + new condor (7.6.0 + patches for
     libdeltacloud 0.8 compatibility)
 -   **Redmine
-    [1374](https://www.aeolusproject.org/redmine/issues/1374)** - As a
+    [1374](https://redmine.aeolusproject.org/redmine/issues/1374)** - As a
     community member, I can see 'bleeding edge' rpms in the new repo
     locations. (peers to 0.2.0)
 -   **Redmine
-    [1363](https://www.aeolusproject.org/redmine/issues/1363)** - As a
+    [1363](https://redmine.aeolusproject.org/redmine/issues/1363)** - As a
     community member, both F14 and RHEL-6 versions of 0.2.0 appear to
     work as intended
 -   **Redmine
-    [1363](https://www.aeolusproject.org/redmine/issues/1363)** -
+    [1363](https://redmine.aeolusproject.org/redmine/issues/1363)** -
     rubygem\_rsolr 1.0.0 package in conductor 0.2.0 F14 repo is busted
 -   **Redmine
-    [1342](https://www.aeolusproject.org/redmine/issues/1342)** - As a
+    [1342](https://redmine.aeolusproject.org/redmine/issues/1342)** - As a
     user, I want the application to be capable of retaining the state of
     pages I've viewed
 -   **Redmine
-    [1341](https://www.aeolusproject.org/redmine/issues/1341)** - As a
+    [1341](https://redmine.aeolusproject.org/redmine/issues/1341)** - As a
     user, I want the application to include a breadcrumb trail for site
     navigation
 -   **Redmine
-    [1339](https://www.aeolusproject.org/redmine/issues/1339)** - As an
+    [1339](https://redmine.aeolusproject.org/redmine/issues/1339)** - As an
     Infrastructure Consumer, I want to review the operational status of
     a Deployment such as uptime, resource consumption, etc
 -   **Redmine
-    [1318](https://www.aeolusproject.org/redmine/issues/1318)** - Wrap
+    [1318](https://redmine.aeolusproject.org/redmine/issues/1318)** - Wrap
     up the public redmine installation
 -   **Redmine
-    [1303](https://www.aeolusproject.org/redmine/issues/1303)** - apply
+    [1303](https://redmine.aeolusproject.org/redmine/issues/1303)** - apply
     imagefactory-v0.5-amis.patch & build in brew
 -   **Redmine
-    [1302](https://www.aeolusproject.org/redmine/issues/1302)** - apply
+    [1302](https://redmine.aeolusproject.org/redmine/issues/1302)** - apply
     imcleod's ec2-repofix patch & build in brew
 -   **Redmine
-    [1272](https://www.aeolusproject.org/redmine/issues/1272)** - Review
+    [1272](https://redmine.aeolusproject.org/redmine/issues/1272)** - Review
     the patches for \#1270
 -   **Redmine
-    [1245](https://www.aeolusproject.org/redmine/issues/1245)** - Add
+    [1245](https://redmine.aeolusproject.org/redmine/issues/1245)** - Add
     some last minute in-place changes for a demo
 -   **Redmine
-    [1241](https://www.aeolusproject.org/redmine/issues/1241)** - As an
+    [1241](https://redmine.aeolusproject.org/redmine/issues/1241)** - As an
     end-user of aeolus, I want https on by default, with no other
     security features enabled
 -   **Redmine
-    [1230](https://www.aeolusproject.org/redmine/issues/1230)** - Verify
+    [1230](https://redmine.aeolusproject.org/redmine/issues/1230)** - Verify
     localization infrastructure is functional
 -   **Redmine
-    [1192](https://www.aeolusproject.org/redmine/issues/1192)** -
+    [1192](https://redmine.aeolusproject.org/redmine/issues/1192)** -
     Template creation should generate assembly
 -   **Redmine
-    [1160](https://www.aeolusproject.org/redmine/issues/1160)** - As a
+    [1160](https://redmine.aeolusproject.org/redmine/issues/1160)** - As a
     team member, I have constant access to the internal bleeding edge
     yum repo
 -   **Redmine
-    [1142](https://www.aeolusproject.org/redmine/issues/1142)** -
+    [1142](https://redmine.aeolusproject.org/redmine/issues/1142)** -
     692161: Fix how /etc/init.d/solr reports status
 -   **Redmine
-    [1112](https://www.aeolusproject.org/redmine/issues/1112)** - Write
+    [1112](https://redmine.aeolusproject.org/redmine/issues/1112)** - Write
     up design doc for installation and puppet's role in same
 -   **Redmine
-    [1095](https://www.aeolusproject.org/redmine/issues/1095)** - As a
+    [1095](https://redmine.aeolusproject.org/redmine/issues/1095)** - As a
     scrum master, I have a way import & sync content from bugzilla
 -   **Redmine
-    [1082](https://www.aeolusproject.org/redmine/issues/1082)** - As an
+    [1082](https://redmine.aeolusproject.org/redmine/issues/1082)** - As an
     SA I want to create a Provider definition
 -   **Redmine
-    [1081](https://www.aeolusproject.org/redmine/issues/1081)** - As an
+    [1081](https://redmine.aeolusproject.org/redmine/issues/1081)** - As an
     SA I want to review the user who launched a deployment in the pool
 -   **Redmine
-    [1078](https://www.aeolusproject.org/redmine/issues/1078)** - As an
+    [1078](https://redmine.aeolusproject.org/redmine/issues/1078)** - As an
     SA I want to enable the pool so that it can be used for a deployment
 -   **Redmine
-    [1077](https://www.aeolusproject.org/redmine/issues/1077)** - As an
+    [1077](https://redmine.aeolusproject.org/redmine/issues/1077)** - As an
     SA I want to delete an existing pool
 -   **Redmine
-    [1075](https://www.aeolusproject.org/redmine/issues/1075)** - As an
+    [1075](https://redmine.aeolusproject.org/redmine/issues/1075)** - As an
     SA I want to create a pool
 -   **Redmine
-    [1074](https://www.aeolusproject.org/redmine/issues/1074)** - As an
+    [1074](https://redmine.aeolusproject.org/redmine/issues/1074)** - As an
     SA I want to create 3 pools that can be used for the development,
     test and production use of the applications/services that will
     utilize resources in the cloud
 -   **Redmine
-    [1040](https://www.aeolusproject.org/redmine/issues/1040)** - As an
+    [1040](https://redmine.aeolusproject.org/redmine/issues/1040)** - As an
     Infrastructure Consumer, I want to review the operational status of
     a Deployment such as uptime, resource consumption, etc
 -   **Redmine
-    [1013](https://www.aeolusproject.org/redmine/issues/1013)** - As an
+    [1013](https://redmine.aeolusproject.org/redmine/issues/1013)** - As an
     SA, I want to update an existing Deployable definition
 -   **Redmine
-    [1010](https://www.aeolusproject.org/redmine/issues/1010)** - As an
+    [1010](https://redmine.aeolusproject.org/redmine/issues/1010)** - As an
     SA, I want to delete an existing Deployable
 -   **Redmine
-    [1009](https://www.aeolusproject.org/redmine/issues/1009)** - As an
+    [1009](https://redmine.aeolusproject.org/redmine/issues/1009)** - As an
     SA, I want to review running Deployments that were derived from a
     Deployable
--   **Redmine [995](https://www.aeolusproject.org/redmine/issues/995)**
+-   **Redmine [995](https://redmine.aeolusproject.org/redmine/issues/995)**
     \- As an SA, I want to create a Deployable definition
--   **Redmine [945](https://www.aeolusproject.org/redmine/issues/945)**
+-   **Redmine [945](https://redmine.aeolusproject.org/redmine/issues/945)**
     \- As an SA, I want to create a Template
--   **Redmine [888](https://www.aeolusproject.org/redmine/issues/888)**
+-   **Redmine [888](https://redmine.aeolusproject.org/redmine/issues/888)**
     \- As a system administrator, I want Conductor to work with SELinux
     turned on
--   **Redmine [751](https://www.aeolusproject.org/redmine/issues/751)**
+-   **Redmine [751](https://redmine.aeolusproject.org/redmine/issues/751)**
     \- aeolus-configure output should be logged
--   **Redmine [680](https://www.aeolusproject.org/redmine/issues/680)**
+-   **Redmine [680](https://redmine.aeolusproject.org/redmine/issues/680)**
     \- As a community member, I have access to a working aeolus ami
--   **Redmine [633](https://www.aeolusproject.org/redmine/issues/633)**
+-   **Redmine [633](https://redmine.aeolusproject.org/redmine/issues/633)**
     \- As a sys admin, I want to configure location for factory connector
--   **Redmine [495](https://www.aeolusproject.org/redmine/issues/495)**
+-   **Redmine [495](https://redmine.aeolusproject.org/redmine/issues/495)**
     \- As a member of the aeolus community, I would like the public
     aeolus redmine site to be production ready
--   **Redmine [459](https://www.aeolusproject.org/redmine/issues/459)**
+-   **Redmine [459](https://redmine.aeolusproject.org/redmine/issues/459)**
     \- As a user I want to see instances running in a pool
--   **Redmine [409](https://www.aeolusproject.org/redmine/issues/409)**
+-   **Redmine [409](https://redmine.aeolusproject.org/redmine/issues/409)**
     \- I want to launch a deployable in the cloud
--   **Redmine [315](https://www.aeolusproject.org/redmine/issues/315)**
+-   **Redmine [315](https://redmine.aeolusproject.org/redmine/issues/315)**
     \- As a RHEL 6 user, I am able to cleanly install conductor
--   **Redmine [58](https://www.aeolusproject.org/redmine/issues/58)** -
+-   **Redmine [58](https://redmine.aeolusproject.org/redmine/issues/58)** -
     As an admin, I would like to be able to deploy Aeolus on RHEL 6
 </div>
 <br />
