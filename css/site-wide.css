@@ -466,9 +466,7 @@ hr.shade {
   text-decoration: none;
   border-bottom: 1px dotted; }
 
-#projects_container ul {
-  }
-
+#users_container li,
 #projects_container li {
   border: 1px solid black;
   list-style: none;
