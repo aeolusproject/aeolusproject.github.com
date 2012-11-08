@@ -466,6 +466,17 @@ hr.shade {
   text-decoration: none;
   border-bottom: 1px dotted; }
 
+#get_it_container li{
+  margin: 10px;
+  list-style: none;
+  cursor: crosshair;
+}
+
+#get_it_container li p,
+#get_it_container li pre{
+  display: none;
+}
+
 #users_container li,
 #projects_container li {
   border: 1px solid black;
