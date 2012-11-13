@@ -75,7 +75,7 @@ John Dunning (mgr), Steve Loranz, Ian McLeod, Ovidiu Visan
 <div class="section-grouping">
 #### Project: [Image Warehouse](imagewarehouse.html)
 
-John Dunning (mgr), Jim Meyering (lead), Jeff Darcy, Pete Zaitcev
+John Dunning (mgr), Pete Zaitcev (lead), Jeff Darcy
 </div>
 <br />
 
@@ -181,7 +181,7 @@ People's details
       <td>Justin Clift</td>
       <td>jclift</td>
       <td>All</td>
-      <td>Community Manager</td>
+      <td>Aeolus Cloud Evangelist</td>
       <td>jclift AT red hat DOT com</td>
       <td>Justin</td>
       <td>&nbsp;</td>
@@ -393,20 +393,6 @@ People's details
       <td>Python and Ruby Developer</td>
       <td>imcleod AT red hat DOT com</td>
       <td>Ian</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr id='jim'>
-      <td>Jim Meyering</td>
-      <td>jim</td>
-      <td>Image Warehouse (mostly)</td>
-      <td>
-        All hands person, works on
-        <br />
-        whatever needs working on
-      </td>
-      <td>jim AT meyering DOT net</td>
-      <td>Jim</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
