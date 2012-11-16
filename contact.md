@@ -52,6 +52,16 @@ is the place for discussion and to seek assistance.
 here](http://news.gmane.org/group/gmane.comp.cloud.aeolus.user)) ([and
 here](https://lists.fedorahosted.org/pipermail/aeolus-users/))
 
+For SysAdmin's and general (non-developer) users, the aeolus-users mailing list
+
+### Community Management
+
+Planning, discussion and debate focused on the Aeolus Project Community,
+expanding our Community, and outreach with other projects.
+
+[aeolus-comm-mgmt](https://lists.fedorahosted.org/mailman/listinfo/aeolus-comm-mgmt)
+([archives here](https://lists.fedorahosted.org/pipermail/aeolus-comm-mgmt/))
+
 ### Developers and technical
 
 Communication between Aeolus developers generally takes place using one of the
