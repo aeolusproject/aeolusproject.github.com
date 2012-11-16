@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#aeolus-meeting Meeting</title>
+<style type="text/css">
+/* This is for the .html in the HTML2 writer */
+body {
+    font-family: Helvetica, sans-serif;
+    font-size:14px;
+}
+h1 {
+    text-align: center;
+}
+a {
+    color:navy;
+    text-decoration: none;
+    border-bottom:1px dotted navy;
+}
+a:hover {
+    text-decoration:none;
+    border-bottom: 0;
+    color:#0000B9;
+}
+hr {
+    border: 1px solid #ccc;
+}
+/* The (nick, time) item pairs, and other body text things. */
+.details {
+    font-size: 12px;
+    font-weight:bold;
+}
+/* The 'AGREED:', 'IDEA', etc, prefix to lines. */
+.itemtype {
+    font-style: normal;    /* un-italics it */
+    font-weight: bold;
+}
+/* Example: change single item types.  Capitalized command name.
+/* .TOPIC  {  color:navy;  } */
+/* .AGREED {  color:lime;  } */
+
+</style>
+</head>
+
+<body>
+<h1>#aeolus-meeting Meeting</h1>
+<span class="details">
+Meeting started by giulivo at 14:05:29 UTC
+(<a href="aeolus-meeting.2012-11-16-14.05.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Meeting summary</h3>
+<ol>
+<li><b class="TOPIC">wrap up on the current status of art</b> <span class="details">(<a href='aeolus-meeting.2012-11-16-14.05.log.html#l-15'>giulivo</a>, 14:07:57)</span>
+<ol type="a">
+  <li><a
+    href="https://redmine.aeolusproject.org/redmine/projects/aeolus/wiki/Release_Checklist">https://redmine.aeolusproject.org/redmine/projects/aeolus/wiki/Release_Checklist</a>
+    existing release checklist <span class="details">(<a
+    href='aeolus-meeting.2012-11-16-14.05.log.html#l-16'>giulivo</a>,
+    14:08:50)</span></li>
+  <li><span class="INFO">We have not been following our own release
+    announcement process, mainly because we have not been clear about
+    when and what we are releasing</span> <span class="details">(<a
+    href='aeolus-meeting.2012-11-16-14.05.log.html#l-17'>eggmaster</a>,
+    14:10:37)</span></li>
+  <li><span class="INFO">Git repos have been tagged at ends of sprints,
+    but no upstream announcements have been sent recently at ends of
+    sprints.</span> <span class="details">(<a
+    href='aeolus-meeting.2012-11-16-14.05.log.html#l-19'>eggmaster</a>,
+    14:11:35)</span></li>
+  <li><a
+    href="https://github.com/aeolus-incubator/dev-tools">https://github.com/aeolus-incubator/dev-tools</a>
+    <span class="details">(<a
+    href='aeolus-meeting.2012-11-16-14.05.log.html#l-53'>dajo</a>,
+    14:19:42)</span></li>
+  <li><a
+    href="https://github.com/aeolus-incubator/dev-tools">https://github.com/aeolus-incubator/dev-tools</a>
+    aeolus dev_tools <span class="details">(<a
+    href='aeolus-meeting.2012-11-16-14.05.log.html#l-55'>giulivo</a>,
+    14:20:23)</span></li>
+  <li><a
+    href="https://raw.github.com/mifo/deltacloud-dev-tools/master/bootstrap.sh">https://raw.github.com/mifo/deltacloud-dev-tools/master/bootstrap.sh</a>
+    deltacloud bootstrap_tool <span class="details">(<a
+    href='aeolus-meeting.2012-11-16-14.05.log.html#l-57'>giulivo</a>,
+    14:20:35)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">eggmaster
+    will find out if we will require use of postgresql for upstream
+    release</span> <span class="details">(<a
+    href='aeolus-meeting.2012-11-16-14.05.log.html#l-68'>eggmaster</a>,
+    14:22:45)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">Decide on our officially supported platform(s) for upcoming release</b> <span class="details">(<a href='aeolus-meeting.2012-11-16-14.05.log.html#l-91'>jclift</a>, 14:29:10)</span>
+<ol type="a">
+  <li><span class="INFO">candidate platforms: Fedora, RHEL,
+    CentOS</span> <span class="details">(<a
+    href='aeolus-meeting.2012-11-16-14.05.log.html#l-95'>eggmaster</a>,
+    14:29:58)</span></li>
+  <li><span class="INFO">for imgfac we may want to look at
+    distutils</span> <span class="details">(<a
+    href='aeolus-meeting.2012-11-16-14.05.log.html#l-118'>giulivo</a>,
+    14:33:43)</span></li>
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">we do *not*
+    want our emphasis to be on packaging work</span> <span
+    class="details">(<a
+    href='aeolus-meeting.2012-11-16-14.05.log.html#l-125'>giulivo</a>,
+    14:34:35)</span></li>
+  <li><i class="itemtype">IDEA</i>: <span class="IDEA">shall we try use
+    the mentioned tools to get a working environment on these two
+    distros and document the issues?</span> <span class="details">(<a
+    href='aeolus-meeting.2012-11-16-14.05.log.html#l-144'>giulivo</a>,
+    14:40:19)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">rlandy will
+    ping cwolfe about expected effort to get dev_tools working on CentOS
+    and other distros</span> <span class="details">(<a
+    href='aeolus-meeting.2012-11-16-14.05.log.html#l-167'>eggmaster</a>,
+    14:44:14)</span></li>
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">we should
+    support centos and fedora first, via dev_tools (and the like)</span>
+    <span class="details">(<a
+    href='aeolus-meeting.2012-11-16-14.05.log.html#l-179'>giulivo</a>,
+    14:46:55)</span></li>
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED"></span> <span
+    class="details">(<a
+    href='aeolus-meeting.2012-11-16-14.05.log.html#l-180'>jclift</a>,
+    14:47:04)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">giulivo will
+    try to figure out how branches and tags are used on github by the
+    different components</span> <span class="details">(<a
+    href='aeolus-meeting.2012-11-16-14.05.log.html#l-243'>giulivo</a>,
+    14:57:50)</span></li>
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">Next meeting
+    Wed 21-Nov-2012 1500 CET</span> <span class="details">(<a
+    href='aeolus-meeting.2012-11-16-14.05.log.html#l-269'>eggmaster</a>,
+    15:01:32)</span></li>
+</ol>
+</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">
+Meeting ended at 15:03:08 UTC
+(<a href="aeolus-meeting.2012-11-16-14.05.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Action items</h3>
+<ol>
+  <li>eggmaster will find out if we will require use of postgresql for upstream release</li>
+  <li>rlandy will ping cwolfe about expected effort to get dev_tools working on CentOS and other distros</li>
+  <li>giulivo will try to figure out how branches and tags are used on github by the different components</li>
+</ol>
+<br><br>
+
+
+
+<h3>Action items, by person</h3>
+<ol>
+  <li> eggmaster <ol>
+    <li>eggmaster will find out if we will require use of postgresql for upstream release</li>
+  </ol></li>
+  <li> giulivo <ol>
+    <li>giulivo will try to figure out how branches and tags are used on github by the different components</li>
+  </ol></li>
+  <li> rlandy <ol>
+    <li>rlandy will ping cwolfe about expected effort to get dev_tools working on CentOS and other distros</li>
+  </ol></li>
+</ol>
+<br><br>
+
+
+
+<h3>People present (lines said)</h3>
+<ol>
+  <li>jclift (78)</li>
+  <li>eggmaster (64)</li>
+  <li>giulivo (53)</li>
+  <li>rlandy (48)</li>
+  <li>dajo (14)</li>
+  <li>mpovolny (14)</li>
+  <li>ambot (3)</li>
+  <li>mmorsi (3)</li>
+  <li>jprovazn (1)</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">Generated by <a href="http://wiki.debian.org/MeetBot">MeetBot</a> 0.1.4.</span>
+</body></html>
