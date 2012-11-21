@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#aeolus-meeting log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">15:02:15</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">15:02:15</span><span class="nk"> &lt;ambot&gt;</span> Meeting started Wed Nov 21 15:02:15 2012 UTC.  The chair is eggmaster. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">15:02:15</span><span class="nk"> &lt;ambot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">15:03:38</span><span class="nk"> &lt;eggmaster&gt;</span> proposed action: giulivo to assemble list of components expected to comprise next release
+<a name="l-5"></a><span class="tm">15:03:55</span><span class="nk"> &lt;ambot&gt;</span> <span class="hi">giulivo:</span> Error: Can't start another meeting, one is in progress.
+<a name="l-6"></a><span class="tm">15:04:02</span><span class="nk"> &lt;jclift&gt;</span> Seems ok.
+<a name="l-7"></a><span class="tm">15:04:22</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">giulivo to assemble list of components expected to comprise next release</span>
+<a name="l-8"></a><span class="tm">15:08:19</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">revised install docs to coincide with next release</span>
+<a name="l-9"></a><span class="tm">15:08:55</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">jclift has existing install docs which can be used as a basis for revision for updated install doc</span>
+<a name="l-10"></a><span class="tm">15:09:04</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">rlandy:</span> What was the result of the chat with cwolfe ?
+<a name="l-11"></a><span class="tm">15:09:25</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">jclift to make said doc available to the release cabal</span>
+<a name="l-12"></a><span class="tm">15:09:39</span><span class="nk"> &lt;rlandy&gt;</span> <span class="hi">jclift:</span> he said that centos should be fine as rhel6 works for the dev install
+<a name="l-13"></a><span class="tm">15:10:27</span><span class="nk"> &lt;rlandy&gt;</span> <span class="hi">jclift:</span> if there is a suitable centos machine around, I can try the install if not, will have to spin one up
+<a name="l-14"></a><span class="tm">15:10:27</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">rlandy:</span> Well, I've personally seen putting "Centos" into a template instead of RHEL caused image builds to fail.
+<a name="l-15"></a><span class="tm">15:10:34</span><span class="nk"> &lt;jclift&gt;</span> But... that was about a year ago, and is a different thing.
+<a name="l-16"></a><span class="tm">15:11:03</span><span class="nk"> &lt;jclift&gt;</span> Not really "initial installation of Aeolus".
+<a name="l-17"></a><span class="tm">15:11:03</span><span class="nk"> &lt;jclift&gt;</span> ;)
+<a name="l-18"></a><span class="tm">15:11:03</span><span class="nk"> &lt;jclift&gt;</span> But yeah, agree in principle.
+<a name="l-19"></a><span class="tm">15:11:24</span><span class="nk"> &lt;morazi&gt;</span> jclift, yea, it isn't going to suddenly make imagefactory know how to build centos.  It is simply going to allow conductor/cli/image to build/run on centos
+<a name="l-20"></a><span class="tm">15:11:24</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">morazi:</span> Yep
+<a name="l-21"></a><span class="tm">15:12:24</span><span class="nk"> &lt;rlandy&gt;</span> <span class="hi">jclift:</span> I can believe that ... we will have to try it out
+<a name="l-22"></a><span class="tm">15:12:49</span><span class="nk"> &lt;morazi&gt;</span> giulivo, was mentioning he would try dev_tools against centos last night, but I fear I returned his ping too late to do him any good.
+<a name="l-23"></a><span class="tm">15:13:12</span><span class="nk"> &lt;giulivo&gt;</span> morazi, I tried but faced some dependencies issues
+<a name="l-24"></a><span class="tm">15:13:19</span><span class="nk"> &lt;giulivo&gt;</span> so my deployment is not working at the moment
+<a name="l-25"></a><span class="tm">15:13:35</span><span class="nk"> &lt;morazi&gt;</span> giulivo, ah, fair enough.  Do you have a list on fpaste or etherpad somewhere
+<a name="l-26"></a><span class="tm">15:13:43</span><span class="nk"> &lt;morazi&gt;</span> ?
+<a name="l-27"></a><span class="tm">15:15:03</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">next meeting 1530 CET 28-Nov-2012</span>
+<a name="l-28"></a><span class="tm">15:15:04</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">giulivo:</span> ^^^
+<a name="l-29"></a><span class="tm">15:15:08</span><span class="nk"> &lt;jclift&gt;</span> (morazi's question)
+<a name="l-30"></a><span class="tm">15:15:27</span><span class="nk"> &lt;giulivo&gt;</span> sure give me a sec
+<a name="l-31"></a><span class="tm">15:15:46</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">all will add to next meeting agenda at https://redmine.aeolusproject.org/redmine/projects/aeolus/wiki/Release_Cabal prior to next meeting.</span>
+<a name="l-32"></a><span class="tm">15:16:27</span><span class="nk"> &lt;eggmaster&gt;</span> jclift dajo jclift Any other action items or points before I close the meeting?
+<a name="l-33"></a><span class="tm">15:16:39</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> ^^
+<a name="l-34"></a><span class="tm">15:16:50</span><span class="nk"> &lt;jclift&gt;</span> Nah, nothing springs to mind.
+<a name="l-35"></a><span class="tm">15:17:03</span><span class="nk"> &lt;eggmaster&gt;</span> going twice...:)
+<a name="l-36"></a><span class="tm">15:17:17</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>
