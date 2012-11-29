@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#aeolus-meeting log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">15:04:33</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">15:04:33</span><span class="nk"> &lt;ambot&gt;</span> Meeting started Thu Nov 29 15:04:33 2012 UTC.  The chair is eggmaster. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">15:04:33</span><span class="nk"> &lt;ambot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">15:07:46</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="topic">#topic </span><span class="topicline">next release schedule</span>
+<a name="l-5"></a><span class="tm">15:11:56</span><span class="nk"> &lt;jclift&gt;</span> So, the major release items we're waiting on, for the next release are:
+<a name="l-6"></a><span class="tm">15:11:58</span><span class="nk"> &lt;jclift&gt;</span> * OpenStack
+<a name="l-7"></a><span class="tm">15:12:03</span><span class="nk"> &lt;jclift&gt;</span> * iwhd nuked
+<a name="l-8"></a><span class="tm">15:12:04</span><span class="nk"> &lt;rlandy&gt;</span> <span class="hi">eggmaster:</span> hi ,.. see dajo is not back yet ...can I join then? or are you live streaming on youtube?
+<a name="l-9"></a><span class="tm">15:12:08</span><span class="nk"> &lt;jclift&gt;</span> *mongodb nuked
+<a name="l-10"></a><span class="tm">15:12:10</span><span class="nk"> &lt;jclift&gt;</span> * tim
+<a name="l-11"></a><span class="tm">15:13:48</span><span class="nk"> &lt;jclift&gt;</span> We can do preparation up to then, but don't "release" it.
+<a name="l-12"></a><span class="tm">15:14:08</span><span class="nk"> &lt;jclift&gt;</span> We should use the meetingbot features too. :)
+<a name="l-13"></a><span class="tm">15:14:17</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">rlandy:</span> we are streaming, would you like to join the hangout? (google id?)
+<a name="l-14"></a><span class="tm">15:15:02</span><span class="nk"> &lt;rlandy&gt;</span> <span class="hi">eggmaster:</span> either  ... pls post either streaming link or mail invite ronellelandy@gmail.com
+<a name="l-15"></a><span class="tm">15:15:32</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">rlandy:</span> sent
+<a name="l-16"></a><span class="tm">15:18:23</span><span class="nk"> &lt;rlandy&gt;</span> <span class="hi">eggmaster:</span> ugh .. don't see invite - don't worry - I'll get in earlier next week ... live streaming link would be awesome though
+<a name="l-17"></a><span class="tm">15:19:19</span><span class="nk"> &lt;morazi&gt;</span> <span class="cmd">#action </span><span class="cmdline">jclift to follow up with debian packaging folks to ensure that we are looking to land imgfactory version 2.0, deltacloud-core 1.0.4 or newer, and whatever version of conductor will pull them all together.</span>
+<a name="l-18"></a><span class="tm">15:19:26</span><span class="nk"> &lt;jclift&gt;</span> :)
+<a name="l-19"></a><span class="tm">15:19:55</span><span class="nk"> &lt;morazi&gt;</span> We probably want to avoid the versions mentioned currently in the debian bugs given the very long release cycle
+<a name="l-20"></a><span class="tm">15:26:35</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="topic">#topic </span><span class="topicline">deployment issues and how much (if any) packaging to depend on</span>
+<a name="l-21"></a><span class="tm">15:27:52</span><span class="nk"> &lt;giulivo&gt;</span> <span class="cmd">#idea </span><span class="cmdline">for imagefactory install we should be able to use 'pip'</span>
+<a name="l-22"></a><span class="tm">15:28:02</span><span class="nk"> &lt;jclift&gt;</span> Yep
+<a name="l-23"></a><span class="tm">15:28:02</span><span class="nk"> &lt;giulivo&gt;</span> <span class="cmd">#idea </span><span class="cmdline">for deltacloud install we should be able to use 'gem'</span>
+<a name="l-24"></a><span class="tm">15:28:07</span><span class="nk"> &lt;jclift&gt;</span> Yep
+<a name="l-25"></a><span class="tm">15:30:22</span><span class="nk"> &lt;morazi&gt;</span> <span class="cmd">#idea </span><span class="cmdline">we should clearly delineate responsibilities/deliverables/artifacts.  The initial focus of this committee likely should be on establishing strong policies around tagging/branching procedure + a way to know which tags of which components are known to work together.</span>
+<a name="l-26"></a><span class="tm">15:30:33</span><span class="nk"> &lt;jclift&gt;</span> <span class="cmd">#action </span><span class="cmdline">Publish new proposed schedule and the features we're waiting on, to the blog (which shoudl then be a news item), and to the Aeolus-* dev maililng lists.</span>
+<a name="l-27"></a><span class="tm">15:31:26</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">eggmaster will check into the possibility of doing imagefactory install from source via dev-tools</span>
+<a name="l-28"></a><span class="tm">15:31:35</span><span class="nk"> &lt;giulivo&gt;</span> <span class="cmd">#action </span><span class="cmdline">giulivo try imgfac via pip</span>
+<a name="l-29"></a><span class="tm">15:31:42</span><span class="nk"> &lt;morazi&gt;</span> <span class="cmd">#idea </span><span class="cmdline">dev_tools should focus primarily on making it easy for a developer to get the entire aeolus stack available as a src checkout so an interested community member can quickly be in a position to hack &amp; submit patches</span>
+<a name="l-30"></a><span class="tm">15:31:52</span><span class="nk"> &lt;giulivo&gt;</span> <span class="cmd">#action </span><span class="cmdline">giulivo try deltacloud via gem</span>
+<a name="l-31"></a><span class="tm">15:32:27</span><span class="nk"> &lt;morazi&gt;</span> <span class="cmd">#idea </span><span class="cmdline">native packaging (rpm, deb, etc) can be a follow on item and may involve seeking external help AND it may happen outside of the time lines of an official upstream release.</span>
+<a name="l-32"></a><span class="tm">15:33:12</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">engage community on the broad issues of how do we deploy, IOW find out how community thinks we ought to deploy instead of deciding it without input</span>
+<a name="l-33"></a><span class="tm">15:34:53</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#info </span><span class="cmdline">make this community engagement a proposal of what we've discussed and request for feedback, instead of making it an open question</span>
+<a name="l-34"></a><span class="tm">15:35:29</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">eggmaster will deliver SOP document by next meeting</span>
+<a name="l-35"></a><span class="tm">15:36:05</span><span class="nk"> &lt;morazi&gt;</span> <span class="cmd">#action </span><span class="cmdline">morazi will review SOP draft</span>
+<a name="l-36"></a><span class="tm">15:37:08</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="topic">#topic </span><span class="topicline">do we want to require real RDBMS (postgresql) for releases</span>
+<a name="l-37"></a><span class="tm">15:37:27</span><span class="nk"> &lt;jclift&gt;</span> <span class="cmd">#action </span><span class="cmdline">See if Crag can join these meetings on a consistent basis.</span>
+<a name="l-38"></a><span class="tm">15:40:00</span><span class="nk"> &lt;morazi&gt;</span> <span class="cmd">#idea </span><span class="cmdline">we probably need to improve on making dev_tools discussions more public (on mailing lists)</span>
+<a name="l-39"></a><span class="tm">15:40:48</span><span class="nk"> &lt;morazi&gt;</span> <span class="cmd">#idea </span><span class="cmdline">we might want to explore the relationship between dev_tools and aeolus-configure on a forward moving basis.</span>
+<a name="l-40"></a><span class="tm">15:40:54</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">eggmaster to hack on postgresql installs via dev-tools</span>
+<a name="l-41"></a><span class="tm">15:41:03</span><span class="nk"> &lt;jclift&gt;</span> PostgreSQL to be our _proper_ deployment option.
+<a name="l-42"></a><span class="tm">15:42:47</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>
