@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#aeolus-meeting Meeting</title>
+<style type="text/css">
+/* This is for the .html in the HTML2 writer */
+body {
+    font-family: Helvetica, sans-serif;
+    font-size:14px;
+}
+h1 {
+    text-align: center;
+}
+a {
+    color:navy;
+    text-decoration: none;
+    border-bottom:1px dotted navy;
+}
+a:hover {
+    text-decoration:none;
+    border-bottom: 0;
+    color:#0000B9;
+}
+hr {
+    border: 1px solid #ccc;
+}
+/* The (nick, time) item pairs, and other body text things. */
+.details {
+    font-size: 12px;
+    font-weight:bold;
+}
+/* The 'AGREED:', 'IDEA', etc, prefix to lines. */
+.itemtype {
+    font-style: normal;    /* un-italics it */
+    font-weight: bold;
+}
+/* Example: change single item types.  Capitalized command name.
+/* .TOPIC  {  color:navy;  } */
+/* .AGREED {  color:lime;  } */
+
+</style>
+</head>
+
+<body>
+<h1>#aeolus-meeting Meeting</h1>
+<span class="details">
+Meeting started by eggmaster at 15:04:33 UTC
+(<a href="aeolus-meeting.2012-11-29-15.04.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Meeting summary</h3>
+<ol>
+<li><b class="TOPIC">next release schedule</b> <span class="details">(<a href='aeolus-meeting.2012-11-29-15.04.log.html#l-4'>eggmaster</a>, 15:07:46)</span>
+<ol type="a">
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">jclift to
+    follow up with debian packaging folks to ensure that we are looking
+    to land imgfactory version 2.0, deltacloud-core 1.0.4 or newer, and
+    whatever version of conductor will pull them all together.</span>
+    <span class="details">(<a
+    href='aeolus-meeting.2012-11-29-15.04.log.html#l-17'>morazi</a>,
+    15:19:19)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">deployment issues and how much (if any) packaging to depend on</b> <span class="details">(<a href='aeolus-meeting.2012-11-29-15.04.log.html#l-20'>eggmaster</a>, 15:26:35)</span>
+<ol type="a">
+  <li><i class="itemtype">IDEA</i>: <span class="IDEA">for imagefactory
+    install we should be able to use 'pip'</span> <span
+    class="details">(<a
+    href='aeolus-meeting.2012-11-29-15.04.log.html#l-21'>giulivo</a>,
+    15:27:52)</span></li>
+  <li><i class="itemtype">IDEA</i>: <span class="IDEA">for deltacloud
+    install we should be able to use 'gem'</span> <span
+    class="details">(<a
+    href='aeolus-meeting.2012-11-29-15.04.log.html#l-23'>giulivo</a>,
+    15:28:02)</span></li>
+  <li><i class="itemtype">IDEA</i>: <span class="IDEA">we should clearly
+    delineate responsibilities/deliverables/artifacts.  The initial
+    focus of this committee likely should be on establishing strong
+    policies around tagging/branching procedure + a way to know which
+    tags of which components are known to work together.</span> <span
+    class="details">(<a
+    href='aeolus-meeting.2012-11-29-15.04.log.html#l-25'>morazi</a>,
+    15:30:22)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">Publish new
+    proposed schedule and the features we're waiting on, to the blog
+    (which shoudl then be a news item), and to the Aeolus-* dev maililng
+    lists.</span> <span class="details">(<a
+    href='aeolus-meeting.2012-11-29-15.04.log.html#l-26'>jclift</a>,
+    15:30:33)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">eggmaster
+    will check into the possibility of doing imagefactory install from
+    source via dev-tools</span> <span class="details">(<a
+    href='aeolus-meeting.2012-11-29-15.04.log.html#l-27'>eggmaster</a>,
+    15:31:26)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">giulivo try
+    imgfac via pip</span> <span class="details">(<a
+    href='aeolus-meeting.2012-11-29-15.04.log.html#l-28'>giulivo</a>,
+    15:31:35)</span></li>
+  <li><i class="itemtype">IDEA</i>: <span class="IDEA">dev_tools should
+    focus primarily on making it easy for a developer to get the entire
+    aeolus stack available as a src checkout so an interested community
+    member can quickly be in a position to hack &amp; submit
+    patches</span> <span class="details">(<a
+    href='aeolus-meeting.2012-11-29-15.04.log.html#l-29'>morazi</a>,
+    15:31:42)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">giulivo try
+    deltacloud via gem</span> <span class="details">(<a
+    href='aeolus-meeting.2012-11-29-15.04.log.html#l-30'>giulivo</a>,
+    15:31:52)</span></li>
+  <li><i class="itemtype">IDEA</i>: <span class="IDEA">native packaging
+    (rpm, deb, etc) can be a follow on item and may involve seeking
+    external help AND it may happen outside of the time lines of an
+    official upstream release.</span> <span class="details">(<a
+    href='aeolus-meeting.2012-11-29-15.04.log.html#l-31'>morazi</a>,
+    15:32:27)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">engage
+    community on the broad issues of how do we deploy, IOW find out how
+    community thinks we ought to deploy instead of deciding it without
+    input</span> <span class="details">(<a
+    href='aeolus-meeting.2012-11-29-15.04.log.html#l-32'>eggmaster</a>,
+    15:33:12)</span></li>
+  <li><span class="INFO">make this community engagement a proposal of
+    what we've discussed and request for feedback, instead of making it
+    an open question</span> <span class="details">(<a
+    href='aeolus-meeting.2012-11-29-15.04.log.html#l-33'>eggmaster</a>,
+    15:34:53)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">eggmaster
+    will deliver SOP document by next meeting</span> <span
+    class="details">(<a
+    href='aeolus-meeting.2012-11-29-15.04.log.html#l-34'>eggmaster</a>,
+    15:35:29)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">morazi will
+    review SOP draft</span> <span class="details">(<a
+    href='aeolus-meeting.2012-11-29-15.04.log.html#l-35'>morazi</a>,
+    15:36:05)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">do we want to require real RDBMS (postgresql) for releases</b> <span class="details">(<a href='aeolus-meeting.2012-11-29-15.04.log.html#l-36'>eggmaster</a>, 15:37:08)</span>
+<ol type="a">
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">See if Crag
+    can join these meetings on a consistent basis.</span> <span
+    class="details">(<a
+    href='aeolus-meeting.2012-11-29-15.04.log.html#l-37'>jclift</a>,
+    15:37:27)</span></li>
+  <li><i class="itemtype">IDEA</i>: <span class="IDEA">we probably need
+    to improve on making dev_tools discussions more public (on mailing
+    lists)</span> <span class="details">(<a
+    href='aeolus-meeting.2012-11-29-15.04.log.html#l-38'>morazi</a>,
+    15:40:00)</span></li>
+  <li><i class="itemtype">IDEA</i>: <span class="IDEA">we might want to
+    explore the relationship between dev_tools and aeolus-configure on a
+    forward moving basis.</span> <span class="details">(<a
+    href='aeolus-meeting.2012-11-29-15.04.log.html#l-39'>morazi</a>,
+    15:40:48)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">eggmaster to
+    hack on postgresql installs via dev-tools</span> <span
+    class="details">(<a
+    href='aeolus-meeting.2012-11-29-15.04.log.html#l-40'>eggmaster</a>,
+    15:40:54)</span></li>
+</ol>
+</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">
+Meeting ended at 15:42:47 UTC
+(<a href="aeolus-meeting.2012-11-29-15.04.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Action items</h3>
+<ol>
+  <li>jclift to follow up with debian packaging folks to ensure that we are looking to land imgfactory version 2.0, deltacloud-core 1.0.4 or newer, and whatever version of conductor will pull them all together.</li>
+  <li>Publish new proposed schedule and the features we're waiting on, to the blog (which shoudl then be a news item), and to the Aeolus-* dev maililng lists.</li>
+  <li>eggmaster will check into the possibility of doing imagefactory install from source via dev-tools</li>
+  <li>giulivo try imgfac via pip</li>
+  <li>giulivo try deltacloud via gem</li>
+  <li>engage community on the broad issues of how do we deploy, IOW find out how community thinks we ought to deploy instead of deciding it without input</li>
+  <li>eggmaster will deliver SOP document by next meeting</li>
+  <li>morazi will review SOP draft</li>
+  <li>See if Crag can join these meetings on a consistent basis.</li>
+  <li>eggmaster to hack on postgresql installs via dev-tools</li>
+</ol>
+<br><br>
+
+
+
+<h3>Action items, by person</h3>
+<ol>
+  <li> eggmaster <ol>
+    <li>eggmaster will check into the possibility of doing imagefactory install from source via dev-tools</li>
+    <li>eggmaster will deliver SOP document by next meeting</li>
+    <li>eggmaster to hack on postgresql installs via dev-tools</li>
+  </ol></li>
+  <li> giulivo <ol>
+    <li>giulivo try imgfac via pip</li>
+    <li>giulivo try deltacloud via gem</li>
+  </ol></li>
+  <li> jclift <ol>
+    <li>jclift to follow up with debian packaging folks to ensure that we are looking to land imgfactory version 2.0, deltacloud-core 1.0.4 or newer, and whatever version of conductor will pull them all together.</li>
+  </ol></li>
+  <li> morazi <ol>
+    <li>morazi will review SOP draft</li>
+  </ol></li>
+  <li><b>UNASSIGNED</b><ol>
+    <li>Publish new proposed schedule and the features we're waiting on, to the blog (which shoudl then be a news item), and to the Aeolus-* dev maililng lists.</li>
+    <li>engage community on the broad issues of how do we deploy, IOW find out how community thinks we ought to deploy instead of deciding it without input</li>
+    <li>See if Crag can join these meetings on a consistent basis.</li>
+  </ol>
+</li>
+</ol>
+<br><br>
+
+
+
+<h3>People present (lines said)</h3>
+<ol>
+  <li>jclift (13)</li>
+  <li>eggmaster (12)</li>
+  <li>morazi (8)</li>
+  <li>giulivo (4)</li>
+  <li>rlandy (3)</li>
+  <li>ambot (2)</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">Generated by <a href="http://wiki.debian.org/MeetBot">MeetBot</a> 0.1.4.</span>
+</body></html>
