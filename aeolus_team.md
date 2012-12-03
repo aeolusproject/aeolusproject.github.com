@@ -91,7 +91,7 @@ QA Team
 <div class="section-grouping">
 #### Project: *All of them*
 
-Dave Johnson (lead), David Gao, Ronelle Landy, Rehana Raj
+Dave Johnson (lead), David Gao, Ronelle Landy, Rehana Raj, Giulio Fidente
 </div>
 
 ## Web-based User Interface
@@ -690,8 +690,6 @@ People's details
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
-  </tbody>
-  <tfoot>
     <tr id='jzigmund'>
       <td>Jozef Zigmund</td>
       <td>jzigmund</td>
@@ -706,7 +704,19 @@ People's details
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
-  </tfoot>
+    <tr id='giulivo'>
+      <td>Giulio Fidente</td>
+      <td>giulivo</td>
+      <td>All</td>
+      <td>Testing, Automation</td>
+      <td>gfidente AT fedoraproject DOT org</td>
+      <td>Giulio</td>
+      <td>
+        <a href='http://giulivo.blogspot.com'>Link</a>
+      </td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
 </table>
 
 <a class='button' href='get_it.html'>
