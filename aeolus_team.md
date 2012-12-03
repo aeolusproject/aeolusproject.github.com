@@ -91,7 +91,7 @@ QA Team
 <div class="section-grouping">
 #### Project: *All of them*
 
-Dave Johnson (lead), David Gao, Ronelle Landy, Rehana Raj
+Dave Johnson (lead), Giulio Fidente, David Gao, Ronelle Landy, Rehana Raj
 </div>
 
 ## Web-based User Interface
@@ -232,6 +232,20 @@ People's details
       <td>JRD</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
+    </tr>
+    <tr id='giulivo'>
+      <td>Giulio Fidente</td>
+      <td>giulivo</td>
+      <td>All of them</td>
+      <td>imgfac/oz, release, testing, test automation</td>
+      <td>gfidente AT fedoraproject DOT org</td>
+      <td>Giulio</td>
+      <td>
+        <a href='http://giulivo.blogspot.com'>Link</a>
+      </td>
+      <td>
+        <a href='http://identi.ca/giulivo'>Link</a>
+      </td>
     </tr>
     <tr id='mfojtik'>
       <td>Michal Fojtik</td>
