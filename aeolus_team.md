@@ -666,7 +666,7 @@ People's details
       <td>matt DOT wagner AT red hat DOT com</td>
       <td>Matt</td>
       <td>
-        <a href='http://matty.tumblr.com'>Link</a>
+        <a href='http://ma.ttwagner.com'>Link</a>
       </td>
       <td>
         <a href='http://twitter.com/n1zyy'>n1zyy</a>
