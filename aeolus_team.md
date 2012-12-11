@@ -522,7 +522,7 @@ People's details
       <td>Jiří Stránský</td>
       <td>jstransk</td>
       <td>
-        <em>To Be Determined. :)</em>
+        Conductor API
       </td>
       <td>Ruby Development</td>
       <td>jstransk AT red hat DOT com</td>
