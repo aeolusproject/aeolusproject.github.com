@@ -185,7 +185,9 @@ People's details
       <td>jclift AT red hat DOT com</td>
       <td>Justin</td>
       <td>&nbsp;</td>
-      <td>&nbsp;</td>
+      <td>
+        <a href='https://twitter.com/realjustinclift'>realjustinclift</a>
+      </td>
     </tr>
     <tr id='jcoufal'>
       <td>Jaromír Coufal</td>
@@ -499,7 +501,7 @@ People's details
     <tr id='tsedovic'>
       <td>Tomas Sedovic</td>
       <td>tsedovic</td>
-      <td>Conductor (mainly)</td>
+      <td>Conductor, Heat</td>
       <td>
         Ruby on Rails, mostly UI;
         <br />
@@ -520,7 +522,7 @@ People's details
       <td>Jiří Stránský</td>
       <td>jstransk</td>
       <td>
-        <em>To Be Determined. :)</em>
+        Conductor API
       </td>
       <td>Ruby Development</td>
       <td>jstransk AT red hat DOT com</td>
@@ -664,7 +666,7 @@ People's details
       <td>matt DOT wagner AT red hat DOT com</td>
       <td>Matt</td>
       <td>
-        <a href='http://matty.tumblr.com'>Link</a>
+        <a href='http://ma.ttwagner.com'>Link</a>
       </td>
       <td>
         <a href='http://twitter.com/n1zyy'>n1zyy</a>
