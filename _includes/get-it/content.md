@@ -10,6 +10,9 @@ Fedora 16 server:
    This will install the latest Aeolus stable packages, along with their
 dependencies, on the system.
 
+   If you feel adventurous and want to try the latest features,
+look at [Aeolus nightly builds](http://mirror.salasaga.org/aeolus-nightly/).
+
 <a class='button' href='gsg/0.10.0/configuring_aeolus.html'>
               Configure It
               <img alt='→' src='images/button-right.png' />
