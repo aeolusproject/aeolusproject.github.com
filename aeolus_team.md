@@ -501,7 +501,7 @@ People's details
     <tr id='tsedovic'>
       <td>Tomas Sedovic</td>
       <td>tsedovic</td>
-      <td>Conductor (mainly)</td>
+      <td>Conductor, Heat</td>
       <td>
         Ruby on Rails, mostly UI;
         <br />
