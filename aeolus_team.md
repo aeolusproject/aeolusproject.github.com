@@ -185,7 +185,9 @@ People's details
       <td>jclift AT red hat DOT com</td>
       <td>Justin</td>
       <td>&nbsp;</td>
-      <td>&nbsp;</td>
+      <td>
+        <a href='https://twitter.com/realjustinclift'>realjustinclift</a>
+      </td>
     </tr>
     <tr id='jcoufal'>
       <td>Jaromír Coufal</td>
