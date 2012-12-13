@@ -1,0 +1,360 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#aeolus-meeting log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">15:01:54</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">15:01:54</span><span class="nk"> &lt;ambot&gt;</span> Meeting started Thu Dec 13 15:01:54 2012 UTC.  The chair is eggmaster. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">15:01:54</span><span class="nk"> &lt;ambot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">15:01:55</span><span class="nk"> &lt;jclift&gt;</span> Will try and get some of those templates converted across to CentOS
+<a name="l-5"></a><span class="tm">15:02:10</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="topic">#topic </span><span class="topicline">recap of everyone's status/activities</span>
+<a name="l-6"></a><span class="tm">15:02:25</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> please reiterate for ambot's benefit &amp; the log
+<a name="l-7"></a><span class="tm">15:02:39</span><span class="nk"> &lt;mpovolny&gt;</span> hi, sorry for the delay, kindergarten pick-up took longer then expected
+<a name="l-8"></a><span class="tm">15:02:43 </span><span class="nka">* jclift</span> <span class="ac">is attempting to get reasonably recent Aeolus running on a VM</span>
+<a name="l-9"></a><span class="tm">15:03:19</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> np nice to see you, hope all the kids contained their bodily fluids in the car
+<a name="l-10"></a><span class="tm">15:03:21</span><span class="nk"> &lt;giulivo&gt;</span> jclift, we've an etherpad for that http://etherpad-aeolusproject.rhcloud.com/p/aeolus-upstream-deployment-notes
+<a name="l-11"></a><span class="tm">15:03:42</span><span class="nk"> &lt;giulivo&gt;</span> I've personally installed imgfac, deltacloud and conductor on three separate F17 systems
+<a name="l-12"></a><span class="tm">15:03:55</span><span class="nk"> &lt;giulivo&gt;</span> following those notes and it should work with no issues
+<a name="l-13"></a><span class="tm">15:04:00</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">giulivo:</span> Ahhh, cool.  I didn't know (or had forgotten) about that link.
+<a name="l-14"></a><span class="tm">15:04:01</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">eggmaster:</span> pick up was done locally using a bobsled
+<a name="l-15"></a><span class="tm">15:04:05</span><span class="nk"> &lt;eggmaster&gt;</span> haha
+<a name="l-16"></a><span class="tm">15:04:13</span><span class="nk"> &lt;giulivo&gt;</span> you can even install conductor on centos with the same instructions
+<a name="l-17"></a><span class="tm">15:04:31</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">giulivo:</span> Yeah, that would be optimal.
+<a name="l-18"></a><span class="tm">15:04:33</span><span class="nk"> &lt;giulivo&gt;</span> also, to recap about my two weeks old actions
+<a name="l-19"></a><span class="tm">15:04:36 </span><span class="nka">* jclift</span> <span class="ac">throws out the F16 vm</span>
+<a name="l-20"></a><span class="tm">15:04:45 </span><span class="nka">* jclift</span> <span class="ac">boots up CentOS vm</span>
+<a name="l-21"></a><span class="tm">15:04:54</span><span class="nk"> &lt;giulivo&gt;</span> I had to try to install deltacloud via gem and imgfac via pip (so that we could merge that into dev-tools)
+<a name="l-22"></a><span class="tm">15:05:12</span><span class="nk"> &lt;giulivo&gt;</span> currently deltcaloud can be successfully installed via gem and dev-tools _can_ do that for you
+<a name="l-23"></a><span class="tm">15:05:18</span><span class="nk"> &lt;giulivo&gt;</span> other than installing conductor
+<a name="l-24"></a><span class="tm">15:05:19</span><span class="nk"> &lt;giulivo&gt;</span> BUT
+<a name="l-25"></a><span class="tm">15:05:37</span><span class="nk"> &lt;giulivo&gt;</span> imgfac distutils don't work well yet
+<a name="l-26"></a><span class="tm">15:05:41</span><span class="nk"> &lt;jclift&gt;</span> k
+<a name="l-27"></a><span class="tm">15:05:56</span><span class="nk"> &lt;giulivo&gt;</span> so we're forced to keep the RPMs for now
+<a name="l-28"></a><span class="tm">15:06:01</span><span class="nk"> &lt;jclift&gt;</span> Is it better to manually rebuild an F17 SRPM package of imgfac, for CentOS 6 for now?
+<a name="l-29"></a><span class="tm">15:06:04</span><span class="nk"> &lt;giulivo&gt;</span> but the guys confirmed they _are_ working on the distutils issue
+<a name="l-30"></a><span class="tm">15:06:16</span><span class="nk"> &lt;giulivo&gt;</span> so jclift I don't think that will be needed
+<a name="l-31"></a><span class="tm">15:06:23</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> cool, thanks for the recap on that, that is mostly good news
+<a name="l-32"></a><span class="tm">15:06:30</span><span class="nk"> &lt;giulivo&gt;</span> as long as we can put some pressure on the imgfac guys on getting distutils to work as expected
+<a name="l-33"></a><span class="tm">15:06:35</span><span class="nk"> &lt;eggmaster&gt;</span> right.
+<a name="l-34"></a><span class="tm">15:06:52</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">put pressure on the imagefactory guys to get distutils working as expected</span>
+<a name="l-35"></a><span class="tm">15:06:56</span><span class="nk"> &lt;eggmaster&gt;</span> :)
+<a name="l-36"></a><span class="tm">15:07:11</span><span class="nk"> &lt;giulivo&gt;</span> yeah, there is an open issue about that on github too https://github.com/aeolusproject/imagefactory/issues/165
+<a name="l-37"></a><span class="tm">15:07:18</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">giulivo:</span> Well, my timeframe for a result is "today", so that course of action's probably not going to work for me. ;)
+<a name="l-38"></a><span class="tm">15:07:18</span><span class="nk"> &lt;mpovolny&gt;</span> I got a mini-patch merget into conductor, that requires right versions of gems to make conductor run on debian and ubuntu
+<a name="l-39"></a><span class="tm">15:07:22</span><span class="nk"> &lt;mpovolny&gt;</span> merged
+<a name="l-40"></a><span class="tm">15:07:24</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#info </span><span class="cmdline">eggmaster has postgresql install via dev-tools working for f17 and RHEL</span>
+<a name="l-41"></a><span class="tm">15:07:41</span><span class="nk"> &lt;eggmaster&gt;</span> ubuntu today, god willing
+<a name="l-42"></a><span class="tm">15:07:46</span><span class="nk"> &lt;mpovolny&gt;</span> just 3 packages got build time issues
+<a name="l-43"></a><span class="tm">15:07:54</span><span class="nk"> &lt;cwolfe_&gt;</span> i've been focused on thor-cli and helping on postgres... within a sprint or two we probably will want to pull down thor-cli as part of dev-tools
+<a name="l-44"></a><span class="tm">15:07:56</span><span class="nk"> &lt;mpovolny&gt;</span> apart from that conductor is running
+<a name="l-45"></a><span class="tm">15:08:17</span><span class="nk"> &lt;mpovolny&gt;</span> then I have taken a look at the status of the thor-cli and the old cli
+<a name="l-46"></a><span class="tm">15:08:57</span><span class="nk"> &lt;mpovolny&gt;</span> the bad news is: after TIM integration the CLI tool (aeolus-image) is NOT working
+<a name="l-47"></a><span class="tm">15:09:04</span><span class="nk"> &lt;mpovolny&gt;</span> and noone is working on that ATM
+<a name="l-48"></a><span class="tm">15:09:05</span><span class="nk"> &lt;dajo&gt;</span> eggmaster, rhel/f17 postgres installs looked good along with specifying sqlite
+<a name="l-49"></a><span class="tm">15:09:17</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> ah that is bad news.
+<a name="l-50"></a><span class="tm">15:09:19</span><span class="nk"> &lt;mpovolny&gt;</span> jstransk says that it is a 2 sprint of work
+<a name="l-51"></a><span class="tm">15:09:37</span><span class="nk"> &lt;mpovolny&gt;</span> so that means that we will have a feature missing in the release, that was previously there :-(
+<a name="l-52"></a><span class="tm">15:09:51</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#info </span><span class="cmdline">aeolus-cli busted with TIM integration, estimate from dev is 2 sprint effort</span>
+<a name="l-53"></a><span class="tm">15:09:56</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">mpovolny:</span> Are you in contact with the debian-cloud guys about getting things running on debian/ubuntu?
+<a name="l-54"></a><span class="tm">15:10:05</span><span class="nk"> &lt;mpovolny&gt;</span> the guys planning the TIM integration seem to forgot about the CLI
+<a name="l-55"></a><span class="tm">15:10:14</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">jclift:</span> no I am not
+<a name="l-56"></a><span class="tm">15:10:21</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">mpovolny:</span> Sounds like you're doing actual integration work for it, so it would probably be super useful to put you in contact. :)
+<a name="l-57"></a><span class="tm">15:10:36</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">mpovolny:</span> They're making patches as well, and are very keen to have them be accepted upstream.
+<a name="l-58"></a><span class="tm">15:10:45 </span><span class="nka">* jclift</span> <span class="ac">suspects there might be some duplication of work</span>
+<a name="l-59"></a><span class="tm">15:10:47</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">jclift:</span> I would like to, but I am for 14 days trying to get costs merged for the release ;-)
+<a name="l-60"></a><span class="tm">15:10:52</span><span class="nk"> &lt;jclift&gt;</span> heh
+<a name="l-61"></a><span class="tm">15:11:04</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">mpovolny:</span> k, I'll put you in contact anyway
+<a name="l-62"></a><span class="tm">15:11:05</span><span class="nk"> &lt;eggmaster&gt;</span> Well,
+<a name="l-63"></a><span class="tm">15:11:16</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">jclift:</span> ok
+<a name="l-64"></a><span class="tm">15:11:22</span><span class="nk"> &lt;jclift&gt;</span> <span class="cmd">#action </span><span class="cmdline">jclift to put mpovolny in contact with the debian-cloud guys</span>
+<a name="l-65"></a><span class="tm">15:11:28</span><span class="nk"> &lt;eggmaster&gt;</span> We shouldn't take on any work that puts our current sprint efforts in jeopardy
+<a name="l-66"></a><span class="tm">15:11:39</span><span class="nk"> &lt;eggmaster&gt;</span> i.e. let's deliver what we're already committed to.
+<a name="l-67"></a><span class="tm">15:11:44</span><span class="nk"> &lt;mpovolny&gt;</span> so what do we do about the CLI?
+<a name="l-68"></a><span class="tm">15:11:50</span><span class="nk"> &lt;rlandy&gt;</span> <span class="hi">mpovolny:</span> cli has been broken on f17 for some time so not sure it's a feature 'taken away' - at least not on that platform
+<a name="l-69"></a><span class="tm">15:11:57</span><span class="nk"> &lt;mpovolny&gt;</span> the good news is that the CLI did not do much
+<a name="l-70"></a><span class="tm">15:12:05</span><span class="nk"> &lt;mpovolny&gt;</span> it was just the image commands
+<a name="l-71"></a><span class="tm">15:12:11</span><span class="nk"> &lt;eggmaster&gt;</span> I think we decided that delivering TIM integration was more important than a particular release date.
+<a name="l-72"></a><span class="tm">15:12:16</span><span class="nk"> &lt;mpovolny&gt;</span> [martin@test2 src]$ aeolus-image --help
+<a name="l-73"></a><span class="tm">15:12:17</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">Usage:</span> aeolus-image [list|build|push|import|delete|status] [command options]
+<a name="l-74"></a><span class="tm">15:12:17</span><span class="nk"> &lt;mpovolny&gt;</span> -h, --help                       Get usage information for this tool
+<a name="l-75"></a><span class="tm">15:12:17</span><span class="nk"> &lt;mpovolny&gt;</span> Aeolus Image Commands:
+<a name="l-76"></a><span class="tm">15:12:17</span><span class="nk"> &lt;mpovolny&gt;</span> list   : Lists Aeolus Image Resources
+<a name="l-77"></a><span class="tm">15:12:17</span><span class="nk"> &lt;mpovolny&gt;</span> build  : Builds a new Image
+<a name="l-78"></a><span class="tm">15:12:19</span><span class="nk"> &lt;mpovolny&gt;</span> push   : Pushes an Image to a particular Provider Account
+<a name="l-79"></a><span class="tm">15:12:21</span><span class="nk"> &lt;mpovolny&gt;</span> import : Imports an existing image
+<a name="l-80"></a><span class="tm">15:12:23</span><span class="nk"> &lt;mpovolny&gt;</span> delete : Delete an Aeolus Image Resource
+<a name="l-81"></a><span class="tm">15:12:25</span><span class="nk"> &lt;mpovolny&gt;</span> status : Check the status of a push or build
+<a name="l-82"></a><span class="tm">15:12:26</span><span class="nk"> &lt;morazi&gt;</span> mpovolny, well it is a logical fall out of the cli going through the conductor endpoints rather than forgetting...
+<a name="l-83"></a><span class="tm">15:12:27</span><span class="nk"> &lt;mpovolny&gt;</span> See `aeolus-image &lt;command&gt; -h` for more information on each command
+<a name="l-84"></a><span class="tm">15:12:38</span><span class="nk"> &lt;eggmaster&gt;</span> i.e. wasn't the consensus last time that we were doing a features-based release for this next one, and then moving to time-based releases.
+<a name="l-85"></a><span class="tm">15:12:59</span><span class="nk"> &lt;dajo&gt;</span> I believe it was, yes
+<a name="l-86"></a><span class="tm">15:13:03</span><span class="nk"> &lt;eggmaster&gt;</span> I see no reason to deviate from that, even though this news about TIM breaking aeolus-cli is a bitter pill.
+<a name="l-87"></a><span class="tm">15:13:26</span><span class="nk"> &lt;giulivo&gt;</span> also, imgfac bundles a broken cli too
+<a name="l-88"></a><span class="tm">15:13:35</span><span class="nk"> &lt;cwolfe_&gt;</span> fwiw, i don't think we should spend any effort updating the old aeolus-cli but rather adding image features to thor-cli
+<a name="l-89"></a><span class="tm">15:13:37</span><span class="nk"> &lt;giulivo&gt;</span> so if the only feature we get from aeolus-image is image building
+<a name="l-90"></a><span class="tm">15:13:41</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe_:</span> ACK
+<a name="l-91"></a><span class="tm">15:13:49</span><span class="nk"> &lt;giulivo&gt;</span> we can point people at the imagefactory cli
+<a name="l-92"></a><span class="tm">15:13:56</span><span class="nk"> &lt;mpovolny&gt;</span> well if jstransk says that it's 2 sprint work for 1, it might be a 1 sprint for two
+<a name="l-93"></a><span class="tm">15:13:56</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> ACK
+<a name="l-94"></a><span class="tm">15:14:12</span><span class="nk"> &lt;jclift&gt;</span> Yeah, I reckon we get the tim v2 bit all working, so that we have openstack support at least _functional_.
+<a name="l-95"></a><span class="tm">15:14:28</span><span class="nk"> &lt;jclift&gt;</span> That gives people something they can directly try out and report bugs against, plus write patches for.
+<a name="l-96"></a><span class="tm">15:14:32</span><span class="nk"> &lt;morazi&gt;</span> he was also talking about making the existing tooling work against tim/new conductor btw.  I don't know if that same estimate holds for porting the functionality in a much cleaner way to thor-cli.
+<a name="l-97"></a><span class="tm">15:14:37</span><span class="nk"> &lt;morazi&gt;</span> mpovolny, ^^
+<a name="l-98"></a><span class="tm">15:14:38</span><span class="nk"> &lt;jclift&gt;</span> We can do thor-cli as a near-follow-up
+<a name="l-99"></a><span class="tm">15:14:57</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">morazi:</span> jstransk said that the estimate is the same for thor-cli
+<a name="l-100"></a><span class="tm">15:15:12</span><span class="nk"> &lt;mpovolny&gt;</span> so I would go for doing it there
+<a name="l-101"></a><span class="tm">15:15:19</span><span class="nk"> &lt;jclift&gt;</span> hmmm...
+<a name="l-102"></a><span class="tm">15:15:22</span><span class="nk"> &lt;mpovolny&gt;</span> so we do not have to do it twice
+<a name="l-103"></a><span class="tm">15:15:38</span><span class="nk"> &lt;morazi&gt;</span> mpovolny, yea, I'd definitely target thor-cli
+<a name="l-104"></a><span class="tm">15:15:41</span><span class="nk"> &lt;jclift&gt;</span> thor-cli sounds like the better place to put effort
+<a name="l-105"></a><span class="tm">15:15:44</span><span class="nk"> &lt;jclift&gt;</span> yeah
+<a name="l-106"></a><span class="tm">15:16:05</span><span class="nk"> &lt;mpovolny&gt;</span> well from my ponint of view -- 6 weeks is a lot of time to get 6 command, but so far all my estimates on this project where wrong
+<a name="l-107"></a><span class="tm">15:16:21</span><span class="nk"> &lt;mpovolny&gt;</span> 6 commands of aeolus-image
+<a name="l-108"></a><span class="tm">15:16:27</span><span class="nk"> &lt;eggmaster&gt;</span> In any case, personally I am ok with delivering a busted cli and just documenting it
+<a name="l-109"></a><span class="tm">15:16:29 </span><span class="nka">* jclift</span> <span class="ac">just wants openstack support of some variety happening that people can use</span>
+<a name="l-110"></a><span class="tm">15:16:32</span><span class="nk"> &lt;morazi&gt;</span> nah, I suspect you are correct re: putting 2 ppl on will bring it in considerably.
+<a name="l-111"></a><span class="tm">15:16:34</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> agree
+<a name="l-112"></a><span class="tm">15:16:43</span><span class="nk"> &lt;jclift&gt;</span> even if we do it in a "release candidate" fashion will be good enough for now
+<a name="l-113"></a><span class="tm">15:16:51</span><span class="nk"> &lt;jclift&gt;</span> and do the proper release when thor-cli is ready.
+<a name="l-114"></a><span class="tm">15:17:06 </span><span class="nka">* jclift</span> <span class="ac">is happy with "sleazy approach" is "good approach" isn't workable</span>
+<a name="l-115"></a><span class="tm">15:17:19</span><span class="nk"> &lt;jclift&gt;</span> s/is "/if "/
+<a name="l-116"></a><span class="tm">15:17:23</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> it would be relatively easy to do a 'z-stream' sort of add on to the release I think
+<a name="l-117"></a><span class="tm">15:17:39</span><span class="nk"> &lt;jclift&gt;</span> Aeolus 0.15.0  -&gt; 0.15.1
+<a name="l-118"></a><span class="tm">15:17:44</span><span class="nk"> &lt;eggmaster&gt;</span> yeah
+<a name="l-119"></a><span class="tm">15:17:46</span><span class="nk"> &lt;jclift&gt;</span> np
+<a name="l-120"></a><span class="tm">15:17:58</span><span class="nk"> &lt;eggmaster&gt;</span> if it's just a new repo/tag for bootstrap.sh
+<a name="l-121"></a><span class="tm">15:18:11</span><span class="nk"> &lt;jclift&gt;</span> In theory. :)
+<a name="l-122"></a><span class="tm">15:18:19</span><span class="nk"> &lt;eggmaster&gt;</span> Well, I can only theorize right now :)
+<a name="l-123"></a><span class="tm">15:18:24</span><span class="nk"> &lt;eggmaster&gt;</span> we don't have the bits to do anything with :)
+<a name="l-124"></a><span class="tm">15:18:27</span><span class="nk"> &lt;jclift&gt;</span> Heh
+<a name="l-125"></a><span class="tm">15:18:43</span><span class="nk"> &lt;jclift&gt;</span> It all sounds ok to me.  We'll know when we start putting it together in more detail.
+<a name="l-126"></a><span class="tm">15:19:29</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> so just to make sure I understood (to summarize it for the notes)
+<a name="l-127"></a><span class="tm">15:19:56</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> we are very close (i.e. all we need to do is edit bootstrap.sh) to delivering dc via gems
+<a name="l-128"></a><span class="tm">15:20:07</span><span class="nk"> &lt;mpovolny&gt;</span> guys, sorry for the noob question, but is there a list of components or something like that? I am concerned about the fact that we sort of noticed so late that the CLI is missing, I would expect some sort of integration testing to show "red" for several weeks already
+<a name="l-129"></a><span class="tm">15:20:10</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> and much less close on the factory side
+<a name="l-130"></a><span class="tm">15:20:27</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> does that sound right? I want to give ambot some #info lines
+<a name="l-131"></a><span class="tm">15:20:38</span><span class="nk"> &lt;mpovolny&gt;</span> I would like to have a list of components and for my own comfort at leas to see how all of them are tested and integrated
+<a name="l-132"></a><span class="tm">15:20:44</span><span class="nk"> &lt;mpovolny&gt;</span> at least
+<a name="l-133"></a><span class="tm">15:21:24</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> jclift worked up a list of components with info on latest releases and that sort of thing
+<a name="l-134"></a><span class="tm">15:21:35</span><span class="nk"> &lt;dajo&gt;</span> yeah, this one: https://etherpad-aeolusproject.rhcloud.com/p/all-project-release-dates
+<a name="l-135"></a><span class="tm">15:21:38</span><span class="nk"> &lt;mpovolny&gt;</span> thanks
+<a name="l-136"></a><span class="tm">15:21:52</span><span class="nk"> &lt;giulivo&gt;</span> eggmaster, correct for me
+<a name="l-137"></a><span class="tm">15:21:59 </span><span class="nka">* jclift</span> <span class="ac">needs to next create a table of what bits are all known to work together properly</span>
+<a name="l-138"></a><span class="tm">15:22:01</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> I agree it's about time for us to get a tentative list of what we think we will test for the release
+<a name="l-139"></a><span class="tm">15:22:05</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> ^^ yeah
+<a name="l-140"></a><span class="tm">15:22:18</span><span class="nk"> &lt;giulivo&gt;</span> but note that I'm running my tests always using RBENV cause I don't want the components
+<a name="l-141"></a><span class="tm">15:22:25</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> care to take that as an #action sir?
+<a name="l-142"></a><span class="tm">15:22:25</span><span class="nk"> &lt;giulivo&gt;</span> to be dependent on the systemwide ruby installation
+<a name="l-143"></a><span class="tm">15:22:29</span><span class="nk"> &lt;jclift&gt;</span> So we can give that to (say) the Debian guys and say "please packages these versions of bits together as they're known to work".
+<a name="l-144"></a><span class="tm">15:22:35</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> Yep
+<a name="l-145"></a><span class="tm">15:22:36</span><span class="nk"> &lt;giulivo&gt;</span> ideally this should make it easier for people to install the components
+<a name="l-146"></a><span class="tm">15:22:41</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> yeah
+<a name="l-147"></a><span class="tm">15:22:43</span><span class="nk"> &lt;giulivo&gt;</span> via the same steps but on different distros
+<a name="l-148"></a><span class="tm">15:22:45</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">giulivo:</span> do you have any tests for the CLI?
+<a name="l-149"></a><span class="tm">15:23:02</span><span class="nk"> &lt;dajo&gt;</span> mpovolny, for aeolus-cli, we do
+<a name="l-150"></a><span class="tm">15:23:06</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> I am ok with RBENV. Does anyone find that controversial?
+<a name="l-151"></a><span class="tm">15:23:37</span><span class="nk"> &lt;jclift&gt;</span> <span class="cmd">#action </span><span class="cmdline">jclift will create a table of which Aeolus components are all known to work together properly</span>
+<a name="l-152"></a><span class="tm">15:23:41</span><span class="nk"> &lt;eggmaster&gt;</span> xlnt
+<a name="l-153"></a><span class="tm">15:24:04</span><span class="nk"> &lt;giulivo&gt;</span> mpovolny, also in imgfac there is some e2e test which we've recently revamped to use the REST api but should work with the 'imagefactory' command too ... except that command is broken in imgfac v2
+<a name="l-154"></a><span class="tm">15:24:20</span><span class="nk"> &lt;jclift&gt;</span> <span class="cmd">#action </span><span class="cmdline">jclift will add a link to the https://etherpad-aeolusproject.rhcloud.com/p/aeolus-upstream-deployment-notes page from the main wiki page, using a title like "manual installation instructions for Aeolus for CentOS, Fedora, and others"</span>
+<a name="l-155"></a><span class="tm">15:24:28</span><span class="nk"> &lt;giulivo&gt;</span> so at the moment the e2e test _only_ works via REST api
+<a name="l-156"></a><span class="tm">15:26:20</span><span class="nk"> &lt;giulivo&gt;</span> mpovolny, when I say REST api I mean the imgfac REST api
+<a name="l-157"></a><span class="tm">15:26:43</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#info </span><span class="cmdline">deltacloud install via gems is known to work, remains to be built into bootstrap.sh in dev-tools</span>
+<a name="l-158"></a><span class="tm">15:27:04</span><span class="nk"> &lt;giulivo&gt;</span> eggmaster, cwolfe_ I think that is included already in dev-tools
+<a name="l-159"></a><span class="tm">15:27:10</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">giulivo:</span> ack
+<a name="l-160"></a><span class="tm">15:27:10</span><span class="nk"> &lt;giulivo&gt;</span> only not very well documented on the wiki
+<a name="l-161"></a><span class="tm">15:27:10</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#info </span><span class="cmdline">imagefactory via pip is broken but work is ongoing to make it functional</span>
+<a name="l-162"></a><span class="tm">15:27:12</span><span class="nk"> &lt;cwolfe_&gt;</span> eggmaster, RBENV controversial how-- that it can be used in bootstrap.sh or that as a standard practice we probably should use the latest ruby available?
+<a name="l-163"></a><span class="tm">15:27:13</span><span class="nk"> &lt;dajo&gt;</span> <span class="hi">eggmaster:</span> so the proposed schedule is the sprint that tim drops, we want ship?
+<a name="l-164"></a><span class="tm">15:27:15</span><span class="nk"> &lt;eggmaster&gt;</span> oh, pff. ok.
+<a name="l-165"></a><span class="tm">15:27:38</span><span class="nk"> &lt;cwolfe_&gt;</span> yes, there is deltacloud in dev-tools too
+<a name="l-166"></a><span class="tm">15:27:38</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> that's how I'm thinking anyway.
+<a name="l-167"></a><span class="tm">15:28:11</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#info </span><span class="cmdline">correction: deltacloud via gems is already in dev-tools</span>
+<a name="l-168"></a><span class="tm">15:28:23</span><span class="nk"> &lt;giulivo&gt;</span> would it be worth get in touch with the tech cabal
+<a name="l-169"></a><span class="tm">15:28:24</span><span class="nk"> &lt;cwolfe_&gt;</span> eggmaster, uh oh... it actually isn't via gems :-)
+<a name="l-170"></a><span class="tm">15:28:35 </span><span class="nka">* eggmaster</span> <span class="ac">shuts up</span>
+<a name="l-171"></a><span class="tm">15:28:40</span><span class="nk"> &lt;cwolfe_&gt;</span> it is built from source for a specified release
+<a name="l-172"></a><span class="tm">15:28:42</span><span class="nk"> &lt;eggmaster&gt;</span> I've done enough damage now
+<a name="l-173"></a><span class="tm">15:28:43</span><span class="nk"> &lt;dajo&gt;</span> eggmaster, so thats a major piece, I am kind of thinking a weeks worth of testing will be cutting it kind of close?
+<a name="l-174"></a><span class="tm">15:29:01</span><span class="nk"> &lt;giulivo&gt;</span> to see if they have suggestions on the release 'date' ?
+<a name="l-175"></a><span class="tm">15:29:18</span><span class="nk"> &lt;dajo&gt;</span> do we just release and then fix any issues after the fact that come up within that week of testing?
+<a name="l-176"></a><span class="tm">15:29:24</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">cwolfe_:</span> We could try Deltacloud from gems though, as it should (in theory) be the same shouldn't it?
+<a name="l-177"></a><span class="tm">15:29:31</span><span class="nk"> &lt;dajo&gt;</span> or there after
+<a name="l-178"></a><span class="tm">15:29:42</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> I think we release after a minimum of a week of testing
+<a name="l-179"></a><span class="tm">15:29:47</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> do more testing
+<a name="l-180"></a><span class="tm">15:29:53</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> and fix issues ongoing.
+<a name="l-181"></a><span class="tm">15:30:04</span><span class="nk"> &lt;dajo&gt;</span> eggmaster, k, I am fine with that
+<a name="l-182"></a><span class="tm">15:30:18</span><span class="nk"> &lt;cwolfe_&gt;</span> jclift, yes.  but we should probably just do one or the other in bootstrap.sh t so it doesn't get too confusing
+<a name="l-183"></a><span class="tm">15:30:21</span><span class="nk"> &lt;dajo&gt;</span> eggmaster, just wanted to make sure that was the plan
+<a name="l-184"></a><span class="tm">15:30:24</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">dajo:</span> We'll the second that tim drops we should at least cut a "beta" or "release candidate" or something-we-can-otherwise-label as "try this out but don't count on it"
+<a name="l-185"></a><span class="tm">15:30:35</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> I'm not saying I speak for the group, but that's what I imagined.
+<a name="l-186"></a><span class="tm">15:30:37</span><span class="nk"> &lt;giulivo&gt;</span> cwolfe_, I'd vote for gem install instead of sources build
+<a name="l-187"></a><span class="tm">15:30:41</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">cwolfe_:</span> /me votes for gem approach.  Same as we did with puppet
+<a name="l-188"></a><span class="tm">15:30:56</span><span class="nk"> &lt;rlandy&gt;</span> <span class="hi">jclift:</span> installing deltacloud from gem should work - the gem may be ahead of the rpmm version sometimes - deltacloud gem releases once per month
+<a name="l-189"></a><span class="tm">15:30:57</span><span class="nk"> &lt;cwolfe_&gt;</span> yeah but puppet isn't an aeolus project :-P
+<a name="l-190"></a><span class="tm">15:31:14 </span><span class="nka">* jclift</span> <span class="ac">doesn't care</span>
+<a name="l-191"></a><span class="tm">15:31:15</span><span class="nk"> &lt;jclift&gt;</span> gem it :)
+<a name="l-192"></a><span class="tm">15:31:20</span><span class="nk"> &lt;giulivo&gt;</span> deltacloud isn't either!
+<a name="l-193"></a><span class="tm">15:31:23</span><span class="nk"> &lt;giulivo&gt;</span> isn't it?
+<a name="l-194"></a><span class="tm">15:31:24</span><span class="nk"> &lt;morazi&gt;</span> the thing that worries me about dc as a gem -- what happens to the daemon processes, etc when installed that way?
+<a name="l-195"></a><span class="tm">15:31:24</span><span class="nk"> &lt;giulivo&gt;</span> :)
+<a name="l-196"></a><span class="tm">15:31:30</span><span class="nk"> &lt;jclift&gt;</span> Technically no
+<a name="l-197"></a><span class="tm">15:31:33</span><span class="nk"> &lt;jclift&gt;</span> gem it
+<a name="l-198"></a><span class="tm">15:31:34</span><span class="nk"> &lt;jclift&gt;</span> :p
+<a name="l-199"></a><span class="tm">15:31:39</span><span class="nk"> &lt;cwolfe_&gt;</span> i am opposed if we can't specify what version of the deltacloud gem we want
+<a name="l-200"></a><span class="tm">15:31:46</span><span class="nk"> &lt;giulivo&gt;</span> morazi, you need to start it manually
+<a name="l-201"></a><span class="tm">15:31:47</span><span class="nk"> &lt;rlandy&gt;</span> <span class="hi">morazi:</span> excellent point
+<a name="l-202"></a><span class="tm">15:31:55</span><span class="nk"> &lt;giulivo&gt;</span> but the same is if you install it from sources
+<a name="l-203"></a><span class="tm">15:31:56 </span><span class="nka">* jclift</span> <span class="ac">grumbles</span>
+<a name="l-204"></a><span class="tm">15:32:00</span><span class="nk"> &lt;giulivo&gt;</span> and the same is for conductor anyway
+<a name="l-205"></a><span class="tm">15:32:05</span><span class="nk"> &lt;giulivo&gt;</span> or for imgfac
+<a name="l-206"></a><span class="tm">15:32:17</span><span class="nk"> &lt;rlandy&gt;</span> <span class="hi">morazi:</span> you'd have to the process like the rpm install would have done
+<a name="l-207"></a><span class="tm">15:32:38</span><span class="nk"> &lt;rlandy&gt;</span> on port 3002 - conductor - user=nobody
+<a name="l-208"></a><span class="tm">15:32:38</span><span class="nk"> &lt;cwolfe_&gt;</span> btw, this from the current dev-tools README:
+<a name="l-209"></a><span class="tm">15:32:40</span><span class="nk"> &lt;mpovolny&gt;</span> that bringes me to a question on GEM support for init.d or 'service', is there anything?
+<a name="l-210"></a><span class="tm">15:32:41</span><span class="nk"> &lt;cwolfe_&gt;</span> Rather point to an existing deltacloud instance, the user can request that deltacloud is built from source with a given release tag and started locally:
+<a name="l-211"></a><span class="tm">15:32:42</span><span class="nk"> &lt;cwolfe_&gt;</span> SETUP_LOCAL_DELTACLOUD_RELEASE=release-1.0.5
+<a name="l-212"></a><span class="tm">15:32:42</span><span class="nk"> &lt;cwolfe_&gt;</span> SETUP_LOCAL_DELTACLOUD_PORT=3002
+<a name="l-213"></a><span class="tm">15:32:48</span><span class="nk"> &lt;morazi&gt;</span> giulivo, yea, I'm just wondering/hoping they have some wrapper scripts around it via src.  Do the same things exist if you pull it in via gem?
+<a name="l-214"></a><span class="tm">15:32:48</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe_:</span> ACK
+<a name="l-215"></a><span class="tm">15:32:51</span><span class="nk"> &lt;mpovolny&gt;</span> I have not even found a way to install into /sbin from a gem
+<a name="l-216"></a><span class="tm">15:33:02</span><span class="nk"> &lt;cwolfe_&gt;</span> so if the release cabal thinks gem is better, that's fine.  just presenting information :-)
+<a name="l-217"></a><span class="tm">15:33:28</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe_:</span> When we originally talked about using dev-tools to deliver a release, we were going to specify a set of tags and get everything from source repos.
+<a name="l-218"></a><span class="tm">15:33:38</span><span class="nk"> &lt;mpovolny&gt;</span> a have doubts that gem provides enough functionality to be used let's say "seriously"
+<a name="l-219"></a><span class="tm">15:33:39</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe_:</span> I don't know what gems buys us here over that approach.
+<a name="l-220"></a><span class="tm">15:33:45</span><span class="nk"> &lt;mpovolny&gt;</span> w/o any additional tooling
+<a name="l-221"></a><span class="tm">15:34:24</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe_:</span> IOW I am leaning toward 'all source repos, all the time'
+<a name="l-222"></a><span class="tm">15:34:31</span><span class="nk"> &lt;giulivo&gt;</span> but what are the advantages of building from source?
+<a name="l-223"></a><span class="tm">15:34:34</span><span class="nk"> &lt;morazi&gt;</span> +1 to the src repo
+<a name="l-224"></a><span class="tm">15:34:38</span><span class="nk"> &lt;giulivo&gt;</span> I don't see any compared to gem
+<a name="l-225"></a><span class="tm">15:34:45</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> that you can always specify a particular tag that you want to install
+<a name="l-226"></a><span class="tm">15:34:53</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">cwolfe_:</span> gem moves us towards the platform-agnostic codebase we're after
+<a name="l-227"></a><span class="tm">15:34:57</span><span class="nk"> &lt;giulivo&gt;</span> with gems you also can specify a particular version
+<a name="l-228"></a><span class="tm">15:35:00</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> I realize that's sort of just a different kind of pointer
+<a name="l-229"></a><span class="tm">15:35:04</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">eggmaster:</span> you can specify a version of gem as well
+<a name="l-230"></a><span class="tm">15:35:07</span><span class="nk"> &lt;giulivo&gt;</span> and the same is with distutils for python
+<a name="l-231"></a><span class="tm">15:35:07</span><span class="nk"> &lt;jclift&gt;</span> Though it sounds like we're still going to have to figure a way to "make it start" on each platform
+<a name="l-232"></a><span class="tm">15:35:20</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> but it is more consistent with what we're doing with the other repos
+<a name="l-233"></a><span class="tm">15:35:26</span><span class="nk"> &lt;rlandy&gt;</span> <span class="hi">jclift:</span> +1 for  platform-agnostic codebase
+<a name="l-234"></a><span class="tm">15:35:32</span><span class="nk"> &lt;morazi&gt;</span> giulivo, I think it is a consistency thing as much as anything else.  If we install that via gem we are kind of favoring setup in a way that benefits say conductor or imgfac because we start making it easier to get src contributions flowing for only come of the projects.
+<a name="l-235"></a><span class="tm">15:35:50</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> also from a developer standpoint
+<a name="l-236"></a><span class="tm">15:36:03</span><span class="nk"> &lt;cwolfe_&gt;</span> <span class="hi">jclift:</span> not sure i buy that argument gem install is more platform-agnostic, deltacloud install from source is just git,  ruby and bundle commands
+<a name="l-237"></a><span class="tm">15:36:04</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> some hacker might want a specific upstream tag, not a release
+<a name="l-238"></a><span class="tm">15:36:08</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">cwolfe_:</span> With Node.js there are platform agnostic Node packages for autostarting daemons and stuff.  Any idea if there's the same thing for gems?
+<a name="l-239"></a><span class="tm">15:36:31</span><span class="nk"> &lt;eggmaster&gt;</span> i.e. maybe they want to test some upcoming functionality in dc, factory, etc that is not part of a released gem yet
+<a name="l-240"></a><span class="tm">15:36:32</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">cwolfe_:</span> Actually, yeah good point.  I meant in comparison to rpms.
+<a name="l-241"></a><span class="tm">15:36:54 </span><span class="nka">* jclift</span> <span class="ac">shuts up about gem vs git for the moment</span>
+<a name="l-242"></a><span class="tm">15:37:18</span><span class="nk"> &lt;giulivo&gt;</span> so we're actually targeting end users I suppose
+<a name="l-243"></a><span class="tm">15:37:33</span><span class="nk"> &lt;giulivo&gt;</span> and I see much more useful to have all the components installed as gems or eggs
+<a name="l-244"></a><span class="tm">15:37:37</span><span class="nk"> &lt;giulivo&gt;</span> I can update those easily
+<a name="l-245"></a><span class="tm">15:37:50</span><span class="nk"> &lt;giulivo&gt;</span> I can be sure they'll ship with the same contents across different distros
+<a name="l-246"></a><span class="tm">15:38:02</span><span class="nk"> &lt;eggmaster&gt;</span> hmm.
+<a name="l-247"></a><span class="tm">15:38:02</span><span class="nk"> &lt;giulivo&gt;</span> I can write my own start/stop wrappers around them if I need to
+<a name="l-248"></a><span class="tm">15:38:13</span><span class="nk"> &lt;morazi&gt;</span> eggmaster, I'd move to seperate the dev_tools roadmap discussion from the actual release meeting if possible.  I believe gem vs src install can be an implementation time decision from the dev_tools team personally
+<a name="l-249"></a><span class="tm">15:38:18</span><span class="nk"> &lt;jclift&gt;</span> Yeah
+<a name="l-250"></a><span class="tm">15:38:25</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">morazi:</span> +1
+<a name="l-251"></a><span class="tm">15:38:59</span><span class="nk"> &lt;eggmaster&gt;</span> Yeah so I think the next set of actions are pretty good, get a sort of 'release candidate' list of components together, document what's missing.
+<a name="l-252"></a><span class="tm">15:39:06</span><span class="nk"> &lt;morazi&gt;</span> giulivo, I think that is a good point.  It seems like we potentially have 3 things we are getting at here.
+<a name="l-253"></a><span class="tm">15:39:26</span><span class="nk"> &lt;morazi&gt;</span> 1.  Release cabal's role in establishing naming/process around when to create tags for the various projects
+<a name="l-254"></a><span class="tm">15:40:02</span><span class="nk"> &lt;morazi&gt;</span> 2.  Defining some amount of strategy around how much integration testing one can expect from an upstream release and making sure a platform exists for that to happen
+<a name="l-255"></a><span class="tm">15:40:58</span><span class="nk"> &lt;morazi&gt;</span> 3.  Defining some amount of follow on things that might occur after we've verified a set of known good tags.  Presumably these would happen out-of-band/after the release itself.  (Thinking things like making sure the src all works together before doing a ton of work around eggs, gems, rpms, debs)
+<a name="l-256"></a><span class="tm">15:43:11</span><span class="nk"> &lt;morazi&gt;</span> Does that seem rational/consistent?
+<a name="l-257"></a><span class="tm">15:43:16</span><span class="nk"> &lt;eggmaster&gt;</span> does to me.
+<a name="l-258"></a><span class="tm">15:43:20</span><span class="nk"> &lt;cwolfe_&gt;</span> me too :-)
+<a name="l-259"></a><span class="tm">15:43:23</span><span class="nk"> &lt;mpovolny&gt;</span> +1
+<a name="l-260"></a><span class="tm">15:44:30</span><span class="nk"> &lt;jclift&gt;</span> Yep, logical steps.
+<a name="l-261"></a><span class="tm">15:44:31</span><span class="nk"> &lt;jclift&gt;</span> Seems good.
+<a name="l-262"></a><span class="tm">15:44:40</span><span class="nk"> &lt;jclift&gt;</span> So, from there..
+<a name="l-263"></a><span class="tm">15:44:51</span><span class="nk"> &lt;giulivo&gt;</span> morazi, +1
+<a name="l-264"></a><span class="tm">15:44:56</span><span class="nk"> &lt;eggmaster&gt;</span> Seems like we are on track with 1 &amp; 2 at least
+<a name="l-265"></a><span class="tm">15:45:23</span><span class="nk"> &lt;eggmaster&gt;</span> if we have a list of components/tags, then dajo &amp; giulivo can start thinking more about how to deliver on 2
+<a name="l-266"></a><span class="tm">15:46:00</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">cwolfe_:</span> Thinking about it more, since we're doing git tags for the rest of our related projects... DC via git makes more sense than via gem.
+<a name="l-267"></a><span class="tm">15:46:12</span><span class="nk"> &lt;jclift&gt;</span> consistency, etc.
+<a name="l-268"></a><span class="tm">15:46:15</span><span class="nk"> &lt;eggmaster&gt;</span> I'd say Release Documentation and communication falls under 3 as well.
+<a name="l-269"></a><span class="tm">15:46:27</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> getting back to a point you made earlier
+<a name="l-270"></a><span class="tm">15:46:44</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> about ease of use for the user, gems/eggs/foo vs src
+<a name="l-271"></a><span class="tm">15:46:53</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> I don't think we need to make that a primary concern.
+<a name="l-272"></a><span class="tm">15:47:14</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> that seems more like an effort for someone who wanted to package this up for a particular distribution.
+<a name="l-273"></a><span class="tm">15:47:35</span><span class="nk"> &lt;morazi&gt;</span> that's where I agree AND disagree.
+<a name="l-274"></a><span class="tm">15:47:49</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">morazi:</span> well so do I :)
+<a name="l-275"></a><span class="tm">15:48:14</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">morazi:</span> but please elaborate
+<a name="l-276"></a><span class="tm">15:49:04</span><span class="nk"> &lt;morazi&gt;</span> I just want to explicitly draw the distinction that we're focusing on the src-installable thingee initially but there is some amount of user-friendly install that may happen as part of #3.
+<a name="l-277"></a><span class="tm">15:49:08</span><span class="nk"> &lt;cwolfe_&gt;</span> <span class="hi">jclift:</span> ack :-)
+<a name="l-278"></a><span class="tm">15:49:17</span><span class="nk"> &lt;jclift&gt;</span> :)
+<a name="l-279"></a><span class="tm">15:49:22</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">morazi:</span> That makes sense.
+<a name="l-280"></a><span class="tm">15:49:41</span><span class="nk"> &lt;morazi&gt;</span> and just make sure it is clear that by saying we want a cleanly installable thing for dev doesn't mean we discount potential users of the upstream.  It is just a follow on in step 3.
+<a name="l-281"></a><span class="tm">15:50:08</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">morazi:</span> personally I think it can't get much easier than bootstrap.sh for installation. Maintenance I'm not so sure about.
+<a name="l-282"></a><span class="tm">15:50:27</span><span class="nk"> &lt;giulivo&gt;</span> jclift, afaik we're _not_ doing git tags for the rest of the related project ... it's the opposite, we install dependencies as gems, imgfac via rpm and deltacloud via gem or rpm
+<a name="l-283"></a><span class="tm">15:50:41</span><span class="nk"> &lt;giulivo&gt;</span> jclift, the _only_ thing we get from git is conductor
+<a name="l-284"></a><span class="tm">15:51:16</span><span class="nk"> &lt;giulivo&gt;</span> jclift, and the conductor's bits and pieces
+<a name="l-285"></a><span class="tm">15:51:20</span><span class="nk"> &lt;jclift&gt;</span> Heh
+<a name="l-286"></a><span class="tm">15:51:25 </span><span class="nka">* jclift</span> <span class="ac">'s brain explodes</span>
+<a name="l-287"></a><span class="tm">15:51:30</span><span class="nk"> &lt;cwolfe_&gt;</span> giulivo, you mean in your current testing framework?
+<a name="l-288"></a><span class="tm">15:51:45</span><span class="nk"> &lt;giulivo&gt;</span> cwolfe_, and in your too
+<a name="l-289"></a><span class="tm">15:51:45</span><span class="nk"> &lt;morazi&gt;</span> eggmaster, yep.  I like how we've gone with dev_tools.  We need to push to completion there and get out of incubation
+<a name="l-290"></a><span class="tm">15:52:06</span><span class="nk"> &lt;giulivo&gt;</span> cwolfe_, except in dev-tools you can opt to install deltacloud via sources
+<a name="l-291"></a><span class="tm">15:52:36 </span><span class="nka">* eggmaster</span> <span class="ac">notes the time</span>
+<a name="l-292"></a><span class="tm">15:52:37</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">morazi:</span> +1
+<a name="l-293"></a><span class="tm">15:52:41</span><span class="nk"> &lt;giulivo&gt;</span> cwolfe_, but again that is only for deltacloud and only if you opt to do so as by default we expect deltacloud to be installed
+<a name="l-294"></a><span class="tm">15:52:43</span><span class="nk"> &lt;cwolfe_&gt;</span> right, you can opt to install it (which makes sense if you'd prefer to say, test a gem install of deltacloud;-)
+<a name="l-295"></a><span class="tm">15:53:08</span><span class="nk"> &lt;giulivo&gt;</span> cwolfe_, the thing is that I consider imgfac as deltacloud external projects
+<a name="l-296"></a><span class="tm">15:53:09</span><span class="nk"> &lt;cwolfe_&gt;</span> i think it is more of a documentation issue at this point
+<a name="l-297"></a><span class="tm">15:53:10</span><span class="nk"> &lt;jclift&gt;</span> giulivo cwolfe_: Lets take this bit off line?
+<a name="l-298"></a><span class="tm">15:53:17</span><span class="nk"> &lt;eggmaster&gt;</span> Anyone have any obvious action items to put forth at this point?
+<a name="l-299"></a><span class="tm">15:53:25</span><span class="nk"> &lt;eggmaster&gt;</span> Agree, let's wrap up the meeting, we can't resolve this in 7 min.
+<a name="l-300"></a><span class="tm">15:53:32</span><span class="nk"> &lt;jclift&gt;</span> :D
+<a name="l-301"></a><span class="tm">15:53:33</span><span class="nk"> &lt;jclift&gt;</span> +1
+<a name="l-302"></a><span class="tm">15:53:43</span><span class="nk"> &lt;eggmaster&gt;</span> But to be clear it is a debate totally worth having.
+<a name="l-303"></a><span class="tm">15:54:22</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> There's only one way to solve it though.
+<a name="l-304"></a><span class="tm">15:54:23</span><span class="nk"> &lt;jclift&gt;</span> http://www.midlandgames.co.uk/sumo-wrestling-suits-hire.htm
+<a name="l-305"></a><span class="tm">15:54:31</span><span class="nk"> &lt;jclift&gt;</span> End meeting?
+<a name="l-306"></a><span class="tm">15:54:31</span><span class="nk"> &lt;eggmaster&gt;</span> rofl
+<a name="l-307"></a><span class="tm">15:54:40</span><span class="nk"> &lt;cwolfe_&gt;</span> lol
+<a name="l-308"></a><span class="tm">15:55:02</span><span class="nk"> &lt;giulivo&gt;</span> so to me it looks like imgfac and deltacloud have already and intend to release and be developed as separate components
+<a name="l-309"></a><span class="tm">15:55:08</span><span class="nk"> &lt;giulivo&gt;</span> does anyone disagree with that?
+<a name="l-310"></a><span class="tm">15:55:15</span><span class="nk"> &lt;jclift&gt;</span> Take it offline.
+<a name="l-311"></a><span class="tm">15:55:23</span><span class="nk"> &lt;jclift&gt;</span> <span class="cmd">#endmeeting </span><span class="cmdline">?</span>
+<a name="l-312"></a><span class="tm">15:55:32</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> let's talk about it in #aeolus
+<a name="l-313"></a><span class="tm">15:55:38</span><span class="nk"> &lt;giulivo&gt;</span> :( I'm sorry, I thought that was a topic for the release cabal
+<a name="l-314"></a><span class="tm">15:55:45</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span>  it is
+<a name="l-315"></a><span class="tm">15:55:50</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> we're just at time.
+<a name="l-316"></a><span class="tm">15:56:09</span><span class="nk"> &lt;eggmaster&gt;</span> sort of.
+<a name="l-317"></a><span class="tm">15:56:46</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> So I do not disagree with that.
+<a name="l-318"></a><span class="tm">15:57:04</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> but I am still not convinced we shouldn't allow ability to use those components from source
+<a name="l-319"></a><span class="tm">15:57:16</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> perhaps a middle ground is possible?
+<a name="l-320"></a><span class="tm">15:57:25</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> i.e. optional source install?
+<a name="l-321"></a><span class="tm">15:57:43</span><span class="nk"> &lt;cwolfe_&gt;</span> yes, let's do that
+<a name="l-322"></a><span class="tm">15:57:53 </span><span class="nka">* cwolfe_</span> <span class="ac">secretly knows that means not changing anything</span>
+<a name="l-323"></a><span class="tm">15:58:03</span><span class="nk"> &lt;giulivo&gt;</span> :
+<a name="l-324"></a><span class="tm">15:58:08</span><span class="nk"> &lt;eggmaster&gt;</span> haha
+<a name="l-325"></a><span class="tm">15:58:18</span><span class="nk"> &lt;giulivo&gt;</span> cwolfe_, +1
+<a name="l-326"></a><span class="tm">15:58:22</span><span class="nk"> &lt;jclift&gt;</span> It would be interesting to try it for all components, and see what happens.
+<a name="l-327"></a><span class="tm">15:58:35</span><span class="nk"> &lt;jclift&gt;</span> If it royally explodes... well, that's useful to know. ;)
+<a name="l-328"></a><span class="tm">15:58:40</span><span class="nk"> &lt;jclift&gt;</span> <span class="cmd">#endmeeting?</span><span class="cmdline"></span>
+<a name="l-329"></a><span class="tm">15:58:57</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> you ok with calling it a day here? or want to discuss more on that?
+<a name="l-330"></a><span class="tm">15:59:05</span><span class="nk"> &lt;eggmaster&gt;</span> I don't want to cut anyone off.
+<a name="l-331"></a><span class="tm">15:59:17</span><span class="nk"> &lt;giulivo&gt;</span> it's okay
+<a name="l-332"></a><span class="tm">15:59:29</span><span class="nk"> &lt;eggmaster&gt;</span> OK then.
+<a name="l-333"></a><span class="tm">15:59:32</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>
