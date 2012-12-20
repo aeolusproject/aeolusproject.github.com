@@ -1,0 +1,271 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#aeolus-meeting log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">15:03:26</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">15:03:26</span><span class="nk"> &lt;ambot&gt;</span> Meeting started Thu Dec 20 15:03:26 2012 UTC.  The chair is eggmaster. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">15:03:26</span><span class="nk"> &lt;ambot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">15:03:52</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="topic">#topic </span><span class="topicline">proposed sprint schedule https://github.com/eggmaster/aeolus-sop/blob/master/sprint_schedule.markdown</span>
+<a name="l-5"></a><span class="tm">15:04:09</span><span class="nk"> &lt;eggmaster&gt;</span> So I just wrote up a list of sprint start dates, 3 week sprints, each starting on Wed
+<a name="l-6"></a><span class="tm">15:04:20</span><span class="nk"> &lt;eggmaster&gt;</span> And labeled them with milestone names.
+<a name="l-7"></a><span class="tm">15:04:59</span><span class="nk"> &lt;eggmaster&gt;</span> Does anyone see any obvious problems with scheduling there? Anyone know when is 2013 RH Summit?
+<a name="l-8"></a><span class="tm">15:05:08</span><span class="nk"> &lt;eggmaster&gt;</span> other than sometime in early june.
+<a name="l-9"></a><span class="tm">15:05:18</span><span class="nk"> &lt;mpovolny&gt;</span> sooo that brings us to the "current release" date, that is going to be after JAN 30
+<a name="l-10"></a><span class="tm">15:05:25</span><span class="nk"> &lt;mpovolny&gt;</span> that is really FEB
+<a name="l-11"></a><span class="tm">15:05:48</span><span class="nk"> &lt;jclift&gt;</span> Hang on....
+<a name="l-12"></a><span class="tm">15:05:56</span><span class="nk"> &lt;eggmaster&gt;</span> Yeah so I think we are going to shoot for the next major release after one more sprint.
+<a name="l-13"></a><span class="tm">15:06:05</span><span class="nk"> &lt;jclift&gt;</span> So, the first release with OpenStack support isn't going to be until Feb?
+<a name="l-14"></a><span class="tm">15:06:08</span><span class="nk"> &lt;mpovolny&gt;</span> because there are blockers for the IMF2 and TIM delivery that will take one more sprint to fix
+<a name="l-15"></a><span class="tm">15:06:14</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> that is my understanding.
+<a name="l-16"></a><span class="tm">15:06:20</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">jclift:</span> yes
+<a name="l-17"></a><span class="tm">15:06:21</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> that is correct.
+<a name="l-18"></a><span class="tm">15:06:23</span><span class="nk"> &lt;jclift&gt;</span> Fuck
+<a name="l-19"></a><span class="tm">15:06:28</span><span class="nk"> &lt;mpovolny&gt;</span> fsck ;-)
+<a name="l-20"></a><span class="tm">15:06:33 </span><span class="nka">* jclift</span> <span class="ac">had better withdraw his FOSDEM talk</span>
+<a name="l-21"></a><span class="tm">15:06:46</span><span class="nk"> &lt;mpovolny&gt;</span> there's the end of the world anyway tomorrow
+<a name="l-22"></a><span class="tm">15:06:51</span><span class="nk"> &lt;mpovolny&gt;</span> when is the FOSDEM?
+<a name="l-23"></a><span class="tm">15:06:55</span><span class="nk"> &lt;jclift&gt;</span> 2-3 Feb
+<a name="l-24"></a><span class="tm">15:07:05</span><span class="nk"> &lt;mpovolny&gt;</span> so you should make it ;-)
+<a name="l-25"></a><span class="tm">15:07:12</span><span class="nk"> &lt;mpovolny&gt;</span> you can announce the release there
+<a name="l-26"></a><span class="tm">15:07:21</span><span class="nk"> &lt;jclift&gt;</span> "20-Feb-2013 (2013-Feb-1)" ?
+<a name="l-27"></a><span class="tm">15:07:27</span><span class="nk"> &lt;jclift&gt;</span> That's the Feb release
+<a name="l-28"></a><span class="tm">15:07:33</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> no...
+<a name="l-29"></a><span class="tm">15:07:37</span><span class="nk"> &lt;eggmaster&gt;</span> sec
+<a name="l-30"></a><span class="tm">15:07:54</span><span class="nk"> &lt;mpovolny&gt;</span> 30-Jan-2013 (2013-Jan-2) -- release after that sprint
+<a name="l-31"></a><span class="tm">15:08:01</span><span class="nk"> &lt;jclift&gt;</span> That's Jan, not feb
+<a name="l-32"></a><span class="tm">15:08:13</span><span class="nk"> &lt;mpovolny&gt;</span> 30 JAN in not really JAN
+<a name="l-33"></a><span class="tm">15:08:13</span><span class="nk"> &lt;jclift&gt;</span> I see what you're meaning tho.
+<a name="l-34"></a><span class="tm">15:08:49</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> we should be making the release announcement for milestone 2013-Jan-2 on Friday 01-Feb
+<a name="l-35"></a><span class="tm">15:09:13</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> so if we make our schedule it should be fresh and piping hot for FOSDEM
+<a name="l-36"></a><span class="tm">15:09:18</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> I'm hoping we'll at least have "testing" code available beforehand to make sure things work?
+<a name="l-37"></a><span class="tm">15:09:36</span><span class="nk"> &lt;jclift&gt;</span> i.e. so if things screw up, I can at least demo "what will be released soon"
+<a name="l-38"></a><span class="tm">15:09:57</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">jclift:</span> that is the testing that showed the bugs
+<a name="l-39"></a><span class="tm">15:10:10</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> Well, we will have a release. If things are broken in it, we will backport fixes onto the maint branch.
+<a name="l-40"></a><span class="tm">15:10:25</span><span class="nk"> &lt;mpovolny&gt;</span> I am absolutely sure that jprovazn is taking the testing very seriously and therefor he is hitting the bugs
+<a name="l-41"></a><span class="tm">15:10:34</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> I assume dajo giulivo et all will be testing the crap out of it for us :)
+<a name="l-42"></a><span class="tm">15:10:52</span><span class="nk"> &lt;dajo&gt;</span> eggmaster, we definitely will be poking it
+<a name="l-43"></a><span class="tm">15:10:56</span><span class="nk"> &lt;eggmaster&gt;</span> yea
+<a name="l-44"></a><span class="tm">15:10:57</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> My point is that we should have code that can be tested by anyone that wants to prior to the "release" too.
+<a name="l-45"></a><span class="tm">15:10:58</span><span class="nk"> &lt;dajo&gt;</span> :)
+<a name="l-46"></a><span class="tm">15:11:01</span><span class="nk"> &lt;giulivo&gt;</span> so I'm sure we tested with jprovazn against openstack
+<a name="l-47"></a><span class="tm">15:11:02</span><span class="nk"> &lt;jclift&gt;</span> Sounds like we will, so yeah.
+<a name="l-48"></a><span class="tm">15:11:38</span><span class="nk"> &lt;giulivo&gt;</span> but that was just a start
+<a name="l-49"></a><span class="tm">15:11:53</span><span class="nk"> &lt;giulivo&gt;</span> at least, in relation to openstack I mean
+<a name="l-50"></a><span class="tm">15:13:17</span><span class="nk"> &lt;giulivo&gt;</span> was that so scary? :)
+<a name="l-51"></a><span class="tm">15:13:32</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> That list of sprint dates and names looks useful.
+<a name="l-52"></a><span class="tm">15:13:41</span><span class="nk"> &lt;eggmaster&gt;</span> So I propose we not get too deep into the weeds of talking about the major release for the moment
+<a name="l-53"></a><span class="tm">15:13:54</span><span class="nk"> &lt;eggmaster&gt;</span> and instead talk about what needs to happen for the current sprint end release
+<a name="l-54"></a><span class="tm">15:13:59</span><span class="nk"> &lt;eggmaster&gt;</span> fair?
+<a name="l-55"></a><span class="tm">15:14:02</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> We can probably cross reference that with the "component release dates" page and create a list of what should be in those sprints too.
+<a name="l-56"></a><span class="tm">15:14:13</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> fair
+<a name="l-57"></a><span class="tm">15:14:22 </span><span class="nka">* jclift</span> <span class="ac">has a week of catching up to do anyway</span>
+<a name="l-58"></a><span class="tm">15:14:23</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> great idea
+<a name="l-59"></a><span class="tm">15:14:42</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="topic">#topic </span><span class="topicline">End of current sprint and associated tasks</span>
+<a name="l-60"></a><span class="tm">15:15:04</span><span class="nk"> &lt;eggmaster&gt;</span> So although we are not doing a major release on this sprint
+<a name="l-61"></a><span class="tm">15:15:16</span><span class="nk"> &lt;mpovolny&gt;</span> let's make it a "training" for the upcoming release that will really matter
+<a name="l-62"></a><span class="tm">15:15:19</span><span class="nk"> &lt;eggmaster&gt;</span> I was still planning to go through the motions of a minor release.
+<a name="l-63"></a><span class="tm">15:15:30</span><span class="nk"> &lt;eggmaster&gt;</span> i.e. tagging the repos at a bare minimum
+<a name="l-64"></a><span class="tm">15:15:49</span><span class="nk"> &lt;eggmaster&gt;</span> Seems like we ought to take this time to figure out what we want our release announcement documentation to look like.
+<a name="l-65"></a><span class="tm">15:16:06</span><span class="nk"> &lt;eggmaster&gt;</span> Maybe get a template going for that sort of thing if we don't have one already.
+<a name="l-66"></a><span class="tm">15:17:40</span><span class="nk"> &lt;jclift&gt;</span> Not a bad idea.
+<a name="l-67"></a><span class="tm">15:17:50 </span><span class="nka">* jclift</span> <span class="ac">has no real suggestions tho</span>
+<a name="l-68"></a><span class="tm">15:18:13</span><span class="nk"> &lt;eggmaster&gt;</span> morazi forwarded me the katello 1.2 release announcement email
+<a name="l-69"></a><span class="tm">15:18:40</span><span class="nk"> &lt;jclift&gt;</span> I want to get the Aeolus templates converted across to CentOS 6 before next meeting, so we have one significant item less to worry about
+<a name="l-70"></a><span class="tm">15:19:29</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">jclift will get Aeolus templates converted across to CentOS 6</span>
+<a name="l-71"></a><span class="tm">15:20:13</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">eggmaster will create a release announcement template using katello's as a model</span>
+<a name="l-72"></a><span class="tm">15:20:41</span><span class="nk"> &lt;eggmaster&gt;</span> I'd like to communicate with the Website cabal about where they want release announcements and doc to live.
+<a name="l-73"></a><span class="tm">15:22:23</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">eggmaster will start talking to Website Cabal about where release documentation will go</span>
+<a name="l-74"></a><span class="tm">15:22:56</span><span class="nk"> &lt;eggmaster&gt;</span> So in terms of the documentation we want, we'll need (feel free to add items here)
+<a name="l-75"></a><span class="tm">15:23:01</span><span class="nk"> &lt;eggmaster&gt;</span> install doc
+<a name="l-76"></a><span class="tm">15:23:16</span><span class="nk"> &lt;eggmaster&gt;</span> upgrade doc (probably not applicable this time, but for future)
+<a name="l-77"></a><span class="tm">15:23:30</span><span class="nk"> &lt;eggmaster&gt;</span> features &amp; enhancements listing
+<a name="l-78"></a><span class="tm">15:23:46</span><span class="nk"> &lt;mpovolny&gt;</span> the examples and some 'first steps' at least a pointer to a website
+<a name="l-79"></a><span class="tm">15:24:36</span><span class="nk"> &lt;eggmaster&gt;</span> bugfix list (can we get this out of github issue tracking easily?)
+<a name="l-80"></a><span class="tm">15:25:11</span><span class="nk"> &lt;eggmaster&gt;</span> pointers to community contact info, mailing lists, issue reporting
+<a name="l-81"></a><span class="tm">15:25:15</span><span class="nk"> &lt;eggmaster&gt;</span> contributor list
+<a name="l-82"></a><span class="tm">15:25:40</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> No idea about extracting info from GH issue tracking.  But, it's a good idea if we can.
+<a name="l-83"></a><span class="tm">15:26:15</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> We're likely not the first place to wonder how to do this either, so asking around for suggestions might be useful if it's non-obvious.
+<a name="l-84"></a><span class="tm">15:26:38</span><span class="nk"> &lt;eggmaster&gt;</span> yeah.
+<a name="l-85"></a><span class="tm">15:26:52</span><span class="nk"> &lt;eggmaster&gt;</span> surely someone has maintained a release with github before us :P
+<a name="l-86"></a><span class="tm">15:27:15</span><span class="nk"> &lt;mpovolny&gt;</span> http://developer.github.com/v3/issues/
+<a name="l-87"></a><span class="tm">15:27:17</span><span class="nk"> &lt;mpovolny&gt;</span> sure
+<a name="l-88"></a><span class="tm">15:27:48</span><span class="nk"> &lt;mpovolny&gt;</span> issues by state, date, labels
+<a name="l-89"></a><span class="tm">15:28:11</span><span class="nk"> &lt;mpovolny&gt;</span> btw who can create labels for Issues at the github project page?
+<a name="l-90"></a><span class="tm">15:28:27</span><span class="nk"> &lt;mpovolny&gt;</span> we probably should label Issues "feature" "bug" etc.
+<a name="l-91"></a><span class="tm">15:28:40</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> good point
+<a name="l-92"></a><span class="tm">15:28:41</span><span class="nk"> &lt;mpovolny&gt;</span> that will help us to get the release information then we need
+<a name="l-93"></a><span class="tm">15:28:47</span><span class="nk"> &lt;jclift&gt;</span> +1
+<a name="l-94"></a><span class="tm">15:29:21</span><span class="nk"> &lt;rlandy&gt;</span> are *all* issues logged in github as opposed to bugzilla?
+<a name="l-95"></a><span class="tm">15:29:29</span><span class="nk"> &lt;jclift&gt;</span> On that note, does anyone have a login to Rally, so we can extract the info for imgfac stuff?
+<a name="l-96"></a><span class="tm">15:29:38</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">rlandy:</span> that's a very good question.
+<a name="l-97"></a><span class="tm">15:29:39</span><span class="nk"> &lt;dajo&gt;</span> jclift, I do
+<a name="l-98"></a><span class="tm">15:29:54</span><span class="nk"> &lt;mpovolny&gt;</span> so I suggest action item: start using github issue labels, and have issues labeled at lease "feature" -- e.g. what athomas puts there at the beginning of the spring and "bug"
+<a name="l-99"></a><span class="tm">15:29:54</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">rlandy:</span> I think the intent was to try to rely on github as much as we can
+<a name="l-100"></a><span class="tm">15:30:13</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">dajo:</span> Cool.  I don't, so haven't been able to see what imgfac info is in there.
+<a name="l-101"></a><span class="tm">15:30:13</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">rlandy:</span> but I don't know it well enough to know if it gives us everything we need.
+<a name="l-102"></a><span class="tm">15:30:26</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> would you start an email thread on that topic please?
+<a name="l-103"></a><span class="tm">15:30:29 </span><span class="nka">* jclift</span> <span class="ac">has no idea how rally works</span>
+<a name="l-104"></a><span class="tm">15:30:31</span><span class="nk"> &lt;mpovolny&gt;</span> sure
+<a name="l-105"></a><span class="tm">15:30:50</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> I would propose a set of labels and ask for feedback
+<a name="l-106"></a><span class="tm">15:30:53</span><span class="nk"> &lt;rlandy&gt;</span> <span class="hi">eggmaster:</span> likely we'll need to do a manual triage/check the first release so we know if one tracker has something the other does not
+<a name="l-107"></a><span class="tm">15:30:57</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> rather than just opening it up for discussion
+<a name="l-108"></a><span class="tm">15:31:03</span><span class="nk"> &lt;dajo&gt;</span> rlandy, eggmaster: I believe all issues right now are opened in github which may ultimately require a downstream issue once we are closer to creating downstream branches, very ugly
+<a name="l-109"></a><span class="tm">15:31:06</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">rlandy:</span> yep
+<a name="l-110"></a><span class="tm">15:31:22</span><span class="nk"> &lt;eggmaster&gt;</span> dajo giulivo do you want to take on that sort of review of github thing as an #action item please
+<a name="l-111"></a><span class="tm">15:31:50</span><span class="nk"> &lt;dajo&gt;</span> eggmaster, sure
+<a name="l-112"></a><span class="tm">15:31:53</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> that does sound sickening
+<a name="l-113"></a><span class="tm">15:33:12</span><span class="nk"> &lt;dajo&gt;</span> <span class="cmd">#action </span><span class="cmdline">dajo will review tracking issues across upstream &amp; downstream releases</span>
+<a name="l-114"></a><span class="tm">15:33:17</span><span class="nk"> &lt;eggmaster&gt;</span> ty
+<a name="l-115"></a><span class="tm">15:34:31</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> could you possibly take on putting that proposed list of release info into a doc and floating it out for comments to an email list?
+<a name="l-116"></a><span class="tm">15:35:36 </span><span class="nka">* jclift</span> <span class="ac">is thinking it over</span>
+<a name="l-117"></a><span class="tm">15:35:41</span><span class="nk"> &lt;eggmaster&gt;</span> I don't think there's anything controversial in there, but someone might propose additions
+<a name="l-118"></a><span class="tm">15:35:56</span><span class="nk"> &lt;eggmaster&gt;</span> really I just want to capture that list somewhere.
+<a name="l-119"></a><span class="tm">15:36:05</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> when do we want it by?
+<a name="l-120"></a><span class="tm">15:36:19</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> pff...week after break?
+<a name="l-121"></a><span class="tm">15:36:32</span><span class="nk"> &lt;jclift&gt;</span> k, that's workable
+<a name="l-122"></a><span class="tm">15:36:41 </span><span class="nka">* jclift</span> <span class="ac">was just worried about "next week" ;P</span>
+<a name="l-123"></a><span class="tm">15:36:53</span><span class="nk"> &lt;eggmaster&gt;</span> yeah.
+<a name="l-124"></a><span class="tm">15:37:18</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#idea </span><span class="cmdline">proposed date for EOS release announcement Fri 04-Jan-2013</span>
+<a name="l-125"></a><span class="tm">15:37:33</span><span class="nk"> &lt;eggmaster&gt;</span> anyone violently disagree with that?
+<a name="l-126"></a><span class="tm">15:37:53</span><span class="nk"> &lt;jclift&gt;</span> So, just a few days after the next minor release.  Yeah, not seeing any issues
+<a name="l-127"></a><span class="tm">15:38:08</span><span class="nk"> &lt;mpovolny&gt;</span> sorry for the stupid question, what is "EOS"
+<a name="l-128"></a><span class="tm">15:38:22</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> I will help get the documentation together, I'd say we make it a team effort between you and me and any other suckers
+<a name="l-129"></a><span class="tm">15:38:30</span><span class="nk"> &lt;eggmaster&gt;</span> End of Sprint
+<a name="l-130"></a><span class="tm">15:38:32</span><span class="nk"> &lt;jclift&gt;</span> :p
+<a name="l-131"></a><span class="tm">15:38:37</span><span class="nk"> &lt;mpovolny&gt;</span> thx ;-)
+<a name="l-132"></a><span class="tm">15:39:04</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> probably better to say 'minor release announcement' I guess
+<a name="l-133"></a><span class="tm">15:39:09</span><span class="nk"> &lt;jclift&gt;</span> s/after/before/
+<a name="l-134"></a><span class="tm">15:40:15</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">minor release announcement Fri 04-Jan-2013</span>
+<a name="l-135"></a><span class="tm">15:40:23</span><span class="nk"> &lt;rlandy&gt;</span> <span class="hi">jclift:</span> a while back we chatted about reviewing new aeolus doc - never got anything for review - is that still being worked on?
+<a name="l-136"></a><span class="tm">15:41:05</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">rlandy:</span> It still needs someone to review it.
+<a name="l-137"></a><span class="tm">15:41:13</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">rlandy:</span> The doc is online for review, but no-one's doing it.
+<a name="l-138"></a><span class="tm">15:42:07</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">rlandy:</span> Is this you volunteering?
+<a name="l-139"></a><span class="tm">15:42:10</span><span class="nk"> &lt;rlandy&gt;</span> <span class="hi">jclift:</span> well, since I volunteered initially, I guess I should - can you resend the link
+<a name="l-140"></a><span class="tm">15:42:49</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">rlandy:</span> http://justinclift.fedorapeople.org/asettle/use_it.html
+<a name="l-141"></a><span class="tm">15:43:06</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">rlandy:</span> From the github repo here: https://github.com/justinclift/aeolus-website
+<a name="l-142"></a><span class="tm">15:43:09</span><span class="nk"> &lt;rlandy&gt;</span> thank you
+<a name="l-143"></a><span class="tm">15:43:18</span><span class="nk"> &lt;rlandy&gt;</span> ... light reading for my shutdown break :)
+<a name="l-144"></a><span class="tm">15:43:28</span><span class="nk"> &lt;jclift&gt;</span> It's a good think I remembered to keep that repo when I was nuking old ones the other day.
+<a name="l-145"></a><span class="tm">15:43:29</span><span class="nk"> &lt;eggmaster&gt;</span> heh
+<a name="l-146"></a><span class="tm">15:43:33 </span><span class="nka">* jclift</span> <span class="ac">nearly killed it</span>
+<a name="l-147"></a><span class="tm">15:43:45</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> admirable restraint on your part
+<a name="l-148"></a><span class="tm">15:44:26</span><span class="nk"> &lt;giulivo&gt;</span> sorry if getting back to something discussed in earlier meetings
+<a name="l-149"></a><span class="tm">15:44:54</span><span class="nk"> &lt;giulivo&gt;</span> are we going to use the 'release branch' only for conductor
+<a name="l-150"></a><span class="tm">15:44:58</span><span class="nk"> &lt;giulivo&gt;</span> or for imgfac and dc too?
+<a name="l-151"></a><span class="tm">15:45:27</span><span class="nk"> &lt;mpovolny&gt;</span> all ofc
+<a name="l-152"></a><span class="tm">15:45:32</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> I'm not sure I understand the question
+<a name="l-153"></a><span class="tm">15:45:55</span><span class="nk"> &lt;giulivo&gt;</span> mpovolny, not sure what ofc is for
+<a name="l-154"></a><span class="tm">15:46:05</span><span class="nk"> &lt;mpovolny&gt;</span> of course
+<a name="l-155"></a><span class="tm">15:46:08</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> i.e. we can only create release branches on repos we own
+<a name="l-156"></a><span class="tm">15:46:18</span><span class="nk"> &lt;giulivo&gt;</span> yeah that was my next question
+<a name="l-157"></a><span class="tm">15:46:50</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> if you don't mind, can we get back to this in just a minute?
+<a name="l-158"></a><span class="tm">15:46:54</span><span class="nk"> &lt;giulivo&gt;</span> sure
+<a name="l-159"></a><span class="tm">15:46:59</span><span class="nk"> &lt;eggmaster&gt;</span> OK
+<a name="l-160"></a><span class="tm">15:47:25</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="topic">#topic </span><span class="topicline">Documenting steps in the release process, example from katello at https://fedorahosted.org/katello/wiki/ReleasingKatello</span>
+<a name="l-161"></a><span class="tm">15:47:53</span><span class="nk"> &lt;eggmaster&gt;</span> Just want to get it on our meeting notes here. We need to write up documentation on what steps are required for each release.
+<a name="l-162"></a><span class="tm">15:48:10</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">eggmaster will start documentation of release process</span>
+<a name="l-163"></a><span class="tm">15:49:06</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> Well, we have very initial "release checklist" on the wiki.
+<a name="l-164"></a><span class="tm">15:49:16</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> yeah
+<a name="l-165"></a><span class="tm">15:49:19</span><span class="nk"> &lt;jclift&gt;</span> It probably just needs updating and fleshing out with any more detail that's relevant
+<a name="l-166"></a><span class="tm">15:49:37</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> so I'd like to just add things like how we tag and branch etc.
+<a name="l-167"></a><span class="tm">15:49:43</span><span class="nk"> &lt;rlandy&gt;</span> +1 ... if eggmaster wins the lottery :) - rest of us will need to know how to manage a release
+<a name="l-168"></a><span class="tm">15:49:51</span><span class="nk"> &lt;eggmaster&gt;</span> you sure will :)
+<a name="l-169"></a><span class="tm">15:50:23</span><span class="nk"> &lt;eggmaster&gt;</span> should I add an action item to buy a lottery ticket?
+<a name="l-170"></a><span class="tm">15:50:36</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">rlandy:</span> How ironic would it be to have a whole project team in a lottery sweepstake together... and win... and all leave? :)
+<a name="l-171"></a><span class="tm">15:50:58</span><span class="nk"> &lt;eggmaster&gt;</span> OK now let's talk about some ugly stuff :)
+<a name="l-172"></a><span class="tm">15:51:07 </span><span class="nka">* jclift</span> <span class="ac">hides</span>
+<a name="l-173"></a><span class="tm">15:51:15</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="topic">#topic </span><span class="topicline">what should comprise the major release</span>
+<a name="l-174"></a><span class="tm">15:52:32</span><span class="nk"> &lt;eggmaster&gt;</span> So there are issues with imagefactory. In particular...sloranz has decided to focus exclusively on packaging for rpm.
+<a name="l-175"></a><span class="tm">15:53:02</span><span class="nk"> &lt;eggmaster&gt;</span> https://github.com/aeolusproject/imagefactory/issues/165
+<a name="l-176"></a><span class="tm">15:53:35</span><span class="nk"> &lt;jclift&gt;</span> k.
+<a name="l-177"></a><span class="tm">15:53:58</span><span class="nk"> &lt;jclift&gt;</span> It looks like the Debian Cloud guys will have to do all of the work for imgfac themselves then.
+<a name="l-178"></a><span class="tm">15:54:09 </span><span class="nka">* jclift</span> <span class="ac">points out they're probably ok with it</span>
+<a name="l-179"></a><span class="tm">15:54:29</span><span class="nk"> &lt;jclift&gt;</span> After all, they'd intended on doing all of Aeolus themselves if they had to
+<a name="l-180"></a><span class="tm">15:54:49</span><span class="nk"> &lt;giulivo&gt;</span> but is that a real problem?
+<a name="l-181"></a><span class="tm">15:55:00</span><span class="nk"> &lt;jclift&gt;</span> But, as to "major release" for upstream... aren't we just focusing on tarballs and similar?
+<a name="l-182"></a><span class="tm">15:55:09</span><span class="nk"> &lt;giulivo&gt;</span> given that dev-tools will have root
+<a name="l-183"></a><span class="tm">15:55:10</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> well, it means we can't have dev-tools set it up.
+<a name="l-184"></a><span class="tm">15:55:23</span><span class="nk"> &lt;eggmaster&gt;</span> Well,
+<a name="l-185"></a><span class="tm">15:55:27</span><span class="nk"> &lt;mpovolny&gt;</span> so, no .tar.gz release for imagefactory?
+<a name="l-186"></a><span class="tm">15:55:30</span><span class="nk"> &lt;mpovolny&gt;</span> only RPM?
+<a name="l-187"></a><span class="tm">15:55:31</span><span class="nk"> &lt;eggmaster&gt;</span> let me back up a little there.
+<a name="l-188"></a><span class="tm">15:55:53</span><span class="nk"> &lt;eggmaster&gt;</span> What I think this means is that we assume a running imagefactory version x.y.z
+<a name="l-189"></a><span class="tm">15:56:05</span><span class="nk"> &lt;jclift&gt;</span> Yeah, that's my understanding.
+<a name="l-190"></a><span class="tm">15:56:07</span><span class="nk"> &lt;rlandy&gt;</span> hmmm... so then it's harder to choose a specific imagefactory version to run on
+<a name="l-191"></a><span class="tm">15:56:29</span><span class="nk"> &lt;rlandy&gt;</span> and then we need to make sure the default shipping package *always* works
+<a name="l-192"></a><span class="tm">15:56:38</span><span class="nk"> &lt;jclift&gt;</span> So, "next major release" of Aeolus should be imagfactory a.b.c.
+<a name="l-193"></a><span class="tm">15:57:04</span><span class="nk"> &lt;jclift&gt;</span> Unsure what a.b.c will be tho.
+<a name="l-194"></a><span class="tm">15:57:11</span><span class="nk"> &lt;jclift&gt;</span> Acutally....
+<a name="l-195"></a><span class="tm">15:57:15 </span><span class="nka">* jclift</span> <span class="ac">keeps quiet</span>
+<a name="l-196"></a><span class="tm">15:57:15</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> plus our release tags for our components.
+<a name="l-197"></a><span class="tm">15:57:29</span><span class="nk"> &lt;mpovolny&gt;</span> https://github.com/aeolusproject/imagefactory/tags -- I see no recent tags
+<a name="l-198"></a><span class="tm">15:58:06</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">mpovolny:</span> Yeah, there aren't any recent ones.
+<a name="l-199"></a><span class="tm">15:58:12</span><span class="nk"> &lt;mpovolny&gt;</span> to get IMF2 atm you have to clone the master?
+<a name="l-200"></a><span class="tm">15:58:35</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">mpovolny:</span> They do their co-ordination stuff in Rally.   I *guess* they'll create new tags at next release, but I don't really know.
+<a name="l-201"></a><span class="tm">15:58:55</span><span class="nk"> &lt;giulivo&gt;</span> but yes currently you clone master
+<a name="l-202"></a><span class="tm">15:58:58</span><span class="nk"> &lt;mpovolny&gt;</span> so we should ask them to at least create a tag
+<a name="l-203"></a><span class="tm">15:59:05</span><span class="nk"> &lt;giulivo&gt;</span> and make RPMs
+<a name="l-204"></a><span class="tm">15:59:07</span><span class="nk"> &lt;giulivo&gt;</span> to isntall it
+<a name="l-205"></a><span class="tm">15:59:44</span><span class="nk"> &lt;eggmaster&gt;</span> Yes, who wants to volunteer to run this down?
+<a name="l-206"></a><span class="tm">16:00:08</span><span class="nk"> &lt;giulivo&gt;</span> but I think they'll have a tag when v2 is considered stable for use with TIM
+<a name="l-207"></a><span class="tm">16:00:44</span><span class="nk"> &lt;eggmaster&gt;</span> OK
+<a name="l-208"></a><span class="tm">16:00:45</span><span class="nk"> &lt;giulivo&gt;</span> current version of conductor works with older REST api of imgfac
+<a name="l-209"></a><span class="tm">16:00:56</span><span class="nk"> &lt;eggmaster&gt;</span> so giulivo
+<a name="l-210"></a><span class="tm">16:01:24</span><span class="nk"> &lt;eggmaster&gt;</span> do you want to take on responsibility to ping release cabal when they have that tag, or be the person who is tracking that anyway?
+<a name="l-211"></a><span class="tm">16:01:36</span><span class="nk"> &lt;giulivo&gt;</span> sure I can
+<a name="l-212"></a><span class="tm">16:01:40</span><span class="nk"> &lt;eggmaster&gt;</span> cool thanks
+<a name="l-213"></a><span class="tm">16:02:00</span><span class="nk"> &lt;giulivo&gt;</span> but I think the problem is getting back again on how do we ship these things
+<a name="l-214"></a><span class="tm">16:02:04</span><span class="nk"> &lt;eggmaster&gt;</span> yes.
+<a name="l-215"></a><span class="tm">16:02:54</span><span class="nk"> &lt;eggmaster&gt;</span> So rlandy I did not quite follow why it is harder to choose a specific factory version to run on
+<a name="l-216"></a><span class="tm">16:03:00</span><span class="nk"> &lt;mpovolny&gt;</span> what options are there? only RPM or git clone, am I right?
+<a name="l-217"></a><span class="tm">16:03:27</span><span class="nk"> &lt;eggmaster&gt;</span> If we say "we expect you to be running factory built off of tag-name" is that not specific enough?
+<a name="l-218"></a><span class="tm">16:03:44</span><span class="nk"> &lt;eggmaster&gt;</span> how you build it is up to you if you're on deb
+<a name="l-219"></a><span class="tm">16:03:50</span><span class="nk"> &lt;giulivo&gt;</span> +1
+<a name="l-220"></a><span class="tm">16:03:52</span><span class="nk"> &lt;eggmaster&gt;</span> otherwise here's a pointer to some rpms?
+<a name="l-221"></a><span class="tm">16:04:03</span><span class="nk"> &lt;giulivo&gt;</span> RPMs are from master
+<a name="l-222"></a><span class="tm">16:04:13</span><span class="nk"> &lt;giulivo&gt;</span> so we can point at a tag
+<a name="l-223"></a><span class="tm">16:04:16</span><span class="nk"> &lt;eggmaster&gt;</span> yeah
+<a name="l-224"></a><span class="tm">16:04:22</span><span class="nk"> &lt;giulivo&gt;</span> you (or dev-tools?) checkout and build the RPMs
+<a name="l-225"></a><span class="tm">16:04:39</span><span class="nk"> &lt;eggmaster&gt;</span> yeah I'd love it if dev-tools did this for us.
+<a name="l-226"></a><span class="tm">16:04:52</span><span class="nk"> &lt;eggmaster&gt;</span> but it's not in there atm.
+<a name="l-227"></a><span class="tm">16:04:53</span><span class="nk"> &lt;giulivo&gt;</span> yeah I thought that's the approach crag was having with the other components too
+<a name="l-228"></a><span class="tm">16:05:15</span><span class="nk"> &lt;rlandy&gt;</span> <span class="hi">eggmaster:</span> rpms sometimes lag and are not cut all that often - when deps change
+<a name="l-229"></a><span class="tm">16:06:40</span><span class="nk"> &lt;eggmaster&gt;</span> Well if the RPM build process is pretty straightforward from source checkout of factory, I would be willing to volunteer to try to get that 'build and install RPMs from imagefactory' work into dev-tools for the next sprint.
+<a name="l-230"></a><span class="tm">16:06:50</span><span class="nk"> &lt;eggmaster&gt;</span> assuming morazi doesn't have something evil planned for me already.
+<a name="l-231"></a><span class="tm">16:07:35</span><span class="nk"> &lt;giulivo&gt;</span> <span class="cmd">#action </span><span class="cmdline">giulivo track imgfac tagging for v2</span>
+<a name="l-232"></a><span class="tm">16:07:50</span><span class="nk"> &lt;eggmaster&gt;</span> oh crap we are over time.
+<a name="l-233"></a><span class="tm">16:08:36</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">eggmaster will talk with cwolfe about getting imagefactory RPM build/install from source into dev-tools during next sprint</span>
+<a name="l-234"></a><span class="tm">16:08:48</span><span class="nk"> &lt;eggmaster&gt;</span> Anyone have additional action items that have not been claimed yet?
+<a name="l-235"></a><span class="tm">16:09:30</span><span class="nk"> &lt;mpovolny&gt;</span> not me
+<a name="l-236"></a><span class="tm">16:09:44</span><span class="nk"> &lt;eggmaster&gt;</span> Anyone propose additional action items not discussed yet?
+<a name="l-237"></a><span class="tm">16:09:51</span><span class="nk"> &lt;jclift&gt;</span> Nope
+<a name="l-238"></a><span class="tm">16:10:16</span><span class="nk"> &lt;eggmaster&gt;</span> ok let's tag it and bag it, thanks everyone.
+<a name="l-239"></a><span class="tm">16:10:21</span><span class="nk"> &lt;eggmaster&gt;</span> going once...
+<a name="l-240"></a><span class="tm">16:10:23</span><span class="nk"> &lt;jclift&gt;</span> :)
+<a name="l-241"></a><span class="tm">16:10:29</span><span class="nk"> &lt;eggmaster&gt;</span> going twice...
+<a name="l-242"></a><span class="tm">16:10:33</span><span class="nk"> &lt;mpovolny&gt;</span> have a nice day
+<a name="l-243"></a><span class="tm">16:10:35</span><span class="nk"> &lt;giulivo&gt;</span> :)
+<a name="l-244"></a><span class="tm">16:10:37</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>
