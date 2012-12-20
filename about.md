@@ -2,6 +2,7 @@
 layout: page
 title: About Aeolus
 ---
+{::options parse_block_html="true" /}
 
 # About Aeolus
 
@@ -11,7 +12,7 @@ To provide superior tools and workflows for flexible
 construction, management, and monitoring of multi-instance deployments
 across clouds.
 
-![High-level Aeolus overview](/images/concept_aeolus_high_level.png)
+<img src="/images/concept_aeolus_high_level.png" width="767" height="460" />
 
 ## Learn More
 
