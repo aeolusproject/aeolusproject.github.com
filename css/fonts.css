@@ -1,8 +1,7 @@
 @font-face {
     font-family: 'Liberation Sans';
     src: url('../fonts/liberation_sans/LiberationSans-Regular-webfont-eot.eot');
-    src: local('Liberation Sans'), local('LiberationSans'), local('Liberation-Sans'),
-         url('../fonts/liberation_sans/LiberationSans-Regular-webfont-eot.eot?#iefix') format('eot'),
+    src: url('../fonts/liberation_sans/LiberationSans-Regular-webfont-eot.eot?#iefix') format('eot'),
          url('../fonts/liberation_sans/LiberationSans-Regular-webfont-woff.woff') format('woff'),
          url('../fonts/liberation_sans/LiberationSans-Regular-webfont-ttf.ttf') format('truetype'),
          url('../fonts/liberation_sans/LiberationSans-Regular-webfont-svg.svg#webfontLfr8h6FA') format('svg');
@@ -14,8 +13,7 @@
 @font-face {
     font-family: 'Liberation Sans';
     src: url('../fonts/liberation_sans/LiberationSans-Italic-webfont-eot.eot');
-    src: local('Liberation Sans'), local('LiberationSans'), local('Liberation-Sans'),
-         url('../fonts/liberation_sans/LiberationSans-Italic-webfont-eot.eot?#iefix') format('eot'),
+    src: url('../fonts/liberation_sans/LiberationSans-Italic-webfont-eot.eot?#iefix') format('eot'),
          url('../fonts/liberation_sans/LiberationSans-Italic-webfont-woff.woff') format('woff'),
          url('../fonts/liberation_sans/LiberationSans-Italic-webfont-ttf.ttf') format('truetype'),
          url('../fonts/liberation_sans/LiberationSans-Italic-webfont-svg.svg#webfont8TmwkzPJ') format('svg');
@@ -27,8 +25,7 @@
 @font-face {
     font-family: 'Liberation Sans';
     src: url('../fonts/liberation_sans/LiberationSans-Bold-webfont-eot.eot');
-    src: local('Liberation Sans'), local('LiberationSans'), local('Liberation-Sans'),
-         url('../fonts/liberation_sans/LiberationSans-Bold-webfont-eot.eot?#iefix') format('eot'),
+    src: url('../fonts/liberation_sans/LiberationSans-Bold-webfont-eot.eot?#iefix') format('eot'),
          url('../fonts/liberation_sans/LiberationSans-Bold-webfont-woff.woff') format('woff'),
          url('../fonts/liberation_sans/LiberationSans-Bold-webfont-ttf.ttf') format('truetype'),
          url('../fonts/liberation_sans/LiberationSans-Bold-webfont-svg.svg#webfontHyWb8e07') format('svg');
@@ -40,8 +37,7 @@
 @font-face {
     font-family: 'Liberation Sans';
     src: url('../fonts/liberation_sans/LiberationSans-BoldItalic-webfont-eot.eot');
-    src: local('Liberation Sans'), local('LiberationSans'), local('Liberation-Sans'),
-         url('../fonts/liberation_sans/LiberationSans-BoldItalic-webfont-eot.eot?#iefix') format('eot'),
+    src: url('../fonts/liberation_sans/LiberationSans-BoldItalic-webfont-eot.eot?#iefix') format('eot'),
          url('../fonts/liberation_sans/LiberationSans-BoldItalic-webfont-woff.woff') format('woff'),
          url('../fonts/liberation_sans/LiberationSans-BoldItalic-webfont-ttf.ttf') format('truetype'),
          url('../fonts/liberation_sans/LiberationSans-BoldItalic-webfont-svg.svg#webfont8uGO27Bu') format('svg');
@@ -52,8 +48,7 @@
 
 @font-face {
     font-family: 'Overpass';
-    src: local("Overpass"),
-         url('../fonts/overpass/overpass_regular-web-eot.eot?#iefix') format('eot'),
+    src: url('../fonts/overpass/overpass_regular-web-eot.eot?#iefix') format('eot'),
          url('../fonts/overpass/overpass_regular-web-woff.woff') format('woff'),
          url('../fonts/overpass/overpass_regular-web-ttf.ttf') format('truetype'),
          url('../fonts/overpass/overpass_regular-web-svg.svg#webfontLTZe4IYH') format('svg');
@@ -64,8 +59,7 @@
 
 @font-face {
     font-family: 'Overpass';
-    src: local("Overpass"), 
-         url('../fonts/overpass/overpass_bold-web-eot.eot?#iefix') format('eot'),
+    src: url('../fonts/overpass/overpass_bold-web-eot.eot?#iefix') format('eot'),
          url('../fonts/overpass/overpass_bold-web-woff.woff') format('woff'),
          url('../fonts/overpass/overpass_bold-web-ttf.ttf') format('truetype'),
          url('../fonts/overpass/overpass_bold-web-svg.svg#webfontzAU82Ltw') format('svg');
