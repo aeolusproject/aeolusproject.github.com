@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#aeolus-meeting log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">15:06:00</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">15:06:00</span><span class="nk"> &lt;ambot&gt;</span> Meeting started Thu Jan 10 15:06:00 2013 UTC.  The chair is eggmaster. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">15:06:00</span><span class="nk"> &lt;ambot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">15:06:21</span><span class="nk"> &lt;jclift&gt;</span> Damn, I forgot to migrate the wiki page across to GB the other day.
+<a name="l-5"></a><span class="tm">15:06:31</span><span class="nk"> &lt;jclift&gt;</span> Meh, I'll do it later.
+<a name="l-6"></a><span class="tm">15:06:35</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="topic">#topic </span><span class="topicline">recap of where things stand and what people are working on</span>
+<a name="l-7"></a><span class="tm">15:07:14 </span><span class="nka">* jclift</span> <span class="ac">is turning dev-tools into a full stack installation solution, newbies can use to get up and running quickly</span>
+<a name="l-8"></a><span class="tm">15:07:19</span><span class="nk"> &lt;eggmaster&gt;</span> So we have a minor release from last sprint to document, which I have had myself on the hook to do largely
+<a name="l-9"></a><span class="tm">15:07:27</span><span class="nk"> &lt;eggmaster&gt;</span> and have pretty much dropped the ball on that.
+<a name="l-10"></a><span class="tm">15:07:53</span><span class="nk"> &lt;eggmaster&gt;</span> According to our fancy new sprint schedule, today is the day to review our release documents for the previous sprint release
+<a name="l-11"></a><span class="tm">15:08:17</span><span class="nk"> &lt;eggmaster&gt;</span> So I will be working on that stuff today and hope we can all look it over later today or in the AM friday for brno folks.
+<a name="l-12"></a><span class="tm">15:08:23</span><span class="nk"> &lt;eggmaster&gt;</span> (as people's schedules permit)
+<a name="l-13"></a><span class="tm">15:08:32</span><span class="nk"> &lt;jclift&gt;</span> sure
+<a name="l-14"></a><span class="tm">15:08:52</span><span class="nk"> &lt;eggmaster&gt;</span> dajo giulivo : so what I'd like to do from a QE perspective on that previous sprint release is
+<a name="l-15"></a><span class="tm">15:09:41</span><span class="nk"> &lt;eggmaster&gt;</span> have us/you use boostrap to do an install based on the tag/branch (which I *just* retroactively created)
+<a name="l-16"></a><span class="tm">15:09:46</span><span class="nk"> &lt;eggmaster&gt;</span> and then we document what doesn't work.
+<a name="l-17"></a><span class="tm">15:10:09</span><span class="nk"> &lt;dajo&gt;</span> sure
+<a name="l-18"></a><span class="tm">15:10:19</span><span class="nk"> &lt;eggmaster&gt;</span> I don't think, for example, we'll be able get e2e out of it, but imho that's fine so long as we document it in our release announcement stuff.
+<a name="l-19"></a><span class="tm">15:10:33</span><span class="nk"> &lt;dajo&gt;</span> eggmaster, fyi, guilio solved my issue from yesterday with non-aeolus-all install and builds not working
+<a name="l-20"></a><span class="tm">15:10:54</span><span class="nk"> &lt;eggmaster&gt;</span> But, I think we should do the run-through and get our doc checklist in order.
+<a name="l-21"></a><span class="tm">15:10:59</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> that fantastic
+<a name="l-22"></a><span class="tm">15:11:07</span><span class="nk"> &lt;eggmaster&gt;</span> s/that/that is
+<a name="l-23"></a><span class="tm">15:11:12</span><span class="nk"> &lt;dajo&gt;</span> so although I haven;t had a chance as of yet, I think its in better shape
+<a name="l-24"></a><span class="tm">15:11:22</span><span class="nk"> &lt;eggmaster&gt;</span> great success, happy to hear that.
+<a name="l-25"></a><span class="tm">15:11:40</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> so you have been my hero with forging ahead on the imgfac stuff in dev-tools, how is that going?
+<a name="l-26"></a><span class="tm">15:11:41</span><span class="nk"> &lt;dajo&gt;</span> basically need to make sure the imagefactory url is http
+<a name="l-27"></a><span class="tm">15:13:05</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> ImageFactory stuff is in there (with no error checking), Oz instructions have been worked out so just adding to the scripting now, Tim instructions have been worked out so need to be added to scripting next.
+<a name="l-28"></a><span class="tm">15:13:37</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> Some kind of "configure ImageFactory to work with everything" bit needs to be added after that, as I've not actually been about to _test_ any of this stuff yet.
+<a name="l-29"></a><span class="tm">15:13:57</span><span class="nk"> &lt;jclift&gt;</span> Apart from starting things up and making sure they listen on a port, don't barf with errors, etc.
+<a name="l-30"></a><span class="tm">15:14:32</span><span class="nk"> &lt;jclift&gt;</span> Kind of 1/2 expecting to find a few missing dependencies after actually configuring everything to work together.
+<a name="l-31"></a><span class="tm">15:14:56</span><span class="nk"> &lt;jclift&gt;</span> &lt;/status&gt;
+<a name="l-32"></a><span class="tm">15:15:11</span><span class="nk"> &lt;cwolfe__&gt;</span> jclift, are you using the tim-stable branch of conductor (have you got that far?)?
+<a name="l-33"></a><span class="tm">15:15:27</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> rock
+<a name="l-34"></a><span class="tm">15:15:30</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">cwolfe__:</span> My intention is to use tim-stable, but no, haven't got that far yet.
+<a name="l-35"></a><span class="tm">15:15:52</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">cwolfe__:</span> I kind of figured that would be the bit to do after getting imagefactory configured.
+<a name="l-36"></a><span class="tm">15:16:19</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> makes sense to me
+<a name="l-37"></a><span class="tm">15:17:35</span><span class="nk"> &lt;giulivo&gt;</span> eggmaster, what is the branch we should look for ?
+<a name="l-38"></a><span class="tm">15:17:50</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> 2012-Dec-1
+<a name="l-39"></a><span class="tm">15:18:14</span><span class="nk"> &lt;cwolfe__&gt;</span> <span class="hi">jclift:</span> so configuring tim-stable is likely going to take some puppet work.  i can start on that bit if that would help
+<a name="l-40"></a><span class="tm">15:18:25</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> I still need to pull over at least one commit to that branch
+<a name="l-41"></a><span class="tm">15:18:27</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">cwolfe__:</span> Very much so. :)
+<a name="l-42"></a><span class="tm">15:18:47</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> Ahhh, so using 2012-Dec-1 would be better than tim-stable then?
+<a name="l-43"></a><span class="tm">15:19:06</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> for what purpose?
+<a name="l-44"></a><span class="tm">15:19:28</span><span class="nk"> &lt;giulivo&gt;</span> I think we should branch deltacloud and imgfac too, correct?
+<a name="l-45"></a><span class="tm">15:19:30</span><span class="nk"> &lt;jclift&gt;</span> Does 2012-Dec-1 have any kind of Tim integration in it?
+<a name="l-46"></a><span class="tm">15:19:32</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> for the next release testing/development don't use 2012-Dec-1
+<a name="l-47"></a><span class="tm">15:19:37</span><span class="nk"> &lt;jclift&gt;</span> Ahh, k.
+<a name="l-48"></a><span class="tm">15:19:42 </span><span class="nka">* jclift</span> <span class="ac">almost got confused</span>
+<a name="l-49"></a><span class="tm">15:19:48</span><span class="nk"> &lt;jclift&gt;</span> tim-stable it is then. :)
+<a name="l-50"></a><span class="tm">15:19:49</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> 2012-Dec-1 is 'minor release for sprint that just ended'
+<a name="l-51"></a><span class="tm">15:20:05</span><span class="nk"> &lt;jclift&gt;</span> Sorry, have been up since early morning.
+<a name="l-52"></a><span class="tm">15:20:14</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> no worries thanks for asking :)
+<a name="l-53"></a><span class="tm">15:20:32</span><span class="nk"> &lt;eggmaster&gt;</span> better to look confused out loud than remain confused in silence I always say
+<a name="l-54"></a><span class="tm">15:20:37</span><span class="nk"> &lt;eggmaster&gt;</span> and I live those words hehe
+<a name="l-55"></a><span class="tm">15:21:43</span><span class="nk"> &lt;jclift&gt;</span> :)
+<a name="l-56"></a><span class="tm">15:21:46</span><span class="nk"> &lt;eggmaster&gt;</span> So this is good stuff imho, I am really relieved to hear how far along jclift has gotten the factory stuff, and that dajo and giulivo got that issue worked out with testing via dev-tools
+<a name="l-57"></a><span class="tm">15:21:57</span><span class="nk"> &lt;eggmaster&gt;</span> nice work everybody.
+<a name="l-58"></a><span class="tm">15:22:35</span><span class="nk"> &lt;eggmaster&gt;</span> So, next topic unless anyone has additional status update type stuff to report?
+<a name="l-59"></a><span class="tm">15:22:40</span><span class="nk"> &lt;giulivo&gt;</span> eggmaster, but to test the components together
+<a name="l-60"></a><span class="tm">15:22:58</span><span class="nk"> &lt;giulivo&gt;</span> we need some 'point in time' for dc and imgfac
+<a name="l-61"></a><span class="tm">15:23:05</span><span class="nk"> &lt;eggmaster&gt;</span> yeah
+<a name="l-62"></a><span class="tm">15:23:17 </span><span class="nka">* jclift</span> <span class="ac">is just using master for both atm</span>
+<a name="l-63"></a><span class="tm">15:23:37</span><span class="nk"> &lt;cwolfe__&gt;</span> eggmaster, i have a minor pull request in to dev-tools that fixes ubuntu / system ruby... it'd be cool if some could volunteer to look at that eventually :-)
+<a name="l-64"></a><span class="tm">15:23:39</span><span class="nk"> &lt;jclift&gt;</span> But that's obviously not going to work for the actual proper release.
+<a name="l-65"></a><span class="tm">15:24:50</span><span class="nk"> &lt;eggmaster&gt;</span> yeah. So I have not looked at their repos to see how they branch for releases; surely they must have tags in there that correspond to releases they've done?
+<a name="l-66"></a><span class="tm">15:25:10</span><span class="nk"> &lt;eggmaster&gt;</span> Is there a reason we need to run off their development tip instead of latest official releases?
+<a name="l-67"></a><span class="tm">15:25:18</span><span class="nk"> &lt;cwolfe__&gt;</span> dc does, and we can point to a particular tag in bootstrap currently
+<a name="l-68"></a><span class="tm">15:25:24</span><span class="nk"> &lt;eggmaster&gt;</span> i.e. is there functionality missing
+<a name="l-69"></a><span class="tm">15:25:55</span><span class="nk"> &lt;giulivo&gt;</span> BUT if we use the latest stable from imgfac and dc
+<a name="l-70"></a><span class="tm">15:25:57</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> Well, it's just how it was when I got to it. :)
+<a name="l-71"></a><span class="tm">15:26:20</span><span class="nk"> &lt;eggmaster&gt;</span> ja
+<a name="l-72"></a><span class="tm">15:26:31</span><span class="nk"> &lt;giulivo&gt;</span> I'm okay with it
+<a name="l-73"></a><span class="tm">15:26:36</span><span class="nk"> &lt;giulivo&gt;</span> (sorry for the CAPS but)
+<a name="l-74"></a><span class="tm">15:27:15</span><span class="nk"> &lt;cwolfe__&gt;</span> fwiw, i think current conductor master needs much older dc, but that changes once tim-stable becomes master...
+<a name="l-75"></a><span class="tm">15:28:01</span><span class="nk"> &lt;jclift&gt;</span> me isn't sure
+<a name="l-76"></a><span class="tm">15:28:44</span><span class="nk"> &lt;jclift&gt;</span> There isn't anything obviously visible wrong in the WebUI when they're used together... but that was with unconfigured imgfac
+<a name="l-77"></a><span class="tm">15:28:57</span><span class="nk"> &lt;jclift&gt;</span> So, might not have been touching DC in that configuration at all
+<a name="l-78"></a><span class="tm">15:30:46</span><span class="nk"> &lt;dajo&gt;</span> the aeolus-all installs and then bootstrap pull in DC 1.0.5 which is their latest official release (I believe 1.0.6 is going out the door right now) so some amount of testing using 1.0.5 has been done without issue
+<a name="l-79"></a><span class="tm">15:31:25</span><span class="nk"> &lt;rlandy&gt;</span> 1.0.6 which may be called 1.1.0 will be out next week in gem version - rpm is questionable
+<a name="l-80"></a><span class="tm">15:31:45</span><span class="nk"> &lt;giulivo&gt;</span> AFAIK we should always use dev-tools
+<a name="l-81"></a><span class="tm">15:31:51</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> +1
+<a name="l-82"></a><span class="tm">15:31:59</span><span class="nk"> &lt;dajo&gt;</span> the point that I was making though was some amount of testing has been done with 1.0.5 and it seems a okay
+<a name="l-83"></a><span class="tm">15:32:02</span><span class="nk"> &lt;cwolfe__&gt;</span> ah, glad to hear dc 1.0.5 was working without issue
+<a name="l-84"></a><span class="tm">15:32:24</span><span class="nk"> &lt;giulivo&gt;</span> and I also like the 'use the latest stable' approach
+<a name="l-85"></a><span class="tm">15:32:42</span><span class="nk"> &lt;giulivo&gt;</span> that's how things should do, unless someone from conductor requires an older version
+<a name="l-86"></a><span class="tm">15:32:46</span><span class="nk"> &lt;giulivo&gt;</span> then we'll have an exception
+<a name="l-87"></a><span class="tm">15:32:49</span><span class="nk"> &lt;giulivo&gt;</span> makes any sense?
+<a name="l-88"></a><span class="tm">15:32:55</span><span class="nk"> &lt;dajo&gt;</span> I agree, we should always use just dev tools, up till yesterday, I was always hitting issues without first laying down aeolus-all which is why I keep using it as a crutch
+<a name="l-89"></a><span class="tm">15:33:48</span><span class="nk"> &lt;dajo&gt;</span> point at master could be problematic at any point in time though, should we use a known stable
+<a name="l-90"></a><span class="tm">15:34:01</span><span class="nk"> &lt;dajo&gt;</span> pointing
+<a name="l-91"></a><span class="tm">15:34:51</span><span class="nk"> &lt;jclift&gt;</span> this is all pretty self-evident ;)
+<a name="l-92"></a><span class="tm">15:35:23</span><span class="nk"> &lt;eggmaster&gt;</span> So my thought was that as part of the install doc for each release (which should just augment the instructions for dev-tools based install/setup) we'd just list a bunch of 'export FOO_COMPONENT_TAG=project-release-tag" statements $user can paste in before running bootstrap
+<a name="l-93"></a><span class="tm">15:36:09</span><span class="nk"> &lt;cwolfe__&gt;</span> +1
+<a name="l-94"></a><span class="tm">15:36:19</span><span class="nk"> &lt;eggmaster&gt;</span> i.e. 'to use release 2012-Dec-1, paste these definitions, and then run bootstrap per usual'
+<a name="l-95"></a><span class="tm">15:36:34</span><span class="nk"> &lt;jclift&gt;</span> -1
+<a name="l-96"></a><span class="tm">15:36:54</span><span class="nk"> &lt;jclift&gt;</span> Well, I suppose we could do that in a "Note - foo" type of thing.
+<a name="l-97"></a><span class="tm">15:37:11</span><span class="nk"> &lt;jclift&gt;</span> But shouldn't we just have things set up to use sensible defaults?
+<a name="l-98"></a><span class="tm">15:38:00</span><span class="nk"> &lt;dajo&gt;</span> +1 for known defaults
+<a name="l-99"></a><span class="tm">15:38:05</span><span class="nk"> &lt;jclift&gt;</span> curl -sL https://raw.github.com/aeolusproject/dev-tools/2013-Jan-1/bootstrap.sh | bash -x
+<a name="l-100"></a><span class="tm">15:38:12</span><span class="nk"> &lt;jclift&gt;</span> (that's an example curl)
+<a name="l-101"></a><span class="tm">15:38:14</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> yeah you're right
+<a name="l-102"></a><span class="tm">15:38:23</span><span class="nk"> &lt;eggmaster&gt;</span> that's how we talked about it previously. thanks.
+<a name="l-103"></a><span class="tm">15:38:50 </span><span class="nka">* eggmaster</span> <span class="ac">tases brain, hopes for positive result</span>
+<a name="l-104"></a><span class="tm">15:39:01</span><span class="nk"> &lt;jclift&gt;</span> So, in the above case, the 2013-Jan-1 version of bootstrap.sh would have defaults in it that work together for the 2012-Jan-1 "release".  Type of thing. :)
+<a name="l-105"></a><span class="tm">15:39:10</span><span class="nk"> &lt;eggmaster&gt;</span> right on the mark. yep.
+<a name="l-106"></a><span class="tm">15:39:11</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> Shocking!
+<a name="l-107"></a><span class="tm">15:39:41</span><span class="nk"> &lt;eggmaster&gt;</span> OK, so next point:
+<a name="l-108"></a><span class="tm">15:39:48</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="topic">#topic </span><span class="topicline">audrey!</span>
+<a name="l-109"></a><span class="tm">15:39:54</span><span class="nk"> &lt;giulivo&gt;</span> sec
+<a name="l-110"></a><span class="tm">15:40:02</span><span class="nk"> &lt;giulivo&gt;</span> put that as an idea
+<a name="l-111"></a><span class="tm">15:40:06</span><span class="nk"> &lt;giulivo&gt;</span> for the glory of meetbot!
+<a name="l-112"></a><span class="tm">15:40:20</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> go ahead
+<a name="l-113"></a><span class="tm">15:40:38</span><span class="nk"> &lt;eggmaster&gt;</span> (not sure what you want me to put as an idea)
+<a name="l-114"></a><span class="tm">15:40:52</span><span class="nk"> &lt;giulivo&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">'curl -sL https://raw.github.com/aeolusproject/dev-tools/2013-Jan-1/bootstrap.sh | bash -x ' would have defaults in it that work together for the 2012-Jan-1 "release".  Type of thing. :)</span>
+<a name="l-115"></a><span class="tm">15:41:02</span><span class="nk"> &lt;eggmaster&gt;</span> excellent.
+<a name="l-116"></a><span class="tm">15:41:13</span><span class="nk"> &lt;jclift&gt;</span> 2013-Jan-1 release that is.
+<a name="l-117"></a><span class="tm">15:41:15</span><span class="nk"> &lt;jclift&gt;</span> :p
+<a name="l-118"></a><span class="tm">15:41:21</span><span class="nk"> &lt;cwolfe__&gt;</span> oh, i thought he meant the tase ;-)
+<a name="l-119"></a><span class="tm">15:41:40</span><span class="nk"> &lt;eggmaster&gt;</span> So giulivo noted in conversation (and on the agenda) that we have been neglecting audrey setup in dev-tools.
+<a name="l-120"></a><span class="tm">15:41:41</span><span class="nk"> &lt;jclift&gt;</span> Heh
+<a name="l-121"></a><span class="tm">15:41:43</span><span class="nk"> &lt;eggmaster&gt;</span> is that the place for it?
+<a name="l-122"></a><span class="tm">15:42:06</span><span class="nk"> &lt;eggmaster&gt;</span> or can it/should it be a separate dep that $user installs outside of dev-tools?
+<a name="l-123"></a><span class="tm">15:42:40</span><span class="nk"> &lt;giulivo&gt;</span> to me it looks like it should go in dev-tools for the simple fact that we expect dev-tools to install all the components for us
+<a name="l-124"></a><span class="tm">15:42:52</span><span class="nk"> &lt;jclift&gt;</span> Hmmm.  Outside of dev-tools is my first thought... unless the Audrey server happily runs on same host as conductor now?
+<a name="l-125"></a><span class="tm">15:43:03</span><span class="nk"> &lt;giulivo&gt;</span> (the components we deveolp)
+<a name="l-126"></a><span class="tm">15:43:06</span><span class="nk"> &lt;giulivo&gt;</span> jclift, it does
+<a name="l-127"></a><span class="tm">15:43:17</span><span class="nk"> &lt;jclift&gt;</span> Ahh, in that case, no objection here. :)
+<a name="l-128"></a><span class="tm">15:44:25</span><span class="nk"> &lt;jclift&gt;</span> Anyone know if the code for setting up Audrey server is easy or if it's complex?
+<a name="l-129"></a><span class="tm">15:44:38 </span><span class="nka">* jclift</span> <span class="ac">is wondering which release of dev-tools we should aim for</span>
+<a name="l-130"></a><span class="tm">15:46:57</span><span class="nk"> &lt;morazi&gt;</span> jclift, I'd poke at blomquist for that.  I know he's done some work to make it so that it can be set up in parallel with conductor at least but I don't know how crazy it gets.  A bunch of it is possibly ignorable because I think the nasty parts were in apache setup collisions
+<a name="l-131"></a><span class="tm">15:46:58</span><span class="nk"> &lt;cwolfe__&gt;</span> not sure we should include audrey in bootstrap proper: it doesn't seem to be actively being worked on, at least in github.  adds more complexity to bootstrap which is also targeted to new devs
+<a name="l-132"></a><span class="tm">15:47:32</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">morazi:</span> cool.
+<a name="l-133"></a><span class="tm">15:47:38</span><span class="nk"> &lt;morazi&gt;</span> I'd ++ what cwolfe__ says as well.  I think I'd rather make sure we are solid in imgfac, tim, dc-core before anything else.
+<a name="l-134"></a><span class="tm">15:48:02</span><span class="nk"> &lt;giulivo&gt;</span> morazi, but we currently test and support audrey on the same host where conductor is installed
+<a name="l-135"></a><span class="tm">15:48:04</span><span class="nk"> &lt;morazi&gt;</span> and make sure we have feedback from dajo that they are able to take a clean box, bootstrap.sh and run tests against it with minimal fuss
+<a name="l-136"></a><span class="tm">15:48:55</span><span class="nk"> &lt;giulivo&gt;</span> cwolfe__, morazi without audrey people wont' be able to execute commands on the deployed instances at launch time
+<a name="l-137"></a><span class="tm">15:49:31</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> well the question, I think, is whether it needs to be in dev-tools a) at all, b) if yes, for this sprint
+<a name="l-138"></a><span class="tm">15:49:51</span><span class="nk"> &lt;eggmaster&gt;</span> my answers are a) maybe b) no
+<a name="l-139"></a><span class="tm">15:50:04</span><span class="nk"> &lt;eggmaster&gt;</span> I'm ok with requiring user to install it separate.
+<a name="l-140"></a><span class="tm">15:50:05</span><span class="nk"> &lt;jclift&gt;</span> If it turns out to "not be too hard", then I'm with giulio on this one
+<a name="l-141"></a><span class="tm">15:50:17</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> me too,
+<a name="l-142"></a><span class="tm">15:50:24</span><span class="nk"> &lt;jclift&gt;</span> It _would_ be good from a "providing a complete working stack" point of view.
+<a name="l-143"></a><span class="tm">15:50:28</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> but not at the expense of tightening up the other stuff
+<a name="l-144"></a><span class="tm">15:50:33</span><span class="nk"> &lt;jclift&gt;</span> No idea of amount of effort needed tho.
+<a name="l-145"></a><span class="tm">15:50:49</span><span class="nk"> &lt;eggmaster&gt;</span> i.e. priority *now* should be on fac, tim, dc
+<a name="l-146"></a><span class="tm">15:51:07</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> disagree?
+<a name="l-147"></a><span class="tm">15:51:13</span><span class="nk"> &lt;jclift&gt;</span> There's also the question of whether heat should be set up too?
+<a name="l-148"></a><span class="tm">15:51:21</span><span class="nk"> &lt;giulivo&gt;</span> fine for me, I'll follow
+<a name="l-149"></a><span class="tm">15:51:30</span><span class="nk"> &lt;giulivo&gt;</span> just try to discuss my thoughts
+<a name="l-150"></a><span class="tm">15:51:32 </span><span class="nka">* jclift</span> <span class="ac">doesn't know how the heat integration for Aeolus going</span>
+<a name="l-151"></a><span class="tm">15:51:42</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">giulivo:</span> no worries at all. :)
+<a name="l-152"></a><span class="tm">15:51:44</span><span class="nk"> &lt;morazi&gt;</span> yea, that sounds about right to me eggmaster
+<a name="l-153"></a><span class="tm">15:52:52</span><span class="nk"> &lt;morazi&gt;</span> giulivo, one thing that would be helpful though is knowing how much of the present tests rely on audrey.  It may mean that we simply want to run 'smoke test' for a while and not worry about deep configurability
+<a name="l-154"></a><span class="tm">15:53:42 </span><span class="nka">* jclift</span> <span class="ac">points out we're nearly at the hour</span>
+<a name="l-155"></a><span class="tm">15:53:48</span><span class="nk"> &lt;jclift&gt;</span> (for the meeting)
+<a name="l-156"></a><span class="tm">15:54:13</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> needing a smoke? ;)
+<a name="l-157"></a><span class="tm">15:54:18</span><span class="nk"> &lt;giulivo&gt;</span> morazi, dajo can help here but the tests for audrey are 'standalone', the existing conductor testing doesn't rely much on the presence of audrey
+<a name="l-158"></a><span class="tm">15:54:20</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> are you watching the seconds tick by?
+<a name="l-159"></a><span class="tm">15:54:26</span><span class="nk"> &lt;jclift&gt;</span> s/smoke/sleep/ :)
+<a name="l-160"></a><span class="tm">15:54:33</span><span class="nk"> &lt;eggmaster&gt;</span> hehe
+<a name="l-161"></a><span class="tm">15:54:55</span><span class="nk"> &lt;giulivo&gt;</span> I just wanted to reinforce that we should be able to get that to work on the same host where conductor is installed
+<a name="l-162"></a><span class="tm">15:54:57</span><span class="nk"> &lt;dajo&gt;</span> yeah, we have a audrey test suite, but the majority of the regression is not audrey related
+<a name="l-163"></a><span class="tm">15:55:13</span><span class="nk"> &lt;eggmaster&gt;</span> OK so I'd just like to throw one potential hand grenade before we break
+<a name="l-164"></a><span class="tm">15:55:53</span><span class="nk"> &lt;eggmaster&gt;</span> hewbrocca was suggesting that maybe we might want to build/install gems in dev-tools, did anyone else catch that conversation, and is it worth revisiting the idea now or later?
+<a name="l-165"></a><span class="tm">15:55:57</span><span class="nk"> &lt;jclift&gt;</span> HA! The pin is still in?
+<a name="l-166"></a><span class="tm">15:56:15</span><span class="nk"> &lt;dajo&gt;</span> :)
+<a name="l-167"></a><span class="tm">15:56:19</span><span class="nk"> &lt;morazi&gt;</span> perfect.  giulivo appreciate you point that out to us!  We should definitely think about what we want to do there from a dev point of view
+<a name="l-168"></a><span class="tm">15:56:28</span><span class="nk"> &lt;jclift&gt;</span> "Meh" to that.  Maybe future release. ;)
+<a name="l-169"></a><span class="tm">15:56:50</span><span class="nk"> &lt;eggmaster&gt;</span> yeah I am on the cool side of lukewarm on that idea tbh
+<a name="l-170"></a><span class="tm">15:57:03</span><span class="nk"> &lt;eggmaster&gt;</span> but I thought I'd raise the point anyway.
+<a name="l-171"></a><span class="tm">15:57:25</span><span class="nk"> &lt;eggmaster&gt;</span> I don't see an urgent need to discuss it in the next 3 min, let's talk about it next time or in the intervening week.
+<a name="l-172"></a><span class="tm">15:57:31</span><span class="nk"> &lt;jclift&gt;</span> Oh, one other idea then...
+<a name="l-173"></a><span class="tm">15:57:43</span><span class="nk"> &lt;jclift&gt;</span> Should we move dev-tools repo to main aeolusproject org now?
+<a name="l-174"></a><span class="tm">15:57:57</span><span class="nk"> &lt;jclift&gt;</span> i.e "incubator" doesn't seem right any more
+<a name="l-175"></a><span class="tm">15:58:09</span><span class="nk"> &lt;morazi&gt;</span> eggmaster, that's a fine question....
+<a name="l-176"></a><span class="tm">15:58:13</span><span class="nk"> &lt;jclift&gt;</span> Same for Tim at rel time too (its's still there isn't it?)
+<a name="l-177"></a><span class="tm">15:58:17</span><span class="nk"> &lt;morazi&gt;</span> I would think about it this way personally...
+<a name="l-178"></a><span class="tm">15:58:39</span><span class="nk"> &lt;morazi&gt;</span> 1.  Do we all agree the main mission of dev_tools is to make it easy for a developer to get setup on a clean box and start coding now_ish.
+<a name="l-179"></a><span class="tm">15:58:41</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">morazi:</span> my only 'downside' on it is versioning on the gems we create
+<a name="l-180"></a><span class="tm">15:59:19</span><span class="nk"> &lt;morazi&gt;</span> 2.  If we agree to to that, are we there yet?  Does taking on the gem stuff help us get there?
+<a name="l-181"></a><span class="tm">15:59:38 </span><span class="nka">* jclift</span> <span class="ac">kind of things "dev-tools" should also be a generall installer for newbies too.  It should be able to do both, the way we're coding it.</span>
+<a name="l-182"></a><span class="tm">15:59:49</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">morazi:</span> I agree with your points
+<a name="l-183"></a><span class="tm">15:59:59</span><span class="nk"> &lt;morazi&gt;</span> I'd consider it a pretty interesting thing if dev_tools starts being say tito and/or gem aware after we stabilize it as a way to allow it expand to:
+<a name="l-184"></a><span class="tm">16:00:21</span><span class="nk"> &lt;morazi&gt;</span> dev_tools == that tool that devs use to quickly get up to speed and release project artifacts
+<a name="l-185"></a><span class="tm">16:00:34</span><span class="nk"> &lt;morazi&gt;</span> having said that, I'm still fighting off some sickness so I might be crazy atm
+<a name="l-186"></a><span class="tm">16:00:44</span><span class="nk"> &lt;eggmaster&gt;</span> haha
+<a name="l-187"></a><span class="tm">16:00:56</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">morazi:</span> I like your kind of crazy though
+<a name="l-188"></a><span class="tm">16:01:27</span><span class="nk"> &lt;jclift&gt;</span> *cough* over time *cough*
+<a name="l-189"></a><span class="tm">16:01:37</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> go to sleep :)
+<a name="l-190"></a><span class="tm">16:01:48</span><span class="nk"> &lt;jclift&gt;</span> :)
+<a name="l-191"></a><span class="tm">16:02:37</span><span class="nk"> &lt;jclift&gt;</span> <span class="cmd">#endmeeting </span><span class="cmdline">?</span>
+<a name="l-192"></a><span class="tm">16:02:44</span><span class="nk"> &lt;eggmaster&gt;</span> yeah let's call it
+<a name="l-193"></a><span class="tm">16:02:46</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>
