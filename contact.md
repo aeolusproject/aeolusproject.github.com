@@ -11,6 +11,7 @@ Contact Us
 
 - [Internet Relay Chat (IRC)](#irc)
 - [Mailing lists](#maillists)
+- [Security](#security)
 - [Need to talk to a human?](#private)
 
 <div id="irc" class="section-grouping">
@@ -38,9 +39,15 @@ will be promptly addressed:
 Release announcements are sent to:
 [aeolus-announce](https://lists.fedorahosted.org/mailman/listinfo/aeolus-announce)
 ([archives](https://lists.fedorahosted.org/pipermail/aeolus-announce/))
+</div>
+<br />
+
+<div id="security" class="section-grouping">
+## Security
 
 Need to report a security bug?
-Please send an email to aeolus-security AT fedorahosted DOT org
+
+Please send an email to <aeolus-security@fedorahosted.org>. Use our [GPG public key](/keys/aeolus-security-public-gpg-key.asc) to keep your message safe and give us a secure way to respond. **We will try to respond within 24 hours**. If you don't hear from us, please ping us on [Twitter](https://twitter.com/aeolusproject).
 </div>
 <br />
 
