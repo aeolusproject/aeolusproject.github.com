@@ -19,6 +19,10 @@ RELEASE NAME
   </div>
   <div class='grid_16'>
 
+##Project Overview
+
+A quick summary of the project and its goals
+
 ##Overview
 
 An easily digestable summary of the release; this is less technical and more business-oriented.
