@@ -1,0 +1,266 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#aeolus-meeting log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">15:00:13</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">15:00:13</span><span class="nk"> &lt;ambot&gt;</span> Meeting started Thu Jan 17 15:00:13 2013 UTC.  The chair is eggmaster. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">15:00:13</span><span class="nk"> &lt;ambot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">15:00:32</span><span class="nk"> &lt;eggmaster&gt;</span> Hi everybody. Welcome to the release cabal meeting.
+<a name="l-5"></a><span class="tm">15:00:54</span><span class="nk"> &lt;cwolfe_&gt;</span> hello
+<a name="l-6"></a><span class="tm">15:01:06</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="topic">#topic </span><span class="topicline">sprint schedule reminders</span>
+<a name="l-7"></a><span class="tm">15:01:26</span><span class="nk"> &lt;eggmaster&gt;</span> So we are on day 7 of the current sprint, by my reckoning
+<a name="l-8"></a><span class="tm">15:01:31</span><span class="nk"> &lt;eggmaster&gt;</span> https://github.com/eggmaster/aeolus-sop/blob/master/SOP-aeolus.markdown
+<a name="l-9"></a><span class="tm">15:02:09</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#info </span><span class="cmdline">We are expecting pull requests in by this coming Monday, 21-Jan</span>
+<a name="l-10"></a><span class="tm">15:02:18</span><span class="nk"> &lt;jclift&gt;</span> Cool
+<a name="l-11"></a><span class="tm">15:02:34</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#info </span><span class="cmdline">repos should be tagged by Wed, 22-Jan to commence integration testing</span>
+<a name="l-12"></a><span class="tm">15:03:00</span><span class="nk"> &lt;eggmaster&gt;</span> I hope that all actually comes to pass.
+<a name="l-13"></a><span class="tm">15:03:26</span><span class="nk"> &lt;eggmaster&gt;</span> I'd like to get a sense of where we are at with the Tim stuff landing because I have no idea where that is.
+<a name="l-14"></a><span class="tm">15:03:35</span><span class="nk"> &lt;eggmaster&gt;</span> Anyone know more than me?
+<a name="l-15"></a><span class="tm">15:03:40</span><span class="nk"> &lt;cwolfe_&gt;</span> it hit conductor master yesterday
+<a name="l-16"></a><span class="tm">15:03:59</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="topic">#topic </span><span class="topicline">status of current work toward next release</span>
+<a name="l-17"></a><span class="tm">15:04:07</span><span class="nk"> &lt;eggmaster&gt;</span> I'm thinking this falls under the next topic.
+<a name="l-18"></a><span class="tm">15:04:48</span><span class="nk"> &lt;eggmaster&gt;</span> Anyone started testing it with bootstrap? does it Just Work?
+<a name="l-19"></a><span class="tm">15:05:05</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> jprovazn mentioned Conductor doesn't support EC2 yet with Tim, which seems a bit weird.
+<a name="l-20"></a><span class="tm">15:05:06</span><span class="nk"> &lt;cwolfe_&gt;</span> yes.  so, i've got too things going i'd like to see in dev-tools asap.  one is tim support... the dev-tools portion of it seems to work, i started testing it yesterday and ran into a bug
+<a name="l-21"></a><span class="tm">15:05:39 </span><span class="nka">* jclift</span> <span class="ac">is testing a potential fix to his "Routing Error" blocker as well</span>
+<a name="l-22"></a><span class="tm">15:05:47</span><span class="nk"> &lt;cwolfe_&gt;</span> to be clear: the puppet part of dev-tools that pulls the tim source and updates conductor's Gemfile to use that instead of :git seems to work fine
+<a name="l-23"></a><span class="tm">15:05:55</span><span class="nk"> &lt;jclift&gt;</span> Cool
+<a name="l-24"></a><span class="tm">15:05:58</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe_:</span> great
+<a name="l-25"></a><span class="tm">15:06:21 </span><span class="nka">* jclift</span> <span class="ac">wants to update the ImageFactory code in dev-tools, so it handles errors better and can be run more than once</span>
+<a name="l-26"></a><span class="tm">15:06:22</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe_:</span> so from a bootstrap POV (not talking about whether it *works* once it's installed) it seems on track yea?
+<a name="l-27"></a><span class="tm">15:06:26</span><span class="nk"> &lt;cwolfe_&gt;</span> that is in my forked version of master, i'd like that merged into dev-tools master asap, i should do a bit more testing though
+<a name="l-28"></a><span class="tm">15:06:40</span><span class="nk"> &lt;cwolfe_&gt;</span> <span class="hi">eggmaster:</span> yes
+<a name="l-29"></a><span class="tm">15:06:44</span><span class="nk"> &lt;eggmaster&gt;</span> xlnt
+<a name="l-30"></a><span class="tm">15:07:14</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe_:</span> would you mind summarizing that in a one-line #info for meeting notes please
+<a name="l-31"></a><span class="tm">15:07:29</span><span class="nk"> &lt;cwolfe_&gt;</span> sure
+<a name="l-32"></a><span class="tm">15:07:44</span><span class="nk"> &lt;eggmaster&gt;</span> take two lines if you are greedy :)
+<a name="l-33"></a><span class="tm">15:08:20</span><span class="nk"> &lt;cwolfe_&gt;</span> <span class="cmd">#info </span><span class="cmdline">cwolferh/dev-tools master now has tim support, meaning the tim source code is downloaded and conductor's Gemfile is updated to point at that</span>
+<a name="l-34"></a><span class="tm">15:09:01</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">cwolfe_:</span> Does it use the 0.2.0 tag atm?
+<a name="l-35"></a><span class="tm">15:09:37</span><span class="nk"> &lt;cwolfe_&gt;</span> <span class="hi">jclift:</span> no, it uses tim master which happens to be 0.2.0 at the moment.  or at least yesterday
+<a name="l-36"></a><span class="tm">15:10:19</span><span class="nk"> &lt;jclift&gt;</span> k
+<a name="l-37"></a><span class="tm">15:10:19</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">cwolfe_:</span> We should start adding in explicit support for specific tags
+<a name="l-38"></a><span class="tm">15:10:25</span><span class="nk"> &lt;eggmaster&gt;</span> but jayg has a release branch (or at least a tag) already, that's great.
+<a name="l-39"></a><span class="tm">15:10:27</span><span class="nk"> &lt;cwolfe_&gt;</span> another thing i've worked on: https://github.com/cwolferh/dev-tools/commit/1bf9ea9c  this needs to land very soon so that dev-tools can properly specify a tag for any project
+<a name="l-40"></a><span class="tm">15:10:46</span><span class="nk"> &lt;cwolfe_&gt;</span> <span class="hi">jclift:</span> the support is there with ^^ :-)
+<a name="l-41"></a><span class="tm">15:10:48</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">cwolfe_:</span> It'll have to be FACTER_* type variable won't it, so it can be set in the scripting?
+<a name="l-42"></a><span class="tm">15:10:53</span><span class="nk"> &lt;jclift&gt;</span> k
+<a name="l-43"></a><span class="tm">15:10:54</span><span class="nk"> &lt;cwolfe_&gt;</span> yes
+<a name="l-44"></a><span class="tm">15:10:58</span><span class="nk"> &lt;jclift&gt;</span> Sweet. :)
+<a name="l-45"></a><span class="tm">15:11:57</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">cwolfe_:</span> I should start looking at your recent scripting stuff again, and rebase into that once I'm happy the Routing error is fixed.
+<a name="l-46"></a><span class="tm">15:12:04</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#info </span><span class="cmdline">dajo has done a bootstrap install against the 2012-Dec-1 tags, and build/push/deploy succeeds on all providers</span>
+<a name="l-47"></a><span class="tm">15:12:24</span><span class="nk"> &lt;eggmaster&gt;</span> ^^ re: previous (minor) release work
+<a name="l-48"></a><span class="tm">15:12:35</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> That was prior to Tim wasn't it?
+<a name="l-49"></a><span class="tm">15:12:40</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> yes
+<a name="l-50"></a><span class="tm">15:12:52</span><span class="nk"> &lt;jclift&gt;</span> Cool, just making sure.  I wasn't certain the other day.
+<a name="l-51"></a><span class="tm">15:13:15</span><span class="nk"> &lt;eggmaster&gt;</span> But I'd like to get a branch in on dev-tools that represents our 'previous minor release'
+<a name="l-52"></a><span class="tm">15:13:28</span><span class="nk"> &lt;eggmaster&gt;</span> i.e. that sets up the tags in ENV variables like we talked about doing.
+<a name="l-53"></a><span class="tm">15:13:37</span><span class="nk"> &lt;eggmaster&gt;</span> So we have a model of how we're going to do it for the next release.
+<a name="l-54"></a><span class="tm">15:13:50</span><span class="nk"> &lt;jclift&gt;</span> Hmmm, that might actually make it harder?
+<a name="l-55"></a><span class="tm">15:13:55</span><span class="nk"> &lt;eggmaster&gt;</span> (and so we can complete the docs on the minor release and go through the motions of getting it out)
+<a name="l-56"></a><span class="tm">15:14:07</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> what do you mean?
+<a name="l-57"></a><span class="tm">15:14:18</span><span class="nk"> &lt;jclift&gt;</span> cwolfe_ has been adding Tim support into the Puppet stuff, so that would mean removing it just for previous rel?
+<a name="l-58"></a><span class="tm">15:14:43</span><span class="nk"> &lt;jclift&gt;</span> i.e. developing another branch just for that
+<a name="l-59"></a><span class="tm">15:14:49</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> well we can branch off a previous commit
+<a name="l-60"></a><span class="tm">15:14:49</span><span class="nk"> &lt;jclift&gt;</span> Sounds like a pita?
+<a name="l-61"></a><span class="tm">15:15:13 </span><span class="nka">* jclift</span> <span class="ac">volunteers eggmaster to do the work :p</span>
+<a name="l-62"></a><span class="tm">15:16:19</span><span class="nk"> &lt;cwolfe_&gt;</span> we don't have much of a choice about branching per release anyway, do we?  at the very least, bootstrap.sh will have different default branch/tag variables
+<a name="l-63"></a><span class="tm">15:16:41</span><span class="nk"> &lt;jclift&gt;</span> Yeah, I was kind of hoping we could just keep it to that mostly. :)
+<a name="l-64"></a><span class="tm">15:16:46</span><span class="nk"> &lt;jclift&gt;</span> Oh well
+<a name="l-65"></a><span class="tm">15:16:49</span><span class="nk"> &lt;mpovolny&gt;</span> sorry for being late and asking what might have been already resolved, but what is the target rails version for the release? 3.2.12?
+<a name="l-66"></a><span class="tm">15:17:35</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> np, let's get to that in a minute.
+<a name="l-67"></a><span class="tm">15:17:45</span><span class="nk"> &lt;mpovolny&gt;</span> oook, so we are still on the meta level ;-)
+<a name="l-68"></a><span class="tm">15:17:59</span><span class="nk"> &lt;eggmaster&gt;</span> hehe yea
+<a name="l-69"></a><span class="tm">15:20:29</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe_:</span> so I can't create a branch on dev-tools or tag anything in there
+<a name="l-70"></a><span class="tm">15:20:43</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe_:</span> but I'd like to get that set up so that dajo giulivo et al can give that a whirl
+<a name="l-71"></a><span class="tm">15:21:04</span><span class="nk"> &lt;cwolfe_&gt;</span> so, https://github.com/cwolferh/dev-tools/commit/1bf9ea9c should go into dev-tools master next.  at that point, we can set the FACTER*_BRANCH vars to point at tags for a release
+<a name="l-72"></a><span class="tm">15:21:16</span><span class="nk"> &lt;eggmaster&gt;</span> OK.
+<a name="l-73"></a><span class="tm">15:21:23</span><span class="nk"> &lt;cwolfe_&gt;</span> <span class="hi">eggmaster:</span> ok, i'll see if i can figure out admin there
+<a name="l-74"></a><span class="tm">15:21:31</span><span class="nk"> &lt;giulivo&gt;</span> but is it only about the tag we use? I think the script itself will have to be branched
+<a name="l-75"></a><span class="tm">15:21:41</span><span class="nk"> &lt;cwolfe_&gt;</span> yes, it will
+<a name="l-76"></a><span class="tm">15:21:42</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> yes
+<a name="l-77"></a><span class="tm">15:21:50</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> we'll have to check in a commit that sets the variables
+<a name="l-78"></a><span class="tm">15:21:51</span><span class="nk"> &lt;giulivo&gt;</span> oh sorry for asking the obvious
+<a name="l-79"></a><span class="tm">15:22:02</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> not at all
+<a name="l-80"></a><span class="tm">15:22:39</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">eggmaster and cwolfe_ will work on getting the minor release branch/tag set up in dev-tools repo</span>
+<a name="l-81"></a><span class="tm">15:23:19</span><span class="nk"> &lt;eggmaster&gt;</span> with the aim of making it useable by dajo &amp; giulivo
+<a name="l-82"></a><span class="tm">15:23:37</span><span class="nk"> &lt;cwolfe_&gt;</span> eggmaster, i added you as a core contributor to aeolus-incubator in github, if that helps
+<a name="l-83"></a><span class="tm">15:23:44</span><span class="nk"> &lt;eggmaster&gt;</span> so we can uncover the inevitable quirks before we try it on the 'real deal' release.
+<a name="l-84"></a><span class="tm">15:23:46</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">cwolfe_:</span> https://github.com/aeolus-incubator/dev-tools/settings/collaboration
+<a name="l-85"></a><span class="tm">15:23:48</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe_:</span> great
+<a name="l-86"></a><span class="tm">15:23:54</span><span class="nk"> &lt;eggmaster&gt;</span> ty
+<a name="l-87"></a><span class="tm">15:23:58</span><span class="nk"> &lt;jclift&gt;</span> Heh, late to the party. ;)
+<a name="l-88"></a><span class="tm">15:24:09</span><span class="nk"> &lt;cwolfe_&gt;</span> :-)
+<a name="l-89"></a><span class="tm">15:25:00</span><span class="nk"> &lt;eggmaster&gt;</span> Anyone else have more to say on current topic? going once?
+<a name="l-90"></a><span class="tm">15:25:29</span><span class="nk"> &lt;jclift&gt;</span> Not me
+<a name="l-91"></a><span class="tm">15:25:52</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> you raised the question of what rails for release
+<a name="l-92"></a><span class="tm">15:26:01</span><span class="nk"> &lt;mpovolny&gt;</span> is it current topic?
+<a name="l-93"></a><span class="tm">15:26:15</span><span class="nk"> &lt;mpovolny&gt;</span> well probably we need to wait for 3.2.12
+<a name="l-94"></a><span class="tm">15:26:27</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> yeah we're on 'checkin/status of release related work' which I'd say includes things like version info
+<a name="l-95"></a><span class="tm">15:26:28</span><span class="nk"> &lt;mpovolny&gt;</span> don't have any idea whet that will be out
+<a name="l-96"></a><span class="tm">15:26:30</span><span class="nk"> &lt;jclift&gt;</span> 3.2.11 isn't good?
+<a name="l-97"></a><span class="tm">15:26:33</span><span class="nk"> &lt;mpovolny&gt;</span> no
+<a name="l-98"></a><span class="tm">15:26:38</span><span class="nk"> &lt;jclift&gt;</span> Heh
+<a name="l-99"></a><span class="tm">15:26:40</span><span class="nk"> &lt;mpovolny&gt;</span> regresseion in AR
+<a name="l-100"></a><span class="tm">15:26:51</span><span class="nk"> &lt;jclift&gt;</span> 3.2.11 was security fix, but they broke it in doing so?
+<a name="l-101"></a><span class="tm">15:26:58</span><span class="nk"> &lt;eggmaster&gt;</span> ouch.
+<a name="l-102"></a><span class="tm">15:27:03</span><span class="nk"> &lt;mpovolny&gt;</span> probably broke it earlier
+<a name="l-103"></a><span class="tm">15:27:11</span><span class="nk"> &lt;jclift&gt;</span> Heh
+<a name="l-104"></a><span class="tm">15:27:19</span><span class="nk"> &lt;mpovolny&gt;</span> and probably broke more things that just what surfaced in conductor
+<a name="l-105"></a><span class="tm">15:27:42 </span><span class="nka">* jclift</span> <span class="ac">inserts obvious comment about regression testing</span>
+<a name="l-106"></a><span class="tm">15:27:43</span><span class="nk"> &lt;eggmaster&gt;</span> Well, is this something we should ask tech cabal about? does this mean release slips another sprint? idk.
+<a name="l-107"></a><span class="tm">15:27:46</span><span class="nk"> &lt;mpovolny&gt;</span> not in the master branch we have a reference to unreleased version of rails
+<a name="l-108"></a><span class="tm">15:27:52</span><span class="nk"> &lt;mpovolny&gt;</span> s/not/now
+<a name="l-109"></a><span class="tm">15:28:00</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> Lets not wait
+<a name="l-110"></a><span class="tm">15:28:07</span><span class="nk"> &lt;eggmaster&gt;</span> Or, do we do release, note issue on 3.2.11, then backport when fixed?
+<a name="l-111"></a><span class="tm">15:28:13</span><span class="nk"> &lt;giulivo&gt;</span> <span class="hi">mpovolny:</span> I think the regression only affects 3.2 and not 3.0, is that correct?
+<a name="l-112"></a><span class="tm">15:28:15</span><span class="nk"> &lt;eggmaster&gt;</span> I am leaning toward that.
+<a name="l-113"></a><span class="tm">15:28:16</span><span class="nk"> &lt;jclift&gt;</span> The version of rails that is the "minimum" is really a deployment issue
+<a name="l-114"></a><span class="tm">15:28:17</span><span class="nk"> &lt;cwolfe_&gt;</span> or do another release
+<a name="l-115"></a><span class="tm">15:28:18</span><span class="nk"> &lt;mpovolny&gt;</span> see https://github.com/aeolusproject/conductor/blob/master/src/Gemfile
+<a name="l-116"></a><span class="tm">15:28:42</span><span class="nk"> &lt;jclift&gt;</span> Yeah, rel as soon as we have our own features in place
+<a name="l-117"></a><span class="tm">15:28:58</span><span class="nk"> &lt;cwolfe_&gt;</span> we should do a "release" sooner rather than later so we can demonstrate we know what we are doing, even if it is top secret
+<a name="l-118"></a><span class="tm">15:28:58</span><span class="nk"> &lt;mpovolny&gt;</span> i doubt we work on 3.0 from the TIM integration on
+<a name="l-119"></a><span class="tm">15:29:07</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">cwolfe_:</span> Yep
+<a name="l-120"></a><span class="tm">15:29:08</span><span class="nk"> &lt;eggmaster&gt;</span> k, good good.
+<a name="l-121"></a><span class="tm">15:29:20</span><span class="nk"> &lt;giulivo&gt;</span> <span class="hi">mpovolny:</span> so with the TIM integration conductor is on 3.2 ?
+<a name="l-122"></a><span class="tm">15:29:22</span><span class="nk"> &lt;mpovolny&gt;</span> rails engines being introduced in 3.1 I guess
+<a name="l-123"></a><span class="tm">15:29:25</span><span class="nk"> &lt;eggmaster&gt;</span> sec I need a sweater it's freezing in here
+<a name="l-124"></a><span class="tm">15:29:41</span><span class="nk"> &lt;mpovolny&gt;</span> living on the edge
+<a name="l-125"></a><span class="tm">15:30:05</span><span class="nk"> &lt;cwolfe_&gt;</span> <span class="hi">giulivo:</span> yes, 3.2.  er, conductor master is 3.2
+<a name="l-126"></a><span class="tm">15:30:35</span><span class="nk"> &lt;mpovolny&gt;</span> &gt;&gt; 3.2.11  actually as seen here  https://github.com/aeolusproject/conductor/blob/master/src/Gemfile
+<a name="l-127"></a><span class="tm">15:30:50</span><span class="nk"> &lt;giulivo&gt;</span> oh you posted that earlier, thanks
+<a name="l-128"></a><span class="tm">15:30:55</span><span class="nk"> &lt;giulivo&gt;</span> didn't notice it!
+<a name="l-129"></a><span class="tm">15:30:56</span><span class="nk"> &lt;mpovolny&gt;</span> no prob
+<a name="l-130"></a><span class="tm">15:31:33</span><span class="nk"> &lt;mpovolny&gt;</span> today some guy from katello was speaking about releases
+<a name="l-131"></a><span class="tm">15:31:39</span><span class="nk"> &lt;mpovolny&gt;</span> and there was some fedora guy
+<a name="l-132"></a><span class="tm">15:31:44</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">mpovolny:</span> Hmm... that's probably ok for _development_, but I'm leery of specifying an actual version in our Release.
+<a name="l-133"></a><span class="tm">15:32:01</span><span class="nk"> &lt;jclift&gt;</span> i.e. "must use Rails 3.2.11"
+<a name="l-134"></a><span class="tm">15:32:08</span><span class="nk"> &lt;mpovolny&gt;</span> and it turned out that to get in the next RHEL we shoul be in Fedora 19 with all deps.
+<a name="l-135"></a><span class="tm">15:32:17</span><span class="nk"> &lt;mpovolny&gt;</span> he said that was some kind of a rule
+<a name="l-136"></a><span class="tm">15:32:29</span><span class="nk"> &lt;mpovolny&gt;</span> I don't know if we have some exception from that?
+<a name="l-137"></a><span class="tm">15:32:37</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">mpovolny:</span> Not our problem.
+<a name="l-138"></a><span class="tm">15:32:40</span><span class="nk"> &lt;cwolfe_&gt;</span> <span class="hi">jclift:</span> agree, we should use whatever conductor tag or commit happens to point to
+<a name="l-139"></a><span class="tm">15:32:42</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> that's news to me
+<a name="l-140"></a><span class="tm">15:32:49</span><span class="nk"> &lt;jclift&gt;</span> (from an upstream project pov)
+<a name="l-141"></a><span class="tm">15:32:51</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> (doesn't mean it's not true)
+<a name="l-142"></a><span class="tm">15:32:52</span><span class="nk"> &lt;mpovolny&gt;</span> it may not be true
+<a name="l-143"></a><span class="tm">15:33:03</span><span class="nk"> &lt;mpovolny&gt;</span> I don't know the ways
+<a name="l-144"></a><span class="tm">15:33:27</span><span class="nk"> &lt;eggmaster&gt;</span> Yeah this is probably not the time &amp; place to discuss downstream RHEL stuff anyway.
+<a name="l-145"></a><span class="tm">15:33:31</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">cwolfe_:</span> Well, when places _deploy_ things to production they normally use a release of software (ie rails) they've done extensive testing on.
+<a name="l-146"></a><span class="tm">15:33:38</span><span class="nk"> &lt;jclift&gt;</span> Sometimes backporting fixes and stuff if needed.
+<a name="l-147"></a><span class="tm">15:33:47</span><span class="nk"> &lt;mpovolny&gt;</span> he just looked surprised when I told him we are not in F18 not working on F19 and yet when he asked me about if we need to be productized I said "yes"
+<a name="l-148"></a><span class="tm">15:34:20</span><span class="nk"> &lt;mpovolny&gt;</span> but that a breakfast chit-chat possibly, really don't know how this works yet
+<a name="l-149"></a><span class="tm">15:34:25</span><span class="nk"> &lt;jclift&gt;</span> "When Fedora's not crap we'll consider it?"
+<a name="l-150"></a><span class="tm">15:34:35</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> yeah it's good that you raise the point
+<a name="l-151"></a><span class="tm">15:34:51</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> I agree we should look into it further outside the release cabal.
+<a name="l-152"></a><span class="tm">15:34:57</span><span class="nk"> &lt;eggmaster&gt;</span> However,
+<a name="l-153"></a><span class="tm">15:35:09</span><span class="nk"> &lt;eggmaster&gt;</span> I'd like to switch gears and talk about documentation issues
+<a name="l-154"></a><span class="tm">15:35:23</span><span class="nk"> &lt;eggmaster&gt;</span> If no one objects.
+<a name="l-155"></a><span class="tm">15:35:27</span><span class="nk"> &lt;jclift&gt;</span> np
+<a name="l-156"></a><span class="tm">15:35:43</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="topic">#topic </span><span class="topicline">documentation work in progress, remaining issues</span>
+<a name="l-157"></a><span class="tm">15:36:17</span><span class="nk"> &lt;eggmaster&gt;</span> So I have a release announcement still in the works, let me list off the things it covers:
+<a name="l-158"></a><span class="tm">15:36:55</span><span class="nk"> &lt;eggmaster&gt;</span> -pointer to install documentation (need, this is what we need to discuss here, but hang on)
+<a name="l-159"></a><span class="tm">15:37:01</span><span class="nk"> &lt;jclift&gt;</span> I don't think rlandy has been able to really look into the "Getting Started Guide" update docs, as we haven't had a working setup for her to look work along with
+<a name="l-160"></a><span class="tm">15:37:04</span><span class="nk"> &lt;eggmaster&gt;</span> -features and enhancements
+<a name="l-161"></a><span class="tm">15:37:10</span><span class="nk"> &lt;eggmaster&gt;</span> -notable bugfixes
+<a name="l-162"></a><span class="tm">15:37:17</span><span class="nk"> &lt;eggmaster&gt;</span> -API enhancements
+<a name="l-163"></a><span class="tm">15:37:24</span><span class="nk"> &lt;eggmaster&gt;</span> -contributor list
+<a name="l-164"></a><span class="tm">15:37:27</span><span class="nk"> &lt;eggmaster&gt;</span> -known issues
+<a name="l-165"></a><span class="tm">15:37:39</span><span class="nk"> &lt;eggmaster&gt;</span> -contact info for reporting errors
+<a name="l-166"></a><span class="tm">15:38:25</span><span class="nk"> &lt;eggmaster&gt;</span> So basically, the things that are needed are install/setup documentation, and known issues (this is for the current previous sprint minor release, but obviously we need install/setup doc going forward as well)
+<a name="l-167"></a><span class="tm">15:38:36</span><span class="nk"> &lt;eggmaster&gt;</span> Now we have this, which is linked in the agenda:
+<a name="l-168"></a><span class="tm">15:38:44</span><span class="nk"> &lt;eggmaster&gt;</span> https://etherpad-aeolusproject.rhcloud.com/p/aeolus-upstream-deployment-notes
+<a name="l-169"></a><span class="tm">15:39:03</span><span class="nk"> &lt;eggmaster&gt;</span> but I think that's kinda outdated since a few of the platforms are talking about 'aeolus-all'
+<a name="l-170"></a><span class="tm">15:39:57</span><span class="nk"> &lt;jclift&gt;</span> The "Justin / CentOS 6" stuff in there is current.
+<a name="l-171"></a><span class="tm">15:40:04</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> yea
+<a name="l-172"></a><span class="tm">15:40:06</span><span class="nk"> &lt;giulivo&gt;</span> yeah mine also is
+<a name="l-173"></a><span class="tm">15:40:06</span><span class="nk"> &lt;jclift&gt;</span> Unfortunately it's not fully working yet
+<a name="l-174"></a><span class="tm">15:40:14</span><span class="nk"> &lt;eggmaster&gt;</span> well that is ok
+<a name="l-175"></a><span class="tm">15:40:16</span><span class="nk"> &lt;giulivo&gt;</span> and mine isn't either cause some steps are missing
+<a name="l-176"></a><span class="tm">15:40:17 </span><span class="nka">* jclift</span> <span class="ac">is actively working on fixing that</span>
+<a name="l-177"></a><span class="tm">15:40:28</span><span class="nk"> &lt;jclift&gt;</span> For mine that is.
+<a name="l-178"></a><span class="tm">15:41:02</span><span class="nk"> &lt;giulivo&gt;</span> so we don't have yet a 'stable' list of steps
+<a name="l-179"></a><span class="tm">15:41:32</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> your entry on that doc for f17 doesn't sound like what you are actually doing lately, is that right?
+<a name="l-180"></a><span class="tm">15:41:51</span><span class="nk"> &lt;dajo&gt;</span> right, I just updated
+<a name="l-181"></a><span class="tm">15:41:53</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> yeah, and on top of that, everyone is now working on getting the 'next release' stuff working
+<a name="l-182"></a><span class="tm">15:42:04</span><span class="nk"> &lt;dajo&gt;</span> with something that is more along the lines of recent attempts
+<a name="l-183"></a><span class="tm">15:42:05</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> awesome
+<a name="l-184"></a><span class="tm">15:42:24</span><span class="nk"> &lt;eggmaster&gt;</span> So I am thinking that for the minor/previous release we just list f17 steps.
+<a name="l-185"></a><span class="tm">15:42:27</span><span class="nk"> &lt;rlandy&gt;</span> <span class="hi">giulivio:</span> jclift; I'm ready to work on the doc when I get the ok from you guys on centOS install
+<a name="l-186"></a><span class="tm">15:42:43</span><span class="nk"> &lt;eggmaster&gt;</span> that work with the to-be-created minor-release branch on dev-tools.
+<a name="l-187"></a><span class="tm">15:42:52</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">rlandy:</span> Yeah, I haven't been able to get around the blocking bug I'm hitting.
+<a name="l-188"></a><span class="tm">15:43:09</span><span class="nk"> &lt;jclift&gt;</span> Just tested a potential fix from jprovazn (literally 1 min ago)... and it didn't work.
+<a name="l-189"></a><span class="tm">15:43:21</span><span class="nk"> &lt;cwolfe_&gt;</span> ugh
+<a name="l-190"></a><span class="tm">15:43:29</span><span class="nk"> &lt;rlandy&gt;</span> <span class="hi">jclift:</span> sure - understand  ... F17 selinux issue is sorted out so setenforce not needed any more
+<a name="l-191"></a><span class="tm">15:43:35</span><span class="nk"> &lt;jclift&gt;</span> Cool
+<a name="l-192"></a><span class="tm">15:43:55</span><span class="nk"> &lt;giulivo&gt;</span> I think we should make sure that works on F18 too
+<a name="l-193"></a><span class="tm">15:44:14</span><span class="nk"> &lt;mpovolny&gt;</span> +1
+<a name="l-194"></a><span class="tm">15:44:17</span><span class="nk"> &lt;giulivo&gt;</span> so that is another target platform we want to try dev-tools
+<a name="l-195"></a><span class="tm">15:44:28</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> yeah
+<a name="l-196"></a><span class="tm">15:44:39</span><span class="nk"> &lt;giulivo&gt;</span> I'm okay with testing on F18
+<a name="l-197"></a><span class="tm">15:44:48</span><span class="nk"> &lt;rlandy&gt;</span> selinux fix is also in F18 (there first and back ported to F17)
+<a name="l-198"></a><span class="tm">15:45:18</span><span class="nk"> &lt;giulivo&gt;</span> also, given that we'll have to support a very different system wide install of ruby
+<a name="l-199"></a><span class="tm">15:45:19</span><span class="nk"> &lt;mpovolny&gt;</span> if a hand needed to get F18 running just tell me, will be happy to help
+<a name="l-200"></a><span class="tm">15:45:23</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> would you be willing to try out the 2012-Dec-1 tag on f18 and write up if/where it fails?
+<a name="l-201"></a><span class="tm">15:45:24</span><span class="nk"> &lt;giulivo&gt;</span> across centos6/f17/f18
+<a name="l-202"></a><span class="tm">15:45:30</span><span class="nk"> &lt;giulivo&gt;</span> isn't it worth defaulting to rbenv?
+<a name="l-203"></a><span class="tm">15:46:16</span><span class="nk"> &lt;giulivo&gt;</span> <span class="hi">eggmaster:</span> that's ok for me, we can add an action for that
+<a name="l-204"></a><span class="tm">15:46:39</span><span class="nk"> &lt;eggmaster&gt;</span> giulivo dajo if we had your two install 'scripts' in place for f17/f18, I would call that adequate for minor release doc.
+<a name="l-205"></a><span class="tm">15:46:55</span><span class="nk"> &lt;eggmaster&gt;</span> Still need to talk to the website guys and decide where we want to place these per-release docs.
+<a name="l-206"></a><span class="tm">15:47:31</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">eggmaster will ask website cabal where per-release docs should live on aeolusproject.org</span>
+<a name="l-207"></a><span class="tm">15:48:29</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">dajo and giulivo will create a doc showing basic/scripty setup steps for f17 and f18 using minor release tags</span>
+<a name="l-208"></a><span class="tm">15:48:42</span><span class="nk"> &lt;eggmaster&gt;</span> then we'll edit that to use the dev-tools stuff.
+<a name="l-209"></a><span class="tm">15:48:54</span><span class="nk"> &lt;giulivo&gt;</span> <span class="hi">cwolfe_:</span> to get the _before tim_ dev-tools script, should I checkout from master or expect a branch?
+<a name="l-210"></a><span class="tm">15:48:55</span><span class="nk"> &lt;eggmaster&gt;</span> dev-tools stuff meaning the minor release branch.
+<a name="l-211"></a><span class="tm">15:49:51</span><span class="nk"> &lt;giulivo&gt;</span> maybe we should have a tag named like the conductor branch?
+<a name="l-212"></a><span class="tm">15:50:31</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> +1 to consistent naming for branches
+<a name="l-213"></a><span class="tm">15:50:46</span><span class="nk"> &lt;cwolfe_&gt;</span> <span class="hi">giulivo:</span> good question.  it depends when you want it, if you want it now i can put it in the dev-tools tim branch.  or in a day or two in master after other tweaks land
+<a name="l-214"></a><span class="tm">15:51:51</span><span class="nk"> &lt;giulivo&gt;</span> so I think you and jclift expect to work against the tim branch until it's ready to be moved into master
+<a name="l-215"></a><span class="tm">15:52:02</span><span class="nk"> &lt;giulivo&gt;</span> is that correct?
+<a name="l-216"></a><span class="tm">15:52:42</span><span class="nk"> &lt;cwolfe_&gt;</span> heh, that was my intention last week, but now that tim is in conductor master, i want to see it hit dev-tools master asap
+<a name="l-217"></a><span class="tm">15:52:52</span><span class="nk"> &lt;jclift&gt;</span> Yeah
+<a name="l-218"></a><span class="tm">15:53:04</span><span class="nk"> &lt;giulivo&gt;</span> if that is the case, I would probably just set the appropriate defaults into master (of dev-tools) now and tag/branch it
+<a name="l-219"></a><span class="tm">15:53:21</span><span class="nk"> &lt;giulivo&gt;</span> makes sense?
+<a name="l-220"></a><span class="tm">15:53:28 </span><span class="nka">* jclift</span> <span class="ac">has no opinion</span>
+<a name="l-221"></a><span class="tm">15:54:14</span><span class="nk"> &lt;morazi&gt;</span> eggmaster, mpovolny I believe jeckersb has a solution that involves using a specific version of rails that is essentially 3.2.11+ (pinned to a particular git commit on their tree)
+<a name="l-222"></a><span class="tm">15:54:32</span><span class="nk"> &lt;giulivo&gt;</span> <span class="hi">cwolfe_:</span> so you can merge asap but we'll have a 'fixed point in time' to refer to?
+<a name="l-223"></a><span class="tm">15:55:15</span><span class="nk"> &lt;giulivo&gt;</span> a branch is probably better cause we haven't tested this on F18 and may have to changes to push
+<a name="l-224"></a><span class="tm">15:55:24</span><span class="nk"> &lt;cwolfe_&gt;</span> giulivo, you probably want two commits in master before that.  https://github.com/aeolus-incubator/dev-tools/pull/21 and https://github.com/aeolus-incubator/dev-tools/issues/18
+<a name="l-225"></a><span class="tm">15:55:49</span><span class="nk"> &lt;giulivo&gt;</span> got it, so we better get back in touch after the meeting for this
+<a name="l-226"></a><span class="tm">15:55:54</span><span class="nk"> &lt;cwolfe_&gt;</span> once those are in, i'd say yeah, branch at will (testing pre-tim)
+<a name="l-227"></a><span class="tm">15:55:57</span><span class="nk"> &lt;cwolfe_&gt;</span> yes :-)
+<a name="l-228"></a><span class="tm">15:56:03</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">morazi:</span> yes, that is what I wrote above
+<a name="l-229"></a><span class="tm">15:56:03</span><span class="nk"> &lt;eggmaster&gt;</span> OK cool.
+<a name="l-230"></a><span class="tm">15:56:33</span><span class="nk"> &lt;eggmaster&gt;</span> I think we have covered the agenda items; does anyone have any burning questions/issues in their mind?
+<a name="l-231"></a><span class="tm">15:56:53</span><span class="nk"> &lt;mpovolny&gt;</span> not me
+<a name="l-232"></a><span class="tm">15:56:54</span><span class="nk"> &lt;eggmaster&gt;</span> speak now so we can resolve your issue in the remaining 4 min ;)
+<a name="l-233"></a><span class="tm">15:56:59</span><span class="nk"> &lt;cwolfe_&gt;</span> hehe
+<a name="l-234"></a><span class="tm">15:57:12</span><span class="nk"> &lt;eggmaster&gt;</span> no issue too big! 3 min special! today only!
+<a name="l-235"></a><span class="tm">15:57:32</span><span class="nk"> &lt;eggmaster&gt;</span> how about we rename the project?
+<a name="l-236"></a><span class="tm">15:57:34</span><span class="nk"> &lt;eggmaster&gt;</span> OK guys,
+<a name="l-237"></a><span class="tm">15:57:38</span><span class="nk"> &lt;mpovolny&gt;</span> ;-)
+<a name="l-238"></a><span class="tm">15:57:42</span><span class="nk"> &lt;eggmaster&gt;</span> thanks for your participation today.
+<a name="l-239"></a><span class="tm">15:57:51</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

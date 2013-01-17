@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#aeolus-meeting Meeting</title>
+<style type="text/css">
+/* This is for the .html in the HTML2 writer */
+body {
+    font-family: Helvetica, sans-serif;
+    font-size:14px;
+}
+h1 {
+    text-align: center;
+}
+a {
+    color:navy;
+    text-decoration: none;
+    border-bottom:1px dotted navy;
+}
+a:hover {
+    text-decoration:none;
+    border-bottom: 0;
+    color:#0000B9;
+}
+hr {
+    border: 1px solid #ccc;
+}
+/* The (nick, time) item pairs, and other body text things. */
+.details {
+    font-size: 12px;
+    font-weight:bold;
+}
+/* The 'AGREED:', 'IDEA', etc, prefix to lines. */
+.itemtype {
+    font-style: normal;    /* un-italics it */
+    font-weight: bold;
+}
+/* Example: change single item types.  Capitalized command name.
+/* .TOPIC  {  color:navy;  } */
+/* .AGREED {  color:lime;  } */
+
+</style>
+</head>
+
+<body>
+<h1>#aeolus-meeting Meeting</h1>
+<span class="details">
+Meeting started by eggmaster at 15:00:13 UTC
+(<a href="aeolus-meeting.2013-01-17-15.00.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Meeting summary</h3>
+<ol>
+<li><b class="TOPIC">sprint schedule reminders</b> <span class="details">(<a href='aeolus-meeting.2013-01-17-15.00.log.html#l-6'>eggmaster</a>, 15:01:06)</span>
+<ol type="a">
+  <li><a
+    href="https://github.com/eggmaster/aeolus-sop/blob/master/SOP-aeolus.markdown">https://github.com/eggmaster/aeolus-sop/blob/master/SOP-aeolus.markdown</a>
+    <span class="details">(<a
+    href='aeolus-meeting.2013-01-17-15.00.log.html#l-8'>eggmaster</a>,
+    15:01:31)</span></li>
+  <li><span class="INFO">We are expecting pull requests in by this
+    coming Monday, 21-Jan</span> <span class="details">(<a
+    href='aeolus-meeting.2013-01-17-15.00.log.html#l-9'>eggmaster</a>,
+    15:02:09)</span></li>
+  <li><span class="INFO">repos should be tagged by Wed, 22-Jan to
+    commence integration testing</span> <span class="details">(<a
+    href='aeolus-meeting.2013-01-17-15.00.log.html#l-11'>eggmaster</a>,
+    15:02:34)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">status of current work toward next release</b> <span class="details">(<a href='aeolus-meeting.2013-01-17-15.00.log.html#l-16'>eggmaster</a>, 15:03:59)</span>
+<ol type="a">
+  <li><span class="INFO">cwolferh/dev-tools master now has tim support,
+    meaning the tim source code is downloaded and conductor's Gemfile is
+    updated to point at that</span> <span class="details">(<a
+    href='aeolus-meeting.2013-01-17-15.00.log.html#l-33'>cwolfe_</a>,
+    15:08:20)</span></li>
+  <li><span class="INFO">dajo has done a bootstrap install against the
+    2012-Dec-1 tags, and build/push/deploy succeeds on all
+    providers</span> <span class="details">(<a
+    href='aeolus-meeting.2013-01-17-15.00.log.html#l-46'>eggmaster</a>,
+    15:12:04)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">eggmaster and
+    cwolfe_ will work on getting the minor release branch/tag set up in
+    dev-tools repo</span> <span class="details">(<a
+    href='aeolus-meeting.2013-01-17-15.00.log.html#l-80'>eggmaster</a>,
+    15:22:39)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">documentation work in progress, remaining issues</b> <span class="details">(<a href='aeolus-meeting.2013-01-17-15.00.log.html#l-156'>eggmaster</a>, 15:35:43)</span>
+<ol type="a">
+  <li><a
+    href="https://etherpad-aeolusproject.rhcloud.com/p/aeolus-upstream-deployment-notes">https://etherpad-aeolusproject.rhcloud.com/p/aeolus-upstream-deployment-notes</a>
+    <span class="details">(<a
+    href='aeolus-meeting.2013-01-17-15.00.log.html#l-168'>eggmaster</a>,
+    15:38:44)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">eggmaster
+    will ask website cabal where per-release docs should live on
+    aeolusproject.org</span> <span class="details">(<a
+    href='aeolus-meeting.2013-01-17-15.00.log.html#l-206'>eggmaster</a>,
+    15:47:31)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">dajo and
+    giulivo will create a doc showing basic/scripty setup steps for f17
+    and f18 using minor release tags</span> <span class="details">(<a
+    href='aeolus-meeting.2013-01-17-15.00.log.html#l-207'>eggmaster</a>,
+    15:48:29)</span></li>
+</ol>
+</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">
+Meeting ended at 15:57:51 UTC
+(<a href="aeolus-meeting.2013-01-17-15.00.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Action items</h3>
+<ol>
+  <li>eggmaster and cwolfe_ will work on getting the minor release branch/tag set up in dev-tools repo</li>
+  <li>eggmaster will ask website cabal where per-release docs should live on aeolusproject.org</li>
+  <li>dajo and giulivo will create a doc showing basic/scripty setup steps for f17 and f18 using minor release tags</li>
+</ol>
+<br><br>
+
+
+
+<h3>Action items, by person</h3>
+<ol>
+  <li> cwolfe_ <ol>
+    <li>eggmaster and cwolfe_ will work on getting the minor release branch/tag set up in dev-tools repo</li>
+  </ol></li>
+  <li> dajo <ol>
+    <li>dajo and giulivo will create a doc showing basic/scripty setup steps for f17 and f18 using minor release tags</li>
+  </ol></li>
+  <li> eggmaster <ol>
+    <li>eggmaster and cwolfe_ will work on getting the minor release branch/tag set up in dev-tools repo</li>
+    <li>eggmaster will ask website cabal where per-release docs should live on aeolusproject.org</li>
+  </ol></li>
+  <li> giulivo <ol>
+    <li>dajo and giulivo will create a doc showing basic/scripty setup steps for f17 and f18 using minor release tags</li>
+  </ol></li>
+</ol>
+<br><br>
+
+
+
+<h3>People present (lines said)</h3>
+<ol>
+  <li>eggmaster (95)</li>
+  <li>jclift (51)</li>
+  <li>mpovolny (31)</li>
+  <li>cwolfe_ (29)</li>
+  <li>giulivo (25)</li>
+  <li>rlandy (3)</li>
+  <li>dajo (2)</li>
+  <li>ambot (2)</li>
+  <li>morazi (1)</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">Generated by <a href="http://wiki.debian.org/MeetBot">MeetBot</a> 0.1.4.</span>
+</body></html>
