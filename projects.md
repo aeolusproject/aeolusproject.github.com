@@ -51,10 +51,10 @@ Core components providing cross and hybrid cloud functionality
 ##Incubation Components:##
 Components in development which to serve various roles by users and administrators
 
-- ##[TIM Rails Engine](http://github.com/aeolus-incubator/tim/ "Tim")##
-  TIM is a pluggable Rails Engine which provides image management capabilities
-  to Ruby on Rails based applications. Currently TIM plugins exist to work with
-  imagefactory and other image mangement systems can be easily added.
+- ##[Tim Rails Engine](http://github.com/aeolus-incubator/tim/ "Tim")##
+  Tim is a Rails Engine responsible for Cloud image management.  It  allows clients to create, delete and upload images to a multitude of Cloud providers.  Tim builds on top of Imagefactory’s cloud abstraction layer.
+
+  Adding the ability for clients to store meta-data (used for searching and sorting) as well as versioning and support for access control.  Tim wraps all this up in a clean, simply RESTful API.
 
 - ##[Template Repository](https://github.com/aeolus-incubator/templates "Template Repository")##
   A community maintained repository of templates verified to work against the Aeolus
