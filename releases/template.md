@@ -19,26 +19,27 @@ RELEASE NAME
   </div>
   <div class='grid_16'>
 
+<div class="section-grouping">
 ##Project Overview
 
 A quick summary of the project and its goals
-
+</div>
+<div class="section-grouping">
 ##Overview
 
 An easily digestable summary of the release; this is less technical and more business-oriented.
-
+</div>
+<div class="section-grouping">
 ##Features
 
 - [Feature 1](#feature1)
 - [Feature 2](#feature2)
-
+</div>
 <div id="feature1" class="section-grouping">
 ### Feature 1
 
 Walkthroughs, use cases, screencasts, links to technical documentation, etc.
 </div>
-<br />
-
 <div id="feature2" class="section-grouping">
 ### Feature 2
 
