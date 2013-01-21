@@ -14,16 +14,22 @@ Tim 0.2.0
 | **Project**      | [Tim](https://github.com/aeolus-incubator/tim) |
 | **Release**      | 0.2.0          |
 | **Release Date** | January 16th, 2013 |
-| **Get It**       | [download](http://rubygems.org/gems/tim) |
+| **Get It**       | [Download](http://rubygems.org/gems/tim) |
 
   </div>
   <div class='grid_16'>
+
+<div class="section-grouping">
 
 ##Project Overview
 
 Tim is a Rails Engine responsible for Cloud image management.  It  allows clients to create, delete and upload images to a multitude of Cloud providers.  Tim builds on top of Imagefactory’s cloud abstraction layer.
 
 Adding the ability for clients to store meta-data (used for searching and sorting) as well as versioning and support for access control.  Tim wraps all this up in a clean, simply RESTful API.
+
+</div>
+
+<div class="section-grouping">
 
 ##Overview
 
@@ -36,11 +42,17 @@ This is the fourth release of Tim.  New features include:
 
 Read the [documentation](http://rubydoc.info/gems/tim/0.2.0/frames) to find out more.
 
+</div>
+
+<div class="section-grouping">
+
 ##Features
 
 - [Introduction to Tim](#introduction)
 - [Import Existing Images](#import)
 - [Full List of Updates](#full)
+
+</div>
 
 <div id="feature1" class="section-grouping">
 ### Introduction to Tim
@@ -50,15 +62,11 @@ During the Aeolus Developer Conference, Martyn Taylor gave an introductory talk 
 <iframe width="560" height="315" src="http://www.youtube.com/embed/eYmzoOWeykM" frameborder="0" allowfullscreen></iframe>
 
 </div>
-<br />
-
 <div id="import" class="section-grouping">
 ### Import Existing Images
 
 This release supports the importing of images into Tim.  To see how, view the [documentation](http://rubydoc.info/gems/tim/0.2.0/file/README.rdoc#Import_Image).
 </div>
-<br />
-
 <div id="full" class="section-grouping">
 ### Full List of Updates
 
