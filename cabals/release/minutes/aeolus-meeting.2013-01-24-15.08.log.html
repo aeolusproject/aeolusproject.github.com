@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#aeolus-meeting log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">15:08:19</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">15:08:19</span><span class="nk"> &lt;ambot&gt;</span> Meeting started Thu Jan 24 15:08:19 2013 UTC.  The chair is eggmaster. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">15:08:19</span><span class="nk"> &lt;ambot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">15:08:20</span><span class="nk"> &lt;giulivo&gt;</span> sorry for being late
+<a name="l-5"></a><span class="tm">15:08:28</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> np :) glad you are here
+<a name="l-6"></a><span class="tm">15:08:34</span><span class="nk"> &lt;giulivo&gt;</span> there was too much on the queue, thanks for pinging
+<a name="l-7"></a><span class="tm">15:08:59</span><span class="nk"> &lt;mpovolny&gt;</span> i reported some problems with the non-supported distro as a githup issue to learn that the only supported way of installing imagefactory is to build the rpms myself
+<a name="l-8"></a><span class="tm">15:09:03</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> it's a small miracle I am here at all...this may be the day they find my face down in a drool-pool on my das keyboard
+<a name="l-9"></a><span class="tm">15:09:32</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> yuck
+<a name="l-10"></a><span class="tm">15:09:33</span><span class="nk"> &lt;mpovolny&gt;</span> (they removed the non-supported distro part of the howto as a direct result of my report about an issue with the howto)
+<a name="l-11"></a><span class="tm">15:10:06</span><span class="nk"> &lt;cwolfe__&gt;</span> yes, yuck
+<a name="l-12"></a><span class="tm">15:10:29</span><span class="nk"> &lt;mpovolny&gt;</span> so I just wonder how this matches to out idea of having a set of git checkouts (that's ok) but then tarballs (here we probably fail in case of imagefactory)
+<a name="l-13"></a><span class="tm">15:10:34</span><span class="nk"> &lt;mpovolny&gt;</span> s/out/our
+<a name="l-14"></a><span class="tm">15:10:42</span><span class="nk"> &lt;cwolfe__&gt;</span> jclift is working through building from source
+<a name="l-15"></a><span class="tm">15:10:47</span><span class="nk"> &lt;cwolfe__&gt;</span> er, imagefactory
+<a name="l-16"></a><span class="tm">15:12:03</span><span class="nk"> &lt;cwolfe__&gt;</span> so, imagefactory is behind the curve in the dev-tools script, for sure.  the goal is ultimately to be able to build from source in a non-os specific sort of way.  but we probably won't have that the first release
+<a name="l-17"></a><span class="tm">15:12:06</span><span class="nk"> &lt;eggmaster&gt;</span> speaking of whom, are we sans jclift today?
+<a name="l-18"></a><span class="tm">15:12:09</span><span class="nk"> &lt;mpovolny&gt;</span> I would offer help with fixing the non-supported branch of the howto to get it e.g. running on debian, but the reaction sort-of took away all I would have to say on the topic
+<a name="l-19"></a><span class="tm">15:13:32</span><span class="nk"> &lt;mpovolny&gt;</span> ok, enough of this, jclift is working on it is that is the resume
+<a name="l-20"></a><span class="tm">15:14:06</span><span class="nk"> &lt;eggmaster&gt;</span> Yeah. So,
+<a name="l-21"></a><span class="tm">15:14:22</span><span class="nk"> &lt;cwolfe__&gt;</span> mpovolny, yes, but he may not be aware of the issues you brought up in the imagefactory issue-- probably worth pinging him
+<a name="l-22"></a><span class="tm">15:14:31</span><span class="nk"> &lt;eggmaster&gt;</span> it sounds like we're looking at full support on Fedora in the near future,
+<a name="l-23"></a><span class="tm">15:15:02</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">cwolfe__:</span> I will ask jclift about it
+<a name="l-24"></a><span class="tm">15:15:29</span><span class="nk"> &lt;eggmaster&gt;</span> but I see no reason why we couldn't hammer on the next release once it's released and offer it for debian once it's working. Or does that seem insane? Like, a dot-release kind of deal?
+<a name="l-25"></a><span class="tm">15:15:49</span><span class="nk"> &lt;cwolfe__&gt;</span> seems reasonable to me
+<a name="l-26"></a><span class="tm">15:16:00</span><span class="nk"> &lt;mpovolny&gt;</span> sure
+<a name="l-27"></a><span class="tm">15:16:04</span><span class="nk"> &lt;eggmaster&gt;</span> (Assuming we need to punt on support for Fedora/Ubuntu to make our deadline)
+<a name="l-28"></a><span class="tm">15:20:26</span><span class="nk"> &lt;giulivo&gt;</span> anyone alive?
+<a name="l-29"></a><span class="tm">15:20:36</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> deep in thought ;)
+<a name="l-30"></a><span class="tm">15:21:10</span><span class="nk"> &lt;mpovolny&gt;</span> yes, alive
+<a name="l-31"></a><span class="tm">15:21:14</span><span class="nk"> &lt;eggmaster&gt;</span> OK so, on the agenda I have the first item as looking at sprint deadlines.
+<a name="l-32"></a><span class="tm">15:21:39</span><span class="nk"> &lt;mpovolny&gt;</span> speaking of F18? F19?
+<a name="l-33"></a><span class="tm">15:21:42</span><span class="nk"> &lt;eggmaster&gt;</span> Yesterday is the day we were to hand off something to dajo and giulivo, but afaict that is still in process.
+<a name="l-34"></a><span class="tm">15:22:04</span><span class="nk"> &lt;eggmaster&gt;</span> I have not tagged our repos yet. I will do that when this meeting is over.
+<a name="l-35"></a><span class="tm">15:22:18</span><span class="nk"> &lt;cwolfe__&gt;</span> for the record, mpovolny's issue: https://github.com/aeolusproject/imagefactory/issues/224
+<a name="l-36"></a><span class="tm">15:22:29</span><span class="nk"> &lt;giulivo&gt;</span> not only, my attempts to test 2012-Dec-1 didn't go wvery well
+<a name="l-37"></a><span class="tm">15:22:44</span><span class="nk"> &lt;eggmaster&gt;</span> I will be merging jtomasek's alchemy patchset first, I suspect. Either that or I will cherry-pick it over.
+<a name="l-38"></a><span class="tm">15:22:47</span><span class="nk"> &lt;giulivo&gt;</span> dev-tools is ok, conductor seems to be in troubles
+<a name="l-39"></a><span class="tm">15:22:51</span><span class="nk"> &lt;mpovolny&gt;</span> https://github.com/aeolusproject/imagefactory/issues/222 -- this is the 1st one
+<a name="l-40"></a><span class="tm">15:23:13</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> howdy
+<a name="l-41"></a><span class="tm">15:23:14</span><span class="nk"> &lt;dajo&gt;</span> I did have success with 2012-Dec-1, me and giulivo were starting to discuss the delta right before this meeting
+<a name="l-42"></a><span class="tm">15:23:22</span><span class="nk"> &lt;jclift&gt;</span> Sorry guys, forgot abt the meeting so went and got food.
+<a name="l-43"></a><span class="tm">15:23:33</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> ah ok, yeah I was gonna point giulivo at you b/c I thought you'd had some success there.
+<a name="l-44"></a><span class="tm">15:23:55</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> np
+<a name="l-45"></a><span class="tm">15:24:12</span><span class="nk"> &lt;dajo&gt;</span> I also tried dev-tools with cwolfe__ latest changes for pulling in tim, everything seems to be online but builds are failing, tryng to get to the root cause once this meeting is over
+<a name="l-46"></a><span class="tm">15:24:14</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> We were just talking about tagging repos and getting something to dajo and giulivo to kick around
+<a name="l-47"></a><span class="tm">15:24:23</span><span class="nk"> &lt;jclift&gt;</span> Cool.
+<a name="l-48"></a><span class="tm">15:24:45</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> since that is indicated in the sprint schedule for yesterday/today
+<a name="l-49"></a><span class="tm">15:25:07</span><span class="nk"> &lt;jclift&gt;</span> Do we have tags in the Tim / Conductor repo's we can use for a full stack (with Tim support)?
+<a name="l-50"></a><span class="tm">15:25:42</span><span class="nk"> &lt;jclift&gt;</span> My scripting is workable and can be given tags.  Ideally I'd integrate it's pieces into the latest stuff from cwolfe__ first before actual rel time tho.
+<a name="l-51"></a><span class="tm">15:25:49</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> conductor isn't tagged yet, I assumed we'd use the latest release tag for tim
+<a name="l-52"></a><span class="tm">15:26:05</span><span class="nk"> &lt;jclift&gt;</span> k.  It's still just using master for everything.
+<a name="l-53"></a><span class="tm">15:26:25</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> define 'It's' pls
+<a name="l-54"></a><span class="tm">15:26:47</span><span class="nk"> &lt;jclift&gt;</span> "It's" == my dev-tools scripting fork.
+<a name="l-55"></a><span class="tm">15:26:53</span><span class="nk"> &lt;mpovolny&gt;</span> from the tim-integration point of view I think there are still many problems on both sides, but there's probably nothing that can be done about it, the release cannot be delayed for ever
+<a name="l-56"></a><span class="tm">15:26:59</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> gotcha, thx for clarification
+<a name="l-57"></a><span class="tm">15:27:05</span><span class="nk"> &lt;cwolfe__&gt;</span> i don't think conductor/tim are quite ready to be tagged given dajo's comment (further clarification: this was testing master everything including imagefactory on fc17)
+<a name="l-58"></a><span class="tm">15:27:07</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> right
+<a name="l-59"></a><span class="tm">15:27:09</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">mpovolny:</span> sure
+<a name="l-60"></a><span class="tm">15:27:17</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> we should tag, branch, and then pick over fixes as needed
+<a name="l-61"></a><span class="tm">15:27:42</span><span class="nk"> &lt;dajo&gt;</span> yeah, it definitely smells like fire still
+<a name="l-62"></a><span class="tm">15:27:51</span><span class="nk"> &lt;eggmaster&gt;</span> But does anyone see a reason why we should not create release/maint branches at this point?
+<a name="l-63"></a><span class="tm">15:27:52</span><span class="nk"> &lt;cwolfe__&gt;</span> yeah, and dev-tools can point to a specific git commit, even, doesn't actually have to be tagged (point it is, it is not a road block)
+<a name="l-64"></a><span class="tm">15:27:59</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe__:</span> right
+<a name="l-65"></a><span class="tm">15:28:11</span><span class="nk"> &lt;mpovolny&gt;</span> I have a pull-req from jan in my review queue, there a fix in tim from yesterday I know about etc. there must be more, most of the people DONT have working setups with the IMF2 yet
+<a name="l-66"></a><span class="tm">15:28:27 </span><span class="nka">* cwolfe__</span> <span class="ac">rereads last comment, cringes and gets more coffee</span>
+<a name="l-67"></a><span class="tm">15:28:32</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> am I reading your latest email correctly re: dev-tools pending commits,
+<a name="l-68"></a><span class="tm">15:28:49</span><span class="nk"> &lt;mpovolny&gt;</span> i mean working developer setups on their working machines -- at least in Brno
+<a name="l-69"></a><span class="tm">15:28:51 </span><span class="nka">* jclift</span> <span class="ac">still needs to read that thread</span>
+<a name="l-70"></a><span class="tm">15:29:16</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> where I think you are suggesting creating a per-aeolus-release branch in dev-tools, and committing default environment variables (for subproject tags) in the bootstrap.sh itself?
+<a name="l-71"></a><span class="tm">15:29:49</span><span class="nk"> &lt;giulivo&gt;</span> yep
+<a name="l-72"></a><span class="tm">15:29:52</span><span class="nk"> &lt;eggmaster&gt;</span> ok.
+<a name="l-73"></a><span class="tm">15:29:55</span><span class="nk"> &lt;eggmaster&gt;</span> So a question there.
+<a name="l-74"></a><span class="tm">15:30:19</span><span class="nk"> &lt;eggmaster&gt;</span> Er, nvm, I think I answered my own question.
+<a name="l-75"></a><span class="tm">15:30:23</span><span class="nk"> &lt;jclift&gt;</span> If we want to avoid a full branch for this stuff, we could just do a non-optimal (somewhat sleazy) approach of using tags instead.
+<a name="l-76"></a><span class="tm">15:30:39</span><span class="nk"> &lt;jclift&gt;</span> i.e. set env variables to values we want in a commit, then tag that commit
+<a name="l-77"></a><span class="tm">15:30:44</span><span class="nk"> &lt;giulivo&gt;</span> not sure why you say sub-optimal
+<a name="l-78"></a><span class="tm">15:30:49</span><span class="nk"> &lt;jclift&gt;</span> then set them back with next commit
+<a name="l-79"></a><span class="tm">15:30:58</span><span class="nk"> &lt;jclift&gt;</span> Well, it just feels a bit dodgy. :)
+<a name="l-80"></a><span class="tm">15:31:05</span><span class="nk"> &lt;giulivo&gt;</span> nah the opposite I think
+<a name="l-81"></a><span class="tm">15:31:11</span><span class="nk"> &lt;eggmaster&gt;</span> Can someone explain the downside of creating a branch to me?
+<a name="l-82"></a><span class="tm">15:31:12</span><span class="nk"> &lt;giulivo&gt;</span> we need branch only for post-release maintenance
+<a name="l-83"></a><span class="tm">15:31:15</span><span class="nk"> &lt;cwolfe__&gt;</span> let's back up one more step
+<a name="l-84"></a><span class="tm">15:31:24</span><span class="nk"> &lt;cwolfe__&gt;</span> how many releases are we going to have in 2013?
+<a name="l-85"></a><span class="tm">15:31:36</span><span class="nk"> &lt;giulivo&gt;</span> anyway, really, branching is fine with me!
+<a name="l-86"></a><span class="tm">15:31:39</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe__:</span> well, one per sprint
+<a name="l-87"></a><span class="tm">15:31:56</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe__:</span> but I think you are asking about 'big fish' releases
+<a name="l-88"></a><span class="tm">15:32:10</span><span class="nk"> &lt;cwolfe__&gt;</span> yes, i am trying to get to the distinction
+<a name="l-89"></a><span class="tm">15:32:32</span><span class="nk"> &lt;cwolfe__&gt;</span> and that i don't think we want a few dozen branches lying around ultimately for per-sprint-releases
+<a name="l-90"></a><span class="tm">15:33:02</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe__:</span> well
+<a name="l-91"></a><span class="tm">15:33:28</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe__:</span> the only reason I think we need branches is to support embedding the env variable setup in bootstrap.sh
+<a name="l-92"></a><span class="tm">15:33:29</span><span class="nk"> &lt;jclift&gt;</span> Well, branches are kind of an "in your face" thing.  They show up everywhere in the GH interface, git branch interface, etc.  Over time, they'll clutter up things.
+<a name="l-93"></a><span class="tm">15:33:45</span><span class="nk"> &lt;mpovolny&gt;</span> well it would be a nice problem to have ;-) having too many branches from too many successful releases :-D
+<a name="l-94"></a><span class="tm">15:33:54</span><span class="nk"> &lt;jclift&gt;</span> Tags aren't as "in your face", so might be the better option. ;)
+<a name="l-95"></a><span class="tm">15:34:10</span><span class="nk"> &lt;eggmaster&gt;</span> Well,
+<a name="l-96"></a><span class="tm">15:34:23</span><span class="nk"> &lt;eggmaster&gt;</span> What about putting a setup script in yet-another git repo?
+<a name="l-97"></a><span class="tm">15:34:34</span><span class="nk"> &lt;eggmaster&gt;</span> dedicated solely to setting things up for each aeolus release?
+<a name="l-98"></a><span class="tm">15:34:42</span><span class="nk"> &lt;eggmaster&gt;</span> this could include setting the dev-tools tag.
+<a name="l-99"></a><span class="tm">15:35:01</span><span class="nk"> &lt;cwolfe__&gt;</span> eggmaster, yes.  an alternate solution is to have a subdir in dev-tools of a script per release where *those* scripts set defaults and point to a specific git commit or tag
+<a name="l-100"></a><span class="tm">15:35:12</span><span class="nk"> &lt;jclift&gt;</span> Explain more how that would be, for an end user?
+<a name="l-101"></a><span class="tm">15:35:13</span><span class="nk"> &lt;eggmaster&gt;</span> I thought briefly about including such a script on the conductor repo on each maint branch
+<a name="l-102"></a><span class="tm">15:35:24</span><span class="nk"> &lt;eggmaster&gt;</span> but I thought it made more sense for it to live in dev-tools repo.
+<a name="l-103"></a><span class="tm">15:35:36</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> it would be:
+<a name="l-104"></a><span class="tm">15:36:06</span><span class="nk"> &lt;giulivo&gt;</span> but I think if those scripts are only needed to set the variables and point to a particular commit
+<a name="l-105"></a><span class="tm">15:36:18</span><span class="nk"> &lt;eggmaster&gt;</span> 1) curl http://path/to/script | /bin/bash
+<a name="l-106"></a><span class="tm">15:36:23</span><span class="nk"> &lt;eggmaster&gt;</span> 2) bootstrap
+<a name="l-107"></a><span class="tm">15:37:19</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe__:</span> the advantage of branching imho is if we want to do a dot-release wherein we need to change some of the subproject tags
+<a name="l-108"></a><span class="tm">15:37:25</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> Could we get the script to call bootstrap automagically?
+<a name="l-109"></a><span class="tm">15:37:27</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe__:</span> by which I mean, branches on dev-tools
+<a name="l-110"></a><span class="tm">15:37:31</span><span class="nk"> &lt;jclift&gt;</span> i.e. 1 line install stil
+<a name="l-111"></a><span class="tm">15:37:33</span><span class="nk"> &lt;jclift&gt;</span> still
+<a name="l-112"></a><span class="tm">15:37:49</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> I don't see why not.
+<a name="l-113"></a><span class="tm">15:38:04</span><span class="nk"> &lt;cwolfe__&gt;</span> eggmaster, i am less opposed to branches for dot releases :-)
+<a name="l-114"></a><span class="tm">15:38:39</span><span class="nk"> &lt;cwolfe__&gt;</span> to giulivo's email earlier, it is probably just going to be plain cleaner to have a pre-tim/imgfac1 branch too
+<a name="l-115"></a><span class="tm">15:38:48</span><span class="nk"> &lt;jclift&gt;</span> Hmm... 2013-Jan-1.1 ?
+<a name="l-116"></a><span class="tm">15:39:01 </span><span class="nka">* jclift</span> <span class="ac">is trying to think of what a dot rel would actually be.</span>
+<a name="l-117"></a><span class="tm">15:39:10</span><span class="nk"> &lt;cwolfe__&gt;</span> oh, oops.  i think misunderstood dot-release
+<a name="l-118"></a><span class="tm">15:39:17</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> yeah that is the next little can of worms in my mind...what do we call these things?
+<a name="l-119"></a><span class="tm">15:39:34</span><span class="nk"> &lt;eggmaster&gt;</span> I had thought that for 'major releases' (gotta have a better term for these)
+<a name="l-120"></a><span class="tm">15:39:44</span><span class="nk"> &lt;jclift&gt;</span> If we call it like "Aeolus 0.20", then a dot rel would be "Aeolus 0.20.1" etc.
+<a name="l-121"></a><span class="tm">15:39:47</span><span class="nk"> &lt;eggmaster&gt;</span> we would bump the version info in the Makefile for conductor
+<a name="l-122"></a><span class="tm">15:39:50</span><span class="nk"> &lt;eggmaster&gt;</span> and call it that.
+<a name="l-123"></a><span class="tm">15:39:57 </span><span class="nka">* jclift</span> <span class="ac">isn't all that bothered</span>
+<a name="l-124"></a><span class="tm">15:40:01</span><span class="nk"> &lt;eggmaster&gt;</span> so the next one would be, what, 0.14.0?
+<a name="l-125"></a><span class="tm">15:40:07</span><span class="nk"> &lt;jclift&gt;</span> I guess
+<a name="l-126"></a><span class="tm">15:40:24</span><span class="nk"> &lt;jclift&gt;</span> I'm still trying to just make the integration bits all happy
+<a name="l-127"></a><span class="tm">15:40:41</span><span class="nk"> &lt;eggmaster&gt;</span> for small-fry releases (i.e. every end of sprint that we have no intention of packaging for anything) we can just use the sprint name or something.
+<a name="l-128"></a><span class="tm">15:40:46</span><span class="nk"> &lt;jclift&gt;</span> Not thinking about the naming/branching/tagging/ stuff.  You guys can decide that. :)
+<a name="l-129"></a><span class="tm">15:41:03</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> you are not obligated to think about it but we welcome your input :)
+<a name="l-130"></a><span class="tm">15:41:15</span><span class="nk"> &lt;cwolfe__&gt;</span> what happened to "in your face"?  ;-)
+<a name="l-131"></a><span class="tm">15:42:54</span><span class="nk"> &lt;eggmaster&gt;</span> So back to the magic script that sets environment variables and launches bootstrap. How do we feel about that?
+<a name="l-132"></a><span class="tm">15:42:55</span><span class="nk"> &lt;cwolfe__&gt;</span> well, we are further away from a dot/major/big-fish release.  maybe we should just decide on what we are going to do for now for sprint releases
+<a name="l-133"></a><span class="tm">15:43:08</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe__:</span> we are?
+<a name="l-134"></a><span class="tm">15:43:24</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe__:</span> we're supposed to be doing a big-fish at the end of the current sprint.
+<a name="l-135"></a><span class="tm">15:43:32</span><span class="nk"> &lt;eggmaster&gt;</span> or am I high or something?
+<a name="l-136"></a><span class="tm">15:43:50</span><span class="nk"> &lt;cwolfe__&gt;</span> eh, well dajo says master doesn't work right now
+<a name="l-137"></a><span class="tm">15:44:02</span><span class="nk"> &lt;cwolfe__&gt;</span> so it doesn't make much sense to cut it pending that, at least
+<a name="l-138"></a><span class="tm">15:44:16</span><span class="nk"> &lt;dajo&gt;</span> yeah, image building seems totally broke through the conductor ui
+<a name="l-139"></a><span class="tm">15:44:18</span><span class="nk"> &lt;cwolfe__&gt;</span> but i feel like there are other major merges coming into conductor too (could be wrong about that)
+<a name="l-140"></a><span class="tm">15:45:06</span><span class="nk"> &lt;dajo&gt;</span> after this meeting, giulivo and I are going to verify its not imagefactory and chase down the tim guys
+<a name="l-141"></a><span class="tm">15:45:30</span><span class="nk"> &lt;eggmaster&gt;</span> We need to enumerate what features we're going to hold for if that's the case.
+<a name="l-142"></a><span class="tm">15:45:41</span><span class="nk"> &lt;mpovolny&gt;</span> major merges: the gettext merge
+<a name="l-143"></a><span class="tm">15:46:11</span><span class="nk"> &lt;eggmaster&gt;</span> I was under the possibly mistaken impression that tim integration was the major thing we were shooting for with this release.
+<a name="l-144"></a><span class="tm">15:46:31</span><span class="nk"> &lt;mpovolny&gt;</span> it probably is so
+<a name="l-145"></a><span class="tm">15:46:46</span><span class="nk"> &lt;mpovolny&gt;</span> the gettext is an implementation detail, it just touches everything
+<a name="l-146"></a><span class="tm">15:47:19</span><span class="nk"> &lt;giulivo&gt;</span> well, same is for tim anyway, I don't think it adds features
+<a name="l-147"></a><span class="tm">15:47:40</span><span class="nk"> &lt;cwolfe__&gt;</span> eggmaster, we can release it and conductor/tim/imagefactory will be hooked up correctly (so dev-tools did its job), but if can't push images to ec2, i feel like it is a little misleading to put it out there as a dot/big-fish release
+<a name="l-148"></a><span class="tm">15:48:00</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe__:</span> agree completely
+<a name="l-149"></a><span class="tm">15:48:01</span><span class="nk"> &lt;eggmaster&gt;</span> but
+<a name="l-150"></a><span class="tm">15:48:14</span><span class="nk"> &lt;eggmaster&gt;</span> is that not something we can get working by end of this cycle?
+<a name="l-151"></a><span class="tm">15:48:24</span><span class="nk"> &lt;mpovolny&gt;</span> I see it as: we should try to "execute" the release process
+<a name="l-152"></a><span class="tm">15:48:40</span><span class="nk"> &lt;mpovolny&gt;</span> from the "is it working" point of view I don;t expect much from this release
+<a name="l-153"></a><span class="tm">15:49:10</span><span class="nk"> &lt;giulivo&gt;</span> <span class="hi">mpovolny:</span> what's the point to release anything if it doesn't work then?
+<a name="l-154"></a><span class="tm">15:49:12</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> well we can/should backport fixes to the release
+<a name="l-155"></a><span class="tm">15:49:26</span><span class="nk"> &lt;mpovolny&gt;</span> there are surely many bugs and rough edges from the TIM integration
+<a name="l-156"></a><span class="tm">15:49:44</span><span class="nk"> &lt;mpovolny&gt;</span> as I said a simple measure for me: the DEV people don't have working setups
+<a name="l-157"></a><span class="tm">15:50:02</span><span class="nk"> &lt;dajo&gt;</span> but if happy flow doesn;t work why put it out there
+<a name="l-158"></a><span class="tm">15:50:05</span><span class="nk"> &lt;eggmaster&gt;</span> Let's take a step back here.
+<a name="l-159"></a><span class="tm">15:50:21</span><span class="nk"> &lt;cwolfe__&gt;</span> maybe a couple ;-)
+<a name="l-160"></a><span class="tm">15:50:25</span><span class="nk"> &lt;mpovolny&gt;</span> Jan has one, I have one working agains mock since yesterday, other devs Brno either do not need it or have issues getting it running (as of yesterday)
+<a name="l-161"></a><span class="tm">15:50:32</span><span class="nk"> &lt;eggmaster&gt;</span> a) we should follow our release schedule and tag repos for the upcoming release
+<a name="l-162"></a><span class="tm">15:50:49</span><span class="nk"> &lt;eggmaster&gt;</span> b) if problems are found that can be solved before end of sprint, pick the fixes over
+<a name="l-163"></a><span class="tm">15:51:01</span><span class="nk"> &lt;eggmaster&gt;</span> c) if they can't be solved, include in 'known issues'
+<a name="l-164"></a><span class="tm">15:51:13</span><span class="nk"> &lt;eggmaster&gt;</span> d) decide in a week if we have a big-fish or a small-fish release
+<a name="l-165"></a><span class="tm">15:51:56</span><span class="nk"> &lt;eggmaster&gt;</span> It's not release cabal's fault if it doesn't work and we have to say 'sorry, we're not ready for big-fish, fix x, y, z' to project managers.
+<a name="l-166"></a><span class="tm">15:52:17</span><span class="nk"> &lt;eggmaster&gt;</span> I am not thrilled about slipping another sprint, but our hands are tied to some extent,.
+<a name="l-167"></a><span class="tm">15:52:23</span><span class="nk"> &lt;eggmaster&gt;</span> Anyone see anything controversial there?
+<a name="l-168"></a><span class="tm">15:52:38</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">giulivo:</span> the point of the release is to get something released and start a process of regular releases (IMHO)
+<a name="l-169"></a><span class="tm">15:52:45</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> yes
+<a name="l-170"></a><span class="tm">15:53:11</span><span class="nk"> &lt;giulivo&gt;</span> sure, I meant it's not our big fish
+<a name="l-171"></a><span class="tm">15:53:18</span><span class="nk"> &lt;giulivo&gt;</span> it's just the end of another sprint
+<a name="l-172"></a><span class="tm">15:53:38</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> well it was supposed to be a big-fish release. that was the pipe dream, anyway.
+<a name="l-173"></a><span class="tm">15:53:42</span><span class="nk"> &lt;cwolfe__&gt;</span> eggmaster, no, that does not look controversial to me.
+<a name="l-174"></a><span class="tm">15:53:49</span><span class="nk"> &lt;eggmaster&gt;</span> I'm not convinced it can't be yet.
+<a name="l-175"></a><span class="tm">15:54:09 </span><span class="nka">* jclift</span> <span class="ac">is glad the FOSDEM talk wasn't accepted</span>
+<a name="l-176"></a><span class="tm">15:54:26</span><span class="nk"> &lt;eggmaster&gt;</span> dajo giulivo so from a QE point of view,
+<a name="l-177"></a><span class="tm">15:54:39</span><span class="nk"> &lt;eggmaster&gt;</span> you've still got some issues with the 2012-Dec-1 tagset
+<a name="l-178"></a><span class="tm">15:54:58</span><span class="nk"> &lt;eggmaster&gt;</span> but you think you'll be able to look at what I tag today soonish?
+<a name="l-179"></a><span class="tm">15:55:07</span><span class="nk"> &lt;eggmaster&gt;</span> i.e. and start giving us a list of what is fooked?
+<a name="l-180"></a><span class="tm">15:56:14</span><span class="nk"> &lt;dajo&gt;</span> I guess I am okay with that, I am hoping we can get happy flow fixed, ultimately the app is for build/pushing/deploying images, not sure why we would ship if the bread and butter is completely broken but I guess... just nervous that it would piss the community off, they spend time to test drive without reading known issues and come to find out its completely broken???
+<a name="l-181"></a><span class="tm">15:56:33</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> depends on what you mean by ship.
+<a name="l-182"></a><span class="tm">15:56:47</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> we're going to do an end-of-sprint release in any case.
+<a name="l-183"></a><span class="tm">15:57:08</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> the only question is whether we send out a big announcement saying "this is the big-fish, start using this thing!"
+<a name="l-184"></a><span class="tm">15:57:11</span><span class="nk"> &lt;cwolfe__&gt;</span> er, isn't this a 2012-Jan-1 tagset we are talking about?
+<a name="l-185"></a><span class="tm">15:57:32</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe__:</span> yes that is the tagset for the current sprint.
+<a name="l-186"></a><span class="tm">15:57:43</span><span class="nk"> &lt;cwolfe__&gt;</span> 2013-Jan-1
+<a name="l-187"></a><span class="tm">15:57:59</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe__:</span> I am still lacking a 'known issues' and 'how to setup' doc for the *previous* sprint work (2012-Dec-1)
+<a name="l-188"></a><span class="tm">15:58:47</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> was that response at all helpful?
+<a name="l-189"></a><span class="tm">15:58:51</span><span class="nk"> &lt;dajo&gt;</span> eggmaster, yeah, it makes sense to get into the habit of the end-of-sprint release cadence... I guess I am more hesitant on sending out a announcement
+<a name="l-190"></a><span class="tm">15:59:19</span><span class="nk"> &lt;dajo&gt;</span> but we can and see how it goes, whats the worst that could happen ;)
+<a name="l-191"></a><span class="tm">15:59:23</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> yeah, we don't have to promote it until it is ready.
+<a name="l-192"></a><span class="tm">15:59:24</span><span class="nk"> &lt;eggmaster&gt;</span> ha
+<a name="l-193"></a><span class="tm">15:59:44</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> I think the important thing is to get our processes happening on a schedule.
+<a name="l-194"></a><span class="tm">15:59:50</span><span class="nk"> &lt;cwolfe__&gt;</span> ok.  so *previous* sprint work 2012-Dec-1 is pre-tim (and i do think we want a branch for pre-tim in dev-tools)
+<a name="l-195"></a><span class="tm">15:59:53</span><span class="nk"> &lt;dajo&gt;</span> I agree
+<a name="l-196"></a><span class="tm">16:00:00</span><span class="nk"> &lt;jclift&gt;</span> I'd rather we don't send out an announcement "use this!" until we've at least had successful sanity testing on it.
+<a name="l-197"></a><span class="tm">16:00:02</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe__:</span> correct
+<a name="l-198"></a><span class="tm">16:00:06</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> +1
+<a name="l-199"></a><span class="tm">16:00:18</span><span class="nk"> &lt;jclift&gt;</span> We can definitely say "new snapshot ready for testing" though, if that's all it is.
+<a name="l-200"></a><span class="tm">16:00:29</span><span class="nk"> &lt;jclift&gt;</span> Just a diff kind of announcement is all.
+<a name="l-201"></a><span class="tm">16:00:34</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> in an ideal world, we would already be at the 'this mostly works' stage by today, in a sprint where we wanted to release a big-fish.
+<a name="l-202"></a><span class="tm">16:00:36</span><span class="nk"> &lt;dajo&gt;</span> +1
+<a name="l-203"></a><span class="tm">16:00:48</span><span class="nk"> &lt;jclift&gt;</span> Yeah, I was just saying. ;)
+<a name="l-204"></a><span class="tm">16:00:51</span><span class="nk"> &lt;eggmaster&gt;</span> yeah
+<a name="l-205"></a><span class="tm">16:00:55</span><span class="nk"> &lt;eggmaster&gt;</span> we're not there, obviously
+<a name="l-206"></a><span class="tm">16:01:09</span><span class="nk"> &lt;eggmaster&gt;</span> and it was always a fool's hope that we would be with the tim integration in play,
+<a name="l-207"></a><span class="tm">16:01:13</span><span class="nk"> &lt;eggmaster&gt;</span> but I am a fool :)
+<a name="l-208"></a><span class="tm">16:01:17</span><span class="nk"> &lt;eggmaster&gt;</span> and still hopeful.
+<a name="l-209"></a><span class="tm">16:01:40</span><span class="nk"> &lt;eggmaster&gt;</span> I see we are at time.
+<a name="l-210"></a><span class="tm">16:02:07</span><span class="nk"> &lt;eggmaster&gt;</span> Does anyone have items they need clarification on before we break?
+<a name="l-211"></a><span class="tm">16:02:29</span><span class="nk"> &lt;jclift&gt;</span> meh
+<a name="l-212"></a><span class="tm">16:03:05</span><span class="nk"> &lt;cwolfe__&gt;</span> where is sesame street and how do i get there?
+<a name="l-213"></a><span class="tm">16:03:14</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe__:</span> I'm not telling
+<a name="l-214"></a><span class="tm">16:03:20</span><span class="nk"> &lt;cwolfe__&gt;</span> hehe
+<a name="l-215"></a><span class="tm">16:03:21</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe__:</span> that is my ace in the hole
+<a name="l-216"></a><span class="tm">16:03:31</span><span class="nk"> &lt;eggmaster&gt;</span> there isn't room for all of us.
+<a name="l-217"></a><span class="tm">16:03:37</span><span class="nk"> &lt;jclift&gt;</span> Aeolus 0.14.0 : Sesame Street
+<a name="l-218"></a><span class="tm">16:03:40</span><span class="nk"> &lt;cwolfe__&gt;</span> ouch!
+<a name="l-219"></a><span class="tm">16:03:43</span><span class="nk"> &lt;eggmaster&gt;</span> hehe I like it
+<a name="l-220"></a><span class="tm">16:03:57</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe__:</span> are you a man or are you a muppet?
+<a name="l-221"></a><span class="tm">16:04:03</span><span class="nk"> &lt;jclift&gt;</span> Fraggle!
+<a name="l-222"></a><span class="tm">16:04:05</span><span class="nk"> &lt;jclift&gt;</span> :D
+<a name="l-223"></a><span class="tm">16:04:08</span><span class="nk"> &lt;cwolfe__&gt;</span> lol!
+<a name="l-224"></a><span class="tm">16:04:11</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> nice
+<a name="l-225"></a><span class="tm">16:04:34</span><span class="nk"> &lt;eggmaster&gt;</span> OK, so I am going to get the alchemy stuff merged in (will fix dev-tools like we discussed yesterday, cwolfe__ )
+<a name="l-226"></a><span class="tm">16:04:35</span><span class="nk"> &lt;jclift&gt;</span> Aeolus 0.15.0 : Ace in the Hole
+<a name="l-227"></a><span class="tm">16:04:41</span><span class="nk"> &lt;eggmaster&gt;</span> and then tag some stuff.
+<a name="l-228"></a><span class="tm">16:04:45</span><span class="nk"> &lt;jclift&gt;</span> Aeolus 0.16.0 : Fraggle Rocks?
+<a name="l-229"></a><span class="tm">16:04:51</span><span class="nk"> &lt;eggmaster&gt;</span> And then go to sesame street, possibly.
+<a name="l-230"></a><span class="tm">16:04:57</span><span class="nk"> &lt;jclift&gt;</span> endmeeting?
+<a name="l-231"></a><span class="tm">16:05:01</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>
