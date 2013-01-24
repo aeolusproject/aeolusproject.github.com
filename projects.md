@@ -17,7 +17,7 @@ Core components providing cross and hybrid cloud functionality
 - ###[Deltacloud](http://deltacloud.apache.org/ "Deltacloud")###
   ![dc_logo](http://deltacloud.apache.org/assets/img/logo.png)
   Deltacloud provides a RESTful Stateless API which clients written in any language
-  can issue calls to cloud providers. The end user specifies the cloud provider and
+  can use to issue calls to cloud providers. The end user specifies the cloud provider and
   the credentials to use in the REST API headers. Deltacloud, which
   implements the [Distributed Management Task Force](http://dmtf.org/)'s
   [CIMI](http://dmtf.org/standards/cloud) standard, proxies abstract calls to resources
@@ -58,7 +58,7 @@ Components in development which serve various roles for users and administrators
 - ##[Template Repository](https://github.com/aeolus-incubator/templates "Template Repository")##
   A community maintained repository of templates verified to work with the Aeolus
   suite of utilities to build images and deploy various stacks of components to the
-  cloud to serve various purposes.
+  cloud.
 
 - ##[Heat](http://heat-api.org/ "Heat API")##
   ![heat_logo](http://heat-api.org/heat-logo-design/slow/heat_logo-large.png)
