@@ -77,6 +77,8 @@ Here's a bunch of helpful links:
   locations](source.html)). We also use GitHub for issue tracking and accepting
   pull requests.
 
+* [Submitting pull requests](pull_requests.html) -- guide to Aeolus pull request process.
+
 * [Aeolus dev-tools](https://github.com/aeolus-incubator/dev-tools) -- tools to
   help you set up a development environment for Conductor and CLI.
 
