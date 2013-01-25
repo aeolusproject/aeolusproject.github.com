@@ -37,7 +37,7 @@ tracker -- each Aeolus subproject has its own:
 
 * [Oz issues](https://github.com/clalancette/oz/issues?state=open)
 
-* [TIM issues](https://github.com/aeolus-incubator/tim/issues?state=open)
+* [Tim issues](https://github.com/aeolus-incubator/tim/issues?state=open)
 
 * [Audrey issues](https://github.com/aeolusproject/audrey/issues?state=open)
 
@@ -76,6 +76,8 @@ Here's a bunch of helpful links:
   the majority of the subprojects (for details see [source code
   locations](source.html)). We also use GitHub for issue tracking and accepting
   pull requests.
+
+* [Submitting pull requests](pull_requests.html) -- guide to Aeolus pull request process.
 
 * [Aeolus dev-tools](https://github.com/aeolus-incubator/dev-tools) -- tools to
   help you set up a development environment for Conductor and CLI.
