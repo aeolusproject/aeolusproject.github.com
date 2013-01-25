@@ -37,7 +37,7 @@ tracker -- each Aeolus subproject has its own:
 
 * [Oz issues](https://github.com/clalancette/oz/issues?state=open)
 
-* [TIM issues](https://github.com/aeolus-incubator/tim/issues?state=open)
+* [Tim issues](https://github.com/aeolus-incubator/tim/issues?state=open)
 
 * [Audrey issues](https://github.com/aeolusproject/audrey/issues?state=open)
 
