@@ -277,7 +277,7 @@ hr.shade {
     display: block;
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 50px;
     z-index: 2; }
   #footer #navigationbg {
     position: absolute;
@@ -291,7 +291,7 @@ hr.shade {
     border-top: 6px solid rgba(0, 0, 0, 0.1);
     z-index: 1;
     width: 1000px;
-    height: 252px;
+    height: 220px;
     top: 56px;
     left: 50%;
     margin-left: -500px; }
@@ -323,6 +323,8 @@ hr.shade {
   left: 0;
   right: 0; }
 
+#copyright {
+  margin-top: 5px; }
 #copyright .line2 {
   margin-top: 2px; }
 #copyright a {
