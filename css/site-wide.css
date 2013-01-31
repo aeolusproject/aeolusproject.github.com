@@ -277,7 +277,7 @@ hr.shade {
     display: block;
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 10px;
     z-index: 2; }
   #footer #navigationbg {
     position: absolute;
@@ -322,6 +322,10 @@ hr.shade {
   bottom: 0;
   left: 0;
   right: 0; }
+
+#copyright {
+  margin-top: 2px;
+}
 
 #copyright .line2 {
   margin-top: 2px; }
