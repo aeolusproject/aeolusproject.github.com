@@ -486,6 +486,12 @@ hr.shade {
   height: 75px;
   margin-right: 10px;}
 
+#projects_container li img[alt=wm_logo]{
+  float: right;
+  width: 128px;
+  height: 30x;
+  margin-right: 10px;}
+
 #projects_container li img[alt=conductor_screenshot]{
   float: left;
   margin-left: 10px;
