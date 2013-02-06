@@ -82,6 +82,11 @@ Components in development which serve various roles for users and administrators
   the following [guide](http://mo.morsi.org/blog/node/347) on migrating instances
   across clouds.
 
+- ##[Winged Monkey](http://www.wingedmonkey.org)##
+  Winged Monkey is an application that provides an elegant and intuitive user interface for self-service consumers of cloud resources.  It offers simplified interactions for non-administrative users, and allows users working with multiple cloud providers to enjoy a common user experience.
+
+  [ [latest release](releases/wingedmonkey-0.1.0.html) ]
+
 
 ##Ancillary Projects:##
 Projects and resources to help users, developers, and the community.
