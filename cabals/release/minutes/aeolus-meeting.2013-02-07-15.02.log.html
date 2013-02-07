@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#aeolus-meeting log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">15:02:17</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">15:02:17</span><span class="nk"> &lt;ambot&gt;</span> Meeting started Thu Feb  7 15:02:17 2013 UTC.  The chair is eggmaster. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">15:02:17</span><span class="nk"> &lt;ambot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">15:02:47</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="topic">#topic </span><span class="topicline">time to release something</span>
+<a name="l-5"></a><span class="tm">15:03:26</span><span class="nk"> &lt;eggmaster&gt;</span> So it is time to pull the trigger and release what we have from end of last sprint as our 'development release'
+<a name="l-6"></a><span class="tm">15:03:35</span><span class="nk"> &lt;eggmaster&gt;</span> Or so I have been strongly encouraged to believe :)
+<a name="l-7"></a><span class="tm">15:03:50</span><span class="nk"> &lt;cwolfe_&gt;</span> heh.  makes sense
+<a name="l-8"></a><span class="tm">15:04:30</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> any news on the imagefactory bug front since yesterday afternoon?
+<a name="l-9"></a><span class="tm">15:04:31</span><span class="nk"> &lt;mpovolny&gt;</span> hmm given the new inputs about manageiq I would say: let's release whatever we have just now
+<a name="l-10"></a><span class="tm">15:05:14</span><span class="nk"> &lt;giulivo&gt;</span> eggmaster, what about the 2012-dec-1 which seemed quite robust
+<a name="l-11"></a><span class="tm">15:05:16</span><span class="nk"> &lt;giulivo&gt;</span> ?
+<a name="l-12"></a><span class="tm">15:05:21</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> missing tim
+<a name="l-13"></a><span class="tm">15:05:24</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> missing alchemy
+<a name="l-14"></a><span class="tm">15:05:25</span><span class="nk"> &lt;dajo&gt;</span> eggmaster, yes, imcleod is actively working on it, he fixed one issue but found another, also looks like we found a few tim edge cases that are not handled
+<a name="l-15"></a><span class="tm">15:05:55</span><span class="nk"> &lt;dajo&gt;</span> waiting on the tim issues until I can do some more testing around them
+<a name="l-16"></a><span class="tm">15:06:30</span><span class="nk"> &lt;giulivo&gt;</span> eggmaster, I knew that but isn't it reasonably close to 1.1.2 and as such usable for end users?
+<a name="l-17"></a><span class="tm">15:06:47</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> well I wasn't trying to educate you ;) but,
+<a name="l-18"></a><span class="tm">15:07:23</span><span class="nk"> &lt;eggmaster&gt;</span> my point was more that we had decided those were feature requirements (well, tim/factory anyway, not so much alchemy) for the next community release.
+<a name="l-19"></a><span class="tm">15:07:50</span><span class="nk"> &lt;giulivo&gt;</span> I'm fine with and always looking forward for being educated!
+<a name="l-20"></a><span class="tm">15:07:59</span><span class="nk"> &lt;eggmaster&gt;</span> I'd rather release with those new features and a long list of known issues than do 2012-Dec-1,
+<a name="l-21"></a><span class="tm">15:08:10</span><span class="nk"> &lt;eggmaster&gt;</span> because there's no point having people developing on it without tim imho.
+<a name="l-22"></a><span class="tm">15:08:44</span><span class="nk"> &lt;giulivo&gt;</span> understood, it was just about the timing
+<a name="l-23"></a><span class="tm">15:09:01</span><span class="nk"> &lt;mpovolny&gt;</span> lets release what we have just now
+<a name="l-24"></a><span class="tm">15:09:04</span><span class="nk"> &lt;giulivo&gt;</span> issue... but I got the point
+<a name="l-25"></a><span class="tm">15:11:03</span><span class="nk"> &lt;eggmaster&gt;</span> (thinking :))
+<a name="l-26"></a><span class="tm">15:11:30</span><span class="nk"> &lt;mpovolny&gt;</span> we do not have the inputs necessary for some meaningful thinking yet I am afraid
+<a name="l-27"></a><span class="tm">15:11:54</span><span class="nk"> &lt;cwolfe_&gt;</span> ok, so the release script itself would be quick, pretty much like https://github.com/aeolus-incubator/dev-tools/pull/39 .  we still don't have bootstrap installing imagfac, so the release would have to stay "install it yourself with these instructions on fc17" i think
+<a name="l-28"></a><span class="tm">15:12:13</span><span class="nk"> &lt;mpovolny&gt;</span> I would just ta
+<a name="l-29"></a><span class="tm">15:12:15</span><span class="nk"> &lt;mpovolny&gt;</span> tag
+<a name="l-30"></a><span class="tm">15:12:23</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe_:</span> yeah I was wondering about imgfac bootstrap stuff, thx
+<a name="l-31"></a><span class="tm">15:12:26</span><span class="nk"> &lt;mpovolny&gt;</span> create a install script that cwolfe_ said
+<a name="l-32"></a><span class="tm">15:12:35</span><span class="nk"> &lt;mpovolny&gt;</span> and call it a day
+<a name="l-33"></a><span class="tm">15:13:17</span><span class="nk"> &lt;cwolfe_&gt;</span> tag in dev-tools, or tag dev-tools/tim/imgfac?
+<a name="l-34"></a><span class="tm">15:13:33</span><span class="nk"> &lt;mpovolny&gt;</span> tag in conductor, tim, imgfac
+<a name="l-35"></a><span class="tm">15:14:07</span><span class="nk"> &lt;mpovolny&gt;</span> take what we have in dev-tools and make it checkout and install those tags and call it a day
+<a name="l-36"></a><span class="tm">15:14:08</span><span class="nk"> &lt;eggmaster&gt;</span> Yeah so that is action item one, I think. We need to review/confirm that the tags are correct in the release script.
+<a name="l-37"></a><span class="tm">15:14:16</span><span class="nk"> &lt;eggmaster&gt;</span> I know at least conductor needs to be changed.
+<a name="l-38"></a><span class="tm">15:14:32</span><span class="nk"> &lt;eggmaster&gt;</span> And then we need dajo to do a last round of testing on that set.
+<a name="l-39"></a><span class="tm">15:14:58</span><span class="nk"> &lt;mpovolny&gt;</span> call it "install-aeolus-reselase-2013-01.sh" put it on web and that's it
+<a name="l-40"></a><span class="tm">15:15:01</span><span class="nk"> &lt;eggmaster&gt;</span> pardon me, dajo and giulivo (and anyone else)
+<a name="l-41"></a><span class="tm">15:15:31</span><span class="nk"> &lt;dajo&gt;</span> first bug, release is spelled wrong in the script name!  ;)
+<a name="l-42"></a><span class="tm">15:15:38</span><span class="nk"> &lt;mpovolny&gt;</span> :-D
+<a name="l-43"></a><span class="tm">15:15:40</span><span class="nk"> &lt;eggmaster&gt;</span> haha.
+<a name="l-44"></a><span class="tm">15:16:08</span><span class="nk"> &lt;eggmaster&gt;</span> tzumainn from publicity cabal reached out to me yesterday about promoting/announcing the release
+<a name="l-45"></a><span class="tm">15:16:50</span><span class="nk"> &lt;eggmaster&gt;</span> I have the bare bones of a release announcement (in process from pre-tim release) here https://etherpad-aeolusproject.rhcloud.com/p/zm75o6DKEw
+<a name="l-46"></a><span class="tm">15:16:58</span><span class="nk"> &lt;mpovolny&gt;</span> tell him not to make much fuzz about it ;-)
+<a name="l-47"></a><span class="tm">15:17:59</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> I think we need to do all the steps.
+<a name="l-48"></a><span class="tm">15:18:05</span><span class="nk"> &lt;mpovolny&gt;</span> sure
+<a name="l-49"></a><span class="tm">15:20:45</span><span class="nk"> &lt;mpovolny&gt;</span> no problem with the announcement
+<a name="l-50"></a><span class="tm">15:20:57</span><span class="nk"> &lt;eggmaster&gt;</span> I think we still need to produce an install doc explaining how to install prereqs, is that correct?
+<a name="l-51"></a><span class="tm">15:21:10</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> I got what you were saying btw
+<a name="l-52"></a><span class="tm">15:21:44</span><span class="nk"> &lt;mpovolny&gt;</span> except  the cli link is outdated
+<a name="l-53"></a><span class="tm">15:21:59</span><span class="nk"> &lt;cwolfe_&gt;</span> <span class="hi">eggmastter:</span> yes, installing imgfac2
+<a name="l-54"></a><span class="tm">15:22:03</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> edits encouraged
+<a name="l-55"></a><span class="tm">15:23:01</span><span class="nk"> &lt;cwolfe_&gt;</span> that's the only prereq.  (fc17 recommended, something like https://gist.github.com/cwolferh/4533547 minus the echos at the end plus checking out the imagefactory tag that gets created for the release)
+<a name="l-56"></a><span class="tm">15:27:15</span><span class="nk"> &lt;eggmaster&gt;</span> In the instructions for 2012-Dec-1 install (which I can't find and I think they were in a private etherpad anyway) iirc dajo was also doing some oauth setup, adjusting various keys. Is that still required when installing imgfac2?
+<a name="l-57"></a><span class="tm">15:27:24</span><span class="nk"> &lt;eggmaster&gt;</span> or does bootstrap handle any of that now?
+<a name="l-58"></a><span class="tm">15:27:57</span><span class="nk"> &lt;cwolfe_&gt;</span> (though, i thought justin was close to breaking through on imgfac/dev-tools at least on rhel6...)
+<a name="l-59"></a><span class="tm">15:28:26</span><span class="nk"> &lt;dajo&gt;</span> yeah, so you still need to setup oauth
+<a name="l-60"></a><span class="tm">15:28:43</span><span class="nk"> &lt;eggmaster&gt;</span> OK, so yeah, I'm just saying we need to document that as well.
+<a name="l-61"></a><span class="tm">15:29:06</span><span class="nk"> &lt;dajo&gt;</span> err, maybe not, revisiting my install steps that step is not listed  :)
+<a name="l-62"></a><span class="tm">15:29:21</span><span class="nk"> &lt;dajo&gt;</span> sed -ie 's/--debug/--debug --no_oauth --no_ssl/g' /etc/sysconfig/imagefactoryd
+<a name="l-63"></a><span class="tm">15:29:33</span><span class="nk"> &lt;dajo&gt;</span> one of the steps is to disable oauth at this time ;)
+<a name="l-64"></a><span class="tm">15:29:47</span><span class="nk"> &lt;cwolfe_&gt;</span> might still need it for it imagewarehouse
+<a name="l-65"></a><span class="tm">15:30:01</span><span class="nk"> &lt;dajo&gt;</span> imgfac v2 drops warehouse
+<a name="l-66"></a><span class="tm">15:30:14</span><span class="nk"> &lt;cwolfe_&gt;</span> right, i mean for  2012-Dec-1
+<a name="l-67"></a><span class="tm">15:30:14</span><span class="nk"> &lt;dajo&gt;</span> no longer needed
+<a name="l-68"></a><span class="tm">15:30:18</span><span class="nk"> &lt;dajo&gt;</span> ahh
+<a name="l-69"></a><span class="tm">15:30:39</span><span class="nk"> &lt;giulivo&gt;</span> in 2012-dec-1 oauth is enabled
+<a name="l-70"></a><span class="tm">15:30:40</span><span class="nk"> &lt;dajo&gt;</span> sure, so we can re-send the 2012-Dec steps
+<a name="l-71"></a><span class="tm">15:30:44</span><span class="nk"> &lt;dajo&gt;</span> right
+<a name="l-72"></a><span class="tm">15:31:18</span><span class="nk"> &lt;dajo&gt;</span> for some reason I thought we were talking about post-tim steps
+<a name="l-73"></a><span class="tm">15:33:56</span><span class="nk"> &lt;eggmaster&gt;</span> Wait, what *are* we talking about? I want to know if we have install doc for release; I have not done a dev-tools install since the 2012-Dec-1 stuff, and I'd like to a) try it, b) get those steps publicly consumeable.
+<a name="l-74"></a><span class="tm">15:34:37</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">eggmaster:</span> I have been testing dev-tools based install last 2 weeks
+<a name="l-75"></a><span class="tm">15:35:19</span><span class="nk"> &lt;mpovolny&gt;</span> the steps at dev-tools website are right
+<a name="l-76"></a><span class="tm">15:35:23</span><span class="nk"> &lt;eggmaster&gt;</span> ok great
+<a name="l-77"></a><span class="tm">15:35:27</span><span class="nk"> &lt;mpovolny&gt;</span> for the dev-tools setup
+<a name="l-78"></a><span class="tm">15:35:57</span><span class="nk"> &lt;mpovolny&gt;</span> we just need the install-release-XXX.sh clone of bootstrap.sh and a wiki page for that
+<a name="l-79"></a><span class="tm">15:36:00</span><span class="nk"> &lt;mpovolny&gt;</span> cwolfe_, ?
+<a name="l-80"></a><span class="tm">15:36:10</span><span class="nk"> &lt;dajo&gt;</span> so giulivo and I worked out steps for 2012-dec last week or so, we can resend those... and we have a draft version of steps for 2013-jan as well
+<a name="l-81"></a><span class="tm">15:37:55</span><span class="nk"> &lt;mpovolny&gt;</span> to get back in line, can we stop talking about the 2012-dec? we are doing a release with the TIM and no imagewarehouse or am I missing something?
+<a name="l-82"></a><span class="tm">15:38:06</span><span class="nk"> &lt;eggmaster&gt;</span> cwolfe_ mpovolny where on dev-tools does it explain setting up imagefactory? Am I blind or looking in the wrong place?
+<a name="l-83"></a><span class="tm">15:38:23</span><span class="nk"> &lt;eggmaster&gt;</span> not seeing it in README or any of the commits from the 2013-Jan-1 pull request
+<a name="l-84"></a><span class="tm">15:38:39</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> yes, correct, 2012-Dec-1 is not in play
+<a name="l-85"></a><span class="tm">15:38:48</span><span class="nk"> &lt;cwolfe_&gt;</span> mpovolny, er, we had leaned toward not cloning and modifying bootstrap.sh but creating a release script instead a la https://github.com/cwolferh/dev-tools/blob/2013-jan-1-release/releases/2013-jan-1.sh
+<a name="l-86"></a><span class="tm">15:39:04</span><span class="nk"> &lt;mpovolny&gt;</span> cwolfe_, Ok
+<a name="l-87"></a><span class="tm">15:39:20</span><span class="nk"> &lt;cwolfe_&gt;</span> eggmaster, correct there is no good documentation to install imgfac2 yet
+<a name="l-88"></a><span class="tm">15:39:35</span><span class="nk"> &lt;eggmaster&gt;</span> OK.
+<a name="l-89"></a><span class="tm">15:39:35</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">eggmaster:</span> no &gt;&gt;text&lt;&lt; on imgractory, byt it is actually installed as part of the bootstrap afaik
+<a name="l-90"></a><span class="tm">15:39:49</span><span class="nk"> &lt;mpovolny&gt;</span> s/byt/but
+<a name="l-91"></a><span class="tm">15:40:20</span><span class="nk"> &lt;cwolfe_&gt;</span> i think the documentation to install imgfac2 would be on the wiki page, then run the release script
+<a name="l-92"></a><span class="tm">15:40:43</span><span class="nk"> &lt;cwolfe_&gt;</span> bootstrap.sh master does not install imgfac right now
+<a name="l-93"></a><span class="tm">15:41:11</span><span class="nk"> &lt;eggmaster&gt;</span> OK. so,
+<a name="l-94"></a><span class="tm">15:41:40</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">writeup imagefactory setup and make visible on aeolusproject.org wiki</span>
+<a name="l-95"></a><span class="tm">15:42:26</span><span class="nk"> &lt;mpovolny&gt;</span> sorry, i was so concentrated at the scripts that I overlooked that there's really no imagefactory in there :-(
+<a name="l-96"></a><span class="tm">15:44:03</span><span class="nk"> &lt;mpovolny&gt;</span> there are setup instructions in the conductor wiki by jprovazn
+<a name="l-97"></a><span class="tm">15:44:06</span><span class="nk"> &lt;mpovolny&gt;</span> for imagefactory2
+<a name="l-98"></a><span class="tm">15:44:14</span><span class="nk"> &lt;eggmaster&gt;</span> So then it sounds to me like we have two steps to our to-be-written install doc. 1) install imagefactory as described at $link, 2) run bootstrap as described at $dev-tools-release-tag-link
+<a name="l-99"></a><span class="tm">15:44:14</span><span class="nk"> &lt;mpovolny&gt;</span> so who will turn that into a script?
+<a name="l-100"></a><span class="tm">15:44:19</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">cwolfe_:</span> does that sound right?
+<a name="l-101"></a><span class="tm">15:44:48</span><span class="nk"> &lt;cwolfe_&gt;</span> eggmaster, yes, that is what i was thinking.
+<a name="l-102"></a><span class="tm">15:44:53</span><span class="nk"> &lt;mpovolny&gt;</span> https://github.com/aeolusproject/conductor/wiki/Conductor-and-new-Imagefactory-setup
+<a name="l-103"></a><span class="tm">15:48:02</span><span class="nk"> &lt;eggmaster&gt;</span> OK, that does not seem user friendly to me. :)
+<a name="l-104"></a><span class="tm">15:48:09</span><span class="nk"> &lt;eggmaster&gt;</span> I am a bit torn here.
+<a name="l-105"></a><span class="tm">15:48:10</span><span class="nk"> &lt;cwolfe_&gt;</span> mpovolny, those instructions are almost equivalent to https://gist.github.com/cwolferh/4533547 i think.  but i think we are leaning toward not releasing an imgfac2 script at this point as part of the release
+<a name="l-106"></a><span class="tm">15:48:29</span><span class="nk"> &lt;eggmaster&gt;</span> Do we want to go so far as to build some imagefactory rpms and host them somewhere?
+<a name="l-107"></a><span class="tm">15:48:46</span><span class="nk"> &lt;mpovolny&gt;</span> for what platforms if we do such thing?
+<a name="l-108"></a><span class="tm">15:48:47</span><span class="nk"> &lt;cwolfe_&gt;</span> that would be very user friendly
+<a name="l-109"></a><span class="tm">15:48:49</span><span class="nk"> &lt;eggmaster&gt;</span> if we're only supporting f17
+<a name="l-110"></a><span class="tm">15:49:01</span><span class="nk"> &lt;mpovolny&gt;</span> then it can be done
+<a name="l-111"></a><span class="tm">15:49:19</span><span class="nk"> &lt;mpovolny&gt;</span> quite fast, I have build the rpms on my machine some 14 days ago
+<a name="l-112"></a><span class="tm">15:49:38</span><span class="nk"> &lt;mpovolny&gt;</span> so it's a couple-minutes work
+<a name="l-113"></a><span class="tm">15:50:02</span><span class="nk"> &lt;mpovolny&gt;</span> then the install-scripts could call what is in cwolfe_'s gist
+<a name="l-114"></a><span class="tm">15:50:13</span><span class="nk"> &lt;mpovolny&gt;</span> and we would have a imgfac2 setup
+<a name="l-115"></a><span class="tm">15:50:32</span><span class="nk"> &lt;mpovolny&gt;</span> where can we host the rpms?
+<a name="l-116"></a><span class="tm">15:50:37</span><span class="nk"> &lt;eggmaster&gt;</span> that is the question.
+<a name="l-117"></a><span class="tm">15:50:58</span><span class="nk"> &lt;mpovolny&gt;</span> do we have some server where we can upload RPMS
+<a name="l-118"></a><span class="tm">15:51:11</span><span class="nk"> &lt;eggmaster&gt;</span> we have some space on fedorapeople where we used to host a bunch of deps that were not in fedora yet
+<a name="l-119"></a><span class="tm">15:51:35</span><span class="nk"> &lt;mpovolny&gt;</span> and then do wget *rpms ; yum install *rpms the install script..
+<a name="l-120"></a><span class="tm">15:52:23</span><span class="nk"> &lt;mpovolny&gt;</span> if you give me the access to that place, I can build the rpms, upload them, test them on F17 and write some short script to install them on F17 tomorrow
+<a name="l-121"></a><span class="tm">15:52:36</span><span class="nk"> &lt;mpovolny&gt;</span> to get us moving....
+<a name="l-122"></a><span class="tm">15:53:26</span><span class="nk"> &lt;eggmaster&gt;</span> I'm not sure I like this approach even though it is easier for the user. I don't like the idea of hosting these bits ourselves. Seems cleaner to me somehow to have user checkout a tag.
+<a name="l-123"></a><span class="tm">15:53:43</span><span class="nk"> &lt;eggmaster&gt;</span> and build it.
+<a name="l-124"></a><span class="tm">15:53:45</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">eggmaster:</span> sure
+<a name="l-125"></a><span class="tm">15:53:56</span><span class="nk"> &lt;mpovolny&gt;</span> so do we want a script that doest that?
+<a name="l-126"></a><span class="tm">15:54:14</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> yes, can you write it?
+<a name="l-127"></a><span class="tm">15:54:16</span><span class="nk"> &lt;mpovolny&gt;</span> i am capable of creating such script for 1-2 platforms, that a short job
+<a name="l-128"></a><span class="tm">15:54:17</span><span class="nk"> &lt;mpovolny&gt;</span> yues
+<a name="l-129"></a><span class="tm">15:54:21</span><span class="nk"> &lt;mpovolny&gt;</span> sure
+<a name="l-130"></a><span class="tm">15:54:24</span><span class="nk"> &lt;mpovolny&gt;</span> tell me the platforms
+<a name="l-131"></a><span class="tm">15:54:25</span><span class="nk"> &lt;eggmaster&gt;</span> that would be great. thank you.
+<a name="l-132"></a><span class="tm">15:54:34</span><span class="nk"> &lt;mpovolny&gt;</span> no problem, lets move ;-)
+<a name="l-133"></a><span class="tm">15:54:38</span><span class="nk"> &lt;mpovolny&gt;</span> F17? F18?
+<a name="l-134"></a><span class="tm">15:54:41</span><span class="nk"> &lt;mpovolny&gt;</span> rhel?
+<a name="l-135"></a><span class="tm">15:55:17</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> do all three and we'll throw away what we don't need.
+<a name="l-136"></a><span class="tm">15:55:37</span><span class="nk"> &lt;mpovolny&gt;</span> so latest rhel? 6.3 is that i believe?
+<a name="l-137"></a><span class="tm">15:55:43</span><span class="nk"> &lt;mpovolny&gt;</span> i'll look into beaker what I have
+<a name="l-138"></a><span class="tm">15:55:46</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> would be useful to have it documented whether or not we support it in the release.
+<a name="l-139"></a><span class="tm">15:55:47</span><span class="nk"> &lt;mpovolny&gt;</span> and those 2 fedoras
+<a name="l-140"></a><span class="tm">15:55:49</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> thank you.
+<a name="l-141"></a><span class="tm">15:55:53</span><span class="nk"> &lt;mpovolny&gt;</span> no problem
+<a name="l-142"></a><span class="tm">15:56:02</span><span class="nk"> &lt;mpovolny&gt;</span> what else can I do to get us move?
+<a name="l-143"></a><span class="tm">15:56:12</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">mpovolny will document/script install of imagefactory for f17/f18/rhel</span>
+<a name="l-144"></a><span class="tm">15:56:37</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> help fill in the new features list in the release doc etherpad I linked to.
+<a name="l-145"></a><span class="tm">15:56:45</span><span class="nk"> &lt;eggmaster&gt;</span> we don't have to have extreme detail
+<a name="l-146"></a><span class="tm">15:56:49</span><span class="nk"> &lt;eggmaster&gt;</span> just an overview of what's new.
+<a name="l-147"></a><span class="tm">15:57:55</span><span class="nk"> &lt;mpovolny&gt;</span> ok, so I can take that too
+<a name="l-148"></a><span class="tm">15:58:20</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="cmd">#action </span><span class="cmdline">mpovolny will go through commit history since the last release and pick notable features</span>
+<a name="l-149"></a><span class="tm">15:58:24</span><span class="nk"> &lt;eggmaster&gt;</span> great
+<a name="l-150"></a><span class="tm">15:58:44</span><span class="nk"> &lt;mpovolny&gt;</span> fill in direcly here: https://etherpad-aeolusproject.rhcloud.com/p/zm75o6DKEw ok?
+<a name="l-151"></a><span class="tm">15:59:08</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> correct
+<a name="l-152"></a><span class="tm">15:59:20</span><span class="nk"> &lt;mpovolny&gt;</span> ok, what else do we miss?
+<a name="l-153"></a><span class="tm">16:00:26</span><span class="nk"> &lt;eggmaster&gt;</span> Just the install doc that explains two steps of imagefactory and bootstrap, I think.
+<a name="l-154"></a><span class="tm">16:01:13</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">confirm set of tags for release and make sure dev-tools reflects correct tags</span>
+<a name="l-155"></a><span class="tm">16:01:19</span><span class="nk"> &lt;eggmaster&gt;</span> and that ^
+<a name="l-156"></a><span class="tm">16:01:59</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">post release documentation under www.aeolusproject.org/releases/</span>
+<a name="l-157"></a><span class="tm">16:02:22</span><span class="nk"> &lt;mpovolny&gt;</span> ok, who will do that? I can provide steps for the factory, but guess cwolfe_afk should finish his release script https://github.com/aeolus-incubator/dev-tools/pull/39 and probably write some comment on in
+<a name="l-158"></a><span class="tm">16:02:24</span><span class="nk"> &lt;mpovolny&gt;</span> on it
+<a name="l-159"></a><span class="tm">16:03:01</span><span class="nk"> &lt;mpovolny&gt;</span> jclift not here either, he seems to be already reviewing the pull-req
+<a name="l-160"></a><span class="tm">16:03:27</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> I will work with cwolfe_afk and dajo to idiot proof it (I will be the idiot) and then I will work with them to get it written up.
+<a name="l-161"></a><span class="tm">16:04:14</span><span class="nk"> &lt;mpovolny&gt;</span> ok, so I get those two items of mine and try to finish them tomorrow and ask someone to test the img build so that we have 2 pairs of eyes
+<a name="l-162"></a><span class="tm">16:04:28</span><span class="nk"> &lt;mpovolny&gt;</span> what else do we have today?
+<a name="l-163"></a><span class="tm">16:05:00</span><span class="nk"> &lt;eggmaster&gt;</span> That's all I've got.
+<a name="l-164"></a><span class="tm">16:05:34</span><span class="nk"> &lt;mpovolny&gt;</span> ook, so the rest the future will show, guess we can end now
+<a name="l-165"></a><span class="tm">16:05:41</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> ack.
+<a name="l-166"></a><span class="tm">16:05:43</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>
