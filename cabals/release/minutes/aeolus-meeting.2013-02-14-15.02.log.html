@@ -1,0 +1,274 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#aeolus-meeting log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">15:02:04</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">15:02:04</span><span class="nk"> &lt;ambot&gt;</span> Meeting started Thu Feb 14 15:02:04 2013 UTC.  The chair is eggmaster. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">15:02:04</span><span class="nk"> &lt;ambot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">15:02:18</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="topic">#topic </span><span class="topicline">Release!</span>
+<a name="l-5"></a><span class="tm">15:02:29</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> hello, just started
+<a name="l-6"></a><span class="tm">15:02:40</span><span class="nk"> &lt;mpovolny&gt;</span> hi all
+<a name="l-7"></a><span class="tm">15:03:00 </span><span class="nka">* jclift</span> <span class="ac">has been looking at other stuff last and earlier this week, so am only getting into testing bits again from last night</span>
+<a name="l-8"></a><span class="tm">15:03:05</span><span class="nk"> &lt;giulivo&gt;</span> that's a topic
+<a name="l-9"></a><span class="tm">15:03:08</span><span class="nk"> &lt;jclift&gt;</span> Not actually sure where everything's up to atm. :/
+<a name="l-10"></a><span class="tm">15:03:13</span><span class="nk"> &lt;eggmaster&gt;</span> OK
+<a name="l-11"></a><span class="tm">15:03:15</span><span class="nk"> &lt;eggmaster&gt;</span> let's recap.
+<a name="l-12"></a><span class="tm">15:03:28</span><span class="nk"> &lt;jclift&gt;</span> tx :)
+<a name="l-13"></a><span class="tm">15:04:05</span><span class="nk"> &lt;eggmaster&gt;</span> We have user building/installing rpms for imagefactory from source checkout,
+<a name="l-14"></a><span class="tm">15:04:31</span><span class="nk"> &lt;eggmaster&gt;</span> with the commit that imcleod pointed us to that addresses the timeout blocker we had.
+<a name="l-15"></a><span class="tm">15:04:47</span><span class="nk"> &lt;eggmaster&gt;</span> mpovolny is adding the setup script as a pull request against ## 07 February 2013 / #aeolus-meeting on freenode at 16:00 CET
+<a name="l-16"></a><span class="tm">15:04:47</span><span class="nk"> &lt;eggmaster&gt;</span> *Agenda*
+<a name="l-17"></a><span class="tm">15:04:53</span><span class="nk"> &lt;eggmaster&gt;</span> doh
+<a name="l-18"></a><span class="tm">15:04:56</span><span class="nk"> &lt;eggmaster&gt;</span> bad paste! bad paste!
+<a name="l-19"></a><span class="tm">15:05:04</span><span class="nk"> &lt;jclift&gt;</span> heh
+<a name="l-20"></a><span class="tm">15:05:16</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">against:</span>  2013-jan-1.sh
+<a name="l-21"></a><span class="tm">15:05:20</span><span class="nk"> &lt;jclift&gt;</span> k
+<a name="l-22"></a><span class="tm">15:05:41</span><span class="nk"> &lt;eggmaster&gt;</span> So user should be able to just run 2013-jan-1.sh
+<a name="l-23"></a><span class="tm">15:06:00</span><span class="nk"> &lt;jclift&gt;</span> Any idea if 2013-jan-1 includes EC2 snapshot support?
+<a name="l-24"></a><span class="tm">15:06:08</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#info </span><span class="cmdline">current release doc is in etherpad at https://etherpad-aeolusproject.rhcloud.com/p/zm75o6DKEw</span>
+<a name="l-25"></a><span class="tm">15:06:21</span><span class="nk"> &lt;jclift&gt;</span> And, have we tested on all of our "supported" clouds?
+<a name="l-26"></a><span class="tm">15:06:42</span><span class="nk"> &lt;eggmaster&gt;</span> And now requires editing out of the imagefactory install steps (after mpovolny's pull request is in; leave that content there for the moment)
+<a name="l-27"></a><span class="tm">15:06:53</span><span class="nk"> &lt;mpovolny&gt;</span> will do that
+<a name="l-28"></a><span class="tm">15:07:15</span><span class="nk"> &lt;eggmaster&gt;</span> dajo giulivo can you address jclift 's question about what supported clouds we have tested on?
+<a name="l-29"></a><span class="tm">15:07:19</span><span class="nk"> &lt;eggmaster&gt;</span> (or will test on...)
+<a name="l-30"></a><span class="tm">15:08:06</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> ty
+<a name="l-31"></a><span class="tm">15:08:33</span><span class="nk"> &lt;giulivo&gt;</span> ec2 only from me
+<a name="l-32"></a><span class="tm">15:09:09</span><span class="nk"> &lt;giulivo&gt;</span> Im sorry but i worked more on the dec release
+<a name="l-33"></a><span class="tm">15:09:09</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">eggmaster:</span> a problem with including the imgac install directly into the release script
+<a name="l-34"></a><span class="tm">15:09:16</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">giulivo:</span> Cool, you've had vm's pushed to EC2 and started from this code?
+<a name="l-35"></a><span class="tm">15:09:20</span><span class="nk"> &lt;mpovolny&gt;</span> there is
+<a name="l-36"></a><span class="tm">15:09:28</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> ok, what?
+<a name="l-37"></a><span class="tm">15:09:47</span><span class="nk"> &lt;mpovolny&gt;</span> it does sudo inself if not run as root, cannot do that any more
+<a name="l-38"></a><span class="tm">15:10:13</span><span class="nk"> &lt;mpovolny&gt;</span> would need it to be 2 scripts which would suck
+<a name="l-39"></a><span class="tm">15:10:14</span><span class="nk"> &lt;eggmaster&gt;</span> hmmmmm yeah I see what you mean, although...
+<a name="l-40"></a><span class="tm">15:10:38</span><span class="nk"> &lt;eggmaster&gt;</span> we're not including this in bootstrap.sh so I don't care so much about being in the sandbox
+<a name="l-41"></a><span class="tm">15:10:48</span><span class="nk"> &lt;eggmaster&gt;</span> We already say that user needs passwordless sudo
+<a name="l-42"></a><span class="tm">15:10:56</span><span class="nk"> &lt;eggmaster&gt;</span> for running release.
+<a name="l-43"></a><span class="tm">15:11:09</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> or am I missing the point?
+<a name="l-44"></a><span class="tm">15:11:19 </span><span class="nka">* eggmaster</span> <span class="ac">looks at script again</span>
+<a name="l-45"></a><span class="tm">15:11:22</span><span class="nk"> &lt;mpovolny&gt;</span> hmm, probably not
+<a name="l-46"></a><span class="tm">15:11:35</span><span class="nk"> &lt;mpovolny&gt;</span> I can add a 'sudo' in front of each line
+<a name="l-47"></a><span class="tm">15:12:08</span><span class="nk"> &lt;mpovolny&gt;</span> or put the script in a here_document, have it witten to a temp file and then run it using sudo
+<a name="l-48"></a><span class="tm">15:12:15</span><span class="nk"> &lt;mpovolny&gt;</span> have it written....
+<a name="l-49"></a><span class="tm">15:12:24</span><span class="nk"> &lt;jclift&gt;</span> Should we mention in the release notes page that this installation approach is still early stage (in development), thus the general messiness of it?
+<a name="l-50"></a><span class="tm">15:12:55</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">mpovolny:</span> Hmmm, why is having it do sudo itself wrong?
+<a name="l-51"></a><span class="tm">15:13:09</span><span class="nk"> &lt;jclift&gt;</span> (note - not arguing against, actually curious)
+<a name="l-52"></a><span class="tm">15:13:32</span><span class="nk"> &lt;mpovolny&gt;</span> if I sudo itself then I would run all the 2013-.. script in sudo
+<a name="l-53"></a><span class="tm">15:13:45</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> I don't think we need to draw attention to the messiness under the hood
+<a name="l-54"></a><span class="tm">15:13:48</span><span class="nk"> &lt;mpovolny&gt;</span> including the line: curl https://raw.github.com/aeolus-incubator/dev-tools/$DEV_TOOLS_BRANCH/bootstrap.sh | /bin/bash 2&gt;&amp;1 | tee -a /tmp/bootstrap-$DEV_TOOLS_BRANCH.out
+<a name="l-55"></a><span class="tm">15:13:57</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> if it's just running 2013-jan-1.sh it doesn't seem outwardly that messy to me
+<a name="l-56"></a><span class="tm">15:14:01</span><span class="nk"> &lt;mpovolny&gt;</span> that would be run as sudo
+<a name="l-57"></a><span class="tm">15:14:28</span><span class="nk"> &lt;mpovolny&gt;</span> so bootstrap would be run as root
+<a name="l-58"></a><span class="tm">15:14:36</span><span class="nk"> &lt;mpovolny&gt;</span> and we don't want that, do we?
+<a name="l-59"></a><span class="tm">15:14:54</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> Well, I'm looking at the manual imagefactory install stuff that seems to be needed prior to that?  From those Installation Notes pages anyway.
+<a name="l-60"></a><span class="tm">15:15:16</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> right. mpovolny has that scripted up and wants to embed it in the start of the release script.
+<a name="l-61"></a><span class="tm">15:15:31</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> so that it will be a one-line invocation when he's done with it.
+<a name="l-62"></a><span class="tm">15:15:35</span><span class="nk"> &lt;jclift&gt;</span> k
+<a name="l-63"></a><span class="tm">15:15:55</span><span class="nk"> &lt;eggmaster&gt;</span> (well, clone dev-tools, then one line :))
+<a name="l-64"></a><span class="tm">15:16:11</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">eggmaster:</span> probably yes
+<a name="l-65"></a><span class="tm">15:16:44</span><span class="nk"> &lt;mpovolny&gt;</span> I will add it as a separate script and run in when dev-tools is cloned from bootstrap
+<a name="l-66"></a><span class="tm">15:16:48</span><span class="nk"> &lt;mpovolny&gt;</span> ok?
+<a name="l-67"></a><span class="tm">15:17:26</span><span class="nk"> &lt;mpovolny&gt;</span> so that I will not change the release script, but will create a pull-request that changes the bootstrap.sh to call the imfac-install.sh, is that ok?
+<a name="l-68"></a><span class="tm">15:17:30</span><span class="nk"> &lt;mpovolny&gt;</span> or other suggestions?
+<a name="l-69"></a><span class="tm">15:17:50</span><span class="nk"> &lt;mpovolny&gt;</span> I don't really care, just want some solution that will be accepted and can be done ASAP
+<a name="l-70"></a><span class="tm">15:17:55</span><span class="nk"> &lt;eggmaster&gt;</span> I do not like the idea of changing bootstrap.sh
+<a name="l-71"></a><span class="tm">15:18:01</span><span class="nk"> &lt;eggmaster&gt;</span> Why can't we just have it in the release script?
+<a name="l-72"></a><span class="tm">15:18:15</span><span class="nk"> &lt;eggmaster&gt;</span> doing `sudo foo blablablabla` as needed?
+<a name="l-73"></a><span class="tm">15:18:28</span><span class="nk"> &lt;mpovolny&gt;</span> the dev-tools is cloned in the bootstrap.sh
+<a name="l-74"></a><span class="tm">15:18:33</span><span class="nk"> &lt;mpovolny&gt;</span> shall I do a second clone?
+<a name="l-75"></a><span class="tm">15:18:38</span><span class="nk"> &lt;mpovolny&gt;</span> I can, sure
+<a name="l-76"></a><span class="tm">15:18:48</span><span class="nk"> &lt;mpovolny&gt;</span> or I can curl the script and run it?
+<a name="l-77"></a><span class="tm">15:18:57</span><span class="nk"> &lt;mpovolny&gt;</span> is that better?
+<a name="l-78"></a><span class="tm">15:18:59</span><span class="nk"> &lt;eggmaster&gt;</span> To be honest, I do not care about just leaving it in the release document if it becomes too difficult.
+<a name="l-79"></a><span class="tm">15:19:15</span><span class="nk"> &lt;mpovolny&gt;</span> neither do I
+<a name="l-80"></a><span class="tm">15:19:21</span><span class="nk"> &lt;mpovolny&gt;</span> just want this resolved ;-)
+<a name="l-81"></a><span class="tm">15:19:46</span><span class="nk"> &lt;mpovolny&gt;</span> it's not difficult we just need to find a way that noone objects
+<a name="l-82"></a><span class="tm">15:20:17</span><span class="nk"> &lt;mpovolny&gt;</span> so can I "curl https://raw.github.com/aeolus-incubator/dev-tools/$DEV_TOOLS_BRANCH/imfac-install.sh | /bin/bash " ? in the release script?
+<a name="l-83"></a><span class="tm">15:20:17</span><span class="nk"> &lt;jclift&gt;</span> "just get it done" :D
+<a name="l-84"></a><span class="tm">15:20:22</span><span class="nk"> &lt;mpovolny&gt;</span> ;-)
+<a name="l-85"></a><span class="tm">15:20:29</span><span class="nk"> &lt;mpovolny&gt;</span> would that be ok?
+<a name="l-86"></a><span class="tm">15:20:41</span><span class="nk"> &lt;jclift&gt;</span> I honestly don't care, as long as it repeatedly works. :D
+<a name="l-87"></a><span class="tm">15:21:01</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> am I missing something? why not just jam it into the beginning of 2013-jan-1.sh before we set any env variables?
+<a name="l-88"></a><span class="tm">15:21:12</span><span class="nk"> &lt;mpovolny&gt;</span> because of the sudo
+<a name="l-89"></a><span class="tm">15:21:26</span><span class="nk"> &lt;mpovolny&gt;</span> but ok, I will jam it there, and sudo each line
+<a name="l-90"></a><span class="tm">15:21:36</span><span class="nk"> &lt;mpovolny&gt;</span> if that's ok with you
+<a name="l-91"></a><span class="tm">15:21:43</span><span class="nk"> &lt;eggmaster&gt;</span> that's fine with me. anyone else object?
+<a name="l-92"></a><span class="tm">15:21:52</span><span class="nk"> &lt;mpovolny&gt;</span> i just cannot do:
+<a name="l-93"></a><span class="tm">15:21:53</span><span class="nk"> &lt;mpovolny&gt;</span> # ensure we run as root
+<a name="l-94"></a><span class="tm">15:21:53</span><span class="nk"> &lt;mpovolny&gt;</span> if [ ! $UID -eq 0 ]; then
+<a name="l-95"></a><span class="tm">15:21:53</span><span class="nk"> &lt;mpovolny&gt;</span> echo "echo running sudo"
+<a name="l-96"></a><span class="tm">15:21:53</span><span class="nk"> &lt;mpovolny&gt;</span> sudo $0
+<a name="l-97"></a><span class="tm">15:21:53</span><span class="nk"> &lt;mpovolny&gt;</span> exit $?
+<a name="l-98"></a><span class="tm">15:21:55</span><span class="nk"> &lt;mpovolny&gt;</span> fi
+<a name="l-99"></a><span class="tm">15:22:01</span><span class="nk"> &lt;mpovolny&gt;</span> I need to sudo each command, but no problem with that
+<a name="l-100"></a><span class="tm">15:22:09</span><span class="nk"> &lt;mpovolny&gt;</span> ok? settled?
+<a name="l-101"></a><span class="tm">15:22:09</span><span class="nk"> &lt;giulivo&gt;</span> mpovolny, to be honest, my attempts to make the script going without sudo were screwed already by a number of other changes introduced later
+<a name="l-102"></a><span class="tm">15:22:10</span><span class="nk"> &lt;eggmaster&gt;</span> just test for passwordless sudo
+<a name="l-103"></a><span class="tm">15:22:23</span><span class="nk"> &lt;eggmaster&gt;</span> (idk what that test is...but...)
+<a name="l-104"></a><span class="tm">15:22:44</span><span class="nk"> &lt;giulivo&gt;</span> at this stage I think this could just run as sudo
+<a name="l-105"></a><span class="tm">15:22:47</span><span class="nk"> &lt;giulivo&gt;</span> as root
+<a name="l-106"></a><span class="tm">15:22:54</span><span class="nk"> &lt;giulivo&gt;</span> or assuming you have full sudo rights
+<a name="l-107"></a><span class="tm">15:23:00</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">eggmaster:</span> I don't get the meening of your last 2 lines
+<a name="l-108"></a><span class="tm">15:23:08</span><span class="nk"> &lt;mpovolny&gt;</span> meaning
+<a name="l-109"></a><span class="tm">15:23:19</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">mpovolny:</span> You have my approval to do "whatever you need" in the script, as long as it works.
+<a name="l-110"></a><span class="tm">15:23:19</span><span class="nk"> &lt;mpovolny&gt;</span> I get it now
+<a name="l-111"></a><span class="tm">15:23:23</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> well, instead of testing to see whether user has root, we could fail out if user does not have passwordless sudo.
+<a name="l-112"></a><span class="tm">15:23:29</span><span class="nk"> &lt;mpovolny&gt;</span> ok
+<a name="l-113"></a><span class="tm">15:23:31</span><span class="nk"> &lt;jclift&gt;</span> We can make it pretty/better for next release. :D
+<a name="l-114"></a><span class="tm">15:23:48</span><span class="nk"> &lt;mpovolny&gt;</span> no idea, how to test for password less sudo, but can try to hack such check
+<a name="l-115"></a><span class="tm">15:23:54</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> but even that is not strictly necessary...
+<a name="l-116"></a><span class="tm">15:24:08</span><span class="nk"> &lt;eggmaster&gt;</span> we *do* say that user needs it in release doc.
+<a name="l-117"></a><span class="tm">15:24:17</span><span class="nk"> &lt;mpovolny&gt;</span> ok, will just jam the imfac install at the beginning
+<a name="l-118"></a><span class="tm">15:24:17</span><span class="nk"> &lt;eggmaster&gt;</span> so, if easy, great. if not, skip.
+<a name="l-119"></a><span class="tm">15:24:23</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> thank you, please do :)
+<a name="l-120"></a><span class="tm">15:24:24</span><span class="nk"> &lt;mpovolny&gt;</span> issue resolved ;-)
+<a name="l-121"></a><span class="tm">15:24:29</span><span class="nk"> &lt;mpovolny&gt;</span> thx for the inputs
+<a name="l-122"></a><span class="tm">15:24:56</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> thanks for volunteering to get it in the script; I think it's a lot less off-putting that way.
+<a name="l-123"></a><span class="tm">15:24:59</span><span class="nk"> &lt;eggmaster&gt;</span> assuming it works ;)
+<a name="l-124"></a><span class="tm">15:25:08</span><span class="nk"> &lt;mpovolny&gt;</span> sure ;-)
+<a name="l-125"></a><span class="tm">15:25:45</span><span class="nk"> &lt;eggmaster&gt;</span> OK.
+<a name="l-126"></a><span class="tm">15:25:47</span><span class="nk"> &lt;eggmaster&gt;</span> So.
+<a name="l-127"></a><span class="tm">15:26:25</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="topic">#topic </span><span class="topicline">Things to do.</span>
+<a name="l-128"></a><span class="tm">15:26:47</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#info </span><span class="cmdline">Finish edit of 2013-jan-1.sh to include scripted imagefactory setup</span>
+<a name="l-129"></a><span class="tm">15:26:59</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">Finish edit of 2013-jan-1.sh to include scripted imagefactory setup</span>
+<a name="l-130"></a><span class="tm">15:27:31</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">markdown-ify release documentation</span>
+<a name="l-131"></a><span class="tm">15:28:08</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">have publicity/web cabal member review mardown-ed release note before inclusion on aeolusproject.org/releases</span>
+<a name="l-132"></a><span class="tm">15:28:47</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">revise http://www.aeolusproject.org/use_it.html to point to new release</span>
+<a name="l-133"></a><span class="tm">15:29:23</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">dajo and or giulivo to do additional smoketesting on release as it stands</span>
+<a name="l-134"></a><span class="tm">15:29:40</span><span class="nk"> &lt;eggmaster&gt;</span> questions/comments
+<a name="l-135"></a><span class="tm">15:31:01</span><span class="nk"> &lt;eggmaster&gt;</span> everyone jumped out the window but me
+<a name="l-136"></a><span class="tm">15:31:02</span><span class="nk"> &lt;eggmaster&gt;</span> ?
+<a name="l-137"></a><span class="tm">15:31:22</span><span class="nk"> &lt;eggmaster&gt;</span> b/c I have a good window here, but there's enough snow to break my fall
+<a name="l-138"></a><span class="tm">15:31:55</span><span class="nk"> &lt;mpovolny&gt;</span> so i will do #1
+<a name="l-139"></a><span class="tm">15:32:26</span><span class="nk"> &lt;mpovolny&gt;</span> what else can I do? but tell me in 2 minutes, will be back then
+<a name="l-140"></a><span class="tm">15:34:33</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">compose release announcement email ('announcing...', features list, and pointer to release doc)</span>
+<a name="l-141"></a><span class="tm">15:34:43</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">send release announcement to $lists</span>
+<a name="l-142"></a><span class="tm">15:35:24</span><span class="nk"> &lt;jclift&gt;</span> Any of us can do those.
+<a name="l-143"></a><span class="tm">15:35:39 </span><span class="nka">* jclift</span> <span class="ac">nominates eggmaster for the rel announce stuff</span>
+<a name="l-144"></a><span class="tm">15:35:53</span><span class="nk"> &lt;eggmaster&gt;</span> heh I was just about to nominate you ;)
+<a name="l-145"></a><span class="tm">15:36:07</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> would you like to do the markdown of the doc?
+<a name="l-146"></a><span class="tm">15:36:19</span><span class="nk"> &lt;jclift&gt;</span> I suspected you would try that. :D
+<a name="l-147"></a><span class="tm">15:36:30</span><span class="nk"> &lt;jclift&gt;</span> Yeah, ok, I can markdown the doc.
+<a name="l-148"></a><span class="tm">15:36:38</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> excellent thank you
+<a name="l-149"></a><span class="tm">15:36:57</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">jclift will do release doc markdown</span>
+<a name="l-150"></a><span class="tm">15:37:00</span><span class="nk"> &lt;jclift&gt;</span> We'll need to know which cloud providers definitely work before release time tho.
+<a name="l-151"></a><span class="tm">15:37:04</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">eggmaster will deal with the announcement email</span>
+<a name="l-152"></a><span class="tm">15:37:08</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> yes
+<a name="l-153"></a><span class="tm">15:37:28</span><span class="nk"> &lt;eggmaster&gt;</span> dajo giulivo can you devote any time to the point jclift raises ^^
+<a name="l-154"></a><span class="tm">15:37:40</span><span class="nk"> &lt;jclift&gt;</span> ie. which openstack clouds we've tested with, whether EC2 works, and which versions of VMware and oVirt/RHEV are known to work
+<a name="l-155"></a><span class="tm">15:37:43</span><span class="nk"> &lt;eggmaster&gt;</span> over the next 2 days ideally
+<a name="l-156"></a><span class="tm">15:38:08</span><span class="nk"> &lt;eggmaster&gt;</span> Does it sound feasible to aim for sending announcement on Monday?
+<a name="l-157"></a><span class="tm">15:39:31</span><span class="nk"> &lt;giulivo&gt;</span> agreed
+<a name="l-158"></a><span class="tm">15:40:32</span><span class="nk"> &lt;mpovolny&gt;</span> provided giulivo and dajo: can do/finish the testing in time?
+<a name="l-159"></a><span class="tm">15:40:37</span><span class="nk"> &lt;dajo&gt;</span> eggmaster, I can definitely give it a go and see where we stand...  although I am thinking we still have imagefactory issues which prevent pushing images to the providers which ultimately block testing
+<a name="l-160"></a><span class="tm">15:40:54</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> at which point we will just indicate those as 'known issues'
+<a name="l-161"></a><span class="tm">15:41:07</span><span class="nk"> &lt;eggmaster&gt;</span> imho
+<a name="l-162"></a><span class="tm">15:41:11</span><span class="nk"> &lt;eggmaster&gt;</span> and get it out the door.
+<a name="l-163"></a><span class="tm">15:41:22</span><span class="nk"> &lt;giulivo&gt;</span> or eventually change the git commit we checkout
+<a name="l-164"></a><span class="tm">15:41:27</span><span class="nk"> &lt;giulivo&gt;</span> makes sense?
+<a name="l-165"></a><span class="tm">15:41:28</span><span class="nk"> &lt;dajo&gt;</span> eggmaster, sure, but that kind of blocks any real testing against the clouds if I can't launch a image
+<a name="l-166"></a><span class="tm">15:41:53</span><span class="nk"> &lt;eggmaster&gt;</span> mmmmmmm
+<a name="l-167"></a><span class="tm">15:41:55</span><span class="nk"> &lt;dajo&gt;</span> anyone know where tim import image stands
+<a name="l-168"></a><span class="tm">15:42:23</span><span class="nk"> &lt;jclift&gt;</span> If we don't know it works, we shouldn't be releasing.
+<a name="l-169"></a><span class="tm">15:42:23</span><span class="nk"> &lt;dajo&gt;</span> afaik, that is not finished which was our backdoor around a issue that this
+<a name="l-170"></a><span class="tm">15:42:52</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> ok, my bad, I guess I thought we were more ok on the factory front.
+<a name="l-171"></a><span class="tm">15:43:04</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> I agree we need to be able to launch an image.
+<a name="l-172"></a><span class="tm">15:43:30</span><span class="nk"> &lt;eggmaster&gt;</span> OK, so.
+<a name="l-173"></a><span class="tm">15:43:36</span><span class="nk"> &lt;mpovolny&gt;</span> noone who can speak for the imagefactory here?
+<a name="l-174"></a><span class="tm">15:43:39</span><span class="nk"> &lt;dajo&gt;</span> actually, I believe we can launch mock images
+<a name="l-175"></a><span class="tm">15:43:45</span><span class="nk"> &lt;dajo&gt;</span> if that counts
+<a name="l-176"></a><span class="tm">15:43:56</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> get your pull request in with the imagefactory setup scripting ASAP and I will test
+<a name="l-177"></a><span class="tm">15:44:05</span><span class="nk"> &lt;eggmaster&gt;</span> then we hand off to dajo and giulivo to see if anything works.
+<a name="l-178"></a><span class="tm">15:44:07</span><span class="nk"> &lt;dajo&gt;</span> giulivo, have you tested imgfac recently to see push failures
+<a name="l-179"></a><span class="tm">15:44:16</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">jclift:</span> our documentation tasks can proceed while they test.
+<a name="l-180"></a><span class="tm">15:44:22</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">eggmaster:</span> Yep
+<a name="l-181"></a><span class="tm">15:44:23</span><span class="nk"> &lt;eggmaster&gt;</span> sane?
+<a name="l-182"></a><span class="tm">15:44:24</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">eggmaster:</span> I will do it tomorrow morning
+<a name="l-183"></a><span class="tm">15:44:39 </span><span class="nka">* jclift</span> <span class="ac">bets money that EC2 pushing doesn't work</span>
+<a name="l-184"></a><span class="tm">15:44:45</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> I may do it before then, but ok :)
+<a name="l-185"></a><span class="tm">15:44:48</span><span class="nk"> &lt;jclift&gt;</span> (small amount!) :&gt;
+<a name="l-186"></a><span class="tm">15:45:01</span><span class="nk"> &lt;mpovolny&gt;</span> I have tested image pushing and building MOCK-only today using the current version of the scripts
+<a name="l-187"></a><span class="tm">15:45:11</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> i.e. check for existing pull request before you work on it.
+<a name="l-188"></a><span class="tm">15:45:39</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">eggmaster:</span> I have just requested a F17 from beaker
+<a name="l-189"></a><span class="tm">15:45:56</span><span class="nk"> &lt;mpovolny&gt;</span> it's a 30 minutes job
+<a name="l-190"></a><span class="tm">15:46:08</span><span class="nk"> &lt;mpovolny&gt;</span> to put the scripts together and run them
+<a name="l-191"></a><span class="tm">15:46:17</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> I agree
+<a name="l-192"></a><span class="tm">15:46:18</span><span class="nk"> &lt;mpovolny&gt;</span> hopefully can do it later today, but cannot promis
+<a name="l-193"></a><span class="tm">15:46:42</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> yeah, you don't have a ton of 'today' left over there, but i appreciate you doing what you can.
+<a name="l-194"></a><span class="tm">15:47:22</span><span class="nk"> &lt;mpovolny&gt;</span> ;-)
+<a name="l-195"></a><span class="tm">15:47:28</span><span class="nk"> &lt;eggmaster&gt;</span> my goal is to get the one-line thing working for QE to test. although really they can use the existing release doc as it stands.
+<a name="l-196"></a><span class="tm">15:47:32</span><span class="nk"> &lt;giulivo&gt;</span> so let's put it this way
+<a name="l-197"></a><span class="tm">15:47:41</span><span class="nk"> &lt;eggmaster&gt;</span> i.e. building imagefactory manually and testing against that commit.
+<a name="l-198"></a><span class="tm">15:48:17 </span><span class="nka">* eggmaster</span> <span class="ac">listens to wise giulivo</span>
+<a name="l-199"></a><span class="tm">15:48:31</span><span class="nk"> &lt;mpovolny&gt;</span> let's move to another topic, hopefully I get the lab machine meanwhile and we can leave this
+<a name="l-200"></a><span class="tm">15:48:40</span><span class="nk"> &lt;giulivo&gt;</span> is there a list of providers we'd like imgfac to be able to build and push
+<a name="l-201"></a><span class="tm">15:49:00</span><span class="nk"> &lt;giulivo&gt;</span> so we can try to get people @imgfac to commit on that?
+<a name="l-202"></a><span class="tm">15:49:03</span><span class="nk"> &lt;jclift&gt;</span> EC2, HP OpenStack cloud, vSphere, and oVirt
+<a name="l-203"></a><span class="tm">15:49:05</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="topic">#topic </span><span class="topicline">remaining testing work</span>
+<a name="l-204"></a><span class="tm">15:50:01</span><span class="nk"> &lt;mpovolny&gt;</span> so we don't know if non-mock image building works at all I understood
+<a name="l-205"></a><span class="tm">15:50:04</span><span class="nk"> &lt;mpovolny&gt;</span> is that right?
+<a name="l-206"></a><span class="tm">15:50:14</span><span class="nk"> &lt;mpovolny&gt;</span> mean building+push
+<a name="l-207"></a><span class="tm">15:51:26</span><span class="nk"> &lt;giulivo&gt;</span> we don't
+<a name="l-208"></a><span class="tm">15:51:41</span><span class="nk"> &lt;jclift&gt;</span> agreed
+<a name="l-209"></a><span class="tm">15:51:52</span><span class="nk"> &lt;jclift&gt;</span> When I tested last week (EC2), it didn't.
+<a name="l-210"></a><span class="tm">15:51:53</span><span class="nk"> &lt;dajo&gt;</span> mpovolny, I installed a new system yesterday and ec2,vsphere,rhev pushes all failed
+<a name="l-211"></a><span class="tm">15:52:11</span><span class="nk"> &lt;giulivo&gt;</span> jclift, last week it didn't build any target image i think
+<a name="l-212"></a><span class="tm">15:52:20</span><span class="nk"> &lt;mpovolny&gt;</span> ok so that is a critical point from the make-sense point of view of the release
+<a name="l-213"></a><span class="tm">15:52:21</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">giulivo:</span> Yeah, that could have been the problem.
+<a name="l-214"></a><span class="tm">15:52:29</span><span class="nk"> &lt;jclift&gt;</span> I don't completely remember. :D
+<a name="l-215"></a><span class="tm">15:52:38</span><span class="nk"> &lt;jclift&gt;</span> <span class="hi">mpovolny:</span> Yep
+<a name="l-216"></a><span class="tm">15:52:38</span><span class="nk"> &lt;dajo&gt;</span> yeah, imcleod commited a fix for that on the 7th (thursday)
+<a name="l-217"></a><span class="tm">15:52:43</span><span class="nk"> &lt;jclift&gt;</span> k
+<a name="l-218"></a><span class="tm">15:52:44</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">dajo:</span> and the imagefactory people are working on that?
+<a name="l-219"></a><span class="tm">15:53:01</span><span class="nk"> &lt;mpovolny&gt;</span> we have to verify that fix?
+<a name="l-220"></a><span class="tm">15:53:04</span><span class="nk"> &lt;mpovolny&gt;</span> dajo?
+<a name="l-221"></a><span class="tm">15:53:23</span><span class="nk"> &lt;eggmaster&gt;</span> I thought that was this:
+<a name="l-222"></a><span class="tm">15:53:29</span><span class="nk"> &lt;eggmaster&gt;</span> https://github.com/aeolusproject/imagefactory/commit/07ce354ac7722066683ad5b67ed5c39aa75ca797
+<a name="l-223"></a><span class="tm">15:53:34</span><span class="nk"> &lt;dajo&gt;</span> mpovolny, imcleod was aware of it, when I hit it yesterday I meant to chase him down but was busy with other fires and it slipped off the plate
+<a name="l-224"></a><span class="tm">15:53:45</span><span class="nk"> &lt;eggmaster&gt;</span> which is what I had us checking out for our local build.
+<a name="l-225"></a><span class="tm">15:53:50</span><span class="nk"> &lt;eggmaster&gt;</span> in the doc.
+<a name="l-226"></a><span class="tm">15:53:53</span><span class="nk"> &lt;dajo&gt;</span> will do first thing after this meeting
+<a name="l-227"></a><span class="tm">15:54:29</span><span class="nk"> &lt;mpovolny&gt;</span> so that's the critical piece of information we need to call it a release If I understand it right
+<a name="l-228"></a><span class="tm">15:55:28</span><span class="nk"> &lt;giulivo&gt;</span> my feeling is that @imgfac
+<a name="l-229"></a><span class="tm">15:55:42</span><span class="nk"> &lt;eggmaster&gt;</span> If there's some other tag/commit we should be building off instead, dajo will prise that info from imcleod maybe?
+<a name="l-230"></a><span class="tm">15:55:45</span><span class="nk"> &lt;giulivo&gt;</span> don't care much about the release process
+<a name="l-231"></a><span class="tm">15:56:16</span><span class="nk"> &lt;giulivo&gt;</span> so they just consider v2 a work in progress and don't commit on having a 'working' release early
+<a name="l-232"></a><span class="tm">15:56:24</span><span class="nk"> &lt;dajo&gt;</span> eggmaster, sure
+<a name="l-233"></a><span class="tm">15:56:27</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> yeah I don't care much about their release process either, so long as we can just find one point in their tree that we know works with our release.
+<a name="l-234"></a><span class="tm">15:57:11</span><span class="nk"> &lt;eggmaster&gt;</span> OK. dajo giulivo thanks in advance for your detective work; I know there's a lot of other stuff demanding your attention.
+<a name="l-235"></a><span class="tm">15:57:27</span><span class="nk"> &lt;eggmaster&gt;</span> Let's call it and check in on irc later today to see where everyone is at, fair?
+<a name="l-236"></a><span class="tm">15:57:34</span><span class="nk"> &lt;jclift&gt;</span> yep
+<a name="l-237"></a><span class="tm">15:57:41</span><span class="nk"> &lt;giulivo&gt;</span> one good thing is
+<a name="l-238"></a><span class="tm">15:58:00</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">eggmaster:</span> have a lab machine with F17 and testing the jammed-together script right now....
+<a name="l-239"></a><span class="tm">15:58:06</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> rock and roll
+<a name="l-240"></a><span class="tm">15:58:20</span><span class="nk"> &lt;giulivo&gt;</span> the testsuite to test via rest is now included in imgfac, so you can use it
+<a name="l-241"></a><span class="tm">15:58:31</span><span class="nk"> &lt;mpovolny&gt;</span> will relocate do some shopping and then hopefully create the pull-request today
+<a name="l-242"></a><span class="tm">15:58:47</span><span class="nk"> &lt;mpovolny&gt;</span> like in 2-3 hours
+<a name="l-243"></a><span class="tm">15:58:58</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> perfect, don't kill yourself to do it
+<a name="l-244"></a><span class="tm">15:59:01</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> but thank you
+<a name="l-245"></a><span class="tm">15:59:02</span><span class="nk"> &lt;mpovolny&gt;</span> ;-)
+<a name="l-246"></a><span class="tm">15:59:42</span><span class="nk"> &lt;eggmaster&gt;</span> OK, thanks very much, everyone. Talk to you soon.
+<a name="l-247"></a><span class="tm">15:59:44</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>
