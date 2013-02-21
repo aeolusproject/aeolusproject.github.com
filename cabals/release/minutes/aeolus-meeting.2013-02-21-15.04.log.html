@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#aeolus-meeting log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">15:04:47</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">15:04:47</span><span class="nk"> &lt;ambot&gt;</span> Meeting started Thu Feb 21 15:04:47 2013 UTC.  The chair is eggmaster. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">15:04:47</span><span class="nk"> &lt;ambot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">15:05:12</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="topic">#topic </span><span class="topicline">farewell jclift, hello $TBD</span>
+<a name="l-5"></a><span class="tm">15:05:32</span><span class="nk"> &lt;eggmaster&gt;</span> As you may have heard, Justin is going to work on Openshift.
+<a name="l-6"></a><span class="tm">15:06:01</span><span class="nk"> &lt;eggmaster&gt;</span> So we have an empty seat at the release cabal table.
+<a name="l-7"></a><span class="tm">15:06:19</span><span class="nk"> &lt;mpovolny&gt;</span> so good luck jclift
+<a name="l-8"></a><span class="tm">15:06:30</span><span class="nk"> &lt;eggmaster&gt;</span> We can fill it or not depending on what the rest of us think. It might be a good time to try to rotate the position to someone else.
+<a name="l-9"></a><span class="tm">15:06:46</span><span class="nk"> &lt;eggmaster&gt;</span> Since I presume we don't all want to stay on release cabal forever anyway (whether or not we go work on Openshift)
+<a name="l-10"></a><span class="tm">15:07:05</span><span class="nk"> &lt;eggmaster&gt;</span> yes, godspeed jclift
+<a name="l-11"></a><span class="tm">15:08:27</span><span class="nk"> &lt;eggmaster&gt;</span> So, let's bring this up in #aeolus soon and see if we can rope someone else in.
+<a name="l-12"></a><span class="tm">15:08:38</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">eggmaster will ask around for another willing victim for release cabal</span>
+<a name="l-13"></a><span class="tm">15:08:53</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="topic">#topic </span><span class="topicline">state of the (non) release</span>
+<a name="l-14"></a><span class="tm">15:09:07</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> have you had any luck starting an instance lately on rhevm?
+<a name="l-15"></a><span class="tm">15:09:16</span><span class="nk"> &lt;eggmaster&gt;</span> I added some notes to https://etherpad-aeolusproject.rhcloud.com/p/aeolus-upstream-deployment-notes
+<a name="l-16"></a><span class="tm">15:09:25</span><span class="nk"> &lt;eggmaster&gt;</span> about the partial success I have had with conductor.
+<a name="l-17"></a><span class="tm">15:09:29</span><span class="nk"> &lt;eggmaster&gt;</span> er, ec2.
+<a name="l-18"></a><span class="tm">15:09:54</span><span class="nk"> &lt;eggmaster&gt;</span> Note that I had to check out a different commit of dev-tools to make it work since the callbacks config (iirc) had changed.
+<a name="l-19"></a><span class="tm">15:10:21</span><span class="nk"> &lt;eggmaster&gt;</span> Changed in a recent fix from jprovazn on conductor master that I picked over to the conductor 0.14.x release branch.
+<a name="l-20"></a><span class="tm">15:10:39</span><span class="nk"> &lt;dajo&gt;</span> eggmaster, haven't tried
+<a name="l-21"></a><span class="tm">15:10:58</span><span class="nk"> &lt;giulivo&gt;</span> eggmaster, dajo I'm unable to add accounts
+<a name="l-22"></a><span class="tm">15:11:08</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> for what provider?
+<a name="l-23"></a><span class="tm">15:11:18</span><span class="nk"> &lt;giulivo&gt;</span> I got the rhev/vsphere/ec2/openstack providers configured, but I'm still unable to add accounts to those
+<a name="l-24"></a><span class="tm">15:11:30</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> ok. I was able to add account for ec2
+<a name="l-25"></a><span class="tm">15:11:39</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> but it failed to correctly populate the HWP list for ec2
+<a name="l-26"></a><span class="tm">15:11:48</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> which is what I'm trying to fix/trackdown now.
+<a name="l-27"></a><span class="tm">15:11:58</span><span class="nk"> &lt;dajo&gt;</span> yeah, I think we need to start with eggmasters notes at the bottom of https://etherpad-aeolusproject.rhcloud.com/p/aeolus-upstream-deployment-notes
+<a name="l-28"></a><span class="tm">15:12:09</span><span class="nk"> &lt;giulivo&gt;</span> dajo, that's what I'm doing
+<a name="l-29"></a><span class="tm">15:12:11</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> yeah take a look at the changes there
+<a name="l-30"></a><span class="tm">15:12:16</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> they are necessary
+<a name="l-31"></a><span class="tm">15:12:21</span><span class="nk"> &lt;giulivo&gt;</span> latests imgfac, deltacloud 1.0.5
+<a name="l-32"></a><span class="tm">15:12:34</span><span class="nk"> &lt;eggmaster&gt;</span> idk for sure about the dc version; that's what mpovolny had suggested we use
+<a name="l-33"></a><span class="tm">15:12:40</span><span class="nk"> &lt;eggmaster&gt;</span> in fact that's what I was trying to test in the first place :)
+<a name="l-34"></a><span class="tm">15:13:28</span><span class="nk"> &lt;mpovolny&gt;</span> yes, there's  pull request changing the versions to 1.0.5 at dev-tools
+<a name="l-35"></a><span class="tm">15:13:46</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> yep
+<a name="l-36"></a><span class="tm">15:14:24</span><span class="nk"> &lt;giulivo&gt;</span> so the error I'm seeing is this:
+<a name="l-37"></a><span class="tm">15:14:24</span><span class="nk"> &lt;giulivo&gt;</span> Failed to populate hardware_profiles: undefined method '[]' for nil:NilClass
+<a name="l-38"></a><span class="tm">15:14:49</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> I have not seen that.
+<a name="l-39"></a><span class="tm">15:14:59</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> is that with my edits to 2013-jan-1.sh in place?
+<a name="l-40"></a><span class="tm">15:15:12</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">giulivo:</span> that was with DC 1.0.5?
+<a name="l-41"></a><span class="tm">15:15:20</span><span class="nk"> &lt;giulivo&gt;</span> it's 1.0.5 yes
+<a name="l-42"></a><span class="tm">15:15:24</span><span class="nk"> &lt;dajo&gt;</span> yeah, I think I am the one saying that 1.0.5 would solve the provider accounts error on no hwp issue... which seems to be completely wrong
+<a name="l-43"></a><span class="tm">15:15:27</span><span class="nk"> &lt;giulivo&gt;</span> and yes it's with the latest imgfac
+<a name="l-44"></a><span class="tm">15:15:34</span><span class="nk"> &lt;eggmaster&gt;</span> I am seeing a weird thing where
+<a name="l-45"></a><span class="tm">15:15:41</span><span class="nk"> &lt;eggmaster&gt;</span> when I add an ec2 provider account,
+<a name="l-46"></a><span class="tm">15:16:00</span><span class="nk"> &lt;eggmaster&gt;</span> it populates the HWPs with 't1.micro', when that is the one thing that's supposed to be being filtered *out* of the list.
+<a name="l-47"></a><span class="tm">15:16:30</span><span class="nk"> &lt;eggmaster&gt;</span> So I haven't dug into the controller yet to see what's going on there yet.
+<a name="l-48"></a><span class="tm">15:16:56</span><span class="nk"> &lt;mpovolny&gt;</span> I will re-run my own tests, I am sure I got one case running and one not, thought the difference was the DC as dajo suggested
+<a name="l-49"></a><span class="tm">15:17:22</span><span class="nk"> &lt;eggmaster&gt;</span> OK, so it sounds like we all have some testing to work on. I will continue to bang on ec2 today.
+<a name="l-50"></a><span class="tm">15:18:17</span><span class="nk"> &lt;mpovolny&gt;</span> I see no progress on the 3 imgfactory issues that dajo reported -- 248-250
+<a name="l-51"></a><span class="tm">15:18:32</span><span class="nk"> &lt;mpovolny&gt;</span> we should probably try to push imgfactory guys a bit
+<a name="l-52"></a><span class="tm">15:18:43</span><span class="nk"> &lt;mpovolny&gt;</span> or am I missing something?
+<a name="l-53"></a><span class="tm">15:19:17</span><span class="nk"> &lt;dajo&gt;</span> hmm, I though the resolved the rhevm push issue (although I haven;t confirmed that to be working)
+<a name="l-54"></a><span class="tm">15:19:27</span><span class="nk"> &lt;eggmaster&gt;</span> the eb2 s3 issue is fixed on master
+<a name="l-55"></a><span class="tm">15:19:33</span><span class="nk"> &lt;eggmaster&gt;</span> defaults to ebs now and works.
+<a name="l-56"></a><span class="tm">15:20:00</span><span class="nk"> &lt;dajo&gt;</span> yeah... rhevm #249... he added a comment but didn;t flip the issue
+<a name="l-57"></a><span class="tm">15:20:44</span><span class="nk"> &lt;eggmaster&gt;</span> I added a comment on #250 just now.
+<a name="l-58"></a><span class="tm">15:21:28</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">eggmaster will run down the HWP issue on ec2 and either fix or get an issue open if he can't fix it.</span>
+<a name="l-59"></a><span class="tm">15:22:05</span><span class="nk"> &lt;mpovolny&gt;</span> so we change the install script to user what is currently master  imagefactory?
+<a name="l-60"></a><span class="tm">15:22:10</span><span class="nk"> &lt;mpovolny&gt;</span> sorry to use
+<a name="l-61"></a><span class="tm">15:22:11</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> yes.
+<a name="l-62"></a><span class="tm">15:22:40</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> I mean, it's not pushed to dev-tools.
+<a name="l-63"></a><span class="tm">15:22:52</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> but I commented out the specific hash to check out for imagefactory.
+<a name="l-64"></a><span class="tm">15:22:57</span><span class="nk"> &lt;eggmaster&gt;</span> so it just pulls master.
+<a name="l-65"></a><span class="tm">15:23:12</span><span class="nk"> &lt;mpovolny&gt;</span> ok
+<a name="l-66"></a><span class="tm">15:23:34</span><span class="nk"> &lt;eggmaster&gt;</span> If master gets us e2e on $provider_list, then we can set it to the commit that's working for us.
+<a name="l-67"></a><span class="tm">15:23:59</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">eggmaster:</span> that is in some pull-request?
+<a name="l-68"></a><span class="tm">15:24:03</span><span class="nk"> &lt;eggmaster&gt;</span> no.
+<a name="l-69"></a><span class="tm">15:24:14</span><span class="nk"> &lt;mpovolny&gt;</span> https://github.com/aeolus-incubator/dev-tools/blob/master/releases/2013-jan-1.sh -- I see   "git checkout 07ce354"
+<a name="l-70"></a><span class="tm">15:24:15</span><span class="nk"> &lt;eggmaster&gt;</span> I didn't want to do a pull request until I knew it worked.
+<a name="l-71"></a><span class="tm">15:24:19</span><span class="nk"> &lt;mpovolny&gt;</span> oook
+<a name="l-72"></a><span class="tm">15:24:20</span><span class="nk"> &lt;mpovolny&gt;</span> sure
+<a name="l-73"></a><span class="tm">15:25:02</span><span class="nk"> &lt;eggmaster&gt;</span> I've just been editing my local copy of 2013-jan-1.sh since it's not like anything gets overwritten by what's actually in dev-tools.
+<a name="l-74"></a><span class="tm">15:25:16</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> there are a couple other edits which you can see in my notes on the etherpad
+<a name="l-75"></a><span class="tm">15:25:33</span><span class="nk"> &lt;eggmaster&gt;</span> https://etherpad-aeolusproject.rhcloud.com/p/aeolus-upstream-deployment-notes
+<a name="l-76"></a><span class="tm">15:26:47</span><span class="nk"> &lt;mpovolny&gt;</span> <span class="hi">eggmaster:</span> that setup at the end of the etherpad note, did mock work?
+<a name="l-77"></a><span class="tm">15:26:55</span><span class="nk"> &lt;eggmaster&gt;</span> mmm, did not test mock.
+<a name="l-78"></a><span class="tm">15:27:00</span><span class="nk"> &lt;eggmaster&gt;</span> good question.
+<a name="l-79"></a><span class="tm">15:27:00</span><span class="nk"> &lt;giulivo&gt;</span> eggmaster, shouldn't the conductor branch be 2013-Jan-1 ?
+<a name="l-80"></a><span class="tm">15:27:17</span><span class="nk"> &lt;eggmaster&gt;</span> heh no.
+<a name="l-81"></a><span class="tm">15:27:32</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> we will change the name of the release script to match the branch.
+<a name="l-82"></a><span class="tm">15:27:38</span><span class="nk"> &lt;mpovolny&gt;</span> ok, I will try to recreate your setup and verify the mock
+<a name="l-83"></a><span class="tm">15:27:54</span><span class="nk"> &lt;giulivo&gt;</span> so that means the only thing we agreed upon is changing
+<a name="l-84"></a><span class="tm">15:28:04</span><span class="nk"> &lt;giulivo&gt;</span> also, why the need to checkout a specific commit of dev-tools ?
+<a name="l-85"></a><span class="tm">15:28:19</span><span class="nk"> &lt;eggmaster&gt;</span> 0.14.x is version for this release. sprintname is used for minor end of sprint releases.
+<a name="l-86"></a><span class="tm">15:28:25</span><span class="nk"> &lt;eggmaster&gt;</span> next big release would be 0.15.x etc.
+<a name="l-87"></a><span class="tm">15:28:35</span><span class="nk"> &lt;mpovolny&gt;</span> and look myself or ask Jan to help fixing the getting the list of hwps it the issue will be there for me
+<a name="l-88"></a><span class="tm">15:28:37</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> we had to bring in a change to the config setup for callbacks
+<a name="l-89"></a><span class="tm">15:28:57</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> which was introduced by a conductor commit from jprovazn that I cherry-picked over to the 0.14.x branch.
+<a name="l-90"></a><span class="tm">15:29:36</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> which is why I changed it to just check out the 0.14.x branch instead of a specific commit for FACTER_CONDUCTOR_BRANCH
+<a name="l-91"></a><span class="tm">15:30:17</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> the dev-tools new commit is just one after the commit we were testing with before.
+<a name="l-92"></a><span class="tm">15:30:45</span><span class="nk"> &lt;giulivo&gt;</span> but shouldn't we checkout dev-tools from matser?
+<a name="l-93"></a><span class="tm">15:31:04</span><span class="nk"> &lt;eggmaster&gt;</span> yes
+<a name="l-94"></a><span class="tm">15:31:10</span><span class="nk"> &lt;eggmaster&gt;</span> you check out dev-tools master,
+<a name="l-95"></a><span class="tm">15:31:29</span><span class="nk"> &lt;eggmaster&gt;</span> but the release script uses bootstrap.sh from commit 012af96d4e
+<a name="l-96"></a><span class="tm">15:31:48</span><span class="nk"> &lt;giulivo&gt;</span> oh until we tag the commit, correct?
+<a name="l-97"></a><span class="tm">15:31:50</span><span class="nk"> &lt;eggmaster&gt;</span> The edits I list on the etherpad are not in dev-tools master, nor are they in a pull request.
+<a name="l-98"></a><span class="tm">15:32:07</span><span class="nk"> &lt;giulivo&gt;</span> yeah I noticed that
+<a name="l-99"></a><span class="tm">15:32:26</span><span class="nk"> &lt;mpovolny&gt;</span> to test them and then merge them when we actually make sure it works
+<a name="l-100"></a><span class="tm">15:32:31</span><span class="nk"> &lt;eggmaster&gt;</span> I just a) check out dev-tools master b) make my edits to 2013-jan-1.sh
+<a name="l-101"></a><span class="tm">15:32:32</span><span class="nk"> &lt;eggmaster&gt;</span> right.
+<a name="l-102"></a><span class="tm">15:33:02</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> I don't understand your comment 'oh until we tag the commit, correct?'
+<a name="l-103"></a><span class="tm">15:33:33</span><span class="nk"> &lt;giulivo&gt;</span> I mean, at some point we will be tagging dev-tools for the 0.14 release
+<a name="l-104"></a><span class="tm">15:33:55</span><span class="nk"> &lt;eggmaster&gt;</span> ah, yeah, I suppose we will have a tag instead of just a commit hash.
+<a name="l-105"></a><span class="tm">15:34:22</span><span class="nk"> &lt;eggmaster&gt;</span> I don't know what's preventing that now. Probably just hasn't been done. cwolfe was not opposed to that iirc.
+<a name="l-106"></a><span class="tm">15:34:32</span><span class="nk"> &lt;eggmaster&gt;</span> he just didn't want to create a branch per release iirc.
+<a name="l-107"></a><span class="tm">15:35:14</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#action </span><span class="cmdline">tag dev-tools once blockers are cleared.</span>
+<a name="l-108"></a><span class="tm">15:35:35</span><span class="nk"> &lt;eggmaster&gt;</span> So basically, test test test guys. Whatever cycles you have, please give them.
+<a name="l-109"></a><span class="tm">15:35:54</span><span class="nk"> &lt;eggmaster&gt;</span> I am beyond eager to get this thing out the door.
+<a name="l-110"></a><span class="tm">15:36:16</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="topic">#topic </span><span class="topicline">remaining documentation issues</span>
+<a name="l-111"></a><span class="tm">15:36:42</span><span class="nk"> &lt;eggmaster&gt;</span> I need to ask jclift if he managed to get the release note converted to markdown for the wiki.
+<a name="l-112"></a><span class="tm">15:36:45</span><span class="nk"> &lt;eggmaster&gt;</span> That's all.
+<a name="l-113"></a><span class="tm">15:37:38</span><span class="nk"> &lt;eggmaster&gt;</span> I see nothing else on the agenda (thanks giulivo for editing that btw)
+<a name="l-114"></a><span class="tm">15:38:17</span><span class="nk"> &lt;eggmaster&gt;</span> Does anyone have anything they want to bring to the group?
+<a name="l-115"></a><span class="tm">15:38:30</span><span class="nk"> &lt;mpovolny&gt;</span> ok, I will test, what you added to the notes, trying to fix what I find, I can test ec2, mock and rhev
+<a name="l-116"></a><span class="tm">15:38:39</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> thank you in advance
+<a name="l-117"></a><span class="tm">15:38:46</span><span class="nk"> &lt;dajo&gt;</span> cool cool, I have two systems installing now, will let you guys know results this afternoon
+<a name="l-118"></a><span class="tm">15:38:52</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">dajo:</span> excellent
+<a name="l-119"></a><span class="tm">15:39:01</span><span class="nk"> &lt;eggmaster&gt;</span> I will continue to hammer on this HWP thing.
+<a name="l-120"></a><span class="tm">15:39:18</span><span class="nk"> &lt;mpovolny&gt;</span> so do we have something else we can do to get it out of the door?
+<a name="l-121"></a><span class="tm">15:39:27</span><span class="nk"> &lt;eggmaster&gt;</span> Everyone please just check in at some point later today and let us know how things went.
+<a name="l-122"></a><span class="tm">15:39:42</span><span class="nk"> &lt;eggmaster&gt;</span> i.e. brno guys at end of day, however soon that is :)
+<a name="l-123"></a><span class="tm">15:39:46</span><span class="nk"> &lt;eggmaster&gt;</span> keep the communication going.
+<a name="l-124"></a><span class="tm">15:39:48</span><span class="nk"> &lt;mpovolny&gt;</span> will try, but given my timezone it might be tomorrow morning
+<a name="l-125"></a><span class="tm">15:40:01</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> very good, whatever you can do is great.
+<a name="l-126"></a><span class="tm">15:40:21</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">mpovolny:</span> I really think it's a matter of getting some successful e2e's in the can.
+<a name="l-127"></a><span class="tm">15:40:35</span><span class="nk"> &lt;mpovolny&gt;</span> ok
+<a name="l-128"></a><span class="tm">15:40:37</span><span class="nk"> &lt;eggmaster&gt;</span> documentation is more or less done (I can edit markdown as well as the next guy...)
+<a name="l-129"></a><span class="tm">15:41:08</span><span class="nk"> &lt;eggmaster&gt;</span> So, everybody test. Clear blockers. Turn up heat on factory/conductor people if shit doesn't work.
+<a name="l-130"></a><span class="tm">15:41:12</span><span class="nk"> &lt;giulivo&gt;</span> I'm reinstalling too
+<a name="l-131"></a><span class="tm">15:41:20</span><span class="nk"> &lt;giulivo&gt;</span> hopefully will be able to test against openstack
+<a name="l-132"></a><span class="tm">15:41:25</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="hi">giulivo:</span> aweoms.e
+<a name="l-133"></a><span class="tm">15:41:29</span><span class="nk"> &lt;eggmaster&gt;</span> hehe
+<a name="l-134"></a><span class="tm">15:41:35</span><span class="nk"> &lt;eggmaster&gt;</span> I'm turning into jayg.
+<a name="l-135"></a><span class="tm">15:41:48</span><span class="nk"> &lt;mpovolny&gt;</span> :-D
+<a name="l-136"></a><span class="tm">15:42:11</span><span class="nk"> &lt;eggmaster&gt;</span> Alright, thanks guys. Let's call it ended and I'm going to dive back into testing.
+<a name="l-137"></a><span class="tm">15:42:17</span><span class="nk"> &lt;eggmaster&gt;</span> going once...
+<a name="l-138"></a><span class="tm">15:42:22</span><span class="nk"> &lt;mpovolny&gt;</span> bye all
+<a name="l-139"></a><span class="tm">15:42:29</span><span class="nk"> &lt;eggmaster&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>
