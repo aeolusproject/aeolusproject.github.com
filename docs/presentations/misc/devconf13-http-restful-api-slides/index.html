@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Designing HTTP RESTful APIs</title>
+
+    <meta name="description" content="Brief introduction to HTTP REST API design plus some practical issues.">
+    <meta name="author" content="Petr Blaho, Jiří Stránský">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- customizations -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <section>
+          <h1>Designing <br/>HTTP REST<span class="smaller">ful</span> API<span class="smaller">s</span></h1>
+          <!--<h3>Petr Blaho &amp; Jiri Stransky</h3>-->
+          <h3>Petr Blaho <img width="110" height="110" src='./images/shadowman.png' title='Red Hat Shadowman' alt='&' style='vertical-align: middle; background: none; border: none; box-shadow: none; margin: 0px 10px;'> Jiri Stransky</h3>
+        </section>
+
+        <section>
+          <h2>We are</h2>
+          <ul>
+            <li>Red Hatters</li>
+            <li>Aeolus engs - API, CLI</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Agenda</h2>
+          <ul>
+            <li>Intro to HTTP REST</li>
+            <li>Practical issues</li>
+            <li>Q &amp; A</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>HTTP REST API</h2>
+        </section>
+
+        <section>
+          <h2>Popular</h2>
+          <ul>
+            <li>GitHub, Twitter, OpenStack...</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Easy to consume</h2>
+          <ul>
+            <li>Conventions</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>HTTP REST</h2>
+        </section>
+
+        <section>
+          <h2><span class="smaller">HTTP</span> REST</h2>
+        </section>
+
+        <section>
+          <h2>REST</h2>
+          <p>
+            (REpresentational State Transfer)
+          </p>
+          <p>
+            Architectural style for communication<br/>between remote applications
+          </p>
+        </section>
+
+        <section>
+          <h2>REST</h2>
+          <ul>
+            <li>Client-server</li>
+            <li>Stateless (request-response)</li>
+            <li><em>Resources</em> with uniform interface</li>
+            <li>Exchange of <em>resource representation</em></li>
+          </ul>
+          <aside class="notes">
+            <p>
+              Client-server - simple communication (everything talks to some
+              central point). OTOH, it makes server the weak spot.
+            </p>
+            <p>
+              Stateless - each request from client contains all information
+              necessary to understand the request
+            </p>
+            <p>
+              Uniform interface - constraints to bring order to the
+              communication and make it easier to reason about the API. OTOH,
+              standardizing the form means the communication cannot be
+              arbitrarily tailored to specific use cases.
+            </p>
+            <p>
+              Caching, layering - certain types of responses can be cached.
+              Caching can happen on the client or on the server, and for
+              unencrypted communication, caching can also happen midway between
+              client and server.
+            </p>
+            <p>
+              Code-on-demand - optional. Make clients simpler by sending
+              executable code from client to server (e.g. JavaScript). For
+              non-web-browser clients, this is used rarely.
+            </p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Resource</h2>
+          <ul>
+            <li>Any information that can be named</li>
+            <li>Can be mutable</li>
+            <li>Identity - URL</li>
+            <li>Collections, elements</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Resource URL<span class="smaller">s</span></h2>
+<pre>
+<code class="xml" contenteditable>https://api.myapp.org/users
+https://api.myapp.org/books
+
+https://api.myapp.org/users/2
+https://api.myapp.org/books/978-0615314464
+
+https://api.myapp.org/users/2/books</code></pre>
+        </section>
+
+
+        <section>
+          <h2>Resource representation</h2>
+          <ul>
+            <li>Serialized snapshot of resource state</li>
+            <li>Hyperlinks</li>
+            <li>Resource can have many representations</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Resource representation</h2>
+<pre>
+<code contenteditable class="xml">&lt;user href="https://api.myapp.org/users/2"&gt;
+  &lt;name&gt;Bob Barley&lt;/name&gt;
+&lt;/user&gt;
+</code><code contenteditable class="json">
+{
+  "_type": "user",
+  "_href": "https://api.myapp.org/users/2",
+  "name": "Bob Barley"
+}</code></pre>
+        </section>
+
+        <section>
+          <h2>HTTP <span class="smaller">REST</span></h2>
+        </section>
+
+        <section>
+          <h2>HTTP</h2>
+          <ul>
+            <li>Uniform interface</li>
+            <li>Standard response codes</li>
+            <li>Standard request methods</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>HTTP response codes</h2>
+          <ul>
+            <li>Request processing result</li>
+            <li>Success vs. error</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>HTTP response codes</h2>
+          <ul>
+            <li>1xx Informational</li>
+            <li>2xx Success</li>
+            <li>3xx Redirection</li>
+            <li>4xx Client error</li>
+            <li>5xx Server error</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Success codes</h2>
+          <ul>
+            <li>200 OK</li>
+            <li>201 Created</li>
+            <li>204 No Content</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Client error codes</h2>
+          <ul>
+            <li>401 Unauthorized</li>
+            <li>403 Forbidden</li>
+            <li>404 Not Found</li>
+            <li>422 Unprocessable Entity</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Server error codes</h2>
+          <ul>
+            <li>500 Internal Server Error</li>
+            <li>503 Service Unavailable</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>HTTP request methods</h2>
+          <ul>
+            <li>Mainly used as CRUD</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>HTTP request methods</h2>
+          <ul>
+            <li>POST</li>
+            <li>GET</li>
+            <li>PUT</li>
+            <li>DELETE</li>
+            <li>(HEAD, OPTIONS, ...)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>POST</h2>
+          <ul>
+            <li>Create a resource (C<span class="smaller">RUD</span>)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>POST</h2>
+<pre>
+<code class="http" contenteditable>POST /users HTTP/1.1
+Accept: application/xml
+Content-Type: application/xml; charset=utf-8
+<code class="xml">
+&lt;user&gt;
+  &lt;name&gt;Alice Adams&lt;/name&gt;
+&lt;/user&gt;</code></code></pre>
+
+<pre>
+<code class="http" contenteditable>HTTP/1.1 201 Created
+Location: https://api.myapp.org/users/3
+Content-Type: application/xml; charset=utf-8
+<code class="xml">
+&lt;user href="https://api.myapp.org/users/3"&gt;
+  &lt;name&gt;Alice Adams&lt;/name&gt;
+&lt;/user&gt;</code></code></pre>
+        </section>
+
+        <section>
+          <h2>GET</h2>
+          <ul>
+            <li>Request a representation of a resource (<span class="smaller">C</span>R<span class="smaller">UD</span>)</li>
+            <li>
+              Can use URL params
+              <ul>
+                <li>Useful for filtering collections</li>
+              </ul>
+            </li>
+            <li>Caching possibility</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>GET</h2>
+<pre>
+<code class="http" contenteditable>GET /users/3 HTTP/1.1
+Accept: application/xml</code></pre>
+<pre>
+<code class="http" contenteditable>HTTP/1.1 200 OK
+Content-Type: application/xml; charset=utf-8
+<code class="xml">
+&lt;user href="https://api.myapp.org/users/3"&gt;
+  &lt;name&gt;Alice Adams&lt;/name&gt;
+&lt;/user&gt;
+</code></code></pre>
+        </section>
+
+        <section>
+          <h2>GET</h2>
+<pre>
+<code class="http" contenteditable>GET /users HTTP/1.1
+Accept: application/xml</code></pre>
+<pre>
+<code class="http" contenteditable>HTTP/1.1 200 OK
+Content-Type: application/xml; charset=utf-8
+<code class="xml">
+&lt;users href="https://api.myapp.org/users"&gt;
+  &lt;user href="https://api.myapp.org/users/2"&gt;
+    &lt;name&gt;Bob Barley&lt;/name&gt;
+  &lt;/user&gt;
+  &lt;user href="https://api.myapp.org/users/3"&gt;
+    &lt;name&gt;Alice Adams&lt;/name&gt;
+  &lt;/user&gt;
+&lt;/users&gt;</code></code></pre>
+        </section>
+
+        <section>
+          <h2>GET</h2>
+<pre>
+<code class="http" contenteditable>GET /users?query=alice HTTP/1.1
+Accept: application/xml</code></pre>
+<pre>
+<code class="http" contenteditable>HTTP/1.1 200 OK
+Content-Type: application/xml; charset=utf-8
+<code class="xml">
+&lt;users href="https://api.myapp.org/users?query=alice"&gt;
+  &lt;user href="https://api.myapp.org/users/3"&gt;
+    &lt;name&gt;Alice Adams&lt;/name&gt;
+  &lt;/user&gt;
+&lt;/users&gt;</code></code></pre>
+        </section>
+
+        <section>
+          <h2>PUT</h2>
+          <ul>
+            <li>
+              Store a resource to a URL
+              <ul>
+                <li>Usually for updating (<span class="smaller">CR</span>U<span class="smaller">D</span>)</li>
+                <li>
+                  Sometimes for creating (C<span class="smaller">RUD</span>)
+                  <ul>
+                    <li>If you know target URL</li>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>PUT</h2>
+<pre>
+<code class="http" contenteditable>PUT /users/3 HTTP/1.1
+Accept: application/xml
+Content-Type: application/xml; charset=utf-8
+<code class="xml">
+&lt;user href="https://api.myapp.org/users/3"&gt;
+  &lt;name&gt;Christine Cooper&lt;/name&gt;
+&lt;/user&gt;</code></code></pre>
+
+<pre>
+<code class="http" contenteditable>HTTP/1.1 200 OK
+Location: https://api.myapp.org/users/3
+Content-Type: application/xml; charset=utf-8
+<code class="xml">
+&lt;user href="https://api.myapp.org/users/3"&gt;
+  &lt;name&gt;Christine Cooper&lt;/name&gt;
+&lt;/user&gt;</code></code></pre>
+        </section>
+
+        <section>
+          <h2>PUT</h2>
+<pre>
+<code class="http" contenteditable>PUT /books/978-0615314464 HTTP/1.1
+Accept: application/xml
+Content-Type: application/xml; charset=utf-8
+<code class="xml">
+&lt;book href="https://api.myapp.org/books/978-0615314464"&gt;
+  &lt;title&gt;xkcd: volume 0&lt;/title&gt;
+&lt;/book&gt;</code></code></pre>
+
+<pre>
+<code class="http" contenteditable>HTTP/1.1 201 Created
+Content-Type: application/xml; charset=utf-8
+<code class="xml">
+&lt;book href="https://api.myapp.org/books/978-0615314464"&gt;
+  &lt;title&gt;xkcd: volume 0&lt;/title&gt;
+&lt;/book&gt;</code></code></pre>
+        </section>
+
+        <section>
+          <h2>DELETE</h2>
+          <ul>
+            <li>Delete a resource (<span class="smaller">CRU</span>D)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>DELETE</h2>
+<pre>
+<code class="http" contenteditable>DELETE /users/3 HTTP/1.1
+Accept: application/xml</code></pre>
+<pre>
+<code class="http" contenteditable>HTTP/1.1 204 No Content</code></pre>
+        </section>
+
+        <section>
+          <h2>HEAD</h2>
+          <ul>
+            <li>Like GET, but only fetches headers</li>
+            <li>Metainformation is the same as for GET</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>HEAD</h2>
+<pre>
+<code class="http" contenteditable>HEAD /users/2 HTTP/1.1</code></pre>
+<pre>
+<code class="http" contenteditable>HTTP/1.1 200 OK
+Content-Type: application/xml; charset=utf-8
+ETag: "59a2b4c1c160097acb1cf8e0b167975f"
+Cache-Control: max-age=0, private, must-revalidate
+</code></pre>
+        </section>
+
+        <section>
+          <h2>OPTIONS</h2>
+          <ul>
+            <li>Request supported HTTP methods for a URL</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>OPTIONS</h2>
+<pre>
+<code class="http" contenteditable>OPTIONS /users/2 HTTP/1.1
+Accept: application/xml</code></pre>
+<pre>
+<code class="http" contenteditable>HTTP/1.1 204 No Content
+Allow: OPTIONS, HEAD, GET, PUT, DELETE</code></pre>
+        </section>
+
+        <section>
+          <h2>Method properties</h2>
+          <ul>
+            <li>Safe - GET, HEAD, OPTIONS</li>
+            <li>Idempotent - PUT, DELETE</li>
+          </ul>
+        </section>
+
+        <section>
+          <img width="640" height="640" src='./images/one-does-not-simply-use-get-to-change-data.jpg' alt='One does not simply use GET to change data'>
+        </section>
+
+        <section>
+          <h2>Basic HTTP REST</h2>
+          <table class="rest">
+            <tr>
+              <td>&nbsp;</td>
+              <td class="header">POST</td>
+              <td class="header">GET</td>
+              <td class="header">PUT</td>
+              <td class="header">DELETE</td>
+            </tr>
+            <tr>
+              <td class="header">Collection</td>
+              <td class="enabled">Create element</td>
+              <td class="enabled">List<br/>(and&nbsp;filter)</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="header">Element</td>
+              <td>&nbsp;</td>
+              <td class="enabled">View</td>
+              <td class="enabled">Update<br/>(or&nbsp;create)</td>
+              <td class="enabled">Delete</td>
+            </tr>
+          </table>
+        </section>
+
+        <section>
+          <h2>Easy to consume</h2>
+          <ul>
+            <li>Conventions</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Conventions</h2>
+<pre>
+<code class="http" contenteditable>GET /repos/aeolus-incubator/thor-cli/issues?labels=enhancement HTTP/1.1</code></pre>
+<pre>
+<code class="http" contenteditable>GET /plus/v1/activities?query=devconf HTTP/1.1</code></pre>
+<pre>
+<code class="http" contenteditable>GET /1.1/search/tweets.json?q=devconf HTTP/1.1</code></pre>
+        </section>
+
+        <section>
+          <!--
+          <h2>
+            Issues when designing RESTful API
+          </h2>
+          -->
+          <img width="640" height="640" src='./images/rest-yourself-issues-are-coming.jpg' alt='REST yourself, issues are coming'>
+        </section>
+
+        <section>
+          <h2>
+            Backwards compatibility
+          </h2>
+          <ul>
+            <li>Resource representation</li>
+            <li>URLs</li>
+            <li>Versioning</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Resource representation</h2>
+          <ul>
+            <li>Adding</li>
+            <li>Removing</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>URLs</h2>
+          <ul>
+            <li>URLs of resources should not change</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>
+            Versioning
+          </h2>
+          <ul>
+            <li>URLs
+            <li>Media type</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>URLs</h2>
+          <ul>
+            <li>namespacing - prefix</li>
+            <pre><code class="http" contenteditable>https://example.org/api/v2.0/foo</code></pre>
+            <li>parameters</li>
+            <pre><code class="http" contenteditable>https://example.org/api/foo?version=2.0</code></pre>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Media type</h2>
+          <ul>
+            <li class='fragment'>Version included in media type
+            <pre><code class="http" contenteditable>Accept: application/vnd.example.foo-v2.0+json</code></pre></li>
+            <li class='fragment'>Version as parameter of media type
+            <pre><code class="http" contenteditable>Accept: application/vnd.example.foo+json; version=2.0</code></pre></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>
+            Amount of Discoverability
+          </h2>
+          <ul>
+            <li>Uniform interface</li>
+            <li>HATEOAS</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Uniform interface</h2>
+          <ul>
+            <li>GET</li>
+            <li>POST</li>
+            <li>PUT</li>
+            <li>DELETE</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>HATEOAS</h2>
+          <ul>
+            <li>Entry point</li>
+            <li>Hypermedia links</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>
+            Long-running actions
+          </h2>
+          <ul>
+            <li class='fragment'>Blocking request</li>
+            <li class='fragment'>Create job
+            <pre><code class="http" contenteditable>HTTP/1.1 202 Accepted</code></pre></li>
+            <li class='fragment'>Polling for result</li>
+            <li class='fragment'>Hooks</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>
+            M:N relationships
+          </h2>
+          <ul>
+            <li class='fragment'>Is it resource?</li>
+            <li class='fragment'>Subcollections</li>
+            <li class='fragment'>PUT / DELETE</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>
+            Pagination, ordering, filtering
+          </h2>
+          <ul>
+            <li class='fragment'>Is it the same resource?</li>
+            <li class='fragment'>URL path
+            <pre><code class="http" contenteditable>https://example.org/foo/page/1/order/price</code></pre></li>
+            <li class='fragment'>URL query
+            <pre><code class="http" contenteditable>https://example.org/foo?page=1&order=price</code></pre></li>
+            <li class='fragment'>Media type
+            <pre><code class="http" contenteditable>https://example.org/foo</code></pre>
+            <pre><code class="http" contenteditable>Accept: application/vnd.example.foo+json; page=1; order=price</code></pre></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>
+            API and UI
+          </h2>
+          <ul>
+            <li class='fragment'>API + UI next to each other</li>
+            <li class='fragment'>UI built as a client of API</li>
+          </ul>
+        </section>
+
+        <section>
+          <img width="640" height="640" src='./images/what-we-want-now-questions-and-answers.jpg' alt='What we want now? Questions & Answers'>
+        </section>
+
+        <section>
+          <h2>Q & A</h2>
+        </section>
+
+        <section>
+          <h2>Thank you</h2>
+          <ul>
+            <li>Petr Blaho (<a href='https://twitter.com/petrblaho' title='Petr Blaho @ Twitter'>@petrblaho</a>)</li>
+            <li>Jiri Stransky (<a href='https://twitter.com/jistr' title='Jiri Stransky @ Twitter'>@jistr</a>)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Sources and links</h3>
+          <ul>
+            <li><a href="http://tomayko.com/writings/rest-to-my-wife">How I explained REST to my wife</a></li>
+            <li><a href="https://restful-api-design.readthedocs.org/en/latest">Thoughts on RESTful API Design</a></li>
+            <li><a href="http://watzmann.net/blog/2012/12/dont-hate-the-hateos.html">Don't hate HATEOS</a></li>
+            <li><a href="http://roy.gbiv.com/untangled/2009/it-is-okay-to-use-post">It is okay to use POST</a></li>
+          </ul>
+        </section>
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: false,
+        progress: false,
+        history: true,
+        center: true,
+        mouseWheel: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        rollingLinks: false,
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+          // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
