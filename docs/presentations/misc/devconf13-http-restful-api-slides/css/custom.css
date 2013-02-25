@@ -1,0 +1,25 @@
+.slides .smaller {
+  font-size: 60%;
+}
+
+.deadly {
+  background-color: #550000;
+}
+
+table.rest {
+  border-collapse: collapse;
+}
+
+table.rest td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.6em;
+  width: 20%;
+}
+
+table.rest td:not(.header) {
+  font-size: 70%;
+}
+
+table.rest td.enabled {
+}
