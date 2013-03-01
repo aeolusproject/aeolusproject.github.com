@@ -13,7 +13,7 @@ Winged Monkey 0.2.0
 
 | **Project**      | [Winged Monkey](http://www.wingedmonkey.org) |
 | **Release**      | 0.2.0          |
-| **Release Date** | February 4th, 2013 |
+| **Release Date** | March 4th, 2013 |
 | **Get It**       | [Installation Instructions](http://www.wingedmonkey.org/get_started.html) |
 
   </div>
