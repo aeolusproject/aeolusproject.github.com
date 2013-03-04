@@ -23,7 +23,7 @@ Conductor 0.14.0
 
 ##Project Overview
 
-Aeolus is software for running virtual machines both internally on your own equipment, and in Clouds from several leading vendors. All at the same time.
+Aeolus is software for running virtual machines both internally on your own equipment, and in clouds from several leading vendors. All at the same time.
 
 Aeolus is comprised of several component projects that work together, including:
 
@@ -82,9 +82,9 @@ Following a successful installation, you should be able to browse to Aeolus Cond
 <div id="rhevm" class="section-grouping">
 ### RHEVM Support
 
-Please note that in order to add these providers, the conductor UI requires the existence of the following json files under /etc/imagefactory directory where provider name matches a definition within the json file.  No imagefactd  restart is necessary.
+Please note that in order to add these providers, the Conductor UI requires the existence of the following JSON files under /etc/imagefactory directory where provider name matches a definition within the json file.  No imagefactoryd restart is necessary.
 
-In addition, rhev support requires the conductor host to have the rhevm export domain nfs share mounted with the values found within rhevm.json.          
+In addition, RHEV support requires the conductor host to have the RHEVM export domain NFS share mounted with the values found within rhevm.json.          
   
 Please use the following as examples:
   
@@ -125,7 +125,7 @@ A user choosing to deploy based on a cost-based provider selection strategy has 
 <div id="alchemy" class="section-grouping">
 ### Alchemy
 
-Conductor now uses Alchemy as its integrated UI component.  Alchemy is an open source project that provides styled user interface components (forms, buttons, flash messages) and complex Ruby-on-Rails composites (header, navigation, login) to ease web developers' lives and help users with web usability.
+Conductor now uses Alchemy as its integrated UI component.  Alchemy is an open source project that provides styled user interface components (forms, buttons, flash messages) and complex Ruby on Rails composites (header, navigation, login) to ease web developers' lives and help users with web usability.
 
 Find out more at [http://ui-alchemy.org](http://ui-alchemy.org).
 </div>
@@ -141,7 +141,7 @@ The [simple_form gem](https://github.com/plataformatec/simple_form) eases the co
 <div id="image" class="section-grouping">
 ### Tim / ImageFactory v2
 
-Conductor 0.14.0 brings integration with Tim and ImageFactory v2.  Tim is a Rails Engine responsible for Cloud image management.  It  allows clients to create, delete and upload images to a multitude of Cloud providers.  Tim builds on top of Imagefactory's cloud abstraction layer.
+Conductor 0.14.0 brings integration with Tim and ImageFactory v2.  Tim is a Rails Engine responsible for cloud image management.  It  allows clients to create, delete and upload images to a multitude of cloud providers.  Tim builds on top of ImageFactory's cloud abstraction layer.
 
 <iframe width="560" height="315" src="http://www.youtube.com/embed/eYmzoOWeykM" frameborder="0" allowfullscreen></iframe>
 </div>
