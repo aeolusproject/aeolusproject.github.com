@@ -43,6 +43,8 @@ Core components providing cross and hybrid cloud functionality
   The Conductor UI unifies the various Aeolus components, providing a rich / high-level
   interactive user experience to deploy instances and configurations across clouds.
 
+  [ [latest release](releases/conductor-0.14.0.html) ]
+
   <div style="clear:both"></div>
 
 ##Incubation Components:##
