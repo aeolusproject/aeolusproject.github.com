@@ -53,6 +53,6 @@ Please send an email to <aeolus-security@fedorahosted.org>. Use our [GPG public 
 
 <div id="private" class="section-grouping">
 ## Need to talk to a human?
-Feel free to contact Matt Wagner (irc: matty_dubbs / email: matt.wagner AT redhat DOT com)
+Feel free to contact Matt Wagner (irc: matty_dubs / email: matt.wagner AT redhat DOT com)
 or Justin Clift (irc: jclift / email: jclift AT redhat DOT com) anytime.
 </div>
