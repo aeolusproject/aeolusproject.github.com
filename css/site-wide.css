@@ -15,8 +15,9 @@ h1, h2, h3, h4, h5, .headline {
 
 h1 {
   text-transform: uppercase;
-  font-weight: normal;
-  font-size: 150%; }
+  font-weight: 700;
+  font-size: 200%;
+  color: #333333; }
 
 h2 {
   color: #107fc9;
