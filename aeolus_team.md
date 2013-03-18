@@ -73,13 +73,6 @@ John Dunning (mgr), Steve Loranz, Ian McLeod, Ovidiu Visan
 <br />
 
 <div class="section-grouping">
-#### Project: [Image Warehouse](imagewarehouse.html)
-
-John Dunning (mgr), Pete Zaitcev (lead), Jeff Darcy
-</div>
-<br />
-
-<div class="section-grouping">
 #### Project: [Oz](oz.html)
 
 John Dunning (mgr), Chris Lalancette (lead), Ian McLeod, Ovidiu Visan
