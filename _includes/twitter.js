@@ -2,10 +2,10 @@
             new TWTR.Widget({
               version: 2,
               type: 'profile',
-              rpp: 5,
+              rpp: 6,
               interval: 30000,
               width: 'auto',
-              height: 'auto',
+              height: '200px',
               theme: {
                 shell: {
                   background: '#47aaed',
@@ -18,8 +18,8 @@
                 }
               },
               features: {
-                scrollbar: false,
-                loop: false,
+                scrollbar: true,
+                loop: true,
                 live: false,
                 behavior: 'all'
               }

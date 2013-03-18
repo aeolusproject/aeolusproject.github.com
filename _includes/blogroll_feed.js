@@ -1,8 +1,8 @@
           //<![CDATA[
             $('#divRss').FeedEk({
               FeedUrl : 'http://blog.aeolusproject.org/feed/',
-              MaxCount : 25,
+              MaxCount : 5,
               ShowDesc : false,
-              ShowPubDate:true
+              ShowPubDate: true,
              });
           //]]>
