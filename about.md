@@ -17,4 +17,17 @@ across clouds.
 ## Learn More
 
 * Aeolus is a collection of many components. Check out our [Projects](/projects.html "Aeolus Projects") page.
-* Check out some (slightly outdated for now) [screenshots](/screenshots.html "Aeolus Project Screenshots")
+* Use Aeolus to facilitate cross cloud / virtualization infrastructure solutions
+* Components abstract various levels of the cloud so that the end user can access resources in a high level manner
+* Aeolus is a [Community](http://blog.aeolusproject.org/ "Community") dedicated to an Open Cloud
+* Check out some [screenshots](/screenshots.html "Aeolus Project Screenshots")
+
+## Summary
+
+Aeolus is a community project aimed to provide a suite of tools to facilitate
+open cloud abstraction. Aeolus components may be used independently or in conjuction
+to represent cloud resources in a high level manner able to be consumed via an
+open source interface. Public and private cloud resources are represented in a unified
+fashion so that end user applications may seemlessly access cloud-based infrastructure.
+
+<img src="/images/component_overview.png" />
