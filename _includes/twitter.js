@@ -8,13 +8,13 @@
               height: '200px',
               theme: {
                 shell: {
-                  background: '#47aaed',
-                  color: '#ffffff'
+                  background: '#d9e9f1',
+                  color: '#666666'
                 },
                 tweets: {
-                  background: '#47aaed',
-                  color: '#000000',
-                  links: '#f5f5f5'
+                  background: '#f3f8fb',
+                  color: '#808080',
+                  links: '#0a93fc'
                 }
               },
               features: {
