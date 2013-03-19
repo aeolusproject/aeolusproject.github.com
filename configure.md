@@ -44,7 +44,6 @@ Goals
 
     -   Deltacloud core
     -   Conductor
-    -   Image Warehouse (iwhd)
     -   Image Builder
     -   Database (PostgreSQL)
 
@@ -95,7 +94,7 @@ Use Cases
 
 -   Sally the sys admin has existing cobbler and puppetmaster servers
     running and wants to provision some additional machines to run the
-    image builder and warehouse. She imports the aeolus module into her
+    image builder. She imports the aeolus module into her
     puppet recipe and uses it to setup/install/configure iwhd and
     imagefactory. She then uses it to automatically create and deploy a
     few templates/images to be available upon installation right within
@@ -184,7 +183,7 @@ High Level Requirements
 
 -   Must provide a means to configure/cleanup all the Aeolus components
     and dependencies on a single machine, including:
-    -   Conductor, core, Image Warehouse, Image Builder, PostgreSQL,
+    -   Conductor, core, Image Builder, PostgreSQL,
         libvirt, mongodb
 
 -   Must provide a means which to configure/cleanup all the
