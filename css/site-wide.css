@@ -514,3 +514,16 @@ hr.shade {
 
 #learn-more-button {
   float: right; }
+
+#maintenance_info {
+  display: block;
+  background: linear-gradient(rgb(255,190,0), rgb(255, 170, 0));
+  padding: 10px 0;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+#maintenance_info a {
+  color: inherit;
+}
